@@ -5,6 +5,11 @@ using UnityEngine;
 
 public class Tile : MonoBehaviour
 {
+    
+    /*
+     * visual feedback when mouse hovers with building
+     * info on tile when mouse hovers
+     */
     public TileScriptable TileScriptable;
     void Start()
     {
