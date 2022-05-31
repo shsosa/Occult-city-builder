@@ -9,6 +9,7 @@ public class UIManager : MonoBehaviour
      * - timer
      * - resources
      * - buildings UI
+     * - tile info
      */
     // Start is called before the first frame update
     void Start()
