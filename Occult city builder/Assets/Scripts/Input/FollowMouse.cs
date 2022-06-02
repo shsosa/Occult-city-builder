@@ -1,15 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class FollowMouse : MonoBehaviour
+namespace InputMouse
 {
-    private Vector3 mousePos;
-   
-    void Update()
+    public class FollowMouse : MonoBehaviour
     {
-        mousePos = Input.mousePosition;
-        mousePos = Camera.main.ScreenToWorldPoint(mousePos);
-        transform.position = new Vector3(mousePos.x, mousePos.y, 0);
+        private Vector3 mousePos;
+   
+        void Update()
+        {
+            mousePos = UnityEngine.Input.mousePosition;
+            mousePos = Camera.main.ScreenToWorldPoint(mousePos);
+            transform.position = new Vector3(mousePos.x, mousePos.y, 0);
+        }
     }
 }

@@ -12,6 +12,7 @@ public class UIManager : MonoBehaviour
      * - tile info
      */
     // Start is called before the first frame update
+    public ResourceManager ResourceManager;
     void Start()
     {
         
