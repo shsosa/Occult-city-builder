@@ -1,20 +1,26 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class Tile : MonoBehaviour
+public class Tile : ProductionMono
 {
     
     /*
      * visual feedback when mouse hovers with building
      * info on tile when mouse hovers
      */
-    public TileScriptable TileScriptable;
-    void Start()
+    [SerializeField] bool hasBonus = false;
+    [SerializeField] bool hasBulding = false;
+
+    private void OnCollisionEnter2D(Collision2D col)
     {
-        Debug.Log(TileScriptable._resourceType);
+        hasBulding = true;
     }
 
-   
+    private void OnCollisionExit(Collision other)
+    {
+        hasBulding = false;
+    }
 }
