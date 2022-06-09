@@ -1,19 +1,17 @@
 using System;
 using UnityEngine;
 
-namespace Map.Building
-{
+//namespace Map.Building
+//{
     public class Building : ProductionMono
     {
         /*
     * snap to tile center or other
-    */
-  
-    
+    */   
+        [SerializeField] BuildingScriptable buildingData; 
         private void Start()
         {
             GetComponent<SpriteRenderer>().sortingOrder = 1;
-      
         }
 
         // collision for UIManager - visual feedback
@@ -26,5 +24,6 @@ namespace Map.Building
         {
             throw new NotImplementedException();
         }
+        
     }
-}
+//}

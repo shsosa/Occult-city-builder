@@ -14,7 +14,9 @@ public class ResourceManager : ScriptableObject
 
     public int wood;
     public int gold;
-    public int wheat;
+    public int vilagers;
+    public int researchPoints;
+
 
    
 }

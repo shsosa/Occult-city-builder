@@ -99,9 +99,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85e3321721fafdf44aa90acfbaadf4d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  resourceManager: {fileID: 0}
   _resourceType: 0
   howMuchCanProduce: 0
-  scriptable: {fileID: 0}
   hasBonus: 0
   hasBulding: 0
 --- !u!60 &5949207213119983241
