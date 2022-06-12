@@ -10,5 +10,4 @@ public class ResourceTypeData : ScriptableObject
     }
     public ResourceType _resourceType;
     public int bonus;
-
 }

@@ -4,7 +4,6 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "New Resource Data", fileName = "ResourceData")]
 public class ResourceData : ScriptableObject
 {
-
     public int wood;
     public int gold;
     public int vilagers;

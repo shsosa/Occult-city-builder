@@ -59,9 +59,9 @@
     <Compile Include="Assets\Scripts\Building.cs" />
     <Compile Include="Assets\Scripts\Production.cs" />
     <Compile Include="Assets\Scripts\ResourceTypeData.cs" />
+    <Compile Include="Assets\Scenes\Building.cs" />
     <Compile Include="Assets\Scripts\ResourceData.cs" />
     <Compile Include="Assets\Scripts\Tiles.cs" />
-    <Compile Include="Assets\Scenes\Building.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
