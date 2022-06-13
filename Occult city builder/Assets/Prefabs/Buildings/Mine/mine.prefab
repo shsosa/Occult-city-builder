@@ -12,6 +12,9 @@ GameObject:
   - component: {fileID: 6066352119879553438}
   - component: {fileID: 8062914700957274103}
   - component: {fileID: 531980647005653325}
+  - component: {fileID: 1367257179}
+  - component: {fileID: 1367257173}
+  - component: {fileID: 1367257174}
   m_Layer: 0
   m_Name: mine
   m_TagString: Building
@@ -74,7 +77,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 7da9073aa46d7924a80f2f03959c62d9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -98,7 +101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44a37726f4c868d4aa2e16474d043214, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buildingScriptable: {fileID: 11400000, guid: b2150912ad9ad9e40a821d724b565fc9, type: 2}
+  _resourceTypeData: {fileID: 11400000, guid: 22a36d06dc0f0d941a9e0762458a563f, type: 2}
 --- !u!60 &531980647005653325
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -135,3 +138,48 @@ PolygonCollider2D:
       - {x: 0.45999998, y: -0.06}
       - {x: 0.45999998, y: 0.08}
       - {x: 0.42, y: 0.26999998}
+--- !u!50 &1367257179
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8333826259438945344}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 0.0001
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &1367257173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8333826259438945344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b740a11e1e17f1a4c88562a1cff9a6bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1367257174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8333826259438945344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad4da6a42a6dc494d88186a62b86a8fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

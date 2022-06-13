@@ -7,33 +7,44 @@ using UnityEngine;
 
 public class Tiles : MonoBehaviour
 {
-    [SerializeField] ResourceTypeData type;
+    public ResourceTypeData type;
     public ResourceTypeData building;
     public bool hasBuilding =false;
     public int amountOfReasourceProdused;
+    private PolygonCollider2D _polygonCollider2D;
     private void Start()
     {
-  
+
+        _polygonCollider2D = GetComponent<PolygonCollider2D>();
             if(building!= null)
                 building = GetComponentInChildren<Building>()._resourceTypeData;
         
     }
 
-    
-
-    private void OnCollisionStay2D(Collision2D col)
+    private void Update()
     {
-        
-       
+        if (hasBuilding)
+        {
+            _polygonCollider2D.isTrigger = false;
+            building = GetComponentInChildren<Building>()._resourceTypeData;
+            
+        }
+        else
+        {
+            _polygonCollider2D.isTrigger = true;
+        }
+            
         
         
     }
+
+    
 
     public void TileProduction()
     {
         if (hasBuilding)
         {
-            building = GetComponentInChildren<Building>()._resourceTypeData;
+           
             Debug.Log("calls production");
             amountOfReasourceProdused = 1;
             if (building._resourceType == type._resourceType)
