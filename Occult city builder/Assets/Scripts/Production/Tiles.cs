@@ -9,6 +9,10 @@ public class Tiles : MonoBehaviour
 {
     public ResourceTypeData type;
     public ResourceTypeData building;
+    [SerializeField] private ResourceData _resourceDataScriptable;
+    public VoidEventChannelSO resourceManager;
+    
+    
     public bool hasBuilding =false;
     public int amountOfReasourceProdused;
     private PolygonCollider2D _polygonCollider2D;
@@ -19,6 +23,11 @@ public class Tiles : MonoBehaviour
             if(building!= null)
                 building = GetComponentInChildren<Building>()._resourceTypeData;
         
+    }
+
+    private void OnEnable()
+    {
+        resourceManager.OnEventRaised += TileProduction;
     }
 
     private void Update()
@@ -42,20 +51,8 @@ public class Tiles : MonoBehaviour
 
     public void TileProduction()
     {
-        if (hasBuilding)
-        {
-           
-            Debug.Log("calls production");
-            amountOfReasourceProdused = 1;
-            if (building._resourceType == type._resourceType)
-            {
-                amountOfReasourceProdused += building.bonus;
-            }
-        }
-        else
-        {
-            amountOfReasourceProdused = 0;
-        }
+        if(hasBuilding)
+             _resourceDataScriptable.IncreaseResource(type._resourceType,amountOfReasourceProdused);
     }
     
  
