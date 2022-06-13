@@ -47,7 +47,7 @@ using UnityEngine;
         }
     private void ProductionFromBuilding(BuildingScriptable.ResourceType resourceType,TileScriptable.TileResourceType tileResourceType)
     {
-        if (resourceType==tileResourceType)
+       // if (resourceType==tileResourceType)
         {
             productionOnThisTile ++;
         }

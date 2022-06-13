@@ -5,24 +5,28 @@ using UnityEngine;
 public class Production : MonoBehaviour
 {
     [SerializeField] ResourceData resourceData;
-    [SerializeField] ResourceTypeData typeData;
+   // [SerializeField] ResourceTypeData typeData;
     [SerializeField] private int secondsToWait = 3;
-    Tiles[] tile;
+    [SerializeField]Tiles[] tile;
     private int resource;
 
     private void Start()
     {
         tile = GetComponentsInChildren<Tiles>();
+       // StartCoroutine(ProductionTimer());
     }
     private void Update()
     {
-        ProductionTimer();
+
+       
     }
 
     private void ResourceProduction()
     {
+        Debug.Log("prouction");
         for (int i = 0; i < tile.Length; ++i)
         {
+           
             tile[i].TileProduction();
             resource += tile[i].amountOfReasourceProdused;
             switch (tile[i].building._resourceType)
@@ -57,5 +61,8 @@ public class Production : MonoBehaviour
     {
         ResourceProduction();
         yield return new WaitForSeconds(secondsToWait);
+        
+        StartCoroutine(ProductionTimer());
+        
     }
 }

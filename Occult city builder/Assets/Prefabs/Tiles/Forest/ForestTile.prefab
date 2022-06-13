@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1861095301598331145}
   - component: {fileID: 7588842737585111093}
-  - component: {fileID: 2902399361693190751}
   - component: {fileID: 5949207213119983241}
   - component: {fileID: 42019628}
+  - component: {fileID: 588148518296366353}
   m_Layer: 0
   m_Name: ForestTile
   m_TagString: Tile
@@ -87,23 +87,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2902399361693190751
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4207903422851380858}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85e3321721fafdf44aa90acfbaadf4d7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  resourceManager: {fileID: 0}
-  _resourceType: 0
-  howMuchCanProduce: 0
-  hasBonus: 0
-  hasBulding: 0
 --- !u!60 &5949207213119983241
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -160,3 +143,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad4da6a42a6dc494d88186a62b86a8fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &588148518296366353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4207903422851380858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 016eed81dfa96fd4a8b91366237d892c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: {fileID: 11400000, guid: 3316c7f7ccd70cf46b2def2d93e7a9f7, type: 2}
+  building: {fileID: 0}
+  amountOfReasourceProdused: 0
