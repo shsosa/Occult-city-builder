@@ -9,7 +9,7 @@ namespace InputMouse
         {
             ProductionMono production = GetComponent<ProductionMono>();
         
-            Debug.Log("mouse hover " +production. _resourceType +" "+ production.howMuchCanProduce + " " + gameObject.name);
+          //  Debug.Log("mouse hover " +production. _resourceType +" "+ production.howMuchCanProduce + " " + gameObject.name);
         }
     
 

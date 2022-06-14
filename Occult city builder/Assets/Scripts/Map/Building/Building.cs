@@ -1,30 +1,107 @@
 using System;
+using InputMouse;
 using UnityEngine;
 
-namespace Map.Building
+
+public class Building : MonoBehaviour
 {
-    public class Building : ProductionMono
+    /*
+* snap to tile center or other
+*/
+    public ResourceTypeData _resourceTypeData;
+
+    #region Building bool states
+
+    private bool isDragged;
+    private bool isOnTile = false;
+    private bool isBuildingChildOfTile = false;
+
+    #endregion
+
+    #region Mono 
+    private void Start()
     {
-        /*
-    * snap to tile center or other
-    */
-  
+        GetComponent<SpriteRenderer>().sortingOrder = 1;
+    }
+
+    private void Update()
+    {
+        ChackIfDragged();
+    }
     
-        private void Start()
+
+    #endregion
+
+    #region CheckStatesMethods
+    private void ChackIfDragged()
+    {
+        if (Input.GetMouseButtonUp(0))
         {
-            GetComponent<SpriteRenderer>().sortingOrder = 1;
-      
+            isDragged = false;
+        }
+        else if (Input.GetMouseButton(0))
+        {
+            isDragged = true;
         }
 
-        // collision for UIManager - visual feedback
-        private void OnCollisionStay(Collision collisionInfo)
+        if (!isDragged && !isBuildingChildOfTile && !isOnTile)
         {
-            throw new NotImplementedException();
+            Destroy(gameObject);
         }
+        
+        Debug.Log("is dragged: " + isDragged);
+    }
+    
+    /// <summary>
+    /// If we want the building can only be on a certain kind of tile with the same resource type
+    /// </summary>
+    /// <param name="resourceTypeData"></param>
+    /// <returns></returns>
+    bool CheckIfTileHasSameResourceType(ResourceTypeData resourceTypeData)
+    {
+        return _resourceTypeData == resourceTypeData;
+    }
+    
+    #endregion
+    
+    #region Collision triggers
 
-        private void OnCollisionExit2D(Collision2D other)
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        Debug.Log("building hit with tile");
+        if(!isBuildingChildOfTile)
+            isOnTile = true;
+        
+        if (other.gameObject.CompareTag("Tile") )
         {
-            throw new NotImplementedException();
+
+           
+            if (!isDragged && isOnTile && !isBuildingChildOfTile)
+            {
+                other.GetComponent<Tiles>().hasBuilding = true;
+                isBuildingChildOfTile =true;
+                transform.parent = other.transform;
+                transform.localPosition = new Vector3(0, 0, 0);
+                GetComponent<FollowMouse>().enabled = false;
+               
+            }
+            
+          
+
         }
     }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        isOnTile = false;
+    }
+
+    #endregion
+   
+
+    
+    // collision for UIManager - visual feedback
+   
+
 }
+
