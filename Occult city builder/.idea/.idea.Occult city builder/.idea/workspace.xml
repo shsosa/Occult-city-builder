@@ -5,22 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6a6f9a88-340d-4329-b101-d2b7388b26fe" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/UIMouseHover.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/UIMouseHover.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Occult city builder/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Occult city builder/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Buildings/Mine.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Buildings/Mine/mine.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Buildings/Mine/mine.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Tiles/Forest.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Tiles/Forest/ForestTile.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Tiles/Forest/ForestTile.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Buildings/quarry.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Buildings/quarry.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Buildings/sanctuary.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Buildings/sanctuary.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Production/Gold.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Production/Gold.asset.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Production/ResourceManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Production/ResourceManager.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Production/Wood.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Production/Wood.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/UIObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/UIObject.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/UIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/UIManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,7 +94,7 @@
       <workItem from="1654169107956" duration="7816000" />
       <workItem from="1655112208930" duration="32855000" />
       <workItem from="1655192445455" duration="1055000" />
-      <workItem from="1655195897951" duration="7433000" />
+      <workItem from="1655195897951" duration="9524000" />
     </task>
     <servers />
   </component>

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3183833581075913166}
   - component: {fileID: 3183833581075913167}
   - component: {fileID: -5156311970317647016}
+  - component: {fileID: 2556875098122686184}
   m_Layer: 0
   m_Name: quarry
   m_TagString: Building
@@ -164,3 +165,24 @@ PolygonCollider2D:
       - {x: 0.48, y: -0.04}
       - {x: 0.48, y: 0.35999998}
       - {x: 0.47, y: 0.48}
+--- !u!50 &2556875098122686184
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3183833581075913164}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

@@ -15,6 +15,10 @@ public class UIManager : MonoBehaviour
     // Start is called before the first frame update
     public ResourceData ResourceManager;
     [SerializeField] private TextMeshProUGUI goldTextUI;
+    [SerializeField] private TextMeshProUGUI woodTextUI;
+    [SerializeField] private TextMeshProUGUI villigersTextUI;
+    [SerializeField] private TextMeshProUGUI cattleTextUI;
+    [SerializeField] private TextMeshProUGUI researchTextUI;
     
     void Start()
     {
@@ -25,5 +29,9 @@ public class UIManager : MonoBehaviour
     void Update()
     {
         goldTextUI.text = ResourceManager.gold.ToString();
+        woodTextUI.text = ResourceManager.wood.ToString();
+        cattleTextUI.text = ResourceManager.cattle.ToString();
+        researchTextUI.text = ResourceManager.researchPoints.ToString();
+        villigersTextUI.text = ResourceManager.vilagers.ToString();
     }
 }
