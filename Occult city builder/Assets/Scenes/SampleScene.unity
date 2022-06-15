@@ -896,7 +896,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CollectReasources: {fileID: 11400000, guid: aa6d1e9599124c244b5af24ba9ba859f, type: 2}
-  time: 3
+  time: 0
 --- !u!1 &733653976
 GameObject:
   m_ObjectHideFlags: 0

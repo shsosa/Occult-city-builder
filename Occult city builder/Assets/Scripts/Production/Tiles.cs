@@ -14,6 +14,7 @@ public class Tiles : MonoBehaviour
     
     
     public bool hasBuilding =false;
+    public bool hasBonus;
     public int amountOfReasourceProdused;
     private PolygonCollider2D _polygonCollider2D;
     private void Start()
@@ -54,6 +55,9 @@ public class Tiles : MonoBehaviour
         if(hasBuilding)
              _resourceDataScriptable.IncreaseResource(type._resourceType,amountOfReasourceProdused);
     }
-    
+    public void TileResourceReductionOnBuild()
+    {
+        _resourceDataScriptable.IncreaseResource(building.resourceTypeToBuild,building.priceToBuild );
+    }
  
 }
