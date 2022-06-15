@@ -24,7 +24,7 @@ namespace InputMouse
         {
             mousePos = Input.mousePosition;
             mousePos = Camera.main.ScreenToWorldPoint(mousePos);
-            Debug.Log("mouse pos: " + mousePos);
+            //Debug.Log("mouse pos: " + mousePos);
         }
     }
 }

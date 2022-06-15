@@ -74,20 +74,22 @@ public class Building : MonoBehaviour
         
         if (other.gameObject.CompareTag("Tile") )
         {
-
-           
             if (!isDragged && isOnTile && !isBuildingChildOfTile)
             {
-                other.GetComponent<Tiles>().hasBuilding = true;
+                Tiles tile;
+                tile = other.GetComponent<Tiles>();
+                tile.hasBuilding = true;
+                tile.TileResourceReductionOnBuild();
+                if(tile.type._resourceType==_resourceTypeData._resourceType)
+                {
+                    tile.amountOfReasourceProdused += _resourceTypeData.bonus;
+                    tile.hasBonus = true;
+                }
                 isBuildingChildOfTile =true;
                 transform.parent = other.transform;
                 transform.localPosition = new Vector3(0, 0, 0);
-                GetComponent<FollowMouse>().enabled = false;
-               
+                GetComponent<FollowMouse>().enabled = false; 
             }
-            
-          
-
         }
     }
 

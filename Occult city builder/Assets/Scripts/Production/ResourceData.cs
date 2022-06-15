@@ -9,9 +9,6 @@ public class ResourceData : ScriptableObject
     public int vilagers;
     public int researchPoints;
     public int cattle;
-    
-   
-
     public void IncreaseResource(ResourceTypeData.ResourceType resourceType, int resourcesTAdd)
     {
         Debug.Log("resource: "+ resourceType);
@@ -34,8 +31,7 @@ public class ResourceData : ScriptableObject
                 break;
             default:
                 Debug.Log("Incorrect resource");
-                break;
-            
+                break; 
         }
     }
 }
