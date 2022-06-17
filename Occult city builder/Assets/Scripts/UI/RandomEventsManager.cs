@@ -17,6 +17,8 @@ public class RandomEventsManager : ScriptableObject
     {
         monsterHungerEventChannel.OnEventRaised += RandomEvent;
     }
+    
+
     private void RandomEvent() 
     {
         EventRandomizer();

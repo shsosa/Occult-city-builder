@@ -15,6 +15,7 @@ public class MonsterManager : MonoBehaviour
     }
     private void HungerGrowth()
     {
+        
         monsterHunger += monsterHungerGrowth;
     }
     private IEnumerator HungerTimer()
@@ -26,6 +27,7 @@ public class MonsterManager : MonoBehaviour
     }
     private void HungerEventFlag()
     {
+        
         monsterHungerEventChannel.RaiseEvent();
     }
     private void HungerEventProbability()

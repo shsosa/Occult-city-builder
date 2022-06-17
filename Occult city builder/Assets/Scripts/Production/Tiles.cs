@@ -55,9 +55,6 @@ public class Tiles : MonoBehaviour
         if(hasBuilding)
              _resourceDataScriptable.IncreaseResource(type._resourceType,amountOfReasourceProdused);
     }
-    public void TileResourceReductionOnBuild()
-    {
-        _resourceDataScriptable.IncreaseResource(building.resourceTypeToBuild,building.priceToBuild );
-    }
+    
  
 }

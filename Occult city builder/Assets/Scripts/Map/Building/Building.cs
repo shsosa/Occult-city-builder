@@ -9,6 +9,7 @@ public class Building : MonoBehaviour
 * snap to tile center or other
 */
     public ResourceTypeData _resourceTypeData;
+    [SerializeField] private ResourceData _resourceDataSO;
 
     #region Building bool states
 
@@ -79,18 +80,33 @@ public class Building : MonoBehaviour
                 Tiles tile;
                 tile = other.GetComponent<Tiles>();
                 tile.hasBuilding = true;
-                tile.TileResourceReductionOnBuild();
+                DecreaseReasourceCost();
                 if(tile.type._resourceType==_resourceTypeData._resourceType)
                 {
                     tile.amountOfReasourceProdused += _resourceTypeData.bonus;
                     tile.hasBonus = true;
                 }
-                isBuildingChildOfTile =true;
-                transform.parent = other.transform;
-                transform.localPosition = new Vector3(0, 0, 0);
+                SetTileParent(other);
+                SnapToTile();
                 GetComponent<FollowMouse>().enabled = false; 
             }
         }
+    }
+
+    private void SetTileParent(Collider2D other)
+    {
+        isBuildingChildOfTile = true;
+        transform.parent = other.transform;
+    }
+
+    private void SnapToTile()
+    {
+        transform.localPosition = new Vector3(0, 0, 0);
+    }
+
+    private void DecreaseReasourceCost()
+    {
+        _resourceDataSO.IncreaseResource(_resourceTypeData.resourceTypeToBuild, -(_resourceTypeData.priceToBuild));
     }
 
     private void OnTriggerExit2D(Collider2D other)

@@ -10,6 +10,7 @@ public class UIObject : MonoBehaviour
    
     [SerializeField] private GameObject buildingToCreate;
     
+    
 
     public void CreateBuldingFromUI()
     {
