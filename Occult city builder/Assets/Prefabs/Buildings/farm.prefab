@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4663308838598489372}
   - component: {fileID: 4663308838598489375}
   - component: {fileID: -8957896040515233175}
-  - component: {fileID: 7582925081682949865}
+  - component: {fileID: 4699757529537708504}
   m_Layer: 0
   m_Name: farm
   m_TagString: Building
@@ -102,6 +102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _resourceTypeData: {fileID: 11400000, guid: 57803a6369e9d274eb46631d91f1ed7b, type: 2}
+  reasourcePrice: {fileID: 11400000, guid: 7bf81ee11460b9e44b8bcd1d9a37e755, type: 2}
   _resourceDataSO: {fileID: 11400000, guid: a058ea4808a964c4883a30c07f49f86f, type: 2}
 --- !u!114 &4663308838598489372
 MonoBehaviour:
@@ -148,8 +149,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!60 &7582925081682949865
-PolygonCollider2D:
+--- !u!58 &4699757529537708504
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -161,28 +162,6 @@ PolygonCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.1, y: 2.1}
-    newSize: {x: 2.1, y: 2.1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0.31, y: 0.38}
-      - {x: 0.17, y: 0.51}
-      - {x: -0.11, y: 0.58}
-      - {x: -0.14, y: 0.58}
-      - {x: -0.22, y: 0.52}
-      - {x: -0.53999996, y: 0.19999999}
-      - {x: -0.55, y: 0.14999999}
-      - {x: -0.55, y: 0.049999997}
-      - {x: -0.41, y: -0.11}
-      - {x: 0.53, y: -0.11}
-      - {x: 0.56, y: -0.07}
-      - {x: 0.56, y: 0.21}
-      - {x: 0.42, y: 0.37}
+  m_Offset: {x: 0, y: 0.17}
+  serializedVersion: 2
+  m_Radius: 0.19

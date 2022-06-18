@@ -10,13 +10,7 @@ public class UIMouseHover : MonoBehaviour
     [SerializeField] private bool isCursorOverObject;
     private GameObject currentObject;
     private bool canIstantiateNewBuilding = true;
-    private UIManager _uiManager;
-
-    private void Awake()
-    {
-        _uiManager = GetComponent<UIManager>();
-    }
-
+    
 
     void Update()
     {
@@ -27,6 +21,8 @@ public class UIMouseHover : MonoBehaviour
         
     }
 
+    #region Mouse position
+    
     private void CheckIfMouseOverObject()
     {
         if (GetMousePos())
@@ -43,10 +39,12 @@ public class UIMouseHover : MonoBehaviour
 
     bool GetMousePos()
     {
-        
         return  EventSystem.current.IsPointerOverGameObject();
     }
+    
 
+    #endregion
+    
     void CheckIfCanTakeBuilding()
     {
         
@@ -64,9 +62,7 @@ public class UIMouseHover : MonoBehaviour
             
         }
     }
-
     
-
     GameObject GetUIObject()
     {
         var eventData = new PointerEventData(EventSystem.current);

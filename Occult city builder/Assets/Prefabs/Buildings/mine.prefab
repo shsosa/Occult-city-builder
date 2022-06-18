@@ -11,11 +11,11 @@ GameObject:
   - component: {fileID: 4493563051597837203}
   - component: {fileID: 6066352119879553438}
   - component: {fileID: 8062914700957274103}
-  - component: {fileID: 531980647005653325}
   - component: {fileID: 1367257179}
   - component: {fileID: 1367257173}
   - component: {fileID: 1367257174}
   - component: {fileID: 7359208176125284310}
+  - component: {fileID: 2964349421710414720}
   m_Layer: 0
   m_Name: mine
   m_TagString: Building
@@ -103,43 +103,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _resourceTypeData: {fileID: 11400000, guid: 22a36d06dc0f0d941a9e0762458a563f, type: 2}
+  reasourcePrice: {fileID: 11400000, guid: e272a855bb621c84d89dd8a5d63fc6ec, type: 2}
   _resourceDataSO: {fileID: 11400000, guid: a058ea4808a964c4883a30c07f49f86f, type: 2}
---- !u!60 &531980647005653325
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8333826259438945344}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.1, y: 2.1}
-    newSize: {x: 2.1, y: 2.1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0.17999999, y: 0.48}
-      - {x: -0.099999994, y: 0.48}
-      - {x: -0.19, y: 0.45999998}
-      - {x: -0.35999998, y: 0.34}
-      - {x: -0.45, y: 0.07}
-      - {x: -0.45, y: -0.049999997}
-      - {x: -0.41, y: -0.11}
-      - {x: 0.42, y: -0.11}
-      - {x: 0.45999998, y: -0.06}
-      - {x: 0.45999998, y: 0.08}
-      - {x: 0.42, y: 0.26999998}
 --- !u!50 &1367257179
 Rigidbody2D:
   serializedVersion: 4
@@ -221,3 +186,19 @@ PolygonCollider2D:
       - {x: 0.45999998, y: -0.06}
       - {x: 0.45999998, y: 0.08}
       - {x: 0.42, y: 0.26999998}
+--- !u!58 &2964349421710414720
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8333826259438945344}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.17}
+  serializedVersion: 2
+  m_Radius: 0.19

@@ -1,17 +1,24 @@
 using System;
+using Game_managment;
 using InputMouse;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 
 public class Building : MonoBehaviour
 {
-    /*
-* snap to tile center or other
-*/
+   //todo 
+
+    #region SerializedData
+
     public ResourceTypeData _resourceTypeData;
+    [SerializeField] private ReasourcePrice reasourcePrice;
     [SerializeField] private ResourceData _resourceDataSO;
 
-    #region Building bool states
+    #endregion
+   
+
+    #region Building Bool States
 
     private bool isDragged;
     private bool isOnTile = false;
@@ -33,7 +40,7 @@ public class Building : MonoBehaviour
 
     #endregion
 
-    #region CheckStatesMethods
+    #region Check States Methods
     private void ChackIfDragged()
     {
         if (Input.GetMouseButtonUp(0))
@@ -65,7 +72,7 @@ public class Building : MonoBehaviour
     
     #endregion
     
-    #region Collision triggers
+    #region Check Collision triggers methods
 
     private void OnTriggerStay2D(Collider2D other)
     {
@@ -103,10 +110,12 @@ public class Building : MonoBehaviour
     {
         transform.localPosition = new Vector3(0, 0, 0);
     }
-
+/// <summary>
+/// Takes the building price SO and passes it to resource manager SO
+/// </summary>
     private void DecreaseReasourceCost()
     {
-        _resourceDataSO.IncreaseResource(_resourceTypeData.resourceTypeToBuild, -(_resourceTypeData.priceToBuild));
+        _resourceDataSO.SpendReasource(reasourcePrice);
     }
 
     private void OnTriggerExit2D(Collider2D other)

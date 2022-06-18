@@ -1,14 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
+using Game_managment;
 using UnityEngine;
 [CreateAssetMenu(menuName = "New Resource Data", fileName = "ResourceData")]
 public class ResourceData : ScriptableObject
 {
+    #region int Resources
+    
     public int wood;
     public int gold;
     public int vilagers;
     public int researchPoints;
     public int cattle;
+    
+
+    #endregion
+  
     public void IncreaseResource(ResourceTypeData.ResourceType resourceType, int resourcesTAdd)
     {
         Debug.Log("resource: "+ resourceType);
@@ -34,4 +41,17 @@ public class ResourceData : ScriptableObject
                 break; 
         }
     }
+
+    public void SpendReasource(ReasourcePrice reasourcePrice)
+    {
+        wood -= reasourcePrice.wood;
+        gold -= reasourcePrice.gold;
+        cattle -= reasourcePrice.cattle;
+        researchPoints -= reasourcePrice.researchPoints;
+        vilagers -= reasourcePrice.vilagers;
+    }
+    
+    
+    
+    
 }

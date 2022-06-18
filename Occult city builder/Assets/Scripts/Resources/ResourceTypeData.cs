@@ -8,6 +8,7 @@ public class ResourceTypeData : ScriptableObject
     {
         Wood, Gold, Vilagers, ResearchPoints, Cattle
     }
-    public ResourceType _resourceType,resourceTypeToBuild;
-    public int bonus,priceToBuild;
+
+    public ResourceType _resourceType;
+    public int bonus;
 }
