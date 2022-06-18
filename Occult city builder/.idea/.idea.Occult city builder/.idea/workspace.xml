@@ -5,39 +5,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6a6f9a88-340d-4329-b101-d2b7388b26fe" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/BuildingManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/BuildingManager.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Game managment/ReasourcePrice.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Map/Building/Farm.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Map/Building/Farm.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Map/Building/House.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Map/Building/House.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Map/Building/Mine.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Map/Building/Mine.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Map/Building/Querry.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Map/Building/Querry.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Map/Building/WitchHut.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Map/Building/WitchHut.asset.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Occult city builder/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Occult city builder/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Buildings/farm.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Buildings/farm.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Buildings/graveyardBuilding.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Buildings/graveyardBuilding.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Buildings/house.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Buildings/house.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Buildings/mine.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Buildings/mine.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Buildings/quarry.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Buildings/quarry.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Buildings/sanctuary.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Buildings/sanctuary.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Buildings/witch hut.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Buildings/witch hut.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game managment/BuildingPriceTObuild.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game managment/BuildingPriceTObuild.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game managment/ReasourcePrice.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Event system/BradcasterScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Event system/BradcasterScript.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Event system/VoidEventChannelSO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Event system/VoidEventChannelSO.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game managment/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game managment/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game managment/ResourceManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game managment/ResourceManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Input/MouseInput.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Unused for now/MouseInput.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Input/MouseInput.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Unused for now/MouseInput.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Map/Building/Building.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Map/Building/Building.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Production/ResourceData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Production/ResourceData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Production/ResourceTypeData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Production/ResourceTypeData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/UIBarScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Unused for now/UIBarScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/UIBarScript.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Unused for now/UIBarScript.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Map/Building/BuldingSO.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Map/Building/BuldingSO/Farm.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Map/Building/BuldingSO/Farm.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Map/Building/BuldingSO/House.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Map/Building/BuldingSO/House.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Map/Building/BuldingSO/Mine.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Map/Building/BuldingSO/Mine.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Map/Building/BuldingSO/Querry.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Map/Building/BuldingSO/Querry.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Map/Building/BuldingSO/WitchHut.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Map/Building/BuldingSO/WitchHut.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Resources/ResourceSO/ResourceManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Resources/ResourceSO/ResourceManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/MineUI.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/MineUI.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/UIBarSlider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/UIBarSlider.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/UIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/UIManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/UIMouseHover.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/UIMouseHover.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/UIObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/UIObject.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,13 +50,11 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Event system/BradcasterScript.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Input/MouseInput.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Unused for now/MouseInput.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/UIObject.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Map/Building/Building.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game managment/ResourceManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Event system/VoidEventChannelSO.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Production/Production.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Map/Building/BuildingScriptable.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />

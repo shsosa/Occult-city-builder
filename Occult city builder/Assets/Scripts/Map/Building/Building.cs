@@ -7,7 +7,7 @@ using UnityEngine.Serialization;
 
 public class Building : MonoBehaviour
 {
-   //todo 
+   //todo maybe move resource update from building manager - still with event to update resource manager 
 
     #region SerializedData
 
@@ -16,8 +16,7 @@ public class Building : MonoBehaviour
     [SerializeField] private ResourceData _resourceDataSO;
 
     #endregion
-   
-
+    
     #region Building Bool States
 
     private bool isDragged;
