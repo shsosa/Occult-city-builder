@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Farm
   m_EditorClassIdentifier: 
   wood: 1
-  gold: 1
-  vilagers: 1
+  gold: 0
+  vilagers: 0
   researchPoints: 0
-  cattle: 1
+  cattle: 0

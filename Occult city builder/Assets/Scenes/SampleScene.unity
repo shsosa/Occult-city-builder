@@ -328,9 +328,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59742891f091b274c87b256e60860ffa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BuildingManager: {fileID: 15791928}
-  _uiObjects: []
+  buildingManager: {fileID: 15791928}
   _resourceData: {fileID: 11400000, guid: a058ea4808a964c4883a30c07f49f86f, type: 2}
+  uiObjects: []
   goldTextUI: {fileID: 395216977}
   woodTextUI: {fileID: 1959636905}
   villigersTextUI: {fileID: 1435511416}

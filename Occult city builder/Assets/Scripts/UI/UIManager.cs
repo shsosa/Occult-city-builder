@@ -1,16 +1,20 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class UIManager : MonoBehaviour
 {
 
-    #region Managers
+    #region Serialised Managers
 
-    public BuildingManager BuildingManager;
-    [SerializeField] private UIObject[] _uiObjects;
+    public BuildingManager buildingManager;
+    
     [SerializeField] ResourceData _resourceData;
 
     #endregion
+    
+    [Header("Array of UI Intractables")]
+    [SerializeField] private UIObject[] uiObjects;
     
     #region Serialized textGUI
     [SerializeField] private TextMeshProUGUI goldTextUI;
@@ -29,7 +33,7 @@ public class UIManager : MonoBehaviour
     private void Awake()
     {
        
-        _uiObjects = GetComponentsInChildren<UIObject>();
+        uiObjects = GetComponentsInChildren<UIObject>();
         
     }
     #endregion
@@ -37,10 +41,11 @@ public class UIManager : MonoBehaviour
     
     void CheckIfCanBuildUI()
     {
-        foreach (var uiObject in _uiObjects)
+        foreach (var uiObject in uiObjects)
         {
+            
             Debug.Log("Current uiObject "+ uiObject.name);
-            uiObject.canBuild = BuildingManager.CheckIfCanBuild(uiObject);
+            uiObject.canBuild = buildingManager.CheckIfCanBuild(uiObject);
         }
     }
 

@@ -15,6 +15,9 @@ public class ResourceData : ScriptableObject
     
 
     #endregion
+    
+    //todo check possibility to make a scriptable for tile also so it can produce some other resources
+    
   
     public void IncreaseResource(ResourceTypeData.ResourceType resourceType, int resourcesTAdd)
     {

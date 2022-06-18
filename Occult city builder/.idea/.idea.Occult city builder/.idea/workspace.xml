@@ -6,31 +6,18 @@
   <component name="ChangeListManager">
     <list default="true" id="6a6f9a88-340d-4329-b101-d2b7388b26fe" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Occult city builder/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Occult city builder/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Event system/BradcasterScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Event system/BradcasterScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Event system/VoidEventChannelSO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Event system/VoidEventChannelSO.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game managment/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game managment/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game managment/ResourceManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game managment/ResourceManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Input/MouseInput.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Unused for now/MouseInput.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Input/MouseInput.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Unused for now/MouseInput.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/BuildingManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Map/Building/BuildingManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/BuildingManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Map/Building/BuildingManager.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Map/Building/Building.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Map/Building/Building.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Map/Building/BuldingSO.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Map/Building/BuldingSO/Farm.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Map/Building/BuldingSO/Farm.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Map/Building/BuldingSO/House.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Map/Building/BuldingSO/House.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Map/Building/BuldingSO/Mine.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Map/Building/BuldingSO/Mine.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Map/Building/BuldingSO/Querry.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Map/Building/BuldingSO/Querry.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Map/Building/BuldingSO/WitchHut.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Map/Building/BuldingSO/WitchHut.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Map/Building/BuldingPriceSO/Farm.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Map/Building/BuldingPriceSO/Farm.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Map/Building/BuldingPriceSO/WitchHut.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Map/Building/BuldingPriceSO/WitchHut.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Resources/Production/Production.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Unused for now/Production.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Resources/Production/Production.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Unused for now/Production.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Resources/ResourceSO/ResourceData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Resources/ResourceSO/ResourceData.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Resources/ResourceSO/ResourceManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Resources/ResourceSO/ResourceManager.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/MineUI.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/MineUI.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/UIBarSlider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/UIBarSlider.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/UIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/UIManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/UIMouseHover.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/UIMouseHover.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/UIObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/UIObject.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

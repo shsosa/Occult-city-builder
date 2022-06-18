@@ -8,6 +8,7 @@ using UnityEngine.Serialization;
 public class Building : MonoBehaviour
 {
    //todo maybe move resource update from building manager - still with event to update resource manager 
+   //todo use raycast instead of collision
 
     #region SerializedData
 
@@ -71,7 +72,7 @@ public class Building : MonoBehaviour
     
     #endregion
     
-    #region Check Collision triggers methods
+    #region Check Collision triggers methods - to build on tile
 
     private void OnTriggerStay2D(Collider2D other)
     {
@@ -79,24 +80,45 @@ public class Building : MonoBehaviour
         if(!isBuildingChildOfTile)
             isOnTile = true;
         
-        if (other.gameObject.CompareTag("Tile") )
+        BuildOnTile(other);
+    }
+
+    private void BuildOnTile(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Tile"))
         {
             if (!isDragged && isOnTile && !isBuildingChildOfTile)
             {
-                Tiles tile;
-                tile = other.GetComponent<Tiles>();
-                tile.hasBuilding = true;
+                var tile = GetTileComponent(other);
                 DecreaseReasourceCost();
-                if(tile.type._resourceType==_resourceTypeData._resourceType)
-                {
-                    tile.amountOfReasourceProdused += _resourceTypeData.bonus;
-                    tile.hasBonus = true;
-                }
+                CheckIfGetsResourceBonus(tile);
                 SetTileParent(other);
                 SnapToTile();
-                GetComponent<FollowMouse>().enabled = false; 
+                StopFollowingMouse();
             }
         }
+    }
+
+    private static Tiles GetTileComponent(Collider2D other)
+    {
+        Tiles tile;
+        tile = other.GetComponent<Tiles>();
+        tile.hasBuilding = true;
+        return tile;
+    }
+
+    private void CheckIfGetsResourceBonus(Tiles tile)
+    {
+        if (tile.type._resourceType == _resourceTypeData._resourceType)
+        {
+            tile.amountOfReasourceProdused += _resourceTypeData.bonus;
+            tile.hasBonus = true;
+        }
+    }
+
+    private void StopFollowingMouse()
+    {
+        GetComponent<FollowMouse>().enabled = false;
     }
 
     private void SetTileParent(Collider2D other)

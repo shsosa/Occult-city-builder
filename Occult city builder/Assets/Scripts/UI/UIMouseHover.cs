@@ -5,14 +5,15 @@ using UnityEngine.EventSystems;
 public class UIMouseHover : MonoBehaviour
 {
     [SerializeField] private bool isCursorOverObject;
-    private GameObject currentObject;
-    private bool canIstantiateNewBuilding = true;
+    private bool _canIstantiateNewBuilding = true;
+    
+    private GameObject _currentObjectFromMouse;
     
 
     void Update()
     {
         CheckIfMouseOverObject();
-        CheckIfCanTakeBuilding();
+        CheckIfCanInstantiateBuilding();
         if(isCursorOverObject)
             GetUIObject();
         
@@ -42,24 +43,25 @@ public class UIMouseHover : MonoBehaviour
 
     #endregion
     
-    void CheckIfCanTakeBuilding()
+    void CheckIfCanInstantiateBuilding()
     {
-        
-       
+        Instantiate_Building_From_UI_WIthMouse();
+    }
+
+    private void Instantiate_Building_From_UI_WIthMouse()
+    {
         if (isCursorOverObject && Input.GetMouseButtonDown(0))
         {
-            currentObject = GetUIObject();
-            currentObject.GetComponent<UIObject>().CreateBuldingFromUI();
-            canIstantiateNewBuilding = false;
-            
+            _currentObjectFromMouse = GetUIObject();
+            _currentObjectFromMouse.GetComponent<UIObject>().CreateBuldingFromUI();
+            _canIstantiateNewBuilding = false;
         }
         else
         {
-            canIstantiateNewBuilding = true;
-            
+            _canIstantiateNewBuilding = true;
         }
     }
-    
+
     GameObject GetUIObject()
     {
         var eventData = new PointerEventData(EventSystem.current);
