@@ -36,8 +36,7 @@ public class Tiles : MonoBehaviour
         if (hasBuilding)
         {
             _polygonCollider2D.isTrigger = false;
-            building = GetComponentInChildren<Building>()._resourceTypeData;
-            
+            building = GetComponentInChildren<Building>()._resourceTypeData; 
         }
         else
         {
@@ -57,7 +56,6 @@ public class Tiles : MonoBehaviour
     }
     public void TileResourceReductionOnBuild()
     {
-        _resourceDataScriptable.IncreaseResource(building.resourceTypeToBuild,building.priceToBuild );
+        //_resourceDataScriptable.IncreaseResource(building.resourceTypeToBuild,building.priceToBuild );
     }
- 
 }

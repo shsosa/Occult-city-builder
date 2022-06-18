@@ -14,7 +14,6 @@ public class SecreficeManager : MonoBehaviour
     private void Sacrifice()
     {
         //to be called from UI Button
-
         monster.monsterHunger -= amountOfReasourcesToSacrefice * hungerReductionPerUnitOfResorce;
         monster.monsterPower += amountOfReasourcesToSacrefice * powerIncreasePerUnitOfReasorce;
         if (isVilagers)
@@ -24,7 +23,7 @@ public class SecreficeManager : MonoBehaviour
         else
         {
             resourceData.cattle -= amountOfReasourcesToSacrefice;
-      }
+        }
         amountOfReasourcesToSacrefice = 0;
         isVilagers = false;
     }

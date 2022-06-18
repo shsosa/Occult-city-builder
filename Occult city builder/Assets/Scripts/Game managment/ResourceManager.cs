@@ -17,6 +17,4 @@ public class ResourceManager : ScriptableObject
     public int vilagers;
     public int researchPoints;
 
-
-   
 }

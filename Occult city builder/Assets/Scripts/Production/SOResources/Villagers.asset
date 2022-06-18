@@ -13,4 +13,6 @@ MonoBehaviour:
   m_Name: Villagers
   m_EditorClassIdentifier: 
   _resourceType: 2
+  resourceTypeToBuild: 4
   bonus: 0
+  priceToBuild: 0
