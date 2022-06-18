@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SecreficeManager : MonoBehaviour
+public class SecreficeManager1 : MonoBehaviour
 {
     private bool isVilagers;
     [SerializeField] MonsterManager monster;
