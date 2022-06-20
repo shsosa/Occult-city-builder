@@ -37,7 +37,7 @@ public class Tiles : MonoBehaviour
 
     private void Update()
     {
-        if (hasBuilding)
+        if (hasBuilding && !isCursed)
         {
             _polygonCollider2D.isTrigger = false;
             building = GetComponentInChildren<Building>()._resourceTypeData;    
@@ -55,7 +55,7 @@ public class Tiles : MonoBehaviour
 
     public void TileProduction()
     {
-        if(hasBuilding&&!isCursed)
+        if(hasBuilding)
              _resourceDataScriptable.IncreaseResource(type._resourceType,amountOfReasourceProdused);
     }
     public void SetCursed()
