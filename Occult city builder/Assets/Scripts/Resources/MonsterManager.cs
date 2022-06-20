@@ -52,6 +52,8 @@ public class MonsterManager : MonoBehaviour
         if (powerEventTriger >= maxRangeToTrigerPowerEvent)
         {
             PowerEvent();
+            maxRangeToTrigerPowerEvent = maxRangeToTrigerPowerEventConstant;
+            monsterPower -= monsterPowerGrowth;
         }
     }
     private void PowerEvent()
@@ -61,8 +63,7 @@ public class MonsterManager : MonoBehaviour
         if(!tile[randomizer].isCursed)
         {
             tile[randomizer].SetCursed();
-            maxRangeToTrigerPowerEvent = maxRangeToTrigerPowerEventConstant;
-            monsterPower -= monsterPowerGrowth;
+            
         }
         else 
         { 

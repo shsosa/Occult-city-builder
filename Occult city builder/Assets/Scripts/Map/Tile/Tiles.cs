@@ -22,7 +22,8 @@ public class Tiles : MonoBehaviour
     private PolygonCollider2D _polygonCollider2D;
     private void Start()
     {
-        normalSprite = spriteRenderer.sprite;
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        //normalSprite = spriteRenderer.sprite;
         _polygonCollider2D = GetComponent<PolygonCollider2D>();
             if(building!= null)
                 building = GetComponentInChildren<Building>()._resourceTypeData;
