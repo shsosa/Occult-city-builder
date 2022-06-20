@@ -90,11 +90,14 @@ public class Building : MonoBehaviour
             if (!isDragged && isOnTile && !isBuildingChildOfTile)
             {
                 var tile = GetTileComponent(other);
-                DecreaseReasourceCost();
-                CheckIfGetsResourceBonus(tile);
-                SetTileParent(other);
-                SnapToTile();
-                StopFollowingMouse();
+                if (!tile.isCursed)
+                {
+                    DecreaseReasourceCost();
+                    CheckIfGetsResourceBonus(tile);
+                    SetTileParent(other);
+                    SnapToTile();
+                    StopFollowingMouse();
+                }
             }
         }
     }
@@ -145,8 +148,11 @@ public class Building : MonoBehaviour
     }
 
     #endregion
-   
 
+    public void Destruction()
+    {
+        Destroy(gameObject);
+    }
     
     // collision for UIManager - visual feedback
    

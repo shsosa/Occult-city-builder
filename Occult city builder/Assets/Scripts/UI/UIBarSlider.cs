@@ -7,6 +7,8 @@ namespace UI
     {
         private Slider _slider;
         [SerializeField] private MonsterManager _monsterManager;
+        public enum BarType { hunger, power}
+        public BarType _barType;
 
         private float monsterHungerSlider;
         
@@ -19,8 +21,19 @@ namespace UI
 
         private void Update()
         {
-            
-            _slider.value = _monsterManager.monsterHunger;
+            BarTypeSwitcher();
         }
+        private void BarTypeSwitcher()
+        {
+            if (_barType==BarType.hunger)
+            {
+                _slider.value = _monsterManager.monsterHunger;
+            }
+            else if (_barType==BarType.power)
+            {
+                _slider.value = _monsterManager.monsterPower;
+            }
+        }
+
     }
 }
