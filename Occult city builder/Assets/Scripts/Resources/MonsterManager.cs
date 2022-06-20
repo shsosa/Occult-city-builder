@@ -6,16 +6,20 @@ public class MonsterManager : MonoBehaviour
     public float monsterHunger, monsterPower;
     public float monsterHungerGrowth, monsterPowerGrowth;
     public float hungerTime;
-    [SerializeField] private float maxRangeToTrigerEvent, maxRangeToTrigerEventConstant, hungerEventTriger;
-    [SerializeField] VoidEventChannelSO monsterHungerEventChannel;
+    [SerializeField] private float maxRangeToTrigerHungerEvent, maxRangeToTrigerHungerEventConstant, hungerEventTriger,
+                     maxRangeToTrigerPowerEvent, maxRangeToTrigerPowerEventConstant, powerEventTriger;
+    [SerializeField] VoidEventChannelSO monsterHungerEventChannel, monsterPowerEventChanel;
+    Tiles[] tile;
     private void Start()
     {
-        maxRangeToTrigerEvent = maxRangeToTrigerEventConstant;
+        tile = FindObjectsOfType<Tiles>();
+        maxRangeToTrigerHungerEvent = maxRangeToTrigerHungerEventConstant;
+        maxRangeToTrigerPowerEvent = maxRangeToTrigerPowerEventConstant;
         StartCoroutine(HungerTimer());
     }
     private void HungerGrowth()
     {
-        
+
         monsterHunger += monsterHungerGrowth;
     }
     private IEnumerator HungerTimer()
@@ -23,22 +27,46 @@ public class MonsterManager : MonoBehaviour
         yield return new WaitForSeconds(hungerTime);
         HungerGrowth();
         HungerEventProbability();
+        PowerEventProbability();
         StartCoroutine(HungerTimer());
     }
     private void HungerEventFlag()
     {
-        
         monsterHungerEventChannel.RaiseEvent();
     }
     private void HungerEventProbability()
     {
-        maxRangeToTrigerEvent -= monsterHunger;
-        hungerEventTriger = Random.Range(0, maxRangeToTrigerEventConstant);
-        if (hungerEventTriger >= maxRangeToTrigerEvent)
+        maxRangeToTrigerHungerEvent -= monsterHunger;
+        hungerEventTriger = Random.Range(0, maxRangeToTrigerHungerEventConstant);
+        if (hungerEventTriger >= maxRangeToTrigerHungerEvent)
         {
             HungerEventFlag();
-            maxRangeToTrigerEvent = maxRangeToTrigerEventConstant;
+            maxRangeToTrigerHungerEvent = maxRangeToTrigerHungerEventConstant;
             monsterHunger = 0;
+        }
+    }
+    private void PowerEventProbability()
+    {
+        maxRangeToTrigerPowerEvent -= monsterPower;
+        powerEventTriger = Random.Range(0, maxRangeToTrigerPowerEventConstant);
+        if (powerEventTriger >= maxRangeToTrigerPowerEvent)
+        {
+            PowerEvent();
+        }
+    }
+    private void PowerEvent()
+    {
+        int randomizer;
+        randomizer = Random.Range(0, tile.Length);
+        if(!tile[randomizer].isCursed)
+        {
+            tile[randomizer].SetCursed();
+            maxRangeToTrigerPowerEvent = maxRangeToTrigerPowerEventConstant;
+            monsterPower -= monsterPowerGrowth;
+        }
+        else 
+        { 
+            PowerEvent(); 
         }
     }
 }

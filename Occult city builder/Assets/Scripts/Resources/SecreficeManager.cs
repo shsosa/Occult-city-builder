@@ -24,7 +24,7 @@ public class SecreficeManager : MonoBehaviour
         else
         {
             resourceData.cattle -= amountOfReasourcesToSacrefice;
-      }
+        }
         amountOfReasourcesToSacrefice = 0;
         isVilagers = false;
     }

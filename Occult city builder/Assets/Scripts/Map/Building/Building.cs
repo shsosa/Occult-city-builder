@@ -90,11 +90,14 @@ public class Building : MonoBehaviour
             if (!isDragged && isOnTile && !isBuildingChildOfTile)
             {
                 var tile = GetTileComponent(other);
-                DecreaseReasourceCost();
-                CheckIfGetsResourceBonus(tile);
-                SetTileParent(other);
-                SnapToTile();
-                StopFollowingMouse();
+                if (!tile.isCursed)
+                {
+                    DecreaseReasourceCost();
+                    CheckIfGetsResourceBonus(tile);
+                    SetTileParent(other);
+                    SnapToTile();
+                    StopFollowingMouse();
+                }
             }
         }
     }
