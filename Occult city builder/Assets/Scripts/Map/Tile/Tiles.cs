@@ -37,10 +37,13 @@ public class Tiles : MonoBehaviour
 
     private void Update()
     {
-        if (hasBuilding && !isCursed)
+        if (hasBuilding )
         {
             _polygonCollider2D.isTrigger = false;
-            building = GetComponentInChildren<Building>()._resourceTypeData;    
+            if (!isCursed)
+            {
+                building = GetComponentInChildren<Building>()._resourceTypeData;
+            }
         }
         else
         {
@@ -62,6 +65,11 @@ public class Tiles : MonoBehaviour
     {
         isCursed = true;
         spriteRenderer.sprite = cursedSprite;
+        if(hasBuilding)
+        {
+            Destroy(transform.GetChild(0).gameObject);
+            hasBuilding = false;
+        } 
     }
     
  

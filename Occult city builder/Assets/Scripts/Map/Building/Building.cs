@@ -148,8 +148,11 @@ public class Building : MonoBehaviour
     }
 
     #endregion
-   
 
+    public void Destruction()
+    {
+        Destroy(gameObject);
+    }
     
     // collision for UIManager - visual feedback
    
