@@ -103,7 +103,7 @@ MonoBehaviour:
   normalSprite: {fileID: 0}
   type: {fileID: 11400000, guid: 3316c7f7ccd70cf46b2def2d93e7a9f7, type: 2}
   building: {fileID: 0}
-  cursedSprite: {fileID: 0}
+  cursedSprite: {fileID: 21300000, guid: 38ec2d16b67aa2745a1eb0294e9472a9, type: 3}
   _resourceDataScriptable: {fileID: 11400000, guid: a058ea4808a964c4883a30c07f49f86f, type: 2}
   resourceManager: {fileID: 11400000, guid: aa6d1e9599124c244b5af24ba9ba859f, type: 2}
   monsterPowerEvent: {fileID: 0}

@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class UIObject : MonoBehaviour
 {
-   
+   //todo check if building manager can instantiate
     [SerializeField] private GameObject buildingToCreate;
     public bool canBuild =false;
     

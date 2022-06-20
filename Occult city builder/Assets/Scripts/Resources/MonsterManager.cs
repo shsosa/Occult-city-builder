@@ -32,6 +32,7 @@ public class MonsterManager : MonoBehaviour
     }
     private void HungerEventFlag()
     {
+        //todo Who is listening to it?
         monsterHungerEventChannel.RaiseEvent();
     }
     private void HungerEventProbability()
@@ -60,6 +61,8 @@ public class MonsterManager : MonoBehaviour
     {
         int randomizer;
         randomizer = Random.Range(0, tile.Length);
+        
+        //todo Randomize is cool - i had a thought about making it spread if close to monster like a deasese,  you know like its alive
         if(!tile[randomizer].isCursed)
         {
             tile[randomizer].SetCursed();

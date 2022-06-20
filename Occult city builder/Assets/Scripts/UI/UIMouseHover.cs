@@ -53,8 +53,12 @@ public class UIMouseHover : MonoBehaviour
         if (isCursorOverObject && Input.GetMouseButtonDown(0))
         {
             _currentObjectFromMouse = GetUIObject();
-            _currentObjectFromMouse.GetComponent<UIObject>().CreateBuldingFromUI();
-            _canIstantiateNewBuilding = false;
+            if (_currentObjectFromMouse.GetComponent<UIObject>() != null)
+            {
+                _currentObjectFromMouse.GetComponent<UIObject>().CreateBuldingFromUI();
+                _canIstantiateNewBuilding = false;
+            }
+             
         }
         else
         {

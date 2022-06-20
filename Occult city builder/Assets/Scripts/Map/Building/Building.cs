@@ -1,8 +1,6 @@
-using System;
 using Game_managment;
 using InputMouse;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 
 public class Building : MonoBehaviour
@@ -40,7 +38,7 @@ public class Building : MonoBehaviour
 
     #endregion
 
-    #region Check States Methods
+    #region Check mouse States Methods
     private void ChackIfDragged()
     {
         if (Input.GetMouseButtonUp(0))
@@ -148,7 +146,7 @@ public class Building : MonoBehaviour
     }
 
     #endregion
-
+//todo do we ude this or can delet?
     public void Destruction()
     {
         Destroy(gameObject);

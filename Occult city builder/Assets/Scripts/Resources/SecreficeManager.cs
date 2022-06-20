@@ -11,7 +11,7 @@ public class SecreficeManager : MonoBehaviour
     [SerializeField] private float hungerReductionPerUnitOfResorce, powerIncreasePerUnitOfReasorce;
     [SerializeField] private float hungerReductionPerUnitOfCattle, powerIncreasePerUnitOfCattle;
     [SerializeField] private float hungerReductionPerUnitOfVilagers, powerIncreasePerUnitOfVilagers;
-    private void Sacrifice()
+    public void Sacrifice()
     {
         //to be called from UI Button
 
@@ -28,13 +28,13 @@ public class SecreficeManager : MonoBehaviour
         amountOfReasourcesToSacrefice = 0;
         isVilagers = false;
     }
-    private void ButtonForCattle()
+    public void ButtonForCattle()
     {
         hungerReductionPerUnitOfResorce = hungerReductionPerUnitOfCattle;
         powerIncreasePerUnitOfReasorce = powerIncreasePerUnitOfCattle;
         isVilagers = false;
     }
-    private void ButtonForVilagers()
+    public void ButtonForVilagers()
     {
         hungerReductionPerUnitOfResorce = hungerReductionPerUnitOfVilagers;
         powerIncreasePerUnitOfReasorce = powerIncreasePerUnitOfVilagers;

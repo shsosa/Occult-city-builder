@@ -13,7 +13,7 @@ public class UIManager : MonoBehaviour
 
     #endregion
     
-    [Header("Array of UI Intractables")]
+    [Header("Array of UI Intractable")]
     [SerializeField] private UIObject[] uiObjects;
     
     #region Serialized textGUI
@@ -44,7 +44,7 @@ public class UIManager : MonoBehaviour
         foreach (var uiObject in uiObjects)
         {
             
-            Debug.Log("Current uiObject "+ uiObject.name);
+            Debug.Log("Current uiObject checking to build: "+ uiObject.name);
             uiObject.canBuild = buildingManager.CheckIfCanBuild(uiObject);
         }
     }
