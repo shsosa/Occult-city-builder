@@ -79,7 +79,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 7da9073aa46d7924a80f2f03959c62d9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3de29fa580aaebd438388a902060a139, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -102,9 +102,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44a37726f4c868d4aa2e16474d043214, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _typeOfDraggableItem: 0
   _resourceTypeData: {fileID: 11400000, guid: 22a36d06dc0f0d941a9e0762458a563f, type: 2}
   reasourcePrice: {fileID: 11400000, guid: e272a855bb621c84d89dd8a5d63fc6ec, type: 2}
   _resourceDataSO: {fileID: 11400000, guid: a058ea4808a964c4883a30c07f49f86f, type: 2}
+  isDragged: 0
 --- !u!50 &1367257179
 Rigidbody2D:
   serializedVersion: 4

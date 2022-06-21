@@ -72,8 +72,18 @@ public class UIMouseHover : MonoBehaviour
         eventData.position = Input.mousePosition;
         var results = new List<RaycastResult>();
         EventSystem.current.RaycastAll(eventData, results);
+        for (int i = 0; i < results.Count; i++)
+        {
+            if (results[i].gameObject.CompareTag("BuildingUI"))
+            {
+                return results[i].gameObject;
+            }
+            
+        }
         Debug.Log("Get UI "+ results[0].gameObject.name);
-        return results[0].gameObject;
+        return null;
+       
+        
         
     }
     

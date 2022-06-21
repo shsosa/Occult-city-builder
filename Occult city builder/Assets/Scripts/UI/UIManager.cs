@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.Serialization;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
@@ -45,7 +46,21 @@ public class UIManager : MonoBehaviour
         {
             
             Debug.Log("Current uiObject checking to build: "+ uiObject.name);
+            
             uiObject.canBuild = buildingManager.CheckIfCanBuild(uiObject);
+            ChangeUIObjectColor(uiObject);
+        }
+    }
+
+    private static void ChangeUIObjectColor(UIObject uiObject)
+    {
+        if (uiObject.canBuild)
+        {
+            uiObject.gameObject.GetComponent<Image>().color = Color.Lerp(Color.gray,Color.white,3f);
+        }
+        else
+        {
+            uiObject.gameObject.GetComponent<Image>().color = Color.gray;
         }
     }
 
