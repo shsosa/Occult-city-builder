@@ -4,11 +4,13 @@ using Recources;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "New Building", menuName = "Building")]
-public class BuildingScriptable : ProductionScriptable
+public class BuildingScriptable : ScriptableObject
 {
-    
-    public bool hasWorker = false;
-
-   
+    public enum ResourceType
+    {
+        Wood, Rock, Gold, Wheat, Cattle
+    }
+    public ResourceType _resourceType = 0;
+    public int bonus;
 
 }

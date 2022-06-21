@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 016eed81dfa96fd4a8b91366237d892c
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - spriteRenderer: {instanceID: 0}
+  - normalSprite: {instanceID: 0}
+  - type: {instanceID: 0}
+  - building: {instanceID: 0}
+  - cursedSprite: {fileID: 21300000, guid: ba06056608aa6f743865a27ed74fb5cf, type: 3}
+  - _resourceDataScriptable: {instanceID: 0}
+  - resourceManager: {instanceID: 0}
+  - monsterPowerEvent: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
