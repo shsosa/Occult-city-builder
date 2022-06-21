@@ -31,6 +31,7 @@ namespace UI
             }
             else if (_barType==BarType.power)
             {
+                Debug.Log("i am monster power");
                 _slider.value = _monsterManager.monsterPower;
             }
         }
