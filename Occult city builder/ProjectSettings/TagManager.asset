@@ -9,6 +9,7 @@ TagManager:
   - ForestTile
   - BuildingUI
   - Secrifice
+  - Map
   layers:
   - Default
   - TransparentFX
