@@ -23,7 +23,7 @@ public class BuildingManager : MonoBehaviour
                 for (int i = 0; i < _reasourcePrices.Count; i++)
                 {
                     //todo change logic to something else not name
-                    if (uiObject.name == _reasourcePrices[i].name)
+                    if (uiObject._reasourcePrice == _reasourcePrices[i])
                     {
 
                         canBuild =

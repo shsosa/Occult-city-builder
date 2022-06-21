@@ -8,6 +8,7 @@ TagManager:
   - Building
   - ForestTile
   - BuildingUI
+  - Secrifice
   layers:
   - Default
   - TransparentFX

@@ -1,12 +1,20 @@
-using Game_managment;
+using System.Security.Cryptography;
+using DefaultNamespace;using Game_managment;
 using InputMouse;
 using UnityEngine;
 
 
-public class Building : MonoBehaviour
+public class Building : MonoBehaviour, Idraggable
 {
    //todo maybe move resource update from building manager - still with event to update resource manager 
    //todo use raycast instead of collision
+
+  public enum TypeOfDraggableItem
+   {
+       Building , Secrifice
+   }
+
+   public TypeOfDraggableItem _typeOfDraggableItem;
 
     #region SerializedData
 
@@ -18,7 +26,7 @@ public class Building : MonoBehaviour
     
     #region Building Bool States
 
-    private bool isDragged;
+    public bool isDragged;
     private bool isOnTile = false;
     private bool isBuildingChildOfTile = false;
 
@@ -39,7 +47,8 @@ public class Building : MonoBehaviour
     #endregion
 
     #region Check mouse States Methods
-    private void ChackIfDragged()
+
+    public void ChackIfDragged()
     {
         if (Input.GetMouseButtonUp(0))
         {
@@ -83,20 +92,48 @@ public class Building : MonoBehaviour
 
     private void BuildOnTile(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Tile"))
+        
+        switch (_typeOfDraggableItem)
         {
-            if (!isDragged && isOnTile && !isBuildingChildOfTile)
-            {
-                var tile = GetTileComponent(other);
-                if (!tile.isCursed)
+            
+            case TypeOfDraggableItem.Building:
+                
+                if (other.gameObject.CompareTag("Tile"))
                 {
-                    DecreaseReasourceCost();
-                    CheckIfGetsResourceBonus(tile);
-                    SetTileParent(other);
-                    SnapToTile();
-                    StopFollowingMouse();
+                    if (!isDragged && isOnTile && !isBuildingChildOfTile)
+                    {
+                        var tile = GetTileComponent(other);
+                        if (!tile.isCursed)
+                        {
+                            DecreaseReasourceCost();
+                            CheckIfGetsResourceBonus(tile);
+                            SetTileParent(other);
+                            SnapToTile();
+                            StopFollowingMouse();
+                        }
+                    }
                 }
-            }
+                break;
+            
+            case TypeOfDraggableItem.Secrifice:
+
+                if (other.gameObject.CompareTag("Secrifice"))
+                {
+                    if (!isDragged)
+                    {
+                        DecreaseReasourceCost();
+                        
+                        other.GetComponent<MosterObjectScript>().Eat(reasourcePrice.secrificeAmount);
+                        Destroy(gameObject);
+                    }
+                    
+                }
+                
+                if(!isDragged)
+                    Destroy(gameObject);
+              
+                
+                break;
         }
     }
 

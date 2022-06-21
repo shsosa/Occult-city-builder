@@ -11,13 +11,11 @@ public class SecreficeManager : MonoBehaviour
     [SerializeField] private float hungerReductionPerUnitOfResorce, powerIncreasePerUnitOfReasorce;
     [SerializeField] private float hungerReductionPerUnitOfCattle, powerIncreasePerUnitOfCattle;
     [SerializeField] private float hungerReductionPerUnitOfVilagers, powerIncreasePerUnitOfVilagers;
-    public void Sacrifice()
+    public void Sacrifice(int secrificeAmount)
     {
-        //to be called from UI Button
-        //todo make it from UI serifice button for villegers and cattle (draggable). to a UI object or noraml of monster? maybe get a script of monster on object
-        // todo events? - text and choose what to drag  - UI constant size with text choose from 2 options - buy fonts. make the SO for events
-        // todo make the hover tooltip - last
-        //todo shader of clouds or smoke for background - check if intractable ca make it
+        
+        //todo what to do here consult with artium
+        
         monster.monsterHunger -= amountOfReasourcesToSacrefice * hungerReductionPerUnitOfResorce;
         monster.monsterPower += amountOfReasourcesToSacrefice * powerIncreasePerUnitOfReasorce;
         if (isVilagers)
