@@ -58,7 +58,7 @@ PrefabInstance:
     - target: {fileID: 4663308838598489373, guid: 6a719563eb764e34abbd656743a3c4b2, type: 3}
       propertyPath: reasourcePrice
       value: 
-      objectReference: {fileID: 11400000, guid: d6aa3f9de4f4f7f429a2a4b3689834f6, type: 2}
+      objectReference: {fileID: 11400000, guid: fc14d91c525411e48b1e9c785afc3f51, type: 2}
     - target: {fileID: 4663308838598489373, guid: 6a719563eb764e34abbd656743a3c4b2, type: 3}
       propertyPath: _resourceTypeData
       value: 
