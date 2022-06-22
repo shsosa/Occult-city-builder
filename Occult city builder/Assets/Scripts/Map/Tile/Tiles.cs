@@ -71,6 +71,11 @@ public class Tiles : MonoBehaviour
             hasBuilding = false;
         } 
     }
+    public void SetNotCursed()
+    {
+        isCursed = false;
+        spriteRenderer.sprite = normalSprite;
+    }
     
  
 }

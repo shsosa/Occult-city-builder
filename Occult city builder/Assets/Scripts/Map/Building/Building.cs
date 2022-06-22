@@ -11,7 +11,7 @@ public class Building : MonoBehaviour, Idraggable
 
   public enum TypeOfDraggableItem
    {
-       Building , Secrifice
+       Building , Secrifice, Ritual
    }
 
    public TypeOfDraggableItem _typeOfDraggableItem;
@@ -114,7 +114,7 @@ public class Building : MonoBehaviour, Idraggable
                     }
                 }
                 break;
-            
+
             case TypeOfDraggableItem.Secrifice:
 
                 if (other.gameObject.CompareTag("Secrifice"))
@@ -128,8 +128,19 @@ public class Building : MonoBehaviour, Idraggable
                     }
                     
                 }
-                
-                if(!isDragged)
+                break;
+            case TypeOfDraggableItem.Ritual:
+
+                if (other.gameObject.CompareTag("Ritual"))
+                {
+                    if (!isDragged)
+                    {
+                        
+                    }
+
+                }
+
+                if (!isDragged)
                     Destroy(gameObject);
               
                 

@@ -12,5 +12,46 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 701fabd735297054cbb3eaa6ff1636df, type: 3}
   m_Name: RandomEvents
   m_EditorClassIdentifier: 
-  monsterHungerEventChannel: {fileID: 11400000, guid: 4462b551541cb204696d810a467825af, type: 2}
-  eventType: 0
+  monsterHungerEventChannel: {fileID: 11400000, guid: 2010f43b02da6a84380ee0a92b046515, type: 2}
+  eventType: 1
+  madnesEvents:
+  - ' Sanity is not a default state of mind nor is it a right. Sanity is a gift,
+    we have been robbed of. Cleanse the village of the unpure or risk to join them! '
+  - ' The mask of sanity was removed, and people smile their true smiles... Give
+    them a reason to weep, my Lord !!! '
+  - ' When whispers of the wind start making sense, you know it is time to silence
+    the people, my Lord... '
+  desiseEvents:
+  - ' Bodies left to decompose on the streets have tendency to grow in numbers. Pay
+    gold... or let death feast, my Lord. '
+  - ' Doctors want gold, commoners want to live... The choise is yours, my Lord. '
+  - ' If they all die, whom shall you feed to the shadows, my Lord? It''s better
+    to pay in gold than in your life. '
+  wildAnimalsEvents:
+  - Ancient unspeakable terror is not the only thing devouring our livestock, there
+    are also wolfs. Build walls, my Lord... or don't.
+  - Even wild beasts are bound to the shadowy will... At least from this, we can
+    hide behind the walls. If you are willing to spend some wood, that is, my Lord...
+  - 'Fangs and claws can be warded off by spears and palisades. It is wood or blood...
+    Choose wisely, my Lord. '
+  starvationEvents:
+  - Shadows aren't the only things that can starve, people can also. Feed them, my
+    Lord.
+  - Starving people aren't much of a sacrifice. It likes them plump, my Lord...
+  - Livestock to people as people to shadows. You do understand the hint, my Lord?!
+  fallingStarEvents:
+  - The priests are fascinated by a passing comet... And you thought they are the
+    smart ones, my Lord
+  - When Stars are falling from the sky, it isn't a time for logic, my.Lord
+  - Make a wish, my Lord
+  eventTextHeaders:
+  - VILLAGERS GONE INSANE
+  - PESTILENCE
+  - WILD ANIMALS
+  - FAMINE
+  - COMET SPOTTED
+  randomEventText: ' Doctors want gold, commoners want to live... The choise is yours,
+    my Lord. '
+  eventTextHeader: PESTILENCE
+  punishment: 1
+  maxPunishment: 0
