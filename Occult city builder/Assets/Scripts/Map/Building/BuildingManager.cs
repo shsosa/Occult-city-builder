@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class BuildingManager : MonoBehaviour
 {
-    
 
+    //todo maybe build from here if i get tile and building from mouse
+    
     #region Resource Data - SO
 
     public ResourceData _resourceData;
@@ -53,7 +54,5 @@ public class BuildingManager : MonoBehaviour
     }
 
     #endregion
-   
     
-   
 }

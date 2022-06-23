@@ -1,3 +1,6 @@
+using System;
+using MoreMountains.Feedbacks;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Tiles : MonoBehaviour
@@ -44,12 +47,13 @@ public class Tiles : MonoBehaviour
         {
             _polygonCollider2D.isTrigger = true;
         }
-            
-        
-        
+
     }
 
-    
+    public void ChangeColor()
+    {
+        GetComponent<SpriteRenderer>().color = Color.blue;
+    }
 
     public void TileProduction()
     {

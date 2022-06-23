@@ -6,6 +6,8 @@ using UnityEngine.EventSystems;
 public class UIObjectInfo : MonoBehaviour
 {
     
+    //todo get tile and building - no collision - raycast
+    
     private bool _canIstantiateNewBuilding = true;
     private UIObject _currentObjectFromMouse;
 
@@ -49,7 +51,7 @@ public class UIObjectInfo : MonoBehaviour
     {
         return  EventSystem.current.IsPointerOverGameObject();
     }
-    UIObject GetUIObject()
+   public UIObject GetUIObject()
     {
         var eventData = new PointerEventData(EventSystem.current);
         eventData.position = Input.mousePosition;
@@ -62,6 +64,7 @@ public class UIObjectInfo : MonoBehaviour
                
                 return results[i].gameObject.GetComponent<UIObject>();
             }
+            
             
         }
        
