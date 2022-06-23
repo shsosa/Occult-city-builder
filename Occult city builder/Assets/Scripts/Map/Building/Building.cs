@@ -1,4 +1,3 @@
-using System.Security.Cryptography;
 using DefaultNamespace;using Game_managment;
 using InputMouse;
 using UnityEngine;
@@ -190,14 +189,6 @@ public class Building : MonoBehaviour, Idraggable
     #endregion
     
     
-//todo do we ude this or can delet?
-    public void Destruction()
-    {
-        Destroy(gameObject);
-    }
-    
-    
-   
 
 }
 

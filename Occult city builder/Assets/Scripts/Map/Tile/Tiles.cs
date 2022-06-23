@@ -1,8 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using InputMouse;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class Tiles : MonoBehaviour
