@@ -3596,7 +3596,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monsterHunger: 0
-  monsterPower: 30
+  monsterPower: 0
   monsterHungerGrowth: 1
   monsterPowerGrowth: 2
   hungerTime: 3

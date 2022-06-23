@@ -15,7 +15,9 @@ namespace Game_managment
 
 
             [Header("Sacrifice To monster amount:")]
-            public int secrificeAmount;
+            public int secrificeAmountHunger;
+
+            public int secrificeAddPower;
 
 
 

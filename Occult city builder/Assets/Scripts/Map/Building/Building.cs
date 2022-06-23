@@ -66,7 +66,12 @@ public class Building : MonoBehaviour, Idraggable
         
         Debug.Log("is dragged: " + isDragged);
     }
-    
+
+    public void GetFollowMouse()
+    {
+        throw new System.NotImplementedException();
+    }
+
     /// <summary>
     /// If we want the building can only be on a certain kind of tile with the same resource type
     /// </summary>
@@ -123,7 +128,7 @@ public class Building : MonoBehaviour, Idraggable
                     {
                         DecreaseReasourceCost();
                         
-                        other.GetComponent<MosterObjectScript>().Eat(reasourcePrice.secrificeAmount);
+                        other.GetComponent<MosterObjectScript>().Eat(reasourcePrice.secrificeAmountHunger, reasourcePrice.secrificeAddPower);
                         Destroy(gameObject);
                     }
                     
@@ -183,13 +188,15 @@ public class Building : MonoBehaviour, Idraggable
     }
 
     #endregion
+    
+    
 //todo do we ude this or can delet?
     public void Destruction()
     {
         Destroy(gameObject);
     }
     
-    // collision for UIManager - visual feedback
+    
    
 
 }

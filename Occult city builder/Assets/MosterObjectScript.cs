@@ -20,9 +20,9 @@ public class MosterObjectScript : MonoBehaviour
     
     
 
-    public void Eat(int amountToSecrifice)
+    public void Eat(int amountToSecrificeHunger, int secrificeAddPower)
     {
-        _secreficeManager.Sacrifice(amountToSecrifice);
+        _secreficeManager.Sacrifice(amountToSecrificeHunger, secrificeAddPower);
     }
 
    

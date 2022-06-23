@@ -17,4 +17,5 @@ MonoBehaviour:
   vilagers: 1
   researchPoints: 0
   cattle: 0
-  secrificeAmount: 10
+  secrificeAmountHunger: 5
+  secrificeAddPower: 5
