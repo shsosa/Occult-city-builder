@@ -16,6 +16,7 @@
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Map/Building/BuldingPriceSO/SecrificeVilliger.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Map/Building/BuldingPriceSO/SecrificeVilliger.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Resources/ResourceSO/ResourceManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Resources/ResourceSO/ResourceManager.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Resources/SecreficeManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Resources/SecreficeManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/UIMouseHover.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/UIMouseHover.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

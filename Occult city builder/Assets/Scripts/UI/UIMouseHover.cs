@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using MoreMountains.Feedbacks;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -56,6 +57,7 @@ public class UIMouseHover : MonoBehaviour
             if (_currentObjectFromMouse.GetComponent<UIObject>() != null)
             {
                 _currentObjectFromMouse.GetComponent<UIObject>().CreateBuldingFromUI();
+                _currentObjectFromMouse.GetComponent<MMFeedbacks>().PlayFeedbacks();
                 _canIstantiateNewBuilding = false;
             }
              
