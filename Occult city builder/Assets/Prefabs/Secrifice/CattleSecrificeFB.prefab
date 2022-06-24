@@ -7,6 +7,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -435190960958372951, guid: 6a719563eb764e34abbd656743a3c4b2, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1.8
+      objectReference: {fileID: 0}
+    - target: {fileID: -435190960958372951, guid: 6a719563eb764e34abbd656743a3c4b2, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1.8
+      objectReference: {fileID: 0}
     - target: {fileID: 4663308838598489370, guid: 6a719563eb764e34abbd656743a3c4b2, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -14,6 +22,18 @@ PrefabInstance:
     - target: {fileID: 4663308838598489371, guid: 6a719563eb764e34abbd656743a3c4b2, type: 3}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4663308838598489371, guid: 6a719563eb764e34abbd656743a3c4b2, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4663308838598489371, guid: 6a719563eb764e34abbd656743a3c4b2, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4663308838598489371, guid: 6a719563eb764e34abbd656743a3c4b2, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.9
       objectReference: {fileID: 0}
     - target: {fileID: 4663308838598489371, guid: 6a719563eb764e34abbd656743a3c4b2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -55,10 +75,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4663308838598489371, guid: 6a719563eb764e34abbd656743a3c4b2, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4663308838598489373, guid: 6a719563eb764e34abbd656743a3c4b2, type: 3}
       propertyPath: reasourcePrice
       value: 
-      objectReference: {fileID: 11400000, guid: d6aa3f9de4f4f7f429a2a4b3689834f6, type: 2}
+      objectReference: {fileID: 11400000, guid: fc14d91c525411e48b1e9c785afc3f51, type: 2}
     - target: {fileID: 4663308838598489373, guid: 6a719563eb764e34abbd656743a3c4b2, type: 3}
       propertyPath: _resourceTypeData
       value: 
@@ -70,6 +94,10 @@ PrefabInstance:
     - target: {fileID: 4663308838598489374, guid: 6a719563eb764e34abbd656743a3c4b2, type: 3}
       propertyPath: m_Name
       value: CattleSecrificeFB
+      objectReference: {fileID: 0}
+    - target: {fileID: 4663308838598489374, guid: 6a719563eb764e34abbd656743a3c4b2, type: 3}
+      propertyPath: m_TagString
+      value: Secrifice
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6a719563eb764e34abbd656743a3c4b2, type: 3}

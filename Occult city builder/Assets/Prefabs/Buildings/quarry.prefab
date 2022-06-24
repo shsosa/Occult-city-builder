@@ -11,11 +11,10 @@ GameObject:
   - component: {fileID: 3183833581075913155}
   - component: {fileID: 3183833581075913152}
   - component: {fileID: 3183833581075913153}
-  - component: {fileID: 3183833581075913166}
   - component: {fileID: 3183833581075913167}
   - component: {fileID: 2556875098122686184}
-  - component: {fileID: -8184546469702023647}
-  m_Layer: 0
+  - component: {fileID: -8015550622469009348}
+  m_Layer: 2
   m_Name: quarry
   m_TagString: Building
   m_Icon: {fileID: 0}
@@ -31,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 3183833581075913164}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 6.143627, y: -2.2025928, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -77,8 +76,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: ad061bd160cf7ea48996d5c3895dd7f0, type: 3}
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 21300000, guid: 959f7a2b78310b148b6ccb703ec21427, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -101,21 +100,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44a37726f4c868d4aa2e16474d043214, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _typeOfDraggableItem: 0
   _resourceTypeData: {fileID: 11400000, guid: 22a36d06dc0f0d941a9e0762458a563f, type: 2}
   reasourcePrice: {fileID: 11400000, guid: d6aa3f9de4f4f7f429a2a4b3689834f6, type: 2}
   _resourceDataSO: {fileID: 11400000, guid: a058ea4808a964c4883a30c07f49f86f, type: 2}
---- !u!114 &3183833581075913166
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3183833581075913164}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad4da6a42a6dc494d88186a62b86a8fa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  BuildEventChannelSo: {fileID: 11400000, guid: 1937f1b57f01ddd448ebe004034eae57, type: 2}
+  tile: {fileID: 0}
+  isDragged: 0
 --- !u!114 &3183833581075913167
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -149,8 +140,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!58 &-8184546469702023647
-CircleCollider2D:
+--- !u!60 &-8015550622469009348
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -162,6 +153,27 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.17}
-  serializedVersion: 2
-  m_Radius: 0.12
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.1, y: 2.1}
+    newSize: {x: 2.1, y: 2.1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.21, y: 0.74}
+      - {x: 0.19, y: 0.78}
+      - {x: -0.16, y: 0.78}
+      - {x: -0.39999998, y: 0.65999997}
+      - {x: -0.42999998, y: 0.64}
+      - {x: -0.42999998, y: 0.34}
+      - {x: -0.42, y: -0.01}
+      - {x: -0.29, y: -0.11}
+      - {x: 0.32, y: -0.11}
+      - {x: 0.42999998, y: 0}
+      - {x: 0.42999998, y: 0.5}
+      - {x: 0.24, y: 0.55}

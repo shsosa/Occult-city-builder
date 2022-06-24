@@ -3,7 +3,8 @@
     public interface Idraggable
     { 
         void ChackIfDragged();
-        
+        void GetFollowMouse();
+
 
     }
 }
