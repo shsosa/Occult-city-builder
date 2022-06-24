@@ -33,6 +33,8 @@ public class BuildingManager : MonoBehaviour
                     building.GetComponent<Building>().Build();
             
         }
+
+        
     }
 
 
@@ -88,13 +90,15 @@ public class BuildingManager : MonoBehaviour
     {
         building = Instantiate(buildingPB, uiButtonPos.position, Quaternion.identity);
         building.transform.SetParent(map);
-        
+        hasInstantiatedBuilding = true;
+
     }
 
     void SetBuildingNull()
     {
         building = null;
         tile = null;
+        hasInstantiatedBuilding = false;
     }
 
 }
