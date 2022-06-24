@@ -10,6 +10,7 @@ public class UIObject : MonoBehaviour
    #region Variables
 
    [SerializeField] private GameObject buildingToCreate;
+   private BuildingManager _buildingManager;
     
    //Price to build
    public ReasourcePrice _reasourcePrice;
@@ -28,7 +29,7 @@ public class UIObject : MonoBehaviour
 
    private void Awake()
    {
-        
+       _buildingManager = FindObjectOfType<BuildingManager>();
        scaleOG = transform.localScale;
         
        map = FindObjectOfType<BuildingManager>().transform;
@@ -58,10 +59,7 @@ public class UIObject : MonoBehaviour
     {
         if(canBuild && buildingToCreate!= null)
         {
-            //todo instantiate from another place
-            GameObject building;
-            building = Instantiate(buildingToCreate, transform.position, quaternion.identity);
-            building.transform.SetParent(map);
+            _buildingManager.Build(buildingToCreate,transform);
         }
     }
 

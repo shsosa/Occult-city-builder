@@ -204,6 +204,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46a9979cedec04d48965b64ad6e07353, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tile: {fileID: 0}
+  building: {fileID: 0}
+  map: {fileID: 1227144226}
+  BuildEventChannelSo: {fileID: 11400000, guid: 1937f1b57f01ddd448ebe004034eae57, type: 2}
+  hasInstantiatedBuilding: 0
   _resourceData: {fileID: 11400000, guid: a058ea4808a964c4883a30c07f49f86f, type: 2}
   _reasourcePrices:
   - {fileID: 11400000, guid: 7bf81ee11460b9e44b8bcd1d9a37e755, type: 2}
@@ -220,13 +225,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1227144226}
     m_Modifications:
+    - target: {fileID: -5132690664235219938, guid: c56b9081cc6bf4a4fb01b61d3f04a7ad, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6413513830729175434, guid: c56b9081cc6bf4a4fb01b61d3f04a7ad, type: 3}
       propertyPath: m_Name
       value: GrassTile (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 6413513830729175437, guid: c56b9081cc6bf4a4fb01b61d3f04a7ad, type: 3}
+      propertyPath: BuildingEventChannelSo
+      value: 
+      objectReference: {fileID: 11400000, guid: 1937f1b57f01ddd448ebe004034eae57, type: 2}
     - target: {fileID: 6413513830729175439, guid: c56b9081cc6bf4a4fb01b61d3f04a7ad, type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6413513830729175439, guid: c56b9081cc6bf4a4fb01b61d3f04a7ad, type: 3}
       propertyPath: m_LocalPosition.x
@@ -268,7 +281,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6413513830729175436, guid: c56b9081cc6bf4a4fb01b61d3f04a7ad, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: c56b9081cc6bf4a4fb01b61d3f04a7ad, type: 3}
 --- !u!1 &68390518
 GameObject:
@@ -1271,9 +1285,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1227144226}
     m_Modifications:
+    - target: {fileID: -7680168238037569987, guid: 2285e1cc6b0c8fc46a1bc68076cded3a, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3522474144374782220, guid: 2285e1cc6b0c8fc46a1bc68076cded3a, type: 3}
+      propertyPath: BuildingEventChannelSo
+      value: 
+      objectReference: {fileID: 11400000, guid: 1937f1b57f01ddd448ebe004034eae57, type: 2}
     - target: {fileID: 3522474144374782222, guid: 2285e1cc6b0c8fc46a1bc68076cded3a, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3522474144374782222, guid: 2285e1cc6b0c8fc46a1bc68076cded3a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1319,7 +1341,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: ForrestDenseTile2 (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3522474144374782221, guid: 2285e1cc6b0c8fc46a1bc68076cded3a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 2285e1cc6b0c8fc46a1bc68076cded3a, type: 3}
 --- !u!1 &395216975
 GameObject:
@@ -4111,13 +4134,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1227144226}
     m_Modifications:
+    - target: {fileID: -5132690664235219938, guid: c56b9081cc6bf4a4fb01b61d3f04a7ad, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6413513830729175434, guid: c56b9081cc6bf4a4fb01b61d3f04a7ad, type: 3}
       propertyPath: m_Name
       value: GrassTile (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6413513830729175437, guid: c56b9081cc6bf4a4fb01b61d3f04a7ad, type: 3}
+      propertyPath: BuildingEventChannelSo
+      value: 
+      objectReference: {fileID: 11400000, guid: 1937f1b57f01ddd448ebe004034eae57, type: 2}
     - target: {fileID: 6413513830729175439, guid: c56b9081cc6bf4a4fb01b61d3f04a7ad, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6413513830729175439, guid: c56b9081cc6bf4a4fb01b61d3f04a7ad, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4159,7 +4190,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6413513830729175436, guid: c56b9081cc6bf4a4fb01b61d3f04a7ad, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: c56b9081cc6bf4a4fb01b61d3f04a7ad, type: 3}
 --- !u!1 &1375470511
 GameObject:
@@ -4884,9 +4916,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1227144226}
     m_Modifications:
+    - target: {fileID: -7680168238037569987, guid: 2285e1cc6b0c8fc46a1bc68076cded3a, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3522474144374782220, guid: 2285e1cc6b0c8fc46a1bc68076cded3a, type: 3}
+      propertyPath: BuildingEventChannelSo
+      value: 
+      objectReference: {fileID: 11400000, guid: 1937f1b57f01ddd448ebe004034eae57, type: 2}
     - target: {fileID: 3522474144374782222, guid: 2285e1cc6b0c8fc46a1bc68076cded3a, type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 3522474144374782222, guid: 2285e1cc6b0c8fc46a1bc68076cded3a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4932,7 +4972,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: ForrestDenseTile2 (2)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3522474144374782221, guid: 2285e1cc6b0c8fc46a1bc68076cded3a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 2285e1cc6b0c8fc46a1bc68076cded3a, type: 3}
 --- !u!1 &1759919377
 GameObject:
@@ -6483,6 +6524,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1227144226}
     m_Modifications:
+    - target: {fileID: 1571799751607307782, guid: 4bdadaf396e2cdf49bb221277a869ff6, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2795448847219876608, guid: 4bdadaf396e2cdf49bb221277a869ff6, type: 3}
       propertyPath: m_Name
       value: MountinTile
@@ -6531,7 +6576,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 2795448847219876623, guid: 4bdadaf396e2cdf49bb221277a869ff6, type: 3}
+      propertyPath: BuildingEventChannelSo
+      value: 
+      objectReference: {fileID: 11400000, guid: 1937f1b57f01ddd448ebe004034eae57, type: 2}
+    m_RemovedComponents:
+    - {fileID: 2795448847219876622, guid: 4bdadaf396e2cdf49bb221277a869ff6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 4bdadaf396e2cdf49bb221277a869ff6, type: 3}
 --- !u!1001 &3101393093318013373
 PrefabInstance:
@@ -6540,6 +6590,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1227144226}
     m_Modifications:
+    - target: {fileID: -7526051053246421789, guid: 912f564359f351a41a691cabf9149d83, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3101393094237439849, guid: 912f564359f351a41a691cabf9149d83, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -6584,69 +6638,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3101393094237439855, guid: 912f564359f351a41a691cabf9149d83, type: 3}
+      propertyPath: BuildingEventChannelSo
+      value: 
+      objectReference: {fileID: 11400000, guid: 1937f1b57f01ddd448ebe004034eae57, type: 2}
     - target: {fileID: 3101393094237439858, guid: 912f564359f351a41a691cabf9149d83, type: 3}
       propertyPath: m_Name
       value: HillsTile
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3101393094237439852, guid: 912f564359f351a41a691cabf9149d83, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 912f564359f351a41a691cabf9149d83, type: 3}
---- !u!1001 &3427567741672878839
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1227144226}
-    m_Modifications:
-    - target: {fileID: 3427567740999271092, guid: adcd5f8a296835b4d9f2fc838ec096a8, type: 3}
-      propertyPath: m_Name
-      value: HillsTile2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3427567740999271103, guid: adcd5f8a296835b4d9f2fc838ec096a8, type: 3}
-      propertyPath: m_RootOrder
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3427567740999271103, guid: adcd5f8a296835b4d9f2fc838ec096a8, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 5.196
-      objectReference: {fileID: 0}
-    - target: {fileID: 3427567740999271103, guid: adcd5f8a296835b4d9f2fc838ec096a8, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 2.61
-      objectReference: {fileID: 0}
-    - target: {fileID: 3427567740999271103, guid: adcd5f8a296835b4d9f2fc838ec096a8, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3427567740999271103, guid: adcd5f8a296835b4d9f2fc838ec096a8, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3427567740999271103, guid: adcd5f8a296835b4d9f2fc838ec096a8, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3427567740999271103, guid: adcd5f8a296835b4d9f2fc838ec096a8, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3427567740999271103, guid: adcd5f8a296835b4d9f2fc838ec096a8, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3427567740999271103, guid: adcd5f8a296835b4d9f2fc838ec096a8, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3427567740999271103, guid: adcd5f8a296835b4d9f2fc838ec096a8, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3427567740999271103, guid: adcd5f8a296835b4d9f2fc838ec096a8, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: adcd5f8a296835b4d9f2fc838ec096a8, type: 3}
 --- !u!1001 &3522474144189057901
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6654,6 +6656,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1227144226}
     m_Modifications:
+    - target: {fileID: -7680168238037569987, guid: 2285e1cc6b0c8fc46a1bc68076cded3a, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3522474144374782220, guid: 2285e1cc6b0c8fc46a1bc68076cded3a, type: 3}
+      propertyPath: BuildingEventChannelSo
+      value: 
+      objectReference: {fileID: 11400000, guid: 1937f1b57f01ddd448ebe004034eae57, type: 2}
     - target: {fileID: 3522474144374782222, guid: 2285e1cc6b0c8fc46a1bc68076cded3a, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -6702,7 +6712,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: ForrestDenseTile2
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3522474144374782221, guid: 2285e1cc6b0c8fc46a1bc68076cded3a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 2285e1cc6b0c8fc46a1bc68076cded3a, type: 3}
 --- !u!1001 &6413513830392062072
 PrefabInstance:
@@ -6711,10 +6722,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1227144226}
     m_Modifications:
+    - target: {fileID: -5132690664235219938, guid: c56b9081cc6bf4a4fb01b61d3f04a7ad, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6413513830729175434, guid: c56b9081cc6bf4a4fb01b61d3f04a7ad, type: 3}
       propertyPath: m_Name
       value: GrassTile
       objectReference: {fileID: 0}
+    - target: {fileID: 6413513830729175437, guid: c56b9081cc6bf4a4fb01b61d3f04a7ad, type: 3}
+      propertyPath: BuildingEventChannelSo
+      value: 
+      objectReference: {fileID: 11400000, guid: 1937f1b57f01ddd448ebe004034eae57, type: 2}
     - target: {fileID: 6413513830729175439, guid: c56b9081cc6bf4a4fb01b61d3f04a7ad, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -6759,7 +6778,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6413513830729175436, guid: c56b9081cc6bf4a4fb01b61d3f04a7ad, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: c56b9081cc6bf4a4fb01b61d3f04a7ad, type: 3}
 --- !u!1001 &7261135108422841880
 PrefabInstance:
@@ -6768,9 +6788,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1227144226}
     m_Modifications:
+    - target: {fileID: 7261135108474742856, guid: 926e65b0da7364543ac2282aa357e573, type: 3}
+      propertyPath: BuildingEventChannelSo
+      value: 
+      objectReference: {fileID: 11400000, guid: 1937f1b57f01ddd448ebe004034eae57, type: 2}
     - target: {fileID: 7261135108474742858, guid: 926e65b0da7364543ac2282aa357e573, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7261135108474742858, guid: 926e65b0da7364543ac2282aa357e573, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6816,7 +6840,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: ValleySparseTile2
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 7261135108474742870, guid: 926e65b0da7364543ac2282aa357e573, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 7261135108474742871, guid: 926e65b0da7364543ac2282aa357e573, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 926e65b0da7364543ac2282aa357e573, type: 3}
 --- !u!1001 &7694414127784080702
 PrefabInstance:
@@ -6825,9 +6854,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1227144226}
     m_Modifications:
+    - target: {fileID: -5312174768916002793, guid: 4242f2cbd92d704489aa198ae3f9b18b, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7694414126651558093, guid: 4242f2cbd92d704489aa198ae3f9b18b, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7694414126651558093, guid: 4242f2cbd92d704489aa198ae3f9b18b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6869,11 +6902,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7694414126651558095, guid: 4242f2cbd92d704489aa198ae3f9b18b, type: 3}
+      propertyPath: BuildingEventChannelSo
+      value: 
+      objectReference: {fileID: 11400000, guid: 1937f1b57f01ddd448ebe004034eae57, type: 2}
     - target: {fileID: 7694414126651558096, guid: 4242f2cbd92d704489aa198ae3f9b18b, type: 3}
       propertyPath: m_Name
       value: ValleySparseTile
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7694414126651558094, guid: 4242f2cbd92d704489aa198ae3f9b18b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 4242f2cbd92d704489aa198ae3f9b18b, type: 3}
 --- !u!1001 &8017027821913078547
 PrefabInstance:
@@ -6930,5 +6968,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8017027821222928875, guid: 578ff8b135ac5d646b46799d680f7a0d, type: 3}
+      propertyPath: BuildingEventChannelSo
+      value: 
+      objectReference: {fileID: 11400000, guid: 1937f1b57f01ddd448ebe004034eae57, type: 2}
+    - target: {fileID: 8629319794636970889, guid: 578ff8b135ac5d646b46799d680f7a0d, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 8017027821222928868, guid: 578ff8b135ac5d646b46799d680f7a0d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 578ff8b135ac5d646b46799d680f7a0d, type: 3}

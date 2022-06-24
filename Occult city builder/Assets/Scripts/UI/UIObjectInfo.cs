@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using InputMouse;
 using MoreMountains.Feedbacks;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -9,9 +11,11 @@ public class UIObjectInfo : MonoBehaviour
     //todo get tile and building - no collision - raycast
     
     private bool _canIstantiateNewBuilding = true;
+   
     private UIObject _currentObjectFromMouse;
 
     #region Mono
+    
 
     void Update()
     {
@@ -32,47 +36,40 @@ public class UIObjectInfo : MonoBehaviour
     {
         if (_currentObjectFromMouse != null)
         {
-            if (_currentObjectFromMouse == GetUIObject())
+            if (_currentObjectFromMouse == CurrentObjectFromMouse())
             {
                 _currentObjectFromMouse.ChangeScale();
             }
 
-            if (_currentObjectFromMouse != GetUIObject())
+            if (_currentObjectFromMouse != CurrentObjectFromMouse())
             {
                 _currentObjectFromMouse.RevertScaleToOG();
             }
         }
 
         if (GetMousePos())
-            _currentObjectFromMouse = GetUIObject();
+            _currentObjectFromMouse = CurrentObjectFromMouse();
+    }
+
+    private static UIObject CurrentObjectFromMouse()
+    {
+        return MouseHover.GetUIObject("BuildingUI")?.GetComponent<UIObject>();
     }
 
     bool GetMousePos()
     {
         return  EventSystem.current.IsPointerOverGameObject();
     }
-   public UIObject GetUIObject()
-    {
-        var eventData = new PointerEventData(EventSystem.current);
-        eventData.position = Input.mousePosition;
-        var results = new List<RaycastResult>();
-        EventSystem.current.RaycastAll(eventData, results);
-        for (int i = 0; i < results.Count; i++)
-        {
-            if (results[i].gameObject.CompareTag("BuildingUI"))
-            {
-               
-                return results[i].gameObject.GetComponent<UIObject>();
-            }
-            
-            
-        }
-       
-        return null;
-       
-        
-        
-    }
+    
+    
+    
+    /*
+   public GameObject GetUIObject(string tagName)
+   {
+       return MouseHover.GetUIObject(tagName);
+
+   }
+    */
 
     #endregion
 

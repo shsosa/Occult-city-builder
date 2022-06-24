@@ -20,6 +20,8 @@ public class Building : MonoBehaviour, Idraggable
     public ResourceTypeData _resourceTypeData;
     [SerializeField] private ReasourcePrice reasourcePrice;
     [SerializeField] private ResourceData _resourceDataSO;
+    public VoidEventChannelSO BuildEventChannelSo;
+    public GameObject tile;
 
     #endregion
     
@@ -35,6 +37,7 @@ public class Building : MonoBehaviour, Idraggable
     private void Start()
     {
         GetComponent<SpriteRenderer>().sortingOrder = 1;
+      
     }
 
     private void Update()
@@ -104,18 +107,7 @@ public class Building : MonoBehaviour, Idraggable
                 
                 if (other.gameObject.CompareTag("Tile"))
                 {
-                    if (!isDragged && isOnTile && !isBuildingChildOfTile)
-                    {
-                        var tile = GetTileComponent(other);
-                        if (!tile.isCursed)
-                        {
-                            DecreaseReasourceCost();
-                            CheckIfGetsResourceBonus(tile);
-                            SetTileParent(other);
-                            SnapToTile();
-                            StopFollowingMouse();
-                        }
-                    }
+                   // Build(other);
                 }
                 break;
             
@@ -132,22 +124,43 @@ public class Building : MonoBehaviour, Idraggable
                     }
                     
                 }
-                
-                if(!isDragged)
+
+                if (!isDragged)
+                {
+                    BuildEventChannelSo.RaiseEvent();
                     Destroy(gameObject);
+                }
+                   
               
                 
                 break;
         }
     }
 
-    private static Tiles GetTileComponent(Collider2D other)
+    public void Build()
     {
-        Tiles tile;
-        tile = other.GetComponent<Tiles>();
-        tile.hasBuilding = true;
-        return tile;
+        if (!isDragged && isOnTile && !isBuildingChildOfTile)
+        {
+            if (tile != null)
+            {
+                if (!tile.GetComponent<Tiles>().isCursed)
+                {
+                   
+                    DecreaseReasourceCost();
+                    CheckIfGetsResourceBonus(tile.GetComponent<Tiles>());
+                    SetTileParent(tile);
+                    SnapToTile();
+                    StopFollowingMouse();
+                    BuildEventChannelSo.RaiseEvent();
+                    tile.GetComponent<Tiles>().hasBuilding = true;
+
+                }
+            }
+        
+        }
     }
+
+   
 
     private void CheckIfGetsResourceBonus(Tiles tile)
     {
@@ -163,10 +176,10 @@ public class Building : MonoBehaviour, Idraggable
         GetComponent<FollowMouse>().enabled = false;
     }
 
-    private void SetTileParent(Collider2D other)
+    private void SetTileParent(GameObject tile)
     {
         isBuildingChildOfTile = true;
-        transform.parent = other.transform;
+        transform.parent = tile.transform;
     }
 
     private void SnapToTile()
@@ -179,6 +192,7 @@ public class Building : MonoBehaviour, Idraggable
     private void DecreaseReasourceCost()
     {
         _resourceDataSO.SpendReasource(reasourcePrice);
+        
     }
 
     private void OnTriggerExit2D(Collider2D other)

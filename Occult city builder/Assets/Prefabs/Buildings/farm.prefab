@@ -11,11 +11,10 @@ GameObject:
   - component: {fileID: 4663308838598489371}
   - component: {fileID: 4663308838598489370}
   - component: {fileID: 4663308838598489373}
-  - component: {fileID: 4663308838598489372}
   - component: {fileID: 4663308838598489375}
   - component: {fileID: -8957896040515233175}
-  - component: {fileID: 4699757529537708504}
-  m_Layer: 0
+  - component: {fileID: -435190960958372951}
+  m_Layer: 2
   m_Name: farm
   m_TagString: Building
   m_Icon: {fileID: 0}
@@ -105,19 +104,9 @@ MonoBehaviour:
   _resourceTypeData: {fileID: 11400000, guid: 57803a6369e9d274eb46631d91f1ed7b, type: 2}
   reasourcePrice: {fileID: 11400000, guid: 7bf81ee11460b9e44b8bcd1d9a37e755, type: 2}
   _resourceDataSO: {fileID: 11400000, guid: a058ea4808a964c4883a30c07f49f86f, type: 2}
+  BuildEventChannelSo: {fileID: 11400000, guid: 1937f1b57f01ddd448ebe004034eae57, type: 2}
+  tile: {fileID: 0}
   isDragged: 0
---- !u!114 &4663308838598489372
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4663308838598489374}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad4da6a42a6dc494d88186a62b86a8fa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &4663308838598489375
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -151,8 +140,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!58 &4699757529537708504
-CircleCollider2D:
+--- !u!60 &-435190960958372951
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -164,6 +153,30 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.17}
-  serializedVersion: 2
-  m_Radius: 0.01
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.1, y: 2.1}
+    newSize: {x: 2.1, y: 2.1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.51, y: 0.19}
+      - {x: 0.38, y: 0.32}
+      - {x: 0.28, y: 0.34}
+      - {x: 0.17, y: 0.32999998}
+      - {x: 0.17, y: 0.44}
+      - {x: 0.099999994, y: 0.48}
+      - {x: -0.049999997, y: 0.51}
+      - {x: -0.17999999, y: 0.51}
+      - {x: -0.48999998, y: 0.21}
+      - {x: -0.51, y: 0.14}
+      - {x: -0.51, y: 0.08}
+      - {x: -0.37, y: -0.099999994}
+      - {x: -0.31, y: -0.11}
+      - {x: 0.48, y: -0.11}
+      - {x: 0.51, y: -0.08}

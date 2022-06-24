@@ -13,6 +13,8 @@ public class Tiles : MonoBehaviour
     [SerializeField] private ResourceData _resourceDataScriptable;
     public VoidEventChannelSO resourceManager,monsterPowerEvent;
     
+    [SerializeField] BuildingManager _buildingManager;
+    
     
     public bool hasBuilding =false;
     public bool hasBonus,isCursed;
@@ -20,6 +22,7 @@ public class Tiles : MonoBehaviour
     private PolygonCollider2D _polygonCollider2D;
     private void Start()
     {
+        _buildingManager = FindObjectOfType<BuildingManager>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         //normalSprite = spriteRenderer.sprite;
         _polygonCollider2D = GetComponent<PolygonCollider2D>();
@@ -30,7 +33,9 @@ public class Tiles : MonoBehaviour
 
     private void OnEnable()
     {
+       
         resourceManager.OnEventRaised += TileProduction;
+        
     }
 
     private void Update()
@@ -70,6 +75,31 @@ public class Tiles : MonoBehaviour
             hasBuilding = false;
         } 
     }
-    
- 
+
+    private void OnMouseExit()
+    {
+        
+            GetComponent<SpriteRenderer>().color = Color.white;
+    }
+
+    private void OnMouseEnter()
+    {
+        
+    }
+
+    private void OnMouseOver()
+    {
+        Debug.Log("on Mouse over");
+       
+            GetComponent<SpriteRenderer>().color = Color.blue;
+        
+        _buildingManager.tile = gameObject;
+    }
+
+    void TileHasBuilding()
+    {
+        hasBuilding = true;
+    }
+
+   
 }

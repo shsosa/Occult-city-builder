@@ -1,12 +1,41 @@
+using System;
 using System.Collections.Generic;
 using Game_managment;
+using InputMouse;
 using UnityEngine;
 
 public class BuildingManager : MonoBehaviour
 {
 
     //todo maybe build from here if i get tile and building from mouse
-    
+
+    public GameObject tile;
+    [SerializeField] private GameObject building;
+    [SerializeField]  private Transform map;
+    public VoidEventChannelSO BuildEventChannelSo;
+
+    public bool hasInstantiatedBuilding = false;
+
+    private void OnEnable()
+    {
+        BuildEventChannelSo.OnEventRaised += SetBuildingNull;
+    }
+
+    private void Update()
+    {
+        
+
+        if (building != null && tile != null)
+        {
+            building.GetComponent<Building>().tile = tile;
+            
+               if(!tile.GetComponent<Tiles>().hasBuilding) 
+                    building.GetComponent<Building>().Build();
+            
+        }
+    }
+
+
     #region Resource Data - SO
 
     public ResourceData _resourceData;
@@ -54,5 +83,18 @@ public class BuildingManager : MonoBehaviour
     }
 
     #endregion
-    
+
+    public void Build(GameObject buildingPB, Transform uiButtonPos)
+    {
+        building = Instantiate(buildingPB, uiButtonPos.position, Quaternion.identity);
+        building.transform.SetParent(map);
+        
+    }
+
+    void SetBuildingNull()
+    {
+        building = null;
+        tile = null;
+    }
+
 }
