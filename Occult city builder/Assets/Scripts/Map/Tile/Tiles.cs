@@ -78,12 +78,19 @@ public class Tiles : MonoBehaviour
         } 
     }
 
+    public void SetNotCursed()
+    {
+        isCursed = false;
+        spriteRenderer.sprite = normalSprite;
+
+
     private void OnMouseExit()
     {
        
         spriteRenderer.sortingOrder = 0;
         spriteRenderer.color = Color.white;
             _buildingManager.tile = null;
+
     }
     
 

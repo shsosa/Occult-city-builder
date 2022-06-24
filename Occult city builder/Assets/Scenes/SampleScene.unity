@@ -5716,10 +5716,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monsterHunger: 0
+
+  
+
   monsterPower: 0
+
   monsterHungerGrowth: 1
   monsterPowerGrowth: 2
   hungerTime: 3
+  isBanished: 0
   maxRangeToTrigerHungerEvent: 0
   maxRangeToTrigerHungerEventConstant: 100
   hungerEventTriger: 0
@@ -5727,7 +5732,7 @@ MonoBehaviour:
   maxRangeToTrigerPowerEventConstant: 100
   powerEventTriger: 0
   monsterHungerEventChannel: {fileID: 11400000, guid: 2010f43b02da6a84380ee0a92b046515, type: 2}
-  monsterPowerEventChanel: {fileID: 0}
+  monsterPowerEventChanel: {fileID: 11400000, guid: cc98b8f22ded66940823e8d0b8b965e2, type: 2}
 --- !u!4 &1876995523
 Transform:
   m_ObjectHideFlags: 0
