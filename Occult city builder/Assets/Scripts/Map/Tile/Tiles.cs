@@ -103,17 +103,16 @@ public class Tiles : MonoBehaviour
                 break;
             
             case true:
-                if (_buildingManager.hasInstantiatedBuilding || isCursed)
+                if (_buildingManager.hasInstantiatedBuilding)
                 {
                     spriteRenderer.color = Color.red;
                     
-
                 }
                 
                 break;
         }
-       
-        
+        if(isCursed && _buildingManager.hasInstantiatedBuilding)
+            spriteRenderer.color = Color.red;
               
         
        
