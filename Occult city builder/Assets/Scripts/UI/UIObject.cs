@@ -6,26 +6,65 @@ using UnityEngine;
 public class UIObject : MonoBehaviour
 {
    //todo check if building manager can instantiate
-    [SerializeField] private GameObject buildingToCreate;
-    public ReasourcePrice _reasourcePrice;
-    private Transform map;
-    public bool canBuild =false;
 
-    private void Awake()
+   #region Variables
+
+   [SerializeField] private GameObject buildingToCreate;
+   private BuildingManager _buildingManager;
+    
+   //Price to build
+   public ReasourcePrice _reasourcePrice;
+    
+   //Instantiate building as child of map - on canvas 
+   private Transform map;
+    
+   //Original object scale
+   private Vector3 scaleOG;
+    
+   public bool canBuild =false;
+
+   #endregion
+
+   #region Mono
+
+   private void Awake()
+   {
+       _buildingManager = FindObjectOfType<BuildingManager>();
+       scaleOG = transform.localScale;
+        
+       map = FindObjectOfType<BuildingManager>().transform;
+   }
+
+   #endregion
+   
+   #region Tranform Scale
+
+    public void ChangeScale()
     {
-        map = FindObjectOfType<BuildingManager>().transform;
+        if(canBuild)
+            transform.localScale = new Vector3(2f, 2f, 2f);
     }
+    
+    public void RevertScaleToOG()
+    {
+        if(canBuild)
+            transform.localScale = scaleOG;
+    }
+
+    #endregion
+    
+    #region Build
 
     public void CreateBuldingFromUI()
     {
-        if(canBuild)
+        if(canBuild && buildingToCreate!= null)
         {
-            //todo instantiate from another place
-            GameObject building;
-            building = Instantiate(buildingToCreate, transform.position, quaternion.identity);
-            building.transform.SetParent(map);
+            _buildingManager.Build(buildingToCreate,transform);
         }
     }
+
+    #endregion
+   
 
    
 }

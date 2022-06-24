@@ -11,8 +11,7 @@ GameObject:
   - component: {fileID: 3101393094237439849}
   - component: {fileID: 3101393094237439854}
   - component: {fileID: 3101393094237439855}
-  - component: {fileID: 3101393094237439852}
-  - component: {fileID: 3101393094237439853}
+  - component: {fileID: 500858844}
   m_Layer: 0
   m_Name: HillsTile
   m_TagString: Tile
@@ -107,23 +106,13 @@ MonoBehaviour:
   _resourceDataScriptable: {fileID: 11400000, guid: a058ea4808a964c4883a30c07f49f86f, type: 2}
   resourceManager: {fileID: 11400000, guid: aa6d1e9599124c244b5af24ba9ba859f, type: 2}
   monsterPowerEvent: {fileID: 0}
+  _buildingManager: {fileID: 0}
+  tileFeedbacks: {fileID: 9061313366241203727, guid: fce37681478f2e64dbaa847f0c3918f0, type: 3}
   hasBuilding: 0
   hasBonus: 0
   isCursed: 0
   amountOfReasourceProdused: 10
---- !u!114 &3101393094237439852
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3101393094237439858}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad4da6a42a6dc494d88186a62b86a8fa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!60 &3101393094237439853
+--- !u!60 &500858844
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

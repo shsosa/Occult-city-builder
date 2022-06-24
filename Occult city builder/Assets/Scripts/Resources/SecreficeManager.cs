@@ -10,8 +10,7 @@ public class SecreficeManager : MonoBehaviour
 
     public void Sacrifice(int secrificeAmountHunger, int secrificePowerAdd)
     {
-
-       
+        
         Debug.Log("Secrificed amount " + secrificeAmountHunger);
 
         monster.monsterHunger -= secrificeAmountHunger;

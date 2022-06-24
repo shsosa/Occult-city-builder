@@ -1,4 +1,4 @@
-using System.Security.Cryptography;
+using System;
 using DefaultNamespace;using Game_managment;
 using InputMouse;
 using UnityEngine;
@@ -6,9 +6,7 @@ using UnityEngine;
 
 public class Building : MonoBehaviour, Idraggable
 {
-   //todo maybe move resource update from building manager - still with event to update resource manager 
-   //todo use raycast instead of collision
-
+    
   public enum TypeOfDraggableItem
    {
        Building , Secrifice
@@ -21,6 +19,8 @@ public class Building : MonoBehaviour, Idraggable
     public ResourceTypeData _resourceTypeData;
     [SerializeField] private ReasourcePrice reasourcePrice;
     [SerializeField] private ResourceData _resourceDataSO;
+    public VoidEventChannelSO BuildEventChannelSo;
+    public GameObject tile;
 
     #endregion
     
@@ -35,8 +35,10 @@ public class Building : MonoBehaviour, Idraggable
     #region Mono 
     private void Start()
     {
-        GetComponent<SpriteRenderer>().sortingOrder = 1;
+        GetComponent<SpriteRenderer>().sortingOrder = 2;
+      
     }
+    
 
     private void Update()
     {
@@ -72,56 +74,44 @@ public class Building : MonoBehaviour, Idraggable
         throw new System.NotImplementedException();
     }
 
-    /// <summary>
-    /// If we want the building can only be on a certain kind of tile with the same resource type
-    /// </summary>
-    /// <param name="resourceTypeData"></param>
-    /// <returns></returns>
-    bool CheckIfTileHasSameResourceType(ResourceTypeData resourceTypeData)
-    {
-        return _resourceTypeData == resourceTypeData;
-    }
-    
     #endregion
     
     #region Check Collision triggers methods - to build on tile
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        Debug.Log("building hit with tile");
+        
         if(!isBuildingChildOfTile)
             isOnTile = true;
         
-        BuildOnTile(other);
+        CheckCollisionsOnTile(other);
     }
 
-    private void BuildOnTile(Collider2D other)
+    /// <summary>
+    /// Switches between types of buildings 
+    /// </summary>
+    /// <param name="other"></param>
+    private void CheckCollisionsOnTile(Collider2D other)
     {
         
         switch (_typeOfDraggableItem)
         {
             
             case TypeOfDraggableItem.Building:
-                
+                if (other.gameObject.CompareTag("Building"))
+                {
+                    if(!isBuildingChildOfTile && !isDragged)
+                        Destroy(gameObject);
+                }
+
                 if (other.gameObject.CompareTag("Tile"))
                 {
-                    if (!isDragged && isOnTile && !isBuildingChildOfTile)
-                    {
-                        var tile = GetTileComponent(other);
-                        if (!tile.isCursed)
-                        {
-                            DecreaseReasourceCost();
-                            CheckIfGetsResourceBonus(tile);
-                            SetTileParent(other);
-                            SnapToTile();
-                            StopFollowingMouse();
-                        }
-                    }
+                    if(other.GetComponent<Tiles>().isCursed && !isDragged)
+                        Destroy(gameObject);
                 }
                 break;
             
             case TypeOfDraggableItem.Secrifice:
-
                 if (other.gameObject.CompareTag("Secrifice"))
                 {
                     if (!isDragged)
@@ -134,21 +124,46 @@ public class Building : MonoBehaviour, Idraggable
                     
                 }
                 
-                if(!isDragged)
+                if (!isDragged)
+                {
+                    
                     Destroy(gameObject);
-              
-                
+                }
+
                 break;
         }
     }
+    #endregion
 
-    private static Tiles GetTileComponent(Collider2D other)
+    #region Build
+    /// <summary>
+    /// Called from buildManager
+    /// </summary>
+    public void PlaceBuildingOnTile()
     {
-        Tiles tile;
-        tile = other.GetComponent<Tiles>();
-        tile.hasBuilding = true;
-        return tile;
+        if (!isDragged && isOnTile && !isBuildingChildOfTile)
+        {
+            if (tile != null)
+            {
+                if (!tile.GetComponent<Tiles>().isCursed)
+                {
+                   
+                    DecreaseReasourceCost();
+                    CheckIfGetsResourceBonus(tile.GetComponent<Tiles>());
+                    SetTileParent(tile);
+                    SnapToTile();
+                    StopFollowingMouse();
+                    BuildEventChannelSo.RaiseEvent();
+                    tile.GetComponent<Tiles>().hasBuilding = true;
+                    GetComponent<PolygonCollider2D>().isTrigger = true;
+
+                }
+            }
+        
+        }
     }
+
+   
 
     private void CheckIfGetsResourceBonus(Tiles tile)
     {
@@ -164,40 +179,38 @@ public class Building : MonoBehaviour, Idraggable
         GetComponent<FollowMouse>().enabled = false;
     }
 
-    private void SetTileParent(Collider2D other)
+    private void SetTileParent(GameObject tile)
     {
         isBuildingChildOfTile = true;
-        transform.parent = other.transform;
+        transform.parent = tile.transform;
     }
 
     private void SnapToTile()
     {
         transform.localPosition = new Vector3(0, 0, 0);
+       
     }
-/// <summary>
-/// Takes the building price SO and passes it to resource manager SO
-/// </summary>
+    /// <summary>
+    /// Takes the building price SO and passes it to resource manager SO
+    /// </summary>
     private void DecreaseReasourceCost()
     {
         _resourceDataSO.SpendReasource(reasourcePrice);
+        
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
         isOnTile = false;
     }
+    
 
     #endregion
-    
-    
-//todo do we ude this or can delet?
-    public void Destruction()
-    {
-        Destroy(gameObject);
-    }
-    
-    
    
+
+   
+    
+    
 
 }
 

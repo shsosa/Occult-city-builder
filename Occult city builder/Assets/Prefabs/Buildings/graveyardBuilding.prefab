@@ -11,11 +11,10 @@ GameObject:
   - component: {fileID: 5175587246928169695}
   - component: {fileID: 5175587246928169694}
   - component: {fileID: 5175587246928169693}
-  - component: {fileID: 5175587246928169692}
   - component: {fileID: 5175587246928169691}
   - component: {fileID: 3435046538153652684}
-  - component: {fileID: 7614577810681299281}
-  m_Layer: 0
+  - component: {fileID: 3084065679356704674}
+  m_Layer: 2
   m_Name: graveyardBuilding
   m_TagString: Building
   m_Icon: {fileID: 0}
@@ -31,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 5175587246928169690}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 9.231038, y: 1.9400091, z: 0}
-  m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -105,19 +104,9 @@ MonoBehaviour:
   _resourceTypeData: {fileID: 11400000, guid: 4fe4a459b8950b248b6e4241c869438e, type: 2}
   reasourcePrice: {fileID: 0}
   _resourceDataSO: {fileID: 11400000, guid: a058ea4808a964c4883a30c07f49f86f, type: 2}
+  BuildEventChannelSo: {fileID: 11400000, guid: 1937f1b57f01ddd448ebe004034eae57, type: 2}
+  tile: {fileID: 0}
   isDragged: 0
---- !u!114 &5175587246928169692
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5175587246928169690}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad4da6a42a6dc494d88186a62b86a8fa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &5175587246928169691
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -151,8 +140,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!58 &7614577810681299281
-CircleCollider2D:
+--- !u!60 &3084065679356704674
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -164,6 +153,31 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.17}
-  serializedVersion: 2
-  m_Radius: 0.12
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.1, y: 2.1}
+    newSize: {x: 2.1, y: 2.1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.28, y: 0.34}
+      - {x: 0.14999999, y: 0.48999998}
+      - {x: 0, y: 0.61}
+      - {x: -0.099999994, y: 0.61}
+      - {x: -0.28, y: 0.45999998}
+      - {x: -0.35999998, y: 0.39}
+      - {x: -0.48, y: 0.26}
+      - {x: -0.48, y: 0.07}
+      - {x: -0.37, y: 0.02}
+      - {x: -0.38, y: -0.06}
+      - {x: -0.26999998, y: -0.099999994}
+      - {x: 0.099999994, y: -0.12}
+      - {x: 0.32, y: -0.12}
+      - {x: 0.44, y: -0.11}
+      - {x: 0.48, y: -0.06}
+      - {x: 0.48, y: 0.22999999}
