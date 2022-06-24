@@ -5,9 +5,7 @@ using UnityEngine;
 
 public class Building : MonoBehaviour, Idraggable
 {
-   //todo maybe move resource update from building manager - still with event to update resource manager 
-   //todo use raycast instead of collision
-
+    
   public enum TypeOfDraggableItem
    {
        Building , Secrifice
@@ -74,40 +72,34 @@ public class Building : MonoBehaviour, Idraggable
         throw new System.NotImplementedException();
     }
 
-    /// <summary>
-    /// If we want the building can only be on a certain kind of tile with the same resource type
-    /// </summary>
-    /// <param name="resourceTypeData"></param>
-    /// <returns></returns>
-    bool CheckIfTileHasSameResourceType(ResourceTypeData resourceTypeData)
-    {
-        return _resourceTypeData == resourceTypeData;
-    }
-    
     #endregion
     
     #region Check Collision triggers methods - to build on tile
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        Debug.Log("building hit with tile");
+        
         if(!isBuildingChildOfTile)
             isOnTile = true;
         
-        BuildOnTile(other);
+        CheckCollisionsOnTile(other);
     }
 
-    private void BuildOnTile(Collider2D other)
+    /// <summary>
+    /// Switches between types of buildings 
+    /// </summary>
+    /// <param name="other"></param>
+    private void CheckCollisionsOnTile(Collider2D other)
     {
         
         switch (_typeOfDraggableItem)
         {
             
             case TypeOfDraggableItem.Building:
-                
-                if (other.gameObject.CompareTag("Tile"))
+                if (other.gameObject.CompareTag("Building"))
                 {
-                   // Build(other);
+                    if(!isBuildingChildOfTile && !isDragged)
+                        Destroy(gameObject);
                 }
                 break;
             
@@ -130,14 +122,15 @@ public class Building : MonoBehaviour, Idraggable
                     BuildEventChannelSo.RaiseEvent();
                     Destroy(gameObject);
                 }
-                   
-              
-                
+
                 break;
         }
     }
 
-    public void Build()
+    /// <summary>
+    /// Called from buildManager
+    /// </summary>
+    public void PlaceBuildingOnTile()
     {
         if (!isDragged && isOnTile && !isBuildingChildOfTile)
         {
@@ -153,6 +146,7 @@ public class Building : MonoBehaviour, Idraggable
                     StopFollowingMouse();
                     BuildEventChannelSo.RaiseEvent();
                     tile.GetComponent<Tiles>().hasBuilding = true;
+                    GetComponent<PolygonCollider2D>().isTrigger = true;
 
                 }
             }
@@ -185,6 +179,7 @@ public class Building : MonoBehaviour, Idraggable
     private void SnapToTile()
     {
         transform.localPosition = new Vector3(0, 0, 0);
+       
     }
 /// <summary>
 /// Takes the building price SO and passes it to resource manager SO

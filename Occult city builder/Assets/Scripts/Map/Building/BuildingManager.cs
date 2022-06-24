@@ -9,10 +9,12 @@ public class BuildingManager : MonoBehaviour
 
     //todo maybe build from here if i get tile and building from mouse
 
+    public VoidEventChannelSO BuildEventChannelSo;
+    
     public GameObject tile;
     [SerializeField] private GameObject building;
     [SerializeField]  private Transform map;
-    public VoidEventChannelSO BuildEventChannelSo;
+   
 
     public bool hasInstantiatedBuilding = false;
 
@@ -30,7 +32,7 @@ public class BuildingManager : MonoBehaviour
             building.GetComponent<Building>().tile = tile;
             
                if(!tile.GetComponent<Tiles>().hasBuilding) 
-                    building.GetComponent<Building>().Build();
+                    building.GetComponent<Building>().PlaceBuildingOnTile();
             
         }
 

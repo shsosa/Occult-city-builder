@@ -82,21 +82,29 @@ public class Tiles : MonoBehaviour
             GetComponent<SpriteRenderer>().color = Color.white;
             _buildingManager.tile = null;
     }
-
-    private void OnMouseEnter()
-    {
-        
-    }
+    
 
     private void OnMouseOver()
     {
-        Debug.Log("on Mouse over");
-        if (_buildingManager.hasInstantiatedBuilding)
+        switch (hasBuilding)
         {
-            GetComponent<SpriteRenderer>().color = Color.blue;
-            _buildingManager.tile = gameObject;
+            case false:
+                if (_buildingManager.hasInstantiatedBuilding)
+                {
+                    GetComponent<SpriteRenderer>().color = Color.blue;
+                    _buildingManager.tile = gameObject;
+                }
+                break;
             
+            case true:
+                if(_buildingManager.hasInstantiatedBuilding)
+                    GetComponent<SpriteRenderer>().color = Color.red;
+                _buildingManager.tile = null;
+               
+                break;
         }
+       
+        
               
         
        

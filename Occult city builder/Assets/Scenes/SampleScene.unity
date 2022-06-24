@@ -204,10 +204,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46a9979cedec04d48965b64ad6e07353, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BuildEventChannelSo: {fileID: 11400000, guid: 1937f1b57f01ddd448ebe004034eae57, type: 2}
   tile: {fileID: 0}
   building: {fileID: 0}
   map: {fileID: 1227144226}
-  BuildEventChannelSo: {fileID: 11400000, guid: 1937f1b57f01ddd448ebe004034eae57, type: 2}
   hasInstantiatedBuilding: 0
   _resourceData: {fileID: 11400000, guid: a058ea4808a964c4883a30c07f49f86f, type: 2}
   _reasourcePrices:
@@ -273,7 +273,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 81121708, guid: c56b9081cc6bf4a4fb01b61d3f04a7ad, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: c56b9081cc6bf4a4fb01b61d3f04a7ad, type: 3}
 --- !u!1 &68390518
 GameObject:
@@ -1324,7 +1325,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: ForrestDenseTile2 (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 109350881, guid: 2285e1cc6b0c8fc46a1bc68076cded3a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 2285e1cc6b0c8fc46a1bc68076cded3a, type: 3}
 --- !u!1 &395216975
 GameObject:
@@ -4164,7 +4166,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 81121708, guid: c56b9081cc6bf4a4fb01b61d3f04a7ad, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: c56b9081cc6bf4a4fb01b61d3f04a7ad, type: 3}
 --- !u!1 &1375470511
 GameObject:
@@ -4937,7 +4940,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: ForrestDenseTile2 (2)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 109350881, guid: 2285e1cc6b0c8fc46a1bc68076cded3a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 2285e1cc6b0c8fc46a1bc68076cded3a, type: 3}
 --- !u!1 &1759919377
 GameObject:
