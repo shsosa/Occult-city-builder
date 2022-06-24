@@ -8,7 +8,6 @@ using UnityEngine.EventSystems;
 public class UIObjectInfo : MonoBehaviour
 {
     
-    //todo get tile and building - no collision - raycast
     
     private bool _canIstantiateNewBuilding = true;
    

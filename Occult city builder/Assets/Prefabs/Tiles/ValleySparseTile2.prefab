@@ -107,6 +107,7 @@ MonoBehaviour:
   resourceManager: {fileID: 11400000, guid: aa6d1e9599124c244b5af24ba9ba859f, type: 2}
   monsterPowerEvent: {fileID: 0}
   _buildingManager: {fileID: 0}
+  tileFeedbacks: {fileID: 9061313366241203727, guid: fce37681478f2e64dbaa847f0c3918f0, type: 3}
   hasBuilding: 0
   hasBonus: 0
   isCursed: 0

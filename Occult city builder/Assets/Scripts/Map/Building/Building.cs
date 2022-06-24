@@ -1,3 +1,4 @@
+using System;
 using DefaultNamespace;using Game_managment;
 using InputMouse;
 using UnityEngine;
@@ -34,9 +35,10 @@ public class Building : MonoBehaviour, Idraggable
     #region Mono 
     private void Start()
     {
-        GetComponent<SpriteRenderer>().sortingOrder = 1;
+        GetComponent<SpriteRenderer>().sortingOrder = 2;
       
     }
+    
 
     private void Update()
     {
@@ -101,10 +103,15 @@ public class Building : MonoBehaviour, Idraggable
                     if(!isBuildingChildOfTile && !isDragged)
                         Destroy(gameObject);
                 }
+
+                if (other.gameObject.CompareTag("Tile"))
+                {
+                    if(other.GetComponent<Tiles>().isCursed && !isDragged)
+                        Destroy(gameObject);
+                }
                 break;
             
             case TypeOfDraggableItem.Secrifice:
-
                 if (other.gameObject.CompareTag("Secrifice"))
                 {
                     if (!isDragged)
@@ -116,17 +123,19 @@ public class Building : MonoBehaviour, Idraggable
                     }
                     
                 }
-
+                
                 if (!isDragged)
                 {
-                    BuildEventChannelSo.RaiseEvent();
+                    
                     Destroy(gameObject);
                 }
 
                 break;
         }
     }
+    #endregion
 
+    #region Build
     /// <summary>
     /// Called from buildManager
     /// </summary>
@@ -181,9 +190,9 @@ public class Building : MonoBehaviour, Idraggable
         transform.localPosition = new Vector3(0, 0, 0);
        
     }
-/// <summary>
-/// Takes the building price SO and passes it to resource manager SO
-/// </summary>
+    /// <summary>
+    /// Takes the building price SO and passes it to resource manager SO
+    /// </summary>
     private void DecreaseReasourceCost()
     {
         _resourceDataSO.SpendReasource(reasourcePrice);
@@ -194,8 +203,12 @@ public class Building : MonoBehaviour, Idraggable
     {
         isOnTile = false;
     }
+    
 
     #endregion
+   
+
+   
     
     
 

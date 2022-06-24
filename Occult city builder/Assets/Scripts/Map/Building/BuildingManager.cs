@@ -10,9 +10,10 @@ public class BuildingManager : MonoBehaviour
     //todo maybe build from here if i get tile and building from mouse
 
     public VoidEventChannelSO BuildEventChannelSo;
+    public VoidEventChannelSO buildUIEventChannelSo;
     
     public GameObject tile;
-    [SerializeField] private GameObject building;
+    public GameObject building;
     [SerializeField]  private Transform map;
    
 
@@ -21,6 +22,11 @@ public class BuildingManager : MonoBehaviour
     private void OnEnable()
     {
         BuildEventChannelSo.OnEventRaised += SetBuildingNull;
+    }
+
+    private void OnDisable()
+    {
+        BuildEventChannelSo.OnEventRaised -= SetBuildingNull;
     }
 
     private void Update()
@@ -92,7 +98,13 @@ public class BuildingManager : MonoBehaviour
     {
         building = Instantiate(buildingPB, uiButtonPos.position, Quaternion.identity);
         building.transform.SetParent(map);
-        hasInstantiatedBuilding = true;
+        
+        //Instantiate Event
+        buildUIEventChannelSo.RaiseEvent();
+        
+        if(building.CompareTag("Building"))
+            hasInstantiatedBuilding = true;
+        
 
     }
 
