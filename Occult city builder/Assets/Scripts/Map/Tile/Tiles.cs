@@ -11,8 +11,8 @@ public class Tiles : MonoBehaviour
     public ResourceTypeData building;
     public Sprite cursedSprite;
     [SerializeField] private ResourceData _resourceDataScriptable;
-    public VoidEventChannelSO resourceManager,monsterPowerEvent;
     
+    public VoidEventChannelSO resourceManager,monsterPowerEvent;
     [SerializeField] BuildingManager _buildingManager;
     [SerializeField] private MMFeedbacks tileFeedbacks;
     
@@ -21,10 +21,15 @@ public class Tiles : MonoBehaviour
     public bool hasBonus,isCursed;
     public int amountOfReasourceProdused;
     private PolygonCollider2D _polygonCollider2D;
+
+
+    private void Awake()
+    {
+        _buildingManager = FindObjectOfType<BuildingManager>();
+    }
+
     private void Start()
     {
-       
-        _buildingManager = FindObjectOfType<BuildingManager>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         _polygonCollider2D = GetComponent<PolygonCollider2D>();
             if(building!= null)
@@ -34,7 +39,7 @@ public class Tiles : MonoBehaviour
 
     private void OnEnable()
     {
-       
+        
         resourceManager.OnEventRaised += TileProduction;
         
     }
@@ -89,7 +94,7 @@ public class Tiles : MonoBehaviour
        
         spriteRenderer.sortingOrder = 0;
         spriteRenderer.color = Color.white;
-            _buildingManager.tile = null;
+        _buildingManager.tile = null;
     }
     
 
@@ -111,14 +116,21 @@ public class Tiles : MonoBehaviour
             case true:
                 if (_buildingManager.hasInstantiatedBuilding)
                 {
-                    spriteRenderer.color = Color.red;
+                    spriteRenderer.sortingOrder=1;
+                    spriteRenderer.color = Color.LerpUnclamped(Color.white, Color.red, 0.3f);
                     
                 }
                 
                 break;
         }
-        if(isCursed && _buildingManager.hasInstantiatedBuilding)
-            spriteRenderer.color = Color.red;
+
+        if (isCursed && _buildingManager.hasInstantiatedBuilding)
+        {
+            spriteRenderer.sortingOrder=1;
+            spriteRenderer.color = Color.LerpUnclamped(Color.white, Color.red, 0.3f);
+            
+        }
+          
               
         
        

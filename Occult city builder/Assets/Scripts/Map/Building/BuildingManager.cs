@@ -12,6 +12,7 @@ public class BuildingManager : MonoBehaviour
     public VoidEventChannelSO BuildEventChannelSo;
     public VoidEventChannelSO buildUIEventChannelSo;
     
+    
     public GameObject tile;
     public GameObject building;
     [SerializeField]  private Transform map;
@@ -22,11 +23,14 @@ public class BuildingManager : MonoBehaviour
     private void OnEnable()
     {
         BuildEventChannelSo.OnEventRaised += SetBuildingNull;
+        
+
     }
 
     private void OnDisable()
     {
         BuildEventChannelSo.OnEventRaised -= SetBuildingNull;
+      
     }
 
     private void Update()
@@ -113,6 +117,30 @@ public class BuildingManager : MonoBehaviour
         building = null;
         tile = null;
         hasInstantiatedBuilding = false;
+    }
+    
+    void CanBuildUIActivate()
+    {
+        var building1 = building?.GetComponent<Building>();
+        
+        if (building1 != null)
+        {
+            Debug.Log("Chain " +  building1.chainPB.activeSelf);
+            switch ( building1.chainPB.activeSelf)
+            {
+                case false:
+                    building1.chainPB.SetActive(true);
+                    break;
+                
+                case true:
+                    building1.chainPB.SetActive(false);
+                    break;
+            }
+            
+                 
+           
+        }
+       
     }
 
 }

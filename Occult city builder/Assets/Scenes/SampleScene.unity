@@ -5720,6 +5720,7 @@ MonoBehaviour:
   monsterHungerGrowth: 1
   monsterPowerGrowth: 2
   hungerTime: 3
+  isBanished: 0
   maxRangeToTrigerHungerEvent: 0
   maxRangeToTrigerHungerEventConstant: 100
   hungerEventTriger: 0

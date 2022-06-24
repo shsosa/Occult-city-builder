@@ -101,6 +101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _typeOfDraggableItem: 0
+  buildingCanBUildChannel: {fileID: 11400000, guid: 3468e238a4805d0469826e5ed4cf95fa, type: 2}
   _resourceTypeData: {fileID: 11400000, guid: 4fe4a459b8950b248b6e4241c869438e, type: 2}
   reasourcePrice: {fileID: 0}
   _resourceDataSO: {fileID: 11400000, guid: a058ea4808a964c4883a30c07f49f86f, type: 2}

@@ -13,6 +13,9 @@ public class Building : MonoBehaviour, Idraggable
    }
 
    public TypeOfDraggableItem _typeOfDraggableItem;
+  
+   
+   public GameObject chainPB;
 
     #region SerializedData
 
@@ -32,9 +35,15 @@ public class Building : MonoBehaviour, Idraggable
 
     #endregion
 
-    #region Mono 
+    #region Mono
+
+    
+
+    
+
     private void Start()
     {
+        chainPB = transform.GetChild(0).gameObject;
         GetComponent<SpriteRenderer>().sortingOrder = 2;
       
     }
@@ -206,7 +215,11 @@ public class Building : MonoBehaviour, Idraggable
     
 
     #endregion
+    
    
+
+
+    
 
    
     
