@@ -6,6 +6,7 @@ public class MonsterManager : MonoBehaviour
     public float monsterHunger, monsterPower;
     public float monsterHungerGrowth, monsterPowerGrowth;
     public float hungerTime;
+    public bool isBanished;
     [SerializeField] private float maxRangeToTrigerHungerEvent, maxRangeToTrigerHungerEventConstant, hungerEventTriger,
                      maxRangeToTrigerPowerEvent, maxRangeToTrigerPowerEventConstant, powerEventTriger;
     [SerializeField] VoidEventChannelSO monsterHungerEventChannel, monsterPowerEventChanel;
