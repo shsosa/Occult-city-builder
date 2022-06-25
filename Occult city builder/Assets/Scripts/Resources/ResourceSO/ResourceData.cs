@@ -53,8 +53,4 @@ public class ResourceData : ScriptableObject
         researchPoints -= reasourcePrice.researchPoints;
         vilagers -= reasourcePrice.vilagers;
     }
-    
-    
-    
-    
 }

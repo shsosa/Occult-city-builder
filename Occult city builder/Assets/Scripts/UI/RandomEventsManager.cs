@@ -6,6 +6,7 @@ public class RandomEventsManager : ScriptableObject
 {
     [SerializeField] VoidEventChannelSO monsterHungerEventChannel;
     private int eventTypeIterator;
+
     public enum EventType
     {
         Madness, Desise, WildAnimals, Starvation, FalingStar,MaxValueForIteration
@@ -25,7 +26,7 @@ public class RandomEventsManager : ScriptableObject
 
     public string randomEventText,eventTextHeader;
 
-    public int punishment,maxPunishment;
+    public int punishment,maxPunishment,priceToPay;
     private void OnEnable()
     {
         monsterHungerEventChannel.OnEventRaised += RandomEvent;
@@ -34,12 +35,10 @@ public class RandomEventsManager : ScriptableObject
 
     private void RandomEvent() 
     {
-        Debug.LogError("Event hunger");
         EventRandomizer();
         eventType= (EventType) eventTypeIterator;
         EventListTextSorter();
         EventTextSorter();
-        Debug.LogError (eventType+" "+eventTextHeader+" "+randomEventText);
     }
     private void EventRandomizer()
     {

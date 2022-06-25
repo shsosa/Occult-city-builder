@@ -19,9 +19,6 @@ namespace Game_managment
 
             public int secrificeAddPower;
 
-
-
-
-
+        public bool isCorectForRendomSecrafice;
     }
 }
