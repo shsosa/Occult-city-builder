@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: a52825fb6637e92429d9c2e651009322
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - rEManager: {fileID: 11400000, guid: a7e59b057f19b78419e0e26cf56a8474, type: 2}
+  - resource: {instanceID: 0}
+  - eventPromt: {instanceID: 0}
+  - eventText: {instanceID: 0}
+  - headerText: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

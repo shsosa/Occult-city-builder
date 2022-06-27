@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
 [CreateAssetMenu(menuName = "RandomEvents", fileName = "RandomEvents")]
 public class RandomEventsManager : ScriptableObject
 {
     [SerializeField] VoidEventChannelSO monsterHungerEventChannel;
+
+
     private int eventTypeIterator;
 
     public enum EventType
@@ -26,7 +29,9 @@ public class RandomEventsManager : ScriptableObject
 
     public string randomEventText,eventTextHeader;
 
-    public int punishment,maxPunishment,priceToPay;
+    public int punishment,maxPunishment,priceToPay,maxPriceToPay;
+
+    public int resourceIterator;
     private void OnEnable()
     {
         monsterHungerEventChannel.OnEventRaised += RandomEvent;
@@ -34,7 +39,7 @@ public class RandomEventsManager : ScriptableObject
     
 
     private void RandomEvent() 
-    {
+    {  
         EventRandomizer();
         eventType= (EventType) eventTypeIterator;
         EventListTextSorter();
@@ -42,6 +47,8 @@ public class RandomEventsManager : ScriptableObject
     }
     private void EventRandomizer()
     {
+        PriceRandomizer();
+        ResourceIteration();
         punishment = Random.Range(1, maxPunishment);
         eventTypeIterator = (int)Random.Range(0, (int)EventType.MaxValueForIteration-1);
         Debug.LogError("randomizer");
@@ -84,5 +91,13 @@ public class RandomEventsManager : ScriptableObject
         int eventTextIterator;
         eventTextIterator = Random.Range(0, curentEventTexts.Count);
         randomEventText = curentEventTexts[eventTextIterator];
+    }
+    private void PriceRandomizer()
+    {
+        priceToPay = Random.Range(1, maxPriceToPay);
+    }
+    private void ResourceIteration()
+    {
+        resourceIterator = Random.Range(0, 4);
     }
 }

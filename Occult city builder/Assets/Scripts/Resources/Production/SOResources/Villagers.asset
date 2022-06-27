@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5419a02c5e6c3442b9046b3626a82aa, type: 3}
   m_Name: Villagers
   m_EditorClassIdentifier: 
-  _resourceType: 4
+  _resourceType: 2
   bonus: 0

@@ -10,5 +10,5 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 95df1d42955b6cb41b5ec48e0e41b436, type: 3}
-  m_Name: New Void Event Channel SO
+  m_Name: HungerRandomEventChanel
   m_EditorClassIdentifier: 

@@ -9,7 +9,7 @@ public class Building : MonoBehaviour, Idraggable
     
   public enum TypeOfDraggableItem
    {
-       Building , Secrifice
+       Building , Secrifice 
    }
 
    public TypeOfDraggableItem _typeOfDraggableItem;
@@ -113,15 +113,13 @@ public class Building : MonoBehaviour, Idraggable
             
             case TypeOfDraggableItem.Secrifice:
                 if (other.gameObject.CompareTag("Secrifice"))
-                {
+                { 
                     if (!isDragged)
                     {
                         DecreaseReasourceCost();
-                        
                         other.GetComponent<MosterObjectScript>().Eat(reasourcePrice.secrificeAmountHunger, reasourcePrice.secrificeAddPower);
                         Destroy(gameObject);
-                    }
-                    
+                    }    
                 }
                 
                 if (!isDragged)
@@ -156,7 +154,6 @@ public class Building : MonoBehaviour, Idraggable
                     BuildEventChannelSo.RaiseEvent();
                     tile.GetComponent<Tiles>().hasBuilding = true;
                     GetComponent<PolygonCollider2D>().isTrigger = true;
-
                 }
             }
         
