@@ -6,6 +6,7 @@ public class SecreficeManager : MonoBehaviour
 {
     private bool isVilagers;
     [SerializeField] MonsterManager monster;
+    public List<Building> listOfActiveSacrificeBuildings;
    
 
     public void Sacrifice(int secrificeAmountHunger, int secrificePowerAdd)

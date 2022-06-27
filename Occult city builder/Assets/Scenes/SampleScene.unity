@@ -209,6 +209,8 @@ MonoBehaviour:
   tile: {fileID: 0}
   building: {fileID: 0}
   map: {fileID: 1227144226}
+  SecrificeManager: {fileID: 778490575}
+  reserchManager: {fileID: 330351601}
   hasInstantiatedBuilding: 0
   _resourceData: {fileID: 11400000, guid: a058ea4808a964c4883a30c07f49f86f, type: 2}
   _reasourcePrices:
@@ -1577,6 +1579,54 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 290560532}
   m_CullTransparentMesh: 1
+--- !u!1 &330351599
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 330351600}
+  - component: {fileID: 330351601}
+  m_Layer: 0
+  m_Name: ReaserchManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &330351600
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 330351599}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.6032151, y: 0.10434353, z: 284.20978}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &330351601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 330351599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc3e09f815693ad4e80bab56288c12fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  monster: {fileID: 1876995522}
+  _resourceData: {fileID: 11400000, guid: a058ea4808a964c4883a30c07f49f86f, type: 2}
+  powerOfRitual: 0
+  listOfActiveResearchBuildings: []
 --- !u!1 &331968081
 GameObject:
   m_ObjectHideFlags: 0
@@ -3660,6 +3710,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monster: {fileID: 1876995522}
+  listOfActiveSacrificeBuildings: []
 --- !u!1 &691162144
 GameObject:
   m_ObjectHideFlags: 0
@@ -4139,6 +4190,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monster: {fileID: 1876995522}
+  listOfActiveSacrificeBuildings: []
 --- !u!1 &792183512
 GameObject:
   m_ObjectHideFlags: 0
