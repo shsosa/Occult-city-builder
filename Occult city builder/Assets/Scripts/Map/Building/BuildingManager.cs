@@ -54,6 +54,7 @@ public class BuildingManager : MonoBehaviour
                 if (!currentBuilding.isDragged)
                 {
                     currentTile.SetNotCursed();
+                    currentBuilding.DecreaseReasourceCost();
                     Destroy(currentBuilding.gameObject);
                 }
             }
