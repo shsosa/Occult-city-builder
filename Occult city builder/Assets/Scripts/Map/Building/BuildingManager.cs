@@ -44,25 +44,35 @@ public class BuildingManager : MonoBehaviour
             Tiles currentTile = tile.GetComponent<Tiles>();
             
             currentBuilding.tile = tile;
-            if (currentTile.hasBuilding)
-            {
-                currentTile.ChangeTileColor(Color.red);
-             
-            }
+            
+            TileHasBuildingFeedback(currentTile,currentBuilding);
 
-            if (!currentTile.hasBuilding && !currentTile.isCursed)
-            {
-                if (currentBuilding._typeOfDraggableItem == Building.TypeOfDraggableItem.Building)
-                {
-                    currentTile.TileHoverEffect();
-                }
-            }
+            HoverOnTileWithBuildingFeedback(currentTile, currentBuilding);
          
             BuildOnTile(currentTile, currentBuilding);
 
             BlessCursedTile(currentBuilding, currentTile);
             
             
+        }
+    }
+
+    private static void HoverOnTileWithBuildingFeedback(Tiles currentTile, Building currentBuilding)
+    {
+        if (!currentTile.hasBuilding && !currentTile.isCursed)
+        {
+            if (currentBuilding.CompareTag("Building"))
+            {
+                currentTile.TileHoverEffect();
+            }
+        }
+    }
+
+    private static void TileHasBuildingFeedback(Tiles currentTile , Building currentBuilding)
+    {
+        if (currentTile.hasBuilding && currentBuilding.CompareTag("Building"))
+        {
+            currentTile.ChangeTileColor(Color.red);
         }
     }
 

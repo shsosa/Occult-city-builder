@@ -119,11 +119,11 @@ public class Building : MonoBehaviour, Idraggable
                     
                 }
                 ThisIsBuilding:
-               CheckTileVacancy(other);
+              
                 break;
             
             case TypeOfDraggableItem.Secrifice:
-                if (other.gameObject.CompareTag("Secrifice"))
+                if (other.gameObject.CompareTag("Monster"))
                 { 
                     if (!isDragged)
                     {
