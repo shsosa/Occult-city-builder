@@ -54,6 +54,7 @@ public class RandomEventUI : MonoBehaviour
         {
             resource.researchPoints -= rEManager.punishment;
         }
+        
         Deactivate();
     }
     public void IfAceptedToSecrifice()
@@ -79,6 +80,7 @@ public class RandomEventUI : MonoBehaviour
         {
             resource.researchPoints -= rEManager.priceToPay;
         }
+        
         Deactivate();
     }
     
@@ -104,7 +106,8 @@ public class RandomEventUI : MonoBehaviour
         if (rEManager.eventType==RandomEventsManager.EventType.FalingStar)
         {
             secrificeObject.GetComponent<Image>().sprite = listOfSprite[4];
-        }    
+        }  
+        
     }
     private void Text()
     {

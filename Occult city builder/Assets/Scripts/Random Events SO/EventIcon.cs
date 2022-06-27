@@ -5,7 +5,10 @@ using InputMouse;
 
 public class EventIcon : MonoBehaviour
 {
+    private Vector3 originalScale;
     private Vector3 originalPosition;
+
+    [SerializeField] private float scaleOffset = 3;
     private FollowMouse mouse;
     private RandomEventUI rEvent;
 
@@ -13,10 +16,20 @@ public class EventIcon : MonoBehaviour
     
     private void Start()
     {
+        originalScale = transform.localScale;
         rEvent = GetComponentInParent<RandomEventUI>();
         originalPosition = transform.position;
         mouse = GetComponent<FollowMouse>();
         mouse.enabled = false;
+    }
+
+    private void OnMouseEnter()
+    {
+        transform.localScale *= scaleOffset;
+    }
+    private void OnMouseExit()
+    {
+        transform.localScale = originalScale;
     }
 
     private void OnMouseDown()
@@ -27,13 +40,16 @@ public class EventIcon : MonoBehaviour
     { 
         if(isSecreficed)
         {
+            transform.localScale = originalScale;
             rEvent.IfAceptedToSecrifice();
             Debug.LogError("Ohhh yeah!!!!!");
             isSecreficed = false;
         }
         else if(isNotSecrificed)
         {
+            transform.localScale = originalScale;
             rEvent.IfRejectedToSecrefice();
+            isNotSecrificed = false;
         }
         mouse.enabled = false;
         transform.position = originalPosition; 

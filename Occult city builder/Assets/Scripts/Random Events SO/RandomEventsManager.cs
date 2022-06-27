@@ -44,6 +44,7 @@ public class RandomEventsManager : ScriptableObject
         eventType= (EventType) eventTypeIterator;
         EventListTextSorter();
         EventTextSorter();
+        
     }
     private void EventRandomizer()
     {
