@@ -104,7 +104,16 @@ public class Building : MonoBehaviour, Idraggable
                 break;
             
             case TypeOfDraggableItem.Research:
-                CheckTileVacancy(other);
+                if (other.gameObject.CompareTag("Tile"))
+                {
+                    if (!isDragged&& other.GetComponent<Tiles>().isCursed)
+                    {
+                        DecreaseReasourceCost();
+                    }
+                    
+                }
+                
+
                 break;
             
             case TypeOfDraggableItem.Secrifice:
@@ -161,19 +170,27 @@ public class Building : MonoBehaviour, Idraggable
         {
             if (tile != null)
             {
-                if (!tile.GetComponent<Tiles>().isCursed)
+                var tileScript = tile.GetComponent<Tiles>();
+                if (!tileScript.isCursed)
                 {
                    
                     DecreaseReasourceCost();
-                    CheckIfGetsResourceBonus(tile.GetComponent<Tiles>());
+                    CheckIfGetsResourceBonus(tileScript);
                     SetTileParent(tile);
                     SnapToTile();
                     StopFollowingMouse();
                     BuildEventChannelSo.RaiseEvent();
-                    tile.GetComponent<Tiles>().hasBuilding = true;
+                    tileScript.hasBuilding = true;
                     GetComponent<PolygonCollider2D>().isTrigger = true;
+                    
                 }
+                
+                
+
+                
             }
+            
+          
         
         }
     }

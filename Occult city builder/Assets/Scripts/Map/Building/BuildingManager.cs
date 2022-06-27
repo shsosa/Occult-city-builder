@@ -46,9 +46,24 @@ public class BuildingManager : MonoBehaviour
             
             currentBuilding.tile = tile;
 
-          
-            if(!currentTile.hasBuilding && !currentTile.isCursed) 
+         
+            if(!currentTile.hasBuilding && !currentTile.isCursed && currentBuilding._typeOfDraggableItem != Building.TypeOfDraggableItem.Research) 
                     currentBuilding.PlaceBuildingOnTile();
+
+            if (currentBuilding._typeOfDraggableItem == Building.TypeOfDraggableItem.Research && currentTile.isCursed)
+            {
+
+                if (!currentBuilding.isDragged)
+                {
+                    currentTile.SetNotCursed();
+                    Destroy(currentBuilding.gameObject);
+                }
+                   
+                
+                 
+            }
+            
+           
             
         }
 
@@ -59,7 +74,7 @@ public class BuildingManager : MonoBehaviour
     #region Resource Data - SO
 
     public ResourceData _resourceData;
-    public List<ReasourcePrice> _reasourcePrices;
+    [SerializeField] List<ReasourcePrice> _reasourcePrices;
 
     #endregion
 

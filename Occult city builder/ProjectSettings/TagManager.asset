@@ -12,6 +12,7 @@ TagManager:
   - Map
   - EventSecrefice
   - EventNotSecrefice
+  - Spell
   layers:
   - Default
   - TransparentFX

@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Tiles : MonoBehaviour
 {
-    public SpriteRenderer spriteRenderer;
+    private SpriteRenderer spriteRenderer;
     public Sprite normalSprite;
     public ResourceTypeData type;
     public ResourceTypeData building;
@@ -26,6 +26,7 @@ public class Tiles : MonoBehaviour
        
         _buildingManager = FindObjectOfType<BuildingManager>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        normalSprite = spriteRenderer.sprite;
         _polygonCollider2D = GetComponent<PolygonCollider2D>();
             if(building!= null)
                 building = GetComponentInChildren<Building>()._resourceTypeData;
@@ -64,7 +65,7 @@ public class Tiles : MonoBehaviour
 
     public void TileProduction()
     {
-        if(hasBuilding)
+        if(hasBuilding && !isCursed)
              _resourceDataScriptable.IncreaseResource(type._resourceType,amountOfReasourceProdused);
     }
     public void SetCursed()
@@ -113,12 +114,20 @@ public class Tiles : MonoBehaviour
                 {
                     spriteRenderer.color = Color.red;
                     
+                    
                 }
                 
                 break;
         }
-        if(isCursed && _buildingManager.hasInstantiatedBuilding)
+
+        if (isCursed && _buildingManager.hasInstantiatedBuilding)
+        {
+            spriteRenderer.sortingOrder=1;
+            _buildingManager.tile = gameObject;
             spriteRenderer.color = Color.red;
+            
+        }
+           
               
         
        
