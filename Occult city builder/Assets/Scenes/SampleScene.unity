@@ -215,13 +215,13 @@ MonoBehaviour:
   _resourceData: {fileID: 11400000, guid: a058ea4808a964c4883a30c07f49f86f, type: 2}
   _reasourcePrices:
   - {fileID: 11400000, guid: 7bf81ee11460b9e44b8bcd1d9a37e755, type: 2}
-  - {fileID: 11400000, guid: 014e99382cd4bac48af7bc16d49f15ec, type: 2}
   - {fileID: 11400000, guid: e272a855bb621c84d89dd8a5d63fc6ec, type: 2}
+  - {fileID: 11400000, guid: 014e99382cd4bac48af7bc16d49f15ec, type: 2}
   - {fileID: 11400000, guid: d6aa3f9de4f4f7f429a2a4b3689834f6, type: 2}
+  - {fileID: 11400000, guid: fc14d91c525411e48b1e9c785afc3f51, type: 2}
   - {fileID: 11400000, guid: ef4215a9cada38d49b7aef4be0ceb5ee, type: 2}
   - {fileID: 11400000, guid: 81e7411d20221c64888237cf2185b92d, type: 2}
-  - {fileID: 11400000, guid: fc14d91c525411e48b1e9c785afc3f51, type: 2}
-  - {fileID: 11400000, guid: 36efc2d9355bd8a4381c80e3ac44c851, type: 2}
+  - {fileID: 11400000, guid: 32341532e71d93c49ad562fc19144ec7, type: 2}
 --- !u!1001 &61785414
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7182,8 +7182,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2ecf06ef223d534ba5f8287dd36ea56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buildingToCreate: {fileID: 907057363068202997, guid: 94e9b8512755a0a44bc2a4a267fdcd62, type: 3}
-  _reasourcePrice: {fileID: 11400000, guid: ef4215a9cada38d49b7aef4be0ceb5ee, type: 2}
+  buildingToCreate: {fileID: 6462662817318702781, guid: cfe6489e2384e3d4fb7434e9cb3c1cf8, type: 3}
+  _reasourcePrice: {fileID: 11400000, guid: 32341532e71d93c49ad562fc19144ec7, type: 2}
   canBuild: 0
 --- !u!114 &1812151152
 MonoBehaviour:

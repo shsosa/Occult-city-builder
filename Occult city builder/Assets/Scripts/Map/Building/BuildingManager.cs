@@ -38,7 +38,6 @@ public class BuildingManager : MonoBehaviour
     private void Update()
     {
         
-
         if (building != null && tile != null)
         {
             Building currentBuilding = building.GetComponent<Building>();
@@ -47,27 +46,20 @@ public class BuildingManager : MonoBehaviour
             currentBuilding.tile = tile;
 
          
-            if(!currentTile.hasBuilding && !currentTile.isCursed && currentBuilding._typeOfDraggableItem != Building.TypeOfDraggableItem.Research) 
+            if(!currentTile.hasBuilding && !currentTile.isCursed && currentBuilding._typeOfDraggableItem == Building.TypeOfDraggableItem.Building) 
                     currentBuilding.PlaceBuildingOnTile();
 
             if (currentBuilding._typeOfDraggableItem == Building.TypeOfDraggableItem.Research && currentTile.isCursed)
             {
-
                 if (!currentBuilding.isDragged)
                 {
                     currentTile.SetNotCursed();
                     Destroy(currentBuilding.gameObject);
                 }
-                   
-                
-                 
             }
             
-           
             
         }
-
-        
     }
 
 
@@ -150,7 +142,8 @@ public class BuildingManager : MonoBehaviour
                 break;
 
             case Building.TypeOfDraggableItem.Research:
-                reserchManager.listOfActiveResearchBuildings.Add(buildingInstance);
+                if(!buildingInstance.gameObject.CompareTag("Spell"))
+                    reserchManager.listOfActiveResearchBuildings.Add(buildingInstance);
                 break;
         }
     }
@@ -168,7 +161,8 @@ public class BuildingManager : MonoBehaviour
                 break;
 
             case Building.TypeOfDraggableItem.Research:
-                reserchManager.listOfActiveResearchBuildings.Remove(building);
+                if(!building.gameObject.CompareTag("Spell"))
+                    reserchManager.listOfActiveResearchBuildings.Remove(building);
                 break;
         }
     }

@@ -103,8 +103,14 @@ public class Tiles : MonoBehaviour
                 {
                     
                     spriteRenderer.sortingOrder=1;
-                    tileFeedbacks.GetComponent<MMFeedbackScale>().AnimateScaleTarget = transform;
-                    tileFeedbacks.PlayFeedbacks();
+                    if(_buildingManager.building != null)
+                    if (_buildingManager.building.GetComponent<Building>()._typeOfDraggableItem ==
+                        Building.TypeOfDraggableItem.Building)
+                    {
+                        tileFeedbacks.GetComponent<MMFeedbackScale>().AnimateScaleTarget = transform;
+                        tileFeedbacks.PlayFeedbacks();
+                    }
+                   
                     _buildingManager.tile = gameObject;
                 }
                 break;
@@ -112,7 +118,10 @@ public class Tiles : MonoBehaviour
             case true:
                 if (_buildingManager.hasInstantiatedBuilding)
                 {
-                    spriteRenderer.color = Color.red;
+                    if(_buildingManager.building != null)
+                        if (_buildingManager.building.GetComponent<Building>()._typeOfDraggableItem ==
+                            Building.TypeOfDraggableItem.Building)
+                            spriteRenderer.color = Color.red;
                     
                     
                 }
@@ -122,9 +131,17 @@ public class Tiles : MonoBehaviour
 
         if (isCursed && _buildingManager.hasInstantiatedBuilding)
         {
+            if(_buildingManager.building != null)
+                if (_buildingManager.building.GetComponent<Building>()._typeOfDraggableItem ==
+                    Building.TypeOfDraggableItem.Research)
+                {
+                    tileFeedbacks.GetComponent<MMFeedbackScale>().AnimateScaleTarget = transform;
+                    tileFeedbacks.PlayFeedbacks();
+                    spriteRenderer.color = Color.red;
+                }
             spriteRenderer.sortingOrder=1;
             _buildingManager.tile = gameObject;
-            spriteRenderer.color = Color.red;
+           
             
         }
            

@@ -111,9 +111,10 @@ public class Building : MonoBehaviour, Idraggable
                         DecreaseReasourceCost();
                     }
                     
+                    
+                    
                 }
                 
-
                 break;
             
             case TypeOfDraggableItem.Secrifice:
