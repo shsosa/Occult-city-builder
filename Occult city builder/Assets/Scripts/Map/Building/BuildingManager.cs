@@ -46,7 +46,16 @@ public class BuildingManager : MonoBehaviour
             currentBuilding.tile = tile;
             if (currentTile.hasBuilding)
             {
-                
+                currentTile.ChangeTileColor(Color.red);
+             
+            }
+
+            if (!currentTile.hasBuilding && !currentTile.isCursed)
+            {
+                if (currentBuilding._typeOfDraggableItem == Building.TypeOfDraggableItem.Building)
+                {
+                    currentTile.TileHoverEffect();
+                }
             }
          
             BuildOnTile(currentTile, currentBuilding);
@@ -64,12 +73,14 @@ public class BuildingManager : MonoBehaviour
             if (currentBuilding.CompareTag("Spell"))
             {
                 if (currentBuilding.isDragged)
+                {
                     currentTile.TileHoverEffect();
+                    currentTile.ChangeTileColor(Color.red);
+                }
+                    
                 else if (!currentBuilding.isDragged)
                 {
-                    Debug.Log("Fuck uinity");
                     currentTile.SetNotCursed();
-
                     currentBuilding.DecreaseReasourceCost();
                     Destroy(currentBuilding.gameObject);
                 }
@@ -80,7 +91,7 @@ public class BuildingManager : MonoBehaviour
     private static void BuildOnTile(Tiles currentTile, Building currentBuilding)
     {
         if (!currentTile.hasBuilding && !currentTile.isCursed &&
-            currentBuilding._typeOfDraggableItem == Building.TypeOfDraggableItem.Building)
+            currentBuilding.CompareTag("Building"))
             currentBuilding.PlaceBuildingOnTile();
     }
 

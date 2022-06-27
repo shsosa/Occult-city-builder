@@ -87,7 +87,6 @@ public class Tiles : MonoBehaviour
 
     private void OnMouseExit()
     {
-       
         spriteRenderer.sortingOrder = 0;
         spriteRenderer.color = Color.white;
             _buildingManager.tile = null;
@@ -97,51 +96,13 @@ public class Tiles : MonoBehaviour
     private void OnMouseOver()
     {
         _buildingManager.tile = gameObject;
-        switch (hasBuilding)
-        {
-            case false:
-                if (_buildingManager.hasInstantiatedBuilding && !isCursed)
-                {
-                    
-                    spriteRenderer.sortingOrder=1;
-                    if(_buildingManager.building != null)
-                    if (_buildingManager.building.GetComponent<Building>()._typeOfDraggableItem ==
-                        Building.TypeOfDraggableItem.Building)
-                    {
-                        tileFeedbacks.GetComponent<MMFeedbackScale>().AnimateScaleTarget = transform;
-                        tileFeedbacks.PlayFeedbacks();
-                    }
-                   
-                  //  _buildingManager.tile = gameObject;
-                }
-                break;
-            
-            case true:
-                if (_buildingManager.hasInstantiatedBuilding)
-                {
-                    if(_buildingManager.building != null)
-                        if (_buildingManager.building.GetComponent<Building>()._typeOfDraggableItem ==
-                            Building.TypeOfDraggableItem.Building)
-                            spriteRenderer.color = Color.red;
-                    
-                    
-                }
-               
-                break;
-        }
-
-       
-           
-              
         
-       
     }
 
     public void TileHoverEffect()
     {
         tileFeedbacks.GetComponent<MMFeedbackScale>().AnimateScaleTarget = transform;
         tileFeedbacks.PlayFeedbacks();
-        ChangeTileColor(Color.red);
         spriteRenderer.sortingOrder=1;
     }
 
@@ -150,10 +111,7 @@ public class Tiles : MonoBehaviour
         spriteRenderer.color = color;
     }
 
-    void TileHasBuilding()
-    {
-        hasBuilding = true;
-    }
+    
 
    
 }

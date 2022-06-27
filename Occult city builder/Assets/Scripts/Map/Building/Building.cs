@@ -108,7 +108,7 @@ public class Building : MonoBehaviour, Idraggable
                 {
                     if (gameObject.CompareTag("Building"))
                     {
-                        PlaceBuildingOnTile();
+                     
                         goto ThisIsBuilding;
                     }
                     
@@ -119,6 +119,7 @@ public class Building : MonoBehaviour, Idraggable
                     
                 }
                 ThisIsBuilding:
+               CheckTileVacancy(other);
                 break;
             
             case TypeOfDraggableItem.Secrifice:
