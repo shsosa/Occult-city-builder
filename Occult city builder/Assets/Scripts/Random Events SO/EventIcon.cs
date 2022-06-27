@@ -28,7 +28,7 @@ public class EventIcon : MonoBehaviour
         if(isSecreficed)
         {
             rEvent.IfAceptedToSecrifice();
-            Debug.LogError("Ohhh yeah!!!!!");
+           // Debug.LogError("Ohhh yeah!!!!!");
             isSecreficed = false;
         }
         else if(isNotSecrificed)
