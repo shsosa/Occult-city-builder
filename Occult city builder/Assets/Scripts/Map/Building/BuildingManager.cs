@@ -44,23 +44,44 @@ public class BuildingManager : MonoBehaviour
             Tiles currentTile = tile.GetComponent<Tiles>();
             
             currentBuilding.tile = tile;
-
-         
-            if(!currentTile.hasBuilding && !currentTile.isCursed && currentBuilding._typeOfDraggableItem == Building.TypeOfDraggableItem.Building) 
-                    currentBuilding.PlaceBuildingOnTile();
-
-            if (currentBuilding._typeOfDraggableItem == Building.TypeOfDraggableItem.Research && currentTile.isCursed)
+            if (currentTile.hasBuilding)
             {
-                if (!currentBuilding.isDragged)
+                
+            }
+         
+            BuildOnTile(currentTile, currentBuilding);
+
+            BlessCursedTile(currentBuilding, currentTile);
+            
+            
+        }
+    }
+
+    private static void BlessCursedTile(Building currentBuilding, Tiles currentTile)
+    {
+        if (currentBuilding._typeOfDraggableItem == Building.TypeOfDraggableItem.Research && currentTile.isCursed)
+        {
+            if (currentBuilding.CompareTag("Spell"))
+            {
+                if (currentBuilding.isDragged)
+                    currentTile.TileHoverEffect();
+                else if (!currentBuilding.isDragged)
                 {
+                    Debug.Log("Fuck uinity");
                     currentTile.SetNotCursed();
+
                     currentBuilding.DecreaseReasourceCost();
                     Destroy(currentBuilding.gameObject);
                 }
             }
-            
-            
         }
+    }
+
+    private static void BuildOnTile(Tiles currentTile, Building currentBuilding)
+    {
+        if (!currentTile.hasBuilding && !currentTile.isCursed &&
+            currentBuilding._typeOfDraggableItem == Building.TypeOfDraggableItem.Building)
+            currentBuilding.PlaceBuildingOnTile();
     }
 
 

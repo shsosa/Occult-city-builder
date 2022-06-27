@@ -113,7 +113,9 @@ public class Building : MonoBehaviour, Idraggable
                     }
                     
                     if(!other.GetComponent<Tiles>().isCursed && !isDragged)
+                    {
                         Destroy(gameObject);
+                    }
                     
                 }
                 ThisIsBuilding:
@@ -189,8 +191,6 @@ public class Building : MonoBehaviour, Idraggable
                 }
                 
                 
-
-                
             }
             
           
@@ -198,7 +198,6 @@ public class Building : MonoBehaviour, Idraggable
         }
     }
 
-   
 
     private void CheckIfGetsResourceBonus(Tiles tile)
     {

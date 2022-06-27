@@ -96,6 +96,7 @@ public class Tiles : MonoBehaviour
 
     private void OnMouseOver()
     {
+        _buildingManager.tile = gameObject;
         switch (hasBuilding)
         {
             case false:
@@ -111,7 +112,7 @@ public class Tiles : MonoBehaviour
                         tileFeedbacks.PlayFeedbacks();
                     }
                    
-                    _buildingManager.tile = gameObject;
+                  //  _buildingManager.tile = gameObject;
                 }
                 break;
             
@@ -125,29 +126,28 @@ public class Tiles : MonoBehaviour
                     
                     
                 }
-                
+               
                 break;
         }
 
-        if (isCursed && _buildingManager.hasInstantiatedBuilding)
-        {
-            if(_buildingManager.building != null)
-                if (_buildingManager.building.GetComponent<Building>()._typeOfDraggableItem ==
-                    Building.TypeOfDraggableItem.Research)
-                {
-                    tileFeedbacks.GetComponent<MMFeedbackScale>().AnimateScaleTarget = transform;
-                    tileFeedbacks.PlayFeedbacks();
-                    spriteRenderer.color = Color.red;
-                }
-            spriteRenderer.sortingOrder=1;
-            _buildingManager.tile = gameObject;
-           
-            
-        }
+       
            
               
         
        
+    }
+
+    public void TileHoverEffect()
+    {
+        tileFeedbacks.GetComponent<MMFeedbackScale>().AnimateScaleTarget = transform;
+        tileFeedbacks.PlayFeedbacks();
+        ChangeTileColor(Color.red);
+        spriteRenderer.sortingOrder=1;
+    }
+
+    public void ChangeTileColor(Color color)
+    {
+        spriteRenderer.color = color;
     }
 
     void TileHasBuilding()
