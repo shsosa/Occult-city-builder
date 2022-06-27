@@ -99,24 +99,22 @@ public class Building : MonoBehaviour, Idraggable
         switch (_typeOfDraggableItem)
         {
             
-            case TypeOfDraggableItem.Building:  
-                 CheckTileVacancy(other);
-                 break;
+            case TypeOfDraggableItem.Building:
+                CheckTileVacancy(other);
+                break;
             
             case TypeOfDraggableItem.Research:
                 if (other.gameObject.CompareTag("Tile"))
                 {
-                    if (gameObject.CompareTag("Building"))
+                    if (!isDragged&& other.GetComponent<Tiles>().isCursed)
                     {
-                        PlaceBuildingOnTile();
-                        goto ThisIsBuilding;
+                        DecreaseReasourceCost();
                     }
                     
-                    if(!other.GetComponent<Tiles>().isCursed && !isDragged)
-                        Destroy(gameObject);
+                    
                     
                 }
-                ThisIsBuilding:
+                
                 break;
             
             case TypeOfDraggableItem.Secrifice:
@@ -228,7 +226,7 @@ public class Building : MonoBehaviour, Idraggable
     /// <summary>
     /// Takes the building price SO and passes it to resource manager SO
     /// </summary>
-    public void DecreaseReasourceCost()
+    private void DecreaseReasourceCost()
     {
         _resourceDataSO.SpendReasource(reasourcePrice);
         

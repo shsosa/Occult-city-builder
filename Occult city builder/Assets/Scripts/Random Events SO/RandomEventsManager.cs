@@ -51,11 +51,11 @@ public class RandomEventsManager : ScriptableObject
         ResourceIteration();
         punishment = Random.Range(1, maxPunishment);
         eventTypeIterator = (int)Random.Range(0, (int)EventType.MaxValueForIteration-1);
-       // Debug.LogError("randomizer");
+        Debug.LogError("randomizer");
     }
     private void EventListTextSorter()
     {
-        //Debug.LogError("listsorter");
+        Debug.LogError("listsorter");
         if (eventType == EventType.Madness)
         {
             curentEventTexts = madnesEvents;

@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 331567645326505193}
   m_Layer: 2
   m_Name: 36_blessed_transparent
-  m_TagString: Spell
+  m_TagString: Building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
