@@ -1,15 +1,16 @@
 using System;
 using DefaultNamespace;using Game_managment;
 using InputMouse;
+using Unity.VisualScripting;
 using UnityEngine;
 
 
 public class Building : MonoBehaviour, Idraggable
 {
-    
+    //todo make building id - like the order on the ui screen
   public enum TypeOfDraggableItem
    {
-       Building , Secrifice
+       Building , Secrifice, Research
    }
 
    public TypeOfDraggableItem _typeOfDraggableItem;
@@ -86,7 +87,8 @@ public class Building : MonoBehaviour, Idraggable
         
         CheckCollisionsOnTile(other);
     }
-
+    //todo building manager
+    
     /// <summary>
     /// Switches between types of buildings 
     /// </summary>
@@ -98,30 +100,22 @@ public class Building : MonoBehaviour, Idraggable
         {
             
             case TypeOfDraggableItem.Building:
-                if (other.gameObject.CompareTag("Building"))
-                {
-                    if(!isBuildingChildOfTile && !isDragged)
-                        Destroy(gameObject);
-                }
-
-                if (other.gameObject.CompareTag("Tile"))
-                {
-                    if(other.GetComponent<Tiles>().isCursed && !isDragged)
-                        Destroy(gameObject);
-                }
+                CheckTileVacancy(other);
+                break;
+            
+            case TypeOfDraggableItem.Research:
+                CheckTileVacancy(other);
                 break;
             
             case TypeOfDraggableItem.Secrifice:
                 if (other.gameObject.CompareTag("Secrifice"))
-                {
+                { 
                     if (!isDragged)
                     {
                         DecreaseReasourceCost();
-                        
-                        other.GetComponent<MosterObjectScript>().Eat(reasourcePrice.secrificeAmountHunger, reasourcePrice.secrificeAddPower);
+                        GetMonsterEat(other);
                         Destroy(gameObject);
-                    }
-                    
+                    }    
                 }
                 
                 if (!isDragged)
@@ -133,6 +127,28 @@ public class Building : MonoBehaviour, Idraggable
                 break;
         }
     }
+
+    private void GetMonsterEat(Collider2D other)
+    {
+        other.GetComponent<MosterObjectScript>()
+            .Eat(reasourcePrice.secrificeAmountHunger, reasourcePrice.secrificeAddPower);
+    }
+
+    private void CheckTileVacancy(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Building"))
+        {
+            if (!isBuildingChildOfTile && !isDragged)
+                Destroy(gameObject);
+        }
+
+        if (other.gameObject.CompareTag("Tile"))
+        {
+            if (other.GetComponent<Tiles>().isCursed && !isDragged)
+                Destroy(gameObject);
+        }
+    }
+
     #endregion
 
     #region Build
@@ -156,7 +172,6 @@ public class Building : MonoBehaviour, Idraggable
                     BuildEventChannelSo.RaiseEvent();
                     tile.GetComponent<Tiles>().hasBuilding = true;
                     GetComponent<PolygonCollider2D>().isTrigger = true;
-
                 }
             }
         
@@ -206,11 +221,11 @@ public class Building : MonoBehaviour, Idraggable
     
 
     #endregion
-   
 
-   
-    
-    
-
+    private void OnDestroy()
+    {
+        Debug.Log("Building destroyed");
+        FindObjectOfType<BuildingManager>().DetachBuildingFromManager(this);
+    }
 }
 

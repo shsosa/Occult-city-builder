@@ -19,3 +19,4 @@ MonoBehaviour:
   cattle: 1
   secrificeAmountHunger: 1
   secrificeAddPower: 2
+  isCorectForRendomSecrafice: 0

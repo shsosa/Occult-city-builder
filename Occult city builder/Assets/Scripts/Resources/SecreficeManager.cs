@@ -6,15 +6,13 @@ public class SecreficeManager : MonoBehaviour
 {
     private bool isVilagers;
     [SerializeField] MonsterManager monster;
+    public List<Building> listOfActiveSacrificeBuildings;
    
 
     public void Sacrifice(int secrificeAmountHunger, int secrificePowerAdd)
     {
-        
         Debug.Log("Secrificed amount " + secrificeAmountHunger);
-
         monster.monsterHunger -= secrificeAmountHunger;
         monster.monsterPower += secrificePowerAdd;
-    }
-    
+    } 
 }

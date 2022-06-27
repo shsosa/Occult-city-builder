@@ -78,6 +78,12 @@ public class Tiles : MonoBehaviour
         } 
     }
 
+    public void SetNotCursed()
+    {
+        isCursed = false;
+        spriteRenderer.sprite = normalSprite;
+    }
+
     private void OnMouseExit()
     {
        

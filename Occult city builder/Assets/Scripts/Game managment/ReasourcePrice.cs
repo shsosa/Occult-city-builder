@@ -18,10 +18,5 @@ namespace Game_managment
             public int secrificeAmountHunger;
 
             public int secrificeAddPower;
-
-
-
-
-
     }
 }
