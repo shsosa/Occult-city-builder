@@ -2,19 +2,25 @@ using System;
 using System.Collections.Generic;
 using Game_managment;
 using InputMouse;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class BuildingManager : MonoBehaviour
 {
 
     //todo maybe build from here if i get tile and building from mouse
-
+    [Header("Event channels: ")]
     public VoidEventChannelSO BuildEventChannelSo;
     public VoidEventChannelSO buildUIEventChannelSo;
     
+    [Header("Active objects to build: ")]
     public GameObject tile;
     public GameObject building;
+    
+    [Header("Building manager objects: ")]
     [SerializeField]  private Transform map;
+    [SerializeField] private SecreficeManager SecrificeManager;
+    [SerializeField] private ReserchManager reserchManager;
    
 
     public bool hasInstantiatedBuilding = false;
@@ -35,10 +41,14 @@ public class BuildingManager : MonoBehaviour
 
         if (building != null && tile != null)
         {
-            building.GetComponent<Building>().tile = tile;
+            Building currentBuilding = building.GetComponent<Building>();
+            Tiles currentTile = tile.GetComponent<Tiles>();
             
-               if(!tile.GetComponent<Tiles>().hasBuilding) 
-                    building.GetComponent<Building>().PlaceBuildingOnTile();
+            currentBuilding.tile = tile;
+
+          
+            if(!currentTile.hasBuilding && !currentTile.isCursed) 
+                    currentBuilding.PlaceBuildingOnTile();
             
         }
 
@@ -97,7 +107,9 @@ public class BuildingManager : MonoBehaviour
     public void Build(GameObject buildingPB, Transform uiButtonPos)
     {
         building = Instantiate(buildingPB, uiButtonPos.position, Quaternion.identity);
-        building.transform.SetParent(map);
+        
+        AttachBuildingToManager();
+        
         
         //Instantiate Event
         buildUIEventChannelSo.RaiseEvent();
@@ -106,6 +118,44 @@ public class BuildingManager : MonoBehaviour
             hasInstantiatedBuilding = true;
         
 
+    }
+
+    private void AttachBuildingToManager()
+    {
+        Building buildingInstance = building.GetComponent<Building>();
+        building.transform.SetParent(map);
+        switch (buildingInstance._typeOfDraggableItem)
+        {
+            case Building.TypeOfDraggableItem.Building:
+               
+                break;
+
+            case Building.TypeOfDraggableItem.Secrifice:
+                SecrificeManager.listOfActiveSacrificeBuildings.Add(buildingInstance);
+                break;
+
+            case Building.TypeOfDraggableItem.Research:
+                reserchManager.listOfActiveResearchBuildings.Add(buildingInstance);
+                break;
+        }
+    }
+
+    public void DetachBuildingFromManager(Building building)
+    {
+        switch (building._typeOfDraggableItem)
+        {
+            case Building.TypeOfDraggableItem.Building:
+               
+                break;
+
+            case Building.TypeOfDraggableItem.Secrifice:
+                SecrificeManager.listOfActiveSacrificeBuildings.Remove(building);
+                break;
+
+            case Building.TypeOfDraggableItem.Research:
+                reserchManager.listOfActiveResearchBuildings.Remove(building);
+                break;
+        }
     }
 
     void SetBuildingNull()
