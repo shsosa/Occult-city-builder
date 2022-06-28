@@ -7,6 +7,8 @@ public class GameManager : MonoBehaviour
     public int numOfCursedTiles;
     public Tiles[] listOfTiles;
     private bool hasLost,hasWon;
+
+    public static bool isEventUIActive = false;
     /*
      * timer -> to UI
      * points - resources -> to UI
@@ -24,7 +26,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
     }
     private void LoseCondition()
     {

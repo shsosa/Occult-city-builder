@@ -27,6 +27,7 @@ public class RandomEventUI : MonoBehaviour
     public void Activate()
     {
         eventPromt.SetActive(true);
+        GameManager.isEventUIActive = true;
         Text();
         Header();
         PriceText();
@@ -122,5 +123,6 @@ public class RandomEventUI : MonoBehaviour
     private void Deactivate()
     {
         eventPromt.SetActive(false);
+        GameManager.isEventUIActive = false;
     }
 }

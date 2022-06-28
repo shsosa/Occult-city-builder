@@ -23,6 +23,7 @@ public class BuildingManager : MonoBehaviour
     [SerializeField]  private MapObjects map;
     [SerializeField] private SecreficeManager SecrificeManager;
     [SerializeField] private ReserchManager reserchManager;
+    private UIManager _uiManager;
    
 
     public bool hasInstantiatedBuilding = false;
@@ -31,6 +32,7 @@ public class BuildingManager : MonoBehaviour
     {
         buildEventChannelSo.OnEventRaised += SetBuildingNull;
         monsterHungerEvents.OnEventRaised += PutObjectsInBack;
+        _uiManager = FindObjectOfType<UIManager>();
 
     }
 
@@ -43,7 +45,7 @@ public class BuildingManager : MonoBehaviour
     private void Update()
     {
         
-        if (building != null && tile != null)
+        if (building != null && tile != null && !GameManager.isEventUIActive)
         {
             Building currentBuilding = building.GetComponent<Building>();
             Tiles currentTile = tile.GetComponent<Tiles>();
@@ -228,10 +230,7 @@ public class BuildingManager : MonoBehaviour
 
     void PutObjectsInBack()
     {
-        foreach (var building in map.activeBuildingsOnmap)
-        {
-           // building.GetComponent<SpriteRenderer>().sortingOrder *= -1;
-        }
+      
     }
     void SetBuildingNull()
     {
