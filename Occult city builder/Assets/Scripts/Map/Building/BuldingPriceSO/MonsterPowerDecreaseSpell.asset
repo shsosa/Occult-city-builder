@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b2cd0fd6b9484366a15c2a69c69ae3ca, type: 3}
-  m_Name: WitchHut
+  m_Name: MonsterPowerDecreaseSpell
   m_EditorClassIdentifier: 
   wood: 0
-  gold: 10
+  gold: 0
   vilagers: 0
-  researchPoints: 0
+  researchPoints: 100
   cattle: 0
   secrificeAmountHunger: 0
-  secrificeAddPower: 0
+  secrificeAddPower: -10

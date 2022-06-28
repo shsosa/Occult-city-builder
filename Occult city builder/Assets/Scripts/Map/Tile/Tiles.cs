@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Tiles : MonoBehaviour
 {
-    public SpriteRenderer spriteRenderer;
+    private SpriteRenderer spriteRenderer;
     public Sprite normalSprite;
     public ResourceTypeData type;
     public ResourceTypeData building;
@@ -26,6 +26,7 @@ public class Tiles : MonoBehaviour
        
         _buildingManager = FindObjectOfType<BuildingManager>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        normalSprite = spriteRenderer.sprite;
         _polygonCollider2D = GetComponent<PolygonCollider2D>();
             if(building!= null)
                 building = GetComponentInChildren<Building>()._resourceTypeData;
@@ -64,7 +65,7 @@ public class Tiles : MonoBehaviour
 
     public void TileProduction()
     {
-        if(hasBuilding)
+        if(hasBuilding && !isCursed)
              _resourceDataScriptable.IncreaseResource(type._resourceType,amountOfReasourceProdused);
     }
     public void SetCursed()
@@ -86,7 +87,6 @@ public class Tiles : MonoBehaviour
 
     private void OnMouseExit()
     {
-       
         spriteRenderer.sortingOrder = 0;
         spriteRenderer.color = Color.white;
             _buildingManager.tile = null;
@@ -95,39 +95,23 @@ public class Tiles : MonoBehaviour
 
     private void OnMouseOver()
     {
-        switch (hasBuilding)
-        {
-            case false:
-                if (_buildingManager.hasInstantiatedBuilding && !isCursed)
-                {
-                    
-                    spriteRenderer.sortingOrder=1;
-                    tileFeedbacks.GetComponent<MMFeedbackScale>().AnimateScaleTarget = transform;
-                    tileFeedbacks.PlayFeedbacks();
-                    _buildingManager.tile = gameObject;
-                }
-                break;
-            
-            case true:
-                if (_buildingManager.hasInstantiatedBuilding)
-                {
-                    spriteRenderer.color = Color.red;
-                    
-                }
-                
-                break;
-        }
-        if(isCursed && _buildingManager.hasInstantiatedBuilding)
-            spriteRenderer.color = Color.red;
-              
+        _buildingManager.tile = gameObject;
         
-       
     }
 
-    void TileHasBuilding()
+    public void TileHoverEffect()
     {
-        hasBuilding = true;
+        tileFeedbacks.GetComponent<MMFeedbackScale>().AnimateScaleTarget = transform;
+        tileFeedbacks.PlayFeedbacks();
+        spriteRenderer.sortingOrder=1;
     }
+
+    public void ChangeTileColor(Color color)
+    {
+        spriteRenderer.color = color;
+    }
+
+    
 
    
 }

@@ -6,12 +6,13 @@ TagManager:
   tags:
   - Tile
   - Building
-  - ForestTile
   - BuildingUI
   - Secrifice
   - Map
   - EventSecrefice
   - EventNotSecrefice
+  - Spell
+  - Monster
   layers:
   - Default
   - TransparentFX

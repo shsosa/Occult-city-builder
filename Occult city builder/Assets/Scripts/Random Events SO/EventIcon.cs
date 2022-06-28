@@ -8,6 +8,7 @@ public class EventIcon : MonoBehaviour
     private Vector3 originalPosition;
     private FollowMouse mouse;
     private RandomEventUI rEvent;
+   
 
     private bool isSecreficed,isNotSecrificed;
     
@@ -28,7 +29,8 @@ public class EventIcon : MonoBehaviour
         if(isSecreficed)
         {
             rEvent.IfAceptedToSecrifice();
-            Debug.LogError("Ohhh yeah!!!!!");
+          
+           // Debug.LogError("Ohhh yeah!!!!!");
             isSecreficed = false;
         }
         else if(isNotSecrificed)
@@ -43,6 +45,7 @@ public class EventIcon : MonoBehaviour
         if (other.gameObject.CompareTag("EventSecrefice"))
         {    
             isSecreficed = true;
+           
         }
         if(other.gameObject.CompareTag("EventNotSecrefice"))
         {

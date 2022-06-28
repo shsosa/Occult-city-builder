@@ -99,16 +99,31 @@ public class Building : MonoBehaviour, Idraggable
         switch (_typeOfDraggableItem)
         {
             
-            case TypeOfDraggableItem.Building:
-                CheckTileVacancy(other);
-                break;
+            case TypeOfDraggableItem.Building:  
+                 CheckTileVacancy(other);
+                 break;
             
             case TypeOfDraggableItem.Research:
-                CheckTileVacancy(other);
+                if (other.gameObject.CompareTag("Tile"))
+                {
+                    if (gameObject.CompareTag("Building"))
+                    {
+                     
+                        goto ThisIsBuilding;
+                    }
+                    
+                    if(!other.GetComponent<Tiles>().isCursed && !isDragged)
+                    {
+                        Destroy(gameObject);
+                    }
+                    
+                }
+                ThisIsBuilding:
+              
                 break;
             
             case TypeOfDraggableItem.Secrifice:
-                if (other.gameObject.CompareTag("Secrifice"))
+                if (other.gameObject.CompareTag("Monster"))
                 { 
                     if (!isDragged)
                     {
@@ -161,24 +176,27 @@ public class Building : MonoBehaviour, Idraggable
         {
             if (tile != null)
             {
-                if (!tile.GetComponent<Tiles>().isCursed)
+                var tileScript = tile.GetComponent<Tiles>();
+                if (!tileScript.isCursed)
                 {
                    
                     DecreaseReasourceCost();
-                    CheckIfGetsResourceBonus(tile.GetComponent<Tiles>());
+                    CheckIfGetsResourceBonus(tileScript);
                     SetTileParent(tile);
                     SnapToTile();
                     StopFollowingMouse();
                     BuildEventChannelSo.RaiseEvent();
-                    tile.GetComponent<Tiles>().hasBuilding = true;
+                    tileScript.hasBuilding = true;
                     GetComponent<PolygonCollider2D>().isTrigger = true;
+                    
                 }
+                
+                
             }
-        
+            
         }
     }
 
-   
 
     private void CheckIfGetsResourceBonus(Tiles tile)
     {
@@ -208,7 +226,7 @@ public class Building : MonoBehaviour, Idraggable
     /// <summary>
     /// Takes the building price SO and passes it to resource manager SO
     /// </summary>
-    private void DecreaseReasourceCost()
+    public void DecreaseReasourceCost()
     {
         _resourceDataSO.SpendReasource(reasourcePrice);
         
@@ -225,7 +243,7 @@ public class Building : MonoBehaviour, Idraggable
     private void OnDestroy()
     {
         Debug.Log("Building destroyed");
-        FindObjectOfType<BuildingManager>().DetachBuildingFromManager(this);
+        FindObjectOfType<BuildingManager>()?.DetachBuildingFromManager(this);
     }
 }
 
