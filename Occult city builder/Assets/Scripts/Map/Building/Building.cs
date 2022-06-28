@@ -194,8 +194,6 @@ public class Building : MonoBehaviour, Idraggable
                 
             }
             
-          
-        
         }
     }
 
@@ -245,7 +243,7 @@ public class Building : MonoBehaviour, Idraggable
     private void OnDestroy()
     {
         Debug.Log("Building destroyed");
-        FindObjectOfType<BuildingManager>().DetachBuildingFromManager(this);
+        FindObjectOfType<BuildingManager>()?.DetachBuildingFromManager(this);
     }
 }
 

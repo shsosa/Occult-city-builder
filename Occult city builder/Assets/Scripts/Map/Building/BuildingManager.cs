@@ -78,7 +78,9 @@ public class BuildingManager : MonoBehaviour
         if (currentTile.hasBuilding && currentBuilding.CompareTag("Building"))
         {
             currentTile.ChangeTileColor(Color.red);
-            if(!currentBuilding.isDragged)
+            if(!currentBuilding.isDragged && currentTile.isCursed)
+                Destroy(currentBuilding.gameObject);
+            if(!currentBuilding.isDragged&& currentTile.hasBuilding)
                 Destroy(currentBuilding.gameObject);
         }
     }
@@ -101,6 +103,7 @@ public class BuildingManager : MonoBehaviour
                     currentBuilding.DecreaseReasourceCost();
                     Destroy(currentBuilding.gameObject);
                 }
+                
             }
         }
     }

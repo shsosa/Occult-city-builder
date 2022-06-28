@@ -36,6 +36,7 @@ public class UIObject : MonoBehaviour
        map = FindObjectOfType<BuildingManager>().transform;
    }
 
+   
    #endregion
    
    #region Tranform Scale
