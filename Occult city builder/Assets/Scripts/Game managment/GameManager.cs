@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -38,6 +39,15 @@ public class GameManager : MonoBehaviour
         if(monster.isBanished)
         {
             hasWon = true;
+            Loader(SceneManager.GetActiveScene().buildIndex + 1);
         }
+    }
+    public void Loader(int scene)
+    {
+        SceneManager.LoadScene(scene);
+    }
+    public void Quit()
+    {
+        Application.Quit();
     }
 }
