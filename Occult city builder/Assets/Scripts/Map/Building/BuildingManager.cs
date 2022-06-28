@@ -12,7 +12,7 @@ public class BuildingManager : MonoBehaviour
     [Header("Event channels: ")]
     public VoidEventChannelSO buildEventChannelSo;
     public VoidEventChannelSO buildUIEventChannelSo;
-    public VoidEventChannelSO monsterHungerEvents;
+    
   
     
     [Header("Active objects to build: ")]
@@ -31,7 +31,7 @@ public class BuildingManager : MonoBehaviour
     private void OnEnable()
     {
         buildEventChannelSo.OnEventRaised += SetBuildingNull;
-        monsterHungerEvents.OnEventRaised += PutObjectsInBack;
+       
         _uiManager = FindObjectOfType<UIManager>();
 
     }
@@ -39,7 +39,7 @@ public class BuildingManager : MonoBehaviour
     private void OnDisable()
     {
         buildEventChannelSo.OnEventRaised -= SetBuildingNull;
-        monsterHungerEvents.OnEventRaised -= PutObjectsInBack;
+      
     }
 
     private void Update()
