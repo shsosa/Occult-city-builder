@@ -76,7 +76,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -100,7 +100,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44a37726f4c868d4aa2e16474d043214, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _typeOfDraggableItem: 0
   _resourceTypeData: {fileID: 0}
+  reasourcePrice: {fileID: 0}
+  _resourceDataSO: {fileID: 0}
+  BuildEventChannelSo: {fileID: 0}
+  tile: {fileID: 0}
+  isDragged: 0
 --- !u!50 &1023912256760010491
 Rigidbody2D:
   serializedVersion: 4

@@ -22,6 +22,7 @@ public class UIObject : MonoBehaviour
    private Vector3 scaleOG;
     
    public bool canBuild =false;
+   private bool eventHappaning = false;
 
    #endregion
 
@@ -57,7 +58,7 @@ public class UIObject : MonoBehaviour
 
     public void CreateBuldingFromUI()
     {
-        if(canBuild && buildingToCreate!= null)
+        if(!eventHappaning && canBuild && buildingToCreate!= null)
         {
             _buildingManager.Build(buildingToCreate,transform);
         }

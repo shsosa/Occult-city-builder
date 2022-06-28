@@ -10,15 +10,17 @@ public class BuildingManager : MonoBehaviour
 
     //todo maybe build from here if i get tile and building from mouse
     [Header("Event channels: ")]
-    public VoidEventChannelSO BuildEventChannelSo;
+    public VoidEventChannelSO buildEventChannelSo;
     public VoidEventChannelSO buildUIEventChannelSo;
+    public VoidEventChannelSO monsterHungerEvents;
+  
     
     [Header("Active objects to build: ")]
     public GameObject tile;
     public GameObject building;
     
     [Header("Building manager objects: ")]
-    [SerializeField]  private Transform map;
+    [SerializeField]  private MapObjects map;
     [SerializeField] private SecreficeManager SecrificeManager;
     [SerializeField] private ReserchManager reserchManager;
    
@@ -27,12 +29,15 @@ public class BuildingManager : MonoBehaviour
 
     private void OnEnable()
     {
-        BuildEventChannelSo.OnEventRaised += SetBuildingNull;
+        buildEventChannelSo.OnEventRaised += SetBuildingNull;
+        monsterHungerEvents.OnEventRaised += PutObjectsInBack;
+
     }
 
     private void OnDisable()
     {
-        BuildEventChannelSo.OnEventRaised -= SetBuildingNull;
+        buildEventChannelSo.OnEventRaised -= SetBuildingNull;
+        monsterHungerEvents.OnEventRaised -= PutObjectsInBack;
     }
 
     private void Update()
@@ -73,6 +78,8 @@ public class BuildingManager : MonoBehaviour
         if (currentTile.hasBuilding && currentBuilding.CompareTag("Building"))
         {
             currentTile.ChangeTileColor(Color.red);
+            if(!currentBuilding.isDragged)
+                Destroy(currentBuilding.gameObject);
         }
     }
 
@@ -173,20 +180,22 @@ public class BuildingManager : MonoBehaviour
     private void AttachBuildingToManager()
     {
         Building buildingInstance = building.GetComponent<Building>();
-        building.transform.SetParent(map);
+       // building.transform.SetParent(map);
         switch (buildingInstance._typeOfDraggableItem)
         {
             case Building.TypeOfDraggableItem.Building:
-               
+               map.activeBuildingsOnmap.Add(buildingInstance);
                 break;
 
             case Building.TypeOfDraggableItem.Secrifice:
                 SecrificeManager.listOfActiveSacrificeBuildings.Add(buildingInstance);
+                map.activeBuildingsOnmap.Add(buildingInstance);
                 break;
 
             case Building.TypeOfDraggableItem.Research:
                 if(!buildingInstance.gameObject.CompareTag("Spell"))
                     reserchManager.listOfActiveResearchBuildings.Add(buildingInstance);
+                map.activeBuildingsOnmap.Add(buildingInstance);
                 break;
         }
     }
@@ -196,20 +205,31 @@ public class BuildingManager : MonoBehaviour
         switch (building._typeOfDraggableItem)
         {
             case Building.TypeOfDraggableItem.Building:
+                map.activeBuildingsOnmap.Remove(building);
                
                 break;
 
             case Building.TypeOfDraggableItem.Secrifice:
                 SecrificeManager.listOfActiveSacrificeBuildings.Remove(building);
+                map.activeBuildingsOnmap.Remove(building);
                 break;
 
             case Building.TypeOfDraggableItem.Research:
                 if(!building.gameObject.CompareTag("Spell"))
                     reserchManager.listOfActiveResearchBuildings.Remove(building);
+                map.activeBuildingsOnmap.Remove(building);
                 break;
         }
     }
 
+
+    void PutObjectsInBack()
+    {
+        foreach (var building in map.activeBuildingsOnmap)
+        {
+           // building.GetComponent<SpriteRenderer>().sortingOrder *= -1;
+        }
+    }
     void SetBuildingNull()
     {
         building = null;

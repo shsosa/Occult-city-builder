@@ -204,11 +204,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46a9979cedec04d48965b64ad6e07353, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BuildEventChannelSo: {fileID: 11400000, guid: 1937f1b57f01ddd448ebe004034eae57, type: 2}
+  buildEventChannelSo: {fileID: 11400000, guid: 1937f1b57f01ddd448ebe004034eae57, type: 2}
   buildUIEventChannelSo: {fileID: 11400000, guid: 8d694df3df72f364c94ebe815482a9fc, type: 2}
+  monsterHungerEvents: {fileID: 11400000, guid: 2010f43b02da6a84380ee0a92b046515, type: 2}
   tile: {fileID: 0}
   building: {fileID: 0}
-  map: {fileID: 1227144226}
+  map: {fileID: 1227144227}
   SecrificeManager: {fileID: 778490575}
   reserchManager: {fileID: 330351601}
   hasInstantiatedBuilding: 0
@@ -238,6 +239,10 @@ PrefabInstance:
       propertyPath: tileFeedbacks
       value: 
       objectReference: {fileID: 9061313364995822384}
+    - target: {fileID: 6413513830729175438, guid: c56b9081cc6bf4a4fb01b61d3f04a7ad, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6413513830729175439, guid: c56b9081cc6bf4a4fb01b61d3f04a7ad, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -1124,7 +1129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d958a52145b19904aa2a5bcb3849eafb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Active: 1
+  Active: 0
   Label: Scale
   Chance: 100
   Timing:
@@ -2305,6 +2310,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3522474144374782223, guid: 2285e1cc6b0c8fc46a1bc68076cded3a, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3522474144374782259, guid: 2285e1cc6b0c8fc46a1bc68076cded3a, type: 3}
       propertyPath: m_Name
       value: ForrestDenseTile2 (1)
@@ -2312,6 +2321,11 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 109350881, guid: 2285e1cc6b0c8fc46a1bc68076cded3a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 2285e1cc6b0c8fc46a1bc68076cded3a, type: 3}
+--- !u!1 &392344893 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8769891356065317514, guid: 5acd115b79d6b4a4a97314326706e23c, type: 3}
+  m_PrefabInstance: {fileID: 1709929490428276893}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &395216975
 GameObject:
   m_ObjectHideFlags: 0
@@ -5667,6 +5681,19 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1847537355846988799, guid: 5acd115b79d6b4a4a97314326706e23c, type: 3}
   m_PrefabInstance: {fileID: 1709929490428276893}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1227144227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 392344893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a91d79f5e7e36042880ce1c870d1560, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activeBuildingsOnmap: []
 --- !u!1 &1245966692
 GameObject:
   m_ObjectHideFlags: 0
@@ -5857,6 +5884,10 @@ PrefabInstance:
       propertyPath: tileFeedbacks
       value: 
       objectReference: {fileID: 9061313364995822384}
+    - target: {fileID: 6413513830729175438, guid: c56b9081cc6bf4a4fb01b61d3f04a7ad, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6413513830729175439, guid: c56b9081cc6bf4a4fb01b61d3f04a7ad, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -7018,6 +7049,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3522474144374782223, guid: 2285e1cc6b0c8fc46a1bc68076cded3a, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3522474144374782259, guid: 2285e1cc6b0c8fc46a1bc68076cded3a, type: 3}
       propertyPath: m_Name
       value: ForrestDenseTile2 (2)
@@ -7738,7 +7773,7 @@ MonoBehaviour:
   maxRangeToTrigerPowerEventConstant: 100
   powerEventTriger: 0
   monsterHungerEventChannel: {fileID: 11400000, guid: 2010f43b02da6a84380ee0a92b046515, type: 2}
-  monsterPowerEventChanel: {fileID: 0}
+  monsterPowerEventChanel: {fileID: 11400000, guid: f59841847b5a2a84fb8fe36d9ccef995, type: 2}
 --- !u!4 &1876995523
 Transform:
   m_ObjectHideFlags: 0
@@ -8899,6 +8934,7 @@ GameObject:
   - component: {fileID: 2067456831}
   - component: {fileID: 2067456833}
   - component: {fileID: 2067456832}
+  - component: {fileID: 2067456834}
   m_Layer: 5
   m_Name: RandomEventPromt
   m_TagString: Untagged
@@ -8973,6 +9009,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2067456830}
   m_CullTransparentMesh: 1
+--- !u!60 &2067456834
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2067456830}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0, y: 1}
+      - {x: -0.95105654, y: 0.30901697}
+      - {x: -0.5877852, y: -0.80901706}
+      - {x: 0.58778536, y: -0.80901694}
+      - {x: 0.9510565, y: 0.30901712}
 --- !u!1 &143479716594700004
 GameObject:
   m_ObjectHideFlags: 0
@@ -9213,6 +9279,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MountinTile
       objectReference: {fileID: 0}
+    - target: {fileID: 2795448847219876620, guid: 4bdadaf396e2cdf49bb221277a869ff6, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2795448847219876621, guid: 4bdadaf396e2cdf49bb221277a869ff6, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -9314,6 +9384,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3101393094237439854, guid: 912f564359f351a41a691cabf9149d83, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3101393094237439855, guid: 912f564359f351a41a691cabf9149d83, type: 3}
       propertyPath: tileFeedbacks
       value: 
@@ -9379,6 +9453,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3522474144374782223, guid: 2285e1cc6b0c8fc46a1bc68076cded3a, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3522474144374782259, guid: 2285e1cc6b0c8fc46a1bc68076cded3a, type: 3}
       propertyPath: m_Name
       value: ForrestDenseTile2
@@ -9400,6 +9478,10 @@ PrefabInstance:
       propertyPath: tileFeedbacks
       value: 
       objectReference: {fileID: 9061313364995822384}
+    - target: {fileID: 6413513830729175438, guid: c56b9081cc6bf4a4fb01b61d3f04a7ad, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6413513830729175439, guid: c56b9081cc6bf4a4fb01b61d3f04a7ad, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -9457,6 +9539,10 @@ PrefabInstance:
       propertyPath: tileFeedbacks
       value: 
       objectReference: {fileID: 9061313364995822384}
+    - target: {fileID: 7261135108474742857, guid: 926e65b0da7364543ac2282aa357e573, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7261135108474742858, guid: 926e65b0da7364543ac2282aa357e573, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -9514,6 +9600,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1227144226}
     m_Modifications:
+    - target: {fileID: 7694414126651558092, guid: 4242f2cbd92d704489aa198ae3f9b18b, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7694414126651558093, guid: 4242f2cbd92d704489aa198ae3f9b18b, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -9769,6 +9859,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8017027821222928873, guid: 578ff8b135ac5d646b46799d680f7a0d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8017027821222928874, guid: 578ff8b135ac5d646b46799d680f7a0d, type: 3}
+      propertyPath: m_SortingOrder
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8017027821222928875, guid: 578ff8b135ac5d646b46799d680f7a0d, type: 3}
