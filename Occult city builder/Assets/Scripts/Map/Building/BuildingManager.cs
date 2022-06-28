@@ -91,7 +91,7 @@ public class BuildingManager : MonoBehaviour
     {
         if (currentBuilding._typeOfDraggableItem == Building.TypeOfDraggableItem.Research && currentTile.isCursed)
         {
-            if (currentBuilding.CompareTag("Spell"))
+            if (currentBuilding.CompareTag("Spell")&& currentTile!= null)
             {
                 if (currentBuilding.isDragged)
                 {
@@ -99,7 +99,7 @@ public class BuildingManager : MonoBehaviour
                     currentTile.ChangeTileColor(Color.red);
                 }
                     
-                else if (!currentBuilding.isDragged)
+                if (!currentBuilding.isDragged)
                 {
                     currentTile.SetNotCursed();
                     currentBuilding.DecreaseReasourceCost();
