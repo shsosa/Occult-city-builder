@@ -1,6 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
+
 public class MonsterManager : MonoBehaviour
 {
     public float monsterHunger, monsterPower;
@@ -18,6 +21,13 @@ public class MonsterManager : MonoBehaviour
         maxRangeToTrigerPowerEvent = maxRangeToTrigerPowerEventConstant;
         StartCoroutine(HungerTimer());
     }
+
+    private void Update()
+    {
+        monsterHunger = Mathf.Clamp(monsterHunger, 0, 100);
+       monsterPower= Mathf.Clamp(monsterPower, 0, 100);
+    }
+
     private void HungerGrowth()
     {
 

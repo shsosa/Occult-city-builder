@@ -12,7 +12,7 @@ public class BuildingManager : MonoBehaviour
     [Header("Event channels: ")]
     public VoidEventChannelSO buildEventChannelSo;
     public VoidEventChannelSO buildUIEventChannelSo;
-    public VoidEventChannelSO monsterHungerEvents;
+    
   
     
     [Header("Active objects to build: ")]
@@ -23,6 +23,7 @@ public class BuildingManager : MonoBehaviour
     [SerializeField]  private MapObjects map;
     [SerializeField] private SecreficeManager SecrificeManager;
     [SerializeField] private ReserchManager reserchManager;
+    private UIManager _uiManager;
    
 
     public bool hasInstantiatedBuilding = false;
@@ -30,20 +31,21 @@ public class BuildingManager : MonoBehaviour
     private void OnEnable()
     {
         buildEventChannelSo.OnEventRaised += SetBuildingNull;
-        monsterHungerEvents.OnEventRaised += PutObjectsInBack;
+       
+        _uiManager = FindObjectOfType<UIManager>();
 
     }
 
     private void OnDisable()
     {
         buildEventChannelSo.OnEventRaised -= SetBuildingNull;
-        monsterHungerEvents.OnEventRaised -= PutObjectsInBack;
+      
     }
 
     private void Update()
     {
         
-        if (building != null && tile != null)
+        if (building != null && tile != null && !GameManager.isEventUIActive)
         {
             Building currentBuilding = building.GetComponent<Building>();
             Tiles currentTile = tile.GetComponent<Tiles>();
@@ -89,7 +91,7 @@ public class BuildingManager : MonoBehaviour
     {
         if (currentBuilding._typeOfDraggableItem == Building.TypeOfDraggableItem.Research && currentTile.isCursed)
         {
-            if (currentBuilding.CompareTag("Spell"))
+            if (currentBuilding.CompareTag("Spell")&& currentTile!= null)
             {
                 if (currentBuilding.isDragged)
                 {
@@ -97,7 +99,7 @@ public class BuildingManager : MonoBehaviour
                     currentTile.ChangeTileColor(Color.red);
                 }
                     
-                else if (!currentBuilding.isDragged)
+                if (!currentBuilding.isDragged)
                 {
                     currentTile.SetNotCursed();
                     currentBuilding.DecreaseReasourceCost();
@@ -228,10 +230,7 @@ public class BuildingManager : MonoBehaviour
 
     void PutObjectsInBack()
     {
-        foreach (var building in map.activeBuildingsOnmap)
-        {
-           // building.GetComponent<SpriteRenderer>().sortingOrder *= -1;
-        }
+      
     }
     void SetBuildingNull()
     {

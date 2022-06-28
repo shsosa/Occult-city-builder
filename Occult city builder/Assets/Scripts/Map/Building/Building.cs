@@ -22,6 +22,7 @@ public class Building : MonoBehaviour, Idraggable
     [SerializeField] private ResourceData _resourceDataSO;
     public VoidEventChannelSO BuildEventChannelSo;
     public GameObject tile;
+    private SpriteRenderer _spriteRenderer;
 
     #endregion
     
@@ -36,7 +37,8 @@ public class Building : MonoBehaviour, Idraggable
     #region Mono 
     private void Start()
     {
-        GetComponent<SpriteRenderer>().sortingOrder = 2;
+        _spriteRenderer = GetComponent<SpriteRenderer>();
+        _spriteRenderer.sortingOrder = 2;
       
     }
     
@@ -44,8 +46,18 @@ public class Building : MonoBehaviour, Idraggable
     private void Update()
     {
         ChackIfDragged();
+        ChangeSortingOrder();
     }
-    
+
+    private void ChangeSortingOrder()
+    {
+        if (GameManager.isEventUIActive)
+            _spriteRenderer.sortingOrder = 0;
+        else
+        {
+            _spriteRenderer.sortingOrder = 2;
+        }
+    }
 
     #endregion
 
