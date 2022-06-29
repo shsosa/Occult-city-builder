@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _typeOfDraggableItem: 0
-  _resourceTypeData: {fileID: 11400000, guid: 22a36d06dc0f0d941a9e0762458a563f, type: 2}
+  _resourceTypeData: {fileID: 11400000, guid: 3316c7f7ccd70cf46b2def2d93e7a9f7, type: 2}
   reasourcePrice: {fileID: 11400000, guid: d6aa3f9de4f4f7f429a2a4b3689834f6, type: 2}
   _resourceDataSO: {fileID: 11400000, guid: a058ea4808a964c4883a30c07f49f86f, type: 2}
   BuildEventChannelSo: {fileID: 11400000, guid: 1937f1b57f01ddd448ebe004034eae57, type: 2}

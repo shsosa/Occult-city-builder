@@ -53,7 +53,7 @@ public class MonsterManager : MonoBehaviour
         {
             HungerEventFlag();
             maxRangeToTrigerHungerEvent = maxRangeToTrigerHungerEventConstant;
-            monsterHunger = 0;
+            
         }
     }
     private void PowerEventProbability()

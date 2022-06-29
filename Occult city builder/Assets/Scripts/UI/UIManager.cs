@@ -62,6 +62,11 @@ public class UIManager : MonoBehaviour
 
     private void UpdateUIText()
     {
+        Mathf.Clamp(_resourceData.gold, 0, 100);
+        Mathf.Clamp(_resourceData.wood, 0, 100);
+        Mathf.Clamp(_resourceData.cattle, 0, 100);
+        Mathf.Clamp(_resourceData.researchPoints, 0, 100);
+        Mathf.Clamp(_resourceData.vilagers, 0, 100);
         goldTextUI.text = _resourceData.gold.ToString();
         woodTextUI.text = _resourceData.wood.ToString();
         cattleTextUI.text = _resourceData.cattle.ToString();

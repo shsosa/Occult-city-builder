@@ -25,6 +25,7 @@ public class Tiles : MonoBehaviour
     {
        
         _buildingManager = FindObjectOfType<BuildingManager>();
+        
         spriteRenderer = GetComponent<SpriteRenderer>();
         normalSprite = spriteRenderer.sprite;
         _polygonCollider2D = GetComponent<PolygonCollider2D>();
@@ -66,7 +67,7 @@ public class Tiles : MonoBehaviour
     public void TileProduction()
     {
         if(hasBuilding && !isCursed)
-             _resourceDataScriptable.IncreaseResource(type._resourceType,amountOfReasourceProdused);
+             _resourceDataScriptable.IncreaseResource(building._resourceType,amountOfReasourceProdused);
     }
     public void SetCursed()
     {
@@ -76,6 +77,7 @@ public class Tiles : MonoBehaviour
         {
             Destroy(transform.GetChild(0).gameObject);
             hasBuilding = false;
+            hasBonus = false;
         } 
     }
 

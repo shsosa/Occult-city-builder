@@ -29,7 +29,8 @@ public class RandomEventsManager : ScriptableObject
 
     public string randomEventText,eventTextHeader;
 
-    public int punishment,maxPunishment,priceToPay,maxPriceToPay;
+    public int punishment,maxPunishment,minPunishment,priceToPay,maxPriceToPay,minPriceToPay,
+        priceGrowthPerItration,punishmentGrowthPerIteration;
 
     public int resourceIterator;
     private void OnEnable()
@@ -44,12 +45,16 @@ public class RandomEventsManager : ScriptableObject
         eventType= (EventType) eventTypeIterator;
         EventListTextSorter();
         EventTextSorter();
+        maxPriceToPay += priceGrowthPerItration;
+        maxPunishment += punishmentGrowthPerIteration;
+        minPriceToPay += priceGrowthPerItration;
+        minPunishment += punishmentGrowthPerIteration;
     }
     private void EventRandomizer()
-    {
-        PriceRandomizer();
+    { 
         ResourceIteration();
-        punishment = Random.Range(1, maxPunishment);
+        PriceRandomizer();
+        punishment = Random.Range(minPunishment, maxPunishment);
         eventTypeIterator = (int)Random.Range(0, (int)EventType.MaxValueForIteration-1);
        // Debug.LogError("randomizer");
     }
@@ -94,7 +99,7 @@ public class RandomEventsManager : ScriptableObject
     }
     private void PriceRandomizer()
     {
-        priceToPay = Random.Range(1, maxPriceToPay);
+        priceToPay = Random.Range(minPriceToPay, maxPriceToPay);
     }
     private void ResourceIteration()
     {

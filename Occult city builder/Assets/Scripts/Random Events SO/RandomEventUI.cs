@@ -38,22 +38,42 @@ public class RandomEventUI : MonoBehaviour
         if (rEManager.resourceIterator == 0)
         {
             resource.cattle -= rEManager.punishment;
+            if(resource.cattle<0)
+            {
+                resource.cattle = 0;
+            }
         }
         if (rEManager.resourceIterator == 1)
         {
             resource.wood -= rEManager.punishment;
+            if (resource.wood < 0)
+            {
+                resource.wood = 0;
+            }
         }
         if (rEManager.resourceIterator == 2)
         {
             resource.vilagers -= rEManager.punishment;
+            if (resource.vilagers < 0)
+            {
+                resource.vilagers = 0;
+            }
         }
         if (rEManager.resourceIterator == 3)
         {
             resource.gold -= rEManager.punishment;
+            if (resource.gold < 0)
+            {
+                resource.gold = 0;
+            }
         }
         if (rEManager.resourceIterator == 4)
         {
             resource.researchPoints -= rEManager.punishment;
+            if (resource.researchPoints < 0)
+            {
+                resource.researchPoints = 0;
+            }
         }
         Deactivate();
     }
