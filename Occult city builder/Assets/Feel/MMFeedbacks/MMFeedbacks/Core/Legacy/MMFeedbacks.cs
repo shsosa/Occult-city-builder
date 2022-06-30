@@ -21,6 +21,8 @@ namespace MoreMountains.Feedbacks
 	[AddComponentMenu("More Mountains/Feedbacks/MMFeedbacks")]
 	public class MMFeedbacks : MonoBehaviour
 	{
+		
+	
 		/// the possible directions MMFeedbacks can be played
 		public enum Directions { TopToBottom, BottomToTop }
 		/// the possible SafeModes (will perform checks to make sure no serialization error has damaged them)
@@ -29,6 +31,12 @@ namespace MoreMountains.Feedbacks
 		/// - runtime only : performs checks on Awake
 		/// - full : performs both editor and runtime checks, recommended setting
 		public enum SafeModes { Nope, EditorOnly, RuntimeOnly, Full }
+		public enum FeedbackType
+		{
+			UIEffect , BuildingEffect, CollectResourcesEffect, TileFeedbackEffect 
+		}
+
+		public FeedbackType _feedbackType;
         
 		/// a list of MMFeedback to trigger
 		public List<MMFeedback> Feedbacks = new List<MMFeedback>();

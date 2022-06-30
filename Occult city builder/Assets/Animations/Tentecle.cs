@@ -30,8 +30,7 @@ public class Tentecle : MonoBehaviour
         LineRenderer.positionCount = length;
         segmentPoses = new Vector3[length];
         segmentV = new Vector3[length];
-        LineRenderer.material.mainTexture.height = 100000;
-        LineRenderer.material.mainTexture.width = 100000;
+       
         
     }
 
