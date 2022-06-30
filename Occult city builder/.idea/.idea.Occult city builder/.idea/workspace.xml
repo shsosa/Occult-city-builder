@@ -5,24 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6a6f9a88-340d-4329-b101-d2b7388b26fe" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Animations.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/RotateToTarget.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/RotateToTarget.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Tantecle monster.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Tantecle monster/Idel.anim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Tantecle monster/Idel.anim.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Tantecle monster/Tentacled_transparentPSB.controller" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Tantecle monster/Tentacled_transparentPSB.controller.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Tentecle.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Tentecle.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tentacled_transparentPSB.psb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tentacled_transparentPSB.psb.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Occult city builder/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Occult city builder/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resource managmentes/isle-of-lore-2-status-icons-all/Images/512x512 transparent/57_tentacled_transparent.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resource managmentes/isle-of-lore-2-status-icons-all/Images/512x512 transparent/57_tentacled_transparent.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/RotateToTarget.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/RotateToTarget.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Tentecle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Tentecle.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/NewSampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/NewSampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Random Events SO/RandomEventUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Random Events SO/RandomEventUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tentacled_transparentPSB.psb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tentacled_transparentPSB.psb.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,7 +116,7 @@
       <workItem from="1655795280167" duration="34721000" />
       <workItem from="1656073206005" duration="4945000" />
       <workItem from="1656360528618" duration="2048000" />
-      <workItem from="1656578634976" duration="4963000" />
+      <workItem from="1656578634976" duration="8178000" />
     </task>
     <servers />
   </component>

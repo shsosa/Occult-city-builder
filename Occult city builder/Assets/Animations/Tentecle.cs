@@ -13,26 +13,38 @@ public class Tentecle : MonoBehaviour
     public Vector3[] segmentV;
 
     public Transform targetDir;
+    public Transform wiggleDir;
 
     public float targetDist;
 
     public float smoothSpeed;
+
+    public int trailSpeed;
+
+    public float wiggleSpeed;
+
+    public float wiggleMagnitude;
     // Start is called before the first frame update
     void Start()
     {
         LineRenderer.positionCount = length;
         segmentPoses = new Vector3[length];
         segmentV = new Vector3[length];
+        LineRenderer.material.mainTexture.height = 100000;
+        LineRenderer.material.mainTexture.width = 100000;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+        
+        wiggleDir.localRotation = Quaternion.Euler(0,0,Mathf.Sin(Time.time * wiggleSpeed) * wiggleMagnitude);
         segmentPoses[0] = targetDir.position;
 
         for (int i = 1; i < segmentPoses.Length; i++)
         {
-            segmentPoses[i] =Vector3.SmoothDamp(segmentPoses[i],segmentPoses[i-1] +targetDir.right * targetDist,ref segmentV[i],smoothSpeed);
+            segmentPoses[i] =Vector3.SmoothDamp(segmentPoses[i],segmentPoses[i-1] +targetDir.right * targetDist,ref segmentV[i],smoothSpeed + i/ trailSpeed);
         }
         
         LineRenderer.SetPositions(segmentPoses);
