@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class RandomEventUI : MonoBehaviour
 {
     [SerializeField] RandomEventsManager rEManager;
-
+    
     [SerializeField] ResourceData resource;
     [SerializeField] GameObject eventPromt,secrificeObject;
     [SerializeField] TMP_Text eventText,headerText,priceText;
