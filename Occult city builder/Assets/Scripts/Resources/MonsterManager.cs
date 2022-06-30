@@ -24,8 +24,8 @@ public class MonsterManager : MonoBehaviour
 
     private void Update()
     {
-        monsterHunger = Mathf.Clamp(monsterHunger, 0, 10);
-       monsterPower= Mathf.Clamp(monsterPower, 0, 10);
+        monsterHunger = Mathf.Clamp(monsterHunger, 0, 100);
+       monsterPower= Mathf.Clamp(monsterPower, 0, 100);
     }
 
     private void HungerGrowth()
