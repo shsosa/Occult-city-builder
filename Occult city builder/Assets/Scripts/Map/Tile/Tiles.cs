@@ -14,25 +14,18 @@ public class Tiles : MonoBehaviour
     public VoidEventChannelSO resourceManager,monsterPowerEvent;
     
     [SerializeField] BuildingManager _buildingManager;
-    private FeedbackEffects feedbackEffectsManager;
-    private MMFeedbacks tileFeedbacks;
+    [SerializeField] private MMFeedbacks tileFeedbacks;
+    
     
     public bool hasBuilding =false;
     public bool hasBonus,isCursed;
     public int amountOfReasourceProdused;
     private PolygonCollider2D _polygonCollider2D;
-
-    private void Awake()
-    {
-        feedbackEffectsManager = FindObjectOfType<FeedbackEffects>();
-    }
-
     private void Start()
     {
        
         _buildingManager = FindObjectOfType<BuildingManager>();
-       
-        tileFeedbacks = feedbackEffectsManager.FeelEffectsList[0].Feedbacks;
+        
         spriteRenderer = GetComponent<SpriteRenderer>();
         normalSprite = spriteRenderer.sprite;
         _polygonCollider2D = GetComponent<PolygonCollider2D>();

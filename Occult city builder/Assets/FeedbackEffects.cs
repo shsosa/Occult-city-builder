@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using MoreMountains.Feedbacks;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -18,23 +17,11 @@ public class FeedbackEffects : MonoBehaviour
     [Header("Collect resources effects:")]
     [SerializeField] private VoidEventChannelSO CollectReasourcesSO;
     [SerializeField] private MMFeedbacks collectResourcesFeddbacks;
-
-
-    [Serializable]
-    public struct FeelEffects
-    {
-        public string name;
-        public MMFeedbacks Feedbacks;
-    }
-
-   
-    public List<FeelEffects> FeelEffectsList;
-
+    
 
 
     private void OnEnable()
     {
-       
         buildChannelSo.OnEventRaised += PlaceBUildingEvent;
         InstanitateBuildingChannelSO.OnEventRaised += InstantiateBuildingEvent;
         CollectReasourcesSO.OnEventRaised += CollectResourcesEvent;

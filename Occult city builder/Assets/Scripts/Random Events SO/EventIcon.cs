@@ -36,14 +36,14 @@ public class EventIcon : MonoBehaviour
         else if(isNotSecrificed)
         {
             rEvent.IfRejectedToSecrefice();
-            Debug.Log("Ohhh yeah!!!!!");
+            Debug.LogError("Ohhh yeah!!!!!");
         }
         mouse.enabled = false;
         transform.position = originalPosition; 
     }
     private void OnCollisionStay2D(Collision2D other)
     {
-        Debug.Log("Im here");
+        Debug.LogError("Im here");
         if (other.gameObject.CompareTag("EventSecrefice"))
         {    
             isSecreficed = true;
@@ -52,7 +52,7 @@ public class EventIcon : MonoBehaviour
         if(other.gameObject.CompareTag("EventNotSecrefice"))
         {
             isNotSecrificed = true;
-            Debug.Log("Im now here");
+            Debug.LogError("Im now here");
         }
     }
     private void OnCollisionExit2D(Collision2D collision)
