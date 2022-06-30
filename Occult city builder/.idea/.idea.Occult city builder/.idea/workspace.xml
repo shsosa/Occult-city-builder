@@ -5,15 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6a6f9a88-340d-4329-b101-d2b7388b26fe" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/EffectType.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/EffectType.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Occult city builder/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Occult city builder/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Animations/Tentecle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Tentecle.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FeedbackEffects.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FeedbackEffects.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Feel/MMFeedbacks/MMFeedbacks/Core/Legacy/MMFeedbacks.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Feel/MMFeedbacks/MMFeedbacks/Core/Legacy/MMFeedbacks.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Tiles/TileFeedbacks.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Tiles/TileFeedbacks.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Map/Tile/Tiles.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Map/Tile/Tiles.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Random Events SO/EventIcon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Random Events SO/EventIcon.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Resources/MonsterManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Resources/MonsterManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,11 +50,11 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "node.js.selected.package.tslint": "(autodetect)"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="$PROJECT_DIR$/WinBuild/Occult city builder.exe" />

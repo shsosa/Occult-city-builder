@@ -935,6 +935,9 @@ MonoBehaviour:
   MMInstantiateBuildinFeedbacks: {fileID: 220630248}
   CollectReasourcesSO: {fileID: 11400000, guid: aa6d1e9599124c244b5af24ba9ba859f, type: 2}
   collectResourcesFeddbacks: {fileID: 1374190624}
+  FeelEffectsList:
+  - name: TileFeedBack
+    Feedbacks: {fileID: 9061313364995822384}
 --- !u!114 &203330289
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -1027,6 +1030,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 841b72de2996c5c40bfb394f3d0e0a98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _feedbackType: 0
   Feedbacks:
   - {fileID: 220630249}
   InitializationMode: 2
@@ -1415,6 +1419,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 841b72de2996c5c40bfb394f3d0e0a98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _feedbackType: 0
   Feedbacks:
   - {fileID: 230836698}
   - {fileID: 230836697}
@@ -1798,6 +1803,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 841b72de2996c5c40bfb394f3d0e0a98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _feedbackType: 0
   Feedbacks:
   - {fileID: 256254606}
   - {fileID: 256254608}
@@ -2816,11 +2822,13 @@ MonoBehaviour:
   segmentV: []
   targetDir: {fileID: 1387374872}
   wiggleDir: {fileID: 1982465478}
-  targetDist: 0.4
-  smoothSpeed: 0.03
+  targetDist: 0.3
+  smoothSpeed: 0.018
   trailSpeed: 100
   wiggleSpeed: 5
   wiggleMagnitude: 10
+  targetGrowth: 0.2
+  timeOfGrowth: 0.001
 --- !u!1 &392344893 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8769891356065317514, guid: 5acd115b79d6b4a4a97314326706e23c, type: 3}
@@ -3069,6 +3077,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 841b72de2996c5c40bfb394f3d0e0a98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _feedbackType: 0
   Feedbacks:
   - {fileID: 396928103}
   - {fileID: 396928104}
@@ -3613,6 +3622,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 841b72de2996c5c40bfb394f3d0e0a98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _feedbackType: 0
   Feedbacks:
   - {fileID: 457941599}
   - {fileID: 457941600}
@@ -4560,11 +4570,13 @@ MonoBehaviour:
   segmentV: []
   targetDir: {fileID: 844581083}
   wiggleDir: {fileID: 1427174396}
-  targetDist: 0.4
-  smoothSpeed: 0.03
+  targetDist: 0.3
+  smoothSpeed: 0.018
   trailSpeed: 100
   wiggleSpeed: 5
   wiggleMagnitude: 10
+  targetGrowth: 0.2
+  timeOfGrowth: 0.001
 --- !u!1 &603300995
 GameObject:
   m_ObjectHideFlags: 0
@@ -6100,11 +6112,13 @@ MonoBehaviour:
   segmentV: []
   targetDir: {fileID: 1827324583}
   wiggleDir: {fileID: 1685276282}
-  targetDist: 0.4
-  smoothSpeed: 0.03
+  targetDist: 0.3
+  smoothSpeed: 0.018
   trailSpeed: 100
   wiggleSpeed: 5
   wiggleMagnitude: 10
+  targetGrowth: 0.2
+  timeOfGrowth: 0.001
 --- !u!1 &923750712
 GameObject:
   m_ObjectHideFlags: 0
@@ -6877,6 +6891,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 841b72de2996c5c40bfb394f3d0e0a98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _feedbackType: 0
   Feedbacks:
   - {fileID: 1090417990}
   - {fileID: 1090417991}
@@ -8089,11 +8104,13 @@ MonoBehaviour:
   segmentV: []
   targetDir: {fileID: 946653088}
   wiggleDir: {fileID: 1585389858}
-  targetDist: 0.4
-  smoothSpeed: 0.03
+  targetDist: 0.3
+  smoothSpeed: 0.018
   trailSpeed: 100
   wiggleSpeed: 5
   wiggleMagnitude: 10
+  targetGrowth: 0.2
+  timeOfGrowth: 0.001
 --- !u!1 &1374190623
 GameObject:
   m_ObjectHideFlags: 0
@@ -8124,6 +8141,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 841b72de2996c5c40bfb394f3d0e0a98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _feedbackType: 0
   Feedbacks:
   - {fileID: 1374190625}
   InitializationMode: 2
@@ -8330,6 +8348,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 841b72de2996c5c40bfb394f3d0e0a98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _feedbackType: 0
   Feedbacks:
   - {fileID: 1375470520}
   - {fileID: 1375470521}
@@ -8967,6 +8986,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 841b72de2996c5c40bfb394f3d0e0a98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _feedbackType: 0
   Feedbacks:
   - {fileID: 1601983961}
   InitializationMode: 2
@@ -9304,7 +9324,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 8.647302, y: -194.24716}
+  m_AnchoredPosition: {x: -33, y: -26}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1685276281
@@ -9587,11 +9607,13 @@ MonoBehaviour:
   segmentV: []
   targetDir: {fileID: 360236291}
   wiggleDir: {fileID: 620249681}
-  targetDist: 0.4
-  smoothSpeed: 0.03
+  targetDist: 0.3
+  smoothSpeed: 0.018
   trailSpeed: 100
   wiggleSpeed: 5
   wiggleMagnitude: 10
+  targetGrowth: 0.2
+  timeOfGrowth: 0.001
 --- !u!1 &1774138948
 GameObject:
   m_ObjectHideFlags: 0
@@ -10130,6 +10152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 841b72de2996c5c40bfb394f3d0e0a98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _feedbackType: 0
   Feedbacks:
   - {fileID: 1812151149}
   - {fileID: 1812151148}
@@ -10412,11 +10435,13 @@ MonoBehaviour:
   segmentV: []
   targetDir: {fileID: 351253902}
   wiggleDir: {fileID: 1263095575}
-  targetDist: 0.4
-  smoothSpeed: 0.03
+  targetDist: 0.3
+  smoothSpeed: 0.018
   trailSpeed: 100
   wiggleSpeed: 5
   wiggleMagnitude: 10
+  targetGrowth: 0.2
+  timeOfGrowth: 0.001
 --- !u!1 &1858823762
 GameObject:
   m_ObjectHideFlags: 0
@@ -10659,6 +10684,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 841b72de2996c5c40bfb394f3d0e0a98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _feedbackType: 0
   Feedbacks:
   - {fileID: 1889531244}
   - {fileID: 1889531245}
@@ -11023,6 +11049,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 841b72de2996c5c40bfb394f3d0e0a98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _feedbackType: 0
   Feedbacks:
   - {fileID: 1899559981}
   - {fileID: 1899559982}
@@ -12665,6 +12692,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 82217223}
     m_Modifications:
+    - target: {fileID: 1991948773021778553, guid: ed286d07a3a185a44b73718e64ee5cdb, type: 3}
+      propertyPath: Label
+      value: TileScale
+      objectReference: {fileID: 0}
     - target: {fileID: 8068894579758322451, guid: ed286d07a3a185a44b73718e64ee5cdb, type: 3}
       propertyPath: m_RootOrder
       value: 0
