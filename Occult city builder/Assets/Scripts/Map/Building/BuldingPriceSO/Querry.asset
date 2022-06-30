@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2cd0fd6b9484366a15c2a69c69ae3ca, type: 3}
   m_Name: Querry
   m_EditorClassIdentifier: 
-  wood: 0
+  wood: 3
   gold: 0
-  vilagers: 0
+  vilagers: 2
   researchPoints: 0
-  cattle: 2
+  cattle: 1
+  secrificeAmountHunger: 0
+  secrificeAddPower: 0

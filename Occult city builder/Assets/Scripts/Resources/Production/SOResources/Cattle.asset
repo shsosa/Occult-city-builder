@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Cattle
   m_EditorClassIdentifier: 
   _resourceType: 4
-  bonus: 0
+  bonus: 2

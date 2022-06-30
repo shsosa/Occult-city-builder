@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2cd0fd6b9484366a15c2a69c69ae3ca, type: 3}
   m_Name: House
   m_EditorClassIdentifier: 
-  wood: 1
-  gold: 4
+  wood: 2
+  gold: 1
   vilagers: 0
   researchPoints: 0
   cattle: 1
+  secrificeAmountHunger: 0
+  secrificeAddPower: 0

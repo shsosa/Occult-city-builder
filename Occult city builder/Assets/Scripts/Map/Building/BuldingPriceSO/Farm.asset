@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wood: 1
   gold: 0
-  vilagers: 0
+  vilagers: 3
   researchPoints: 0
-  cattle: 0
+  cattle: 1
+  secrificeAmountHunger: 0
+  secrificeAddPower: 0

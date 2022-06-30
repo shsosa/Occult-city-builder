@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8ea555cfb2a7ef459111f388e4b538f, type: 3}
   m_Name: ResourceManager
   m_EditorClassIdentifier: 
-  wood: 9310
-  gold: 8425
-  vilagers: 959
-  researchPoints: 2500
-  cattle: 15851
+  wood: 5
+  gold: 5
+  vilagers: 5
+  researchPoints: 5
+  cattle: 5

@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Villagers
   m_EditorClassIdentifier: 
   _resourceType: 2
-  bonus: 0
+  bonus: 2
