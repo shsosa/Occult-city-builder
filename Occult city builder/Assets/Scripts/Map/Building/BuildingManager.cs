@@ -120,7 +120,7 @@ public class BuildingManager : MonoBehaviour
 
     private static void BlessCursedTile(Building currentBuilding, Tiles currentTile)
     {
-        if (currentBuilding._typeOfDraggableItem == Building.TypeOfDraggableItem.Research && currentTile.isCursed)
+        if (currentBuilding._typeOfDraggableItem == Building.TypeOfDraggableItem.Secrifice && currentTile.isCursed)
         {
             if (currentBuilding.CompareTag("Spell")&& currentTile!= null)
             {
