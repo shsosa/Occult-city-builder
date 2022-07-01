@@ -14,8 +14,11 @@ public class MonsterManager : MonoBehaviour
                      maxRangeToTrigerPowerEvent, maxRangeToTrigerPowerEventConstant, powerEventTriger;
     [SerializeField] VoidEventChannelSO monsterHungerEventChannel, monsterPowerEventChanel;
     Tiles[] tile;
+
+    [SerializeField] Tentecle[] _tenteclesArray;
     private void Start()
     {
+        _tenteclesArray = GetComponentsInChildren<Tentecle>();
         tile = FindObjectsOfType<Tiles>();
         maxRangeToTrigerHungerEvent = maxRangeToTrigerHungerEventConstant;
         maxRangeToTrigerPowerEvent = maxRangeToTrigerPowerEventConstant;

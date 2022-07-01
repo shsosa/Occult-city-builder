@@ -5,6 +5,8 @@ using UnityEngine;
 public class Tentecle : MonoBehaviour
 {
 
+    
+    //todo - whrn to follow mouse - when has secrifice building - can be done with scrifice- after destroyed un follow
     public int length;
 
     public LineRenderer LineRenderer;
@@ -14,7 +16,7 @@ public class Tentecle : MonoBehaviour
 
     public Transform targetDir;
     public Transform wiggleDir;
-    private MonsterManager _monsterManager;
+   
 
     public float targetDist;
 
@@ -25,13 +27,18 @@ public class Tentecle : MonoBehaviour
     public float wiggleSpeed;
 
     public float wiggleMagnitude;
-    
+
+    [SerializeField] float wiggleMagOG, wiggleSpeedOG; 
+
     [SerializeField] private float targetGrowth;
     [SerializeField] private float timeOfGrowth =0.05f;
+
+    
     // Start is called before the first frame update
     void Start()
     {
-        _monsterManager = FindObjectOfType<MonsterManager>();
+        wiggleMagOG = wiggleMagnitude;
+        wiggleSpeedOG = wiggleSpeed;
         LineRenderer.positionCount = length;
         segmentPoses = new Vector3[length];
         segmentV = new Vector3[length];
@@ -51,25 +58,50 @@ public class Tentecle : MonoBehaviour
             segmentPoses[i] =Vector3.SmoothDamp(segmentPoses[i],segmentPoses[i-1] +targetDir.right * targetDist,ref segmentV[i],smoothSpeed + i/ trailSpeed);
         }
         
-      //  GrowTanticle();
-       // HungerAgetated();
+    
         LineRenderer.SetPositions(segmentPoses);
+
+        if (Input.GetKey(KeyCode.Space))
+        {
+            StartCoroutine(Pulse(10, 20, 0.1f,0.1f,1));
+        }
     }
 
-    void GrowTanticle()
+    public void GrowTanticle( float monsterPower)
     {
-        targetGrowth = _monsterManager.monsterPower / 10f;
+        targetGrowth =monsterPower / 10f;
         targetDist = Mathf.Lerp(targetDist, targetGrowth, timeOfGrowth);
         targetDist = Mathf.Clamp(targetDist, 0.2f, 0.5f);
             
     }
 
-    void HungerAgetated()
+    public void HungerAgetated(float monsterHunger)
     {
-        wiggleMagnitude = Mathf.Lerp(wiggleMagnitude, _monsterManager.monsterHunger * 2f, 0.5f);
+        wiggleMagnitude = Mathf.Lerp(wiggleMagnitude, monsterHunger * 2f, 0.5f);
         wiggleMagnitude = Mathf.Clamp(wiggleMagnitude, 1f, 30);
         
-        wiggleSpeed = Mathf.Lerp(wiggleSpeed, _monsterManager.monsterHunger * 2f, 0.5f);
+        wiggleSpeed = Mathf.Lerp(wiggleSpeed, monsterHunger * 2f, 0.5f);
         wiggleSpeed = Mathf.Clamp(wiggleSpeed, 1f, 30);
+    }
+
+    public IEnumerator Pulse(float wiggleSpeed, float wiggleMag,float tenticleGrowth, float pulseTime,float growthMagnitude)
+    {
+       
+
+        yield return PulseChange(wiggleSpeed,wiggleMag,pulseTime);
+        targetDist = Mathf.Lerp(targetDist, targetDist + tenticleGrowth, 0.5f);
+        yield return new WaitForSeconds(growthMagnitude);
+        targetDist = Mathf.Lerp(targetDist, targetDist - tenticleGrowth, 0.5f);
+        yield return PulseChange(-wiggleSpeed, -wiggleMag,pulseTime);
+       
+
+
+    }
+
+    IEnumerator PulseChange(float speed, float wiggleMag, float pulseTime)
+    {
+        wiggleSpeed = Mathf.Lerp(wiggleSpeed, wiggleSpeed + speed,pulseTime);
+        wiggleMagnitude = Mathf.Lerp(wiggleMagnitude, wiggleMagnitude + wiggleMag, pulseTime);
+        yield return null;
     }
 }
