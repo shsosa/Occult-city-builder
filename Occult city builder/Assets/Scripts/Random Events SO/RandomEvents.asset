@@ -51,15 +51,16 @@ MonoBehaviour:
   - WILD ANIMALS
   - FAMINE
   - COMET SPOTTED
-  randomEventText: 'The mask of sanity was removed, and people smile their true smiles...
-    Give them a reason to weep, my Lord !!! '
+  randomEventText: ' Sanity is not a default state of mind nor is it a right. Sanity
+    is a gift, we have been robbed of. Cleanse the village of the unpure or risk
+    to join them, my Lord!  '
   eventTextHeader: VILLAGERS GONE INSANE
-  punishment: 10
-  maxPunishment: 12
-  minPunishment: 11
-  priceToPay: 11
-  maxPriceToPay: 15
-  minPriceToPay: 12
+  punishment: 1
+  maxPunishment: 2
+  minPunishment: 1
+  priceToPay: 1
+  maxPriceToPay: 2
+  minPriceToPay: 1
   priceGrowthPerItration: 1
   punishmentGrowthPerIteration: 1
-  resourceIterator: 1
+  resourceIterator: 0

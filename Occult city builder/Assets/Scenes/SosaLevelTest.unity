@@ -10710,9 +10710,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monsterHunger: 0
   monsterPower: 0
-  monsterHungerGrowth: 1
+  monsterHungerGrowth: 0.05
   monsterPowerGrowth: 2
-  hungerTime: 3
+  hungerTime: 0.1
   isBanished: 0
   maxRangeToTrigerHungerEvent: 0
   maxRangeToTrigerHungerEventConstant: 10000
