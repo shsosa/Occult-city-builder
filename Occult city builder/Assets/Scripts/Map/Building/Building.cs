@@ -116,21 +116,7 @@ public class Building : MonoBehaviour, Idraggable
                  break;
             
             case TypeOfDraggableItem.Research:
-                if (other.gameObject.CompareTag("Tile"))
-                {
-                    if (gameObject.CompareTag("Building"))
-                    {
-                     
-                        goto ThisIsBuilding;
-                    }
-                    
-                    if(!other.GetComponent<Tiles>().isCursed && !isDragged)
-                    {
-                        Destroy(gameObject);
-                    }
-                    
-                }
-                ThisIsBuilding:
+                
               
                 break;
             
@@ -233,6 +219,7 @@ public class Building : MonoBehaviour, Idraggable
     private void SnapToTile()
     {
         transform.localPosition = new Vector3(0, 0, 0);
+        
        
     }
     /// <summary>

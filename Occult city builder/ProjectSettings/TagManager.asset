@@ -13,6 +13,7 @@ TagManager:
   - EventNotSecrefice
   - Spell
   - Monster
+  - HolyTile
   layers:
   - Default
   - TransparentFX

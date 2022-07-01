@@ -52,13 +52,44 @@ public class BuildingManager : MonoBehaviour
             
             currentBuilding.tile = tile;
             
-            TileHasBuildingFeedback(currentTile,currentBuilding);
-
-            HoverOnTileWithBuildingFeedback(currentTile, currentBuilding);
-         
-            BuildOnTile(currentTile, currentBuilding);
-
             BlessCursedTile(currentBuilding, currentTile);
+            if (!currentTile.CompareTag("HolyTile"))
+            {
+                TileHasBuildingFeedback(currentTile,currentBuilding);
+
+                HoverOnTileWithBuildingFeedback(currentTile, currentBuilding);
+         
+                BuildOnTile(currentTile, currentBuilding);
+                
+                
+            }
+            
+          
+            
+            if (currentTile.CompareTag("HolyTile"))
+            {
+                if (currentBuilding._typeOfDraggableItem == Building.TypeOfDraggableItem.Research &&
+                    !currentTile.hasBuilding)
+                {
+                    if(currentBuilding.isDragged && !currentTile.hasBuilding)
+                        currentTile.TileHoverEffect();
+                    if (!currentBuilding.isDragged && !currentTile.hasBuilding)
+                    {
+                        currentTile.ActivateSacredSite();
+                        Destroy(currentBuilding.gameObject);
+                    }
+                       
+                }
+                
+                
+            }
+
+            if (currentBuilding._typeOfDraggableItem == Building.TypeOfDraggableItem.Research &&
+                currentTile.CompareTag("Tile") && !currentBuilding.isDragged)
+            {
+                Destroy(currentBuilding.gameObject);
+            }
+          
             
             
         }

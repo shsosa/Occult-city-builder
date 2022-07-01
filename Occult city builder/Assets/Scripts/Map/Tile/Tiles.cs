@@ -81,7 +81,7 @@ public class Tiles : MonoBehaviour
         isCursed = true;
         
         spriteRenderer.sprite = cursedSprite;
-        if(hasBuilding)
+        if(hasBuilding && building !=null)
         {
             hasBuilding = false;
             Destroy(transform.GetChild(0).gameObject);
@@ -120,6 +120,12 @@ public class Tiles : MonoBehaviour
     public void ChangeTileColor(Color color)
     {
         spriteRenderer.color = color;
+    }
+
+    public void ActivateSacredSite()
+    {
+        SpriteRenderer sacredSite = transform.GetChild(0).GetComponent<SpriteRenderer>();
+        sacredSite.color = Color.Lerp(Color.blue, Color.cyan, 1f);
     }
 
     

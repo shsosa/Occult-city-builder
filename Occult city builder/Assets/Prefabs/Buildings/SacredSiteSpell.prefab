@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 331567645326505193}
   - component: {fileID: 8849899712448278358}
   m_Layer: 2
-  m_Name: MonsterPowerDecreaseSpellPB
+  m_Name: SacredSiteSpell
   m_TagString: Spell
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -121,9 +121,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44a37726f4c868d4aa2e16474d043214, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _typeOfDraggableItem: 1
+  _typeOfDraggableItem: 2
   _resourceTypeData: {fileID: 11400000, guid: 4fe4a459b8950b248b6e4241c869438e, type: 2}
-  reasourcePrice: {fileID: 11400000, guid: 976eff758a593984d810a64b2f2ca6f8, type: 2}
+  reasourcePrice: {fileID: 11400000, guid: e9482fd79af0a5f4aab30793d31ffc4b, type: 2}
   _resourceDataSO: {fileID: 11400000, guid: a058ea4808a964c4883a30c07f49f86f, type: 2}
   BuildEventChannelSo: {fileID: 11400000, guid: 1937f1b57f01ddd448ebe004034eae57, type: 2}
   tile: {fileID: 0}

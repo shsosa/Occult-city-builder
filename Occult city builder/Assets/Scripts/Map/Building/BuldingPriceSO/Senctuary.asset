@@ -9,11 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8ea555cfb2a7ef459111f388e4b538f, type: 3}
-  m_Name: ResourceManager
+  m_Script: {fileID: 11500000, guid: b2cd0fd6b9484366a15c2a69c69ae3ca, type: 3}
+  m_Name: Senctuary
   m_EditorClassIdentifier: 
-  wood: 100
+  wood: 0
   gold: 0
   vilagers: 0
-  researchPoints: 910
+  researchPoints: 1000
   cattle: 0
+  secrificeAmountHunger: 0
+  secrificeAddPower: 0

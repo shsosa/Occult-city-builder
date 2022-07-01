@@ -55,12 +55,12 @@ MonoBehaviour:
     is a gift, we have been robbed of. Cleanse the village of the unpure or risk
     to join them, my Lord!  '
   eventTextHeader: VILLAGERS GONE INSANE
-  punishment: 1
-  maxPunishment: 2
-  minPunishment: 1
-  priceToPay: 1
-  maxPriceToPay: 2
-  minPriceToPay: 1
+  punishment: 174
+  maxPunishment: 175
+  minPunishment: 175
+  priceToPay: 174
+  maxPriceToPay: 175
+  minPriceToPay: 175
   priceGrowthPerItration: 1
   punishmentGrowthPerIteration: 1
-  resourceIterator: 0
+  resourceIterator: 3
