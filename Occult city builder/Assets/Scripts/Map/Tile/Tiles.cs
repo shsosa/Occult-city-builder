@@ -73,17 +73,18 @@ public class Tiles : MonoBehaviour
 
     public void TileProduction()
     {
-        if(hasBuilding && !isCursed)
+        if(hasBuilding && !isCursed && building != null)
              _resourceDataScriptable.IncreaseResource(building._resourceType,amountOfReasourceProdused);
     }
     public void SetCursed()
     {
         isCursed = true;
+        
         spriteRenderer.sprite = cursedSprite;
         if(hasBuilding)
         {
-            Destroy(transform.GetChild(0).gameObject);
             hasBuilding = false;
+            Destroy(transform.GetChild(0).gameObject);
             hasBonus = false;
         } 
     }

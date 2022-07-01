@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SosaLevelTest
   m_EditorClassIdentifier: 
   templateScene: {fileID: 102900000, guid: 85a8c4e000635ce4584a78d1264d0f27, type: 3}
-  templateName: 
+  templateName: Test level template
   description: 
   preview: {fileID: 0}
   dependencies:

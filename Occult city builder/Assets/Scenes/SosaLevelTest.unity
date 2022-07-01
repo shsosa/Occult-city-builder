@@ -10715,10 +10715,10 @@ MonoBehaviour:
   hungerTime: 0.1
   isBanished: 0
   maxRangeToTrigerHungerEvent: 0
-  maxRangeToTrigerHungerEventConstant: 10000
+  maxRangeToTrigerHungerEventConstant: 100000
   hungerEventTriger: 0
   maxRangeToTrigerPowerEvent: 0
-  maxRangeToTrigerPowerEventConstant: 10000
+  maxRangeToTrigerPowerEventConstant: 100000
   powerEventTriger: 0
   monsterHungerEventChannel: {fileID: 11400000, guid: 2010f43b02da6a84380ee0a92b046515, type: 2}
   monsterPowerEventChanel: {fileID: 11400000, guid: f59841847b5a2a84fb8fe36d9ccef995, type: 2}
