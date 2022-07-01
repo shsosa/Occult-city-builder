@@ -53,6 +53,7 @@ public class BuildingManager : MonoBehaviour
             currentBuilding.tile = tile;
             
             BlessCursedTile(currentBuilding, currentTile);
+            
             if (!currentTile.CompareTag("HolyTile"))
             {
                 TileHasBuildingFeedback(currentTile,currentBuilding);
@@ -60,38 +61,35 @@ public class BuildingManager : MonoBehaviour
                 HoverOnTileWithBuildingFeedback(currentTile, currentBuilding);
          
                 BuildOnTile(currentTile, currentBuilding);
-                
-                
-            }
-            
-          
-            
-            if (currentTile.CompareTag("HolyTile"))
-            {
-                if (currentBuilding._typeOfDraggableItem == Building.TypeOfDraggableItem.Research &&
-                    !currentTile.hasBuilding)
-                {
-                    if(currentBuilding.isDragged && !currentTile.hasBuilding)
-                        currentTile.TileHoverEffect();
-                    if (!currentBuilding.isDragged && !currentTile.hasBuilding)
-                    {
-                        currentTile.ActivateSacredSite();
-                        Destroy(currentBuilding.gameObject);
-                    }
-                       
-                }
-                
-                
+
             }
 
+            ActivateHolySite(currentTile, currentBuilding);
+        }
+    }
+
+    private static void ActivateHolySite(Tiles currentTile, Building currentBuilding)
+    {
+        if (currentTile.CompareTag("HolyTile"))
+        {
             if (currentBuilding._typeOfDraggableItem == Building.TypeOfDraggableItem.Research &&
-                currentTile.CompareTag("Tile") && !currentBuilding.isDragged)
+                !currentTile.hasBuilding)
             {
-                Destroy(currentBuilding.gameObject);
+                if (currentBuilding.isDragged && !currentTile.hasBuilding)
+                    currentTile.TileHoverEffect();
+                if (!currentBuilding.isDragged && !currentTile.hasBuilding)
+                {
+                    currentTile.ActivateSacredSite();
+                    currentBuilding.DecreaseReasourceCost();
+                    Destroy(currentBuilding.gameObject);
+                }
             }
-          
-            
-            
+        }
+
+        if (currentBuilding._typeOfDraggableItem == Building.TypeOfDraggableItem.Research &&
+            currentTile.CompareTag("Tile") && !currentBuilding.isDragged)
+        {
+            Destroy(currentBuilding.gameObject);
         }
     }
 
