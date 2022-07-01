@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Game_managment;
 using InputMouse;
 using MoreMountains.Feedbacks;
 using UnityEngine;
@@ -20,6 +21,27 @@ public class UIObjectInfo : MonoBehaviour
     {
         CheckIfMouseOverObject();
         CheckIfCanInstantiateBuilding();
+        
+        
+            GetBuildingPrice();
+        
+           
+    }
+
+    public string GetBuildingPrice()
+    {
+        if (_currentObjectFromMouse != null)
+        {
+            ReasourcePrice building = _currentObjectFromMouse._reasourcePrice;
+            Debug.Log("Price " + "Wood :" + building.wood + " " + "Cattle: " + building.cattle + " " + "Gold :" +
+                      building.gold + " " + "Villegers :" + building.vilagers + " " + "Research points :" +
+                      building.researchPoints);
+            return "Price " + "Wood :" + building.wood + " " + "Cattle: " + building.cattle + " " + "Gold :" +
+                   building.gold + " " + "Villegers :" + building.vilagers + " " + "Research points :" +
+                   building.researchPoints;
+        }
+
+        return null;
     }
 
     #endregion

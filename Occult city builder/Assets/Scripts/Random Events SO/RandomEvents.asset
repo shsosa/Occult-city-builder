@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: RandomEvents
   m_EditorClassIdentifier: 
   monsterHungerEventChannel: {fileID: 11400000, guid: 2010f43b02da6a84380ee0a92b046515, type: 2}
-  eventType: 1
+  eventType: 2
   madnesEvents:
   - ' Sanity is not a default state of mind nor is it a right. Sanity is a gift,
     we have been robbed of. Cleanse the village of the unpure or risk to join them,
@@ -51,15 +51,15 @@ MonoBehaviour:
   - WILD ANIMALS
   - FAMINE
   - COMET SPOTTED
-  randomEventText: 'Doctors want gold, commoners want to live... The choise is yours,
-    my Lord. '
-  eventTextHeader: PESTILENCE
-  punishment: 0
-  maxPunishment: 5
-  minPunishment: 2
-  priceToPay: 3
-  maxPriceToPay: 3
-  minPriceToPay: 1
+  randomEventText: Ancient unspeakable terror is not the only thing devouring our
+    livestock, there are also wolfs. Build walls, my Lord... or don't.
+  eventTextHeader: WILD ANIMALS
+  punishment: 58
+  maxPunishment: 61
+  minPunishment: 61
+  priceToPay: 50
+  maxPriceToPay: 56
+  minPriceToPay: 53
   priceGrowthPerItration: 3
   punishmentGrowthPerIteration: 3
-  resourceIterator: 2
+  resourceIterator: 0
