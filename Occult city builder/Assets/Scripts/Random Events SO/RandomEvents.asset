@@ -51,16 +51,13 @@ MonoBehaviour:
   - WILD ANIMALS
   - FAMINE
   - COMET SPOTTED
-  randomEventText: ' Sanity is not a default state of mind nor is it a right. Sanity
-    is a gift, we have been robbed of. Cleanse the village of the unpure or risk
-    to join them, my Lord!  '
+  randomEventText: ' When whispers of the wind start making sense, you know it is
+    time to silence the people, my Lord... '
   eventTextHeader: VILLAGERS GONE INSANE
-  punishment: 174
-  maxPunishment: 175
-  minPunishment: 175
-  priceToPay: 174
-  maxPriceToPay: 175
-  minPriceToPay: 175
-  priceGrowthPerItration: 1
-  punishmentGrowthPerIteration: 1
+  priceGrowthPerItration: 2
+  punishmentGrowthPerIteration: 3
+  maxPunishmentOnStart: 6
+  minPunishmentOnStart: 3
+  maxPriceToPayOnStart: 4
+  minPriceToPayOnStart: 2
   resourceIterator: 3

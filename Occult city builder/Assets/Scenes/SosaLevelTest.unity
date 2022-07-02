@@ -11217,16 +11217,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monsterHunger: 0
   monsterPower: 0
-  monsterHungerGrowth: 0.05
+  monsterHungerGrowth: 1
   monsterPowerGrowth: 2
-  hungerTime: 0.1
+  hungerTime: 3
   isBanished: 0
   maxRangeToTrigerHungerEvent: 0
-  maxRangeToTrigerHungerEventConstant: 100000
+  maxRangeToTrigerHungerEventConstant: 1000
   hungerEventTriger: 0
   maxRangeToTrigerPowerEvent: 0
-  maxRangeToTrigerPowerEventConstant: 100000
+  maxRangeToTrigerPowerEventConstant: 1000
   powerEventTriger: 0
+  minThreshholdForHungerEvent: 25
+  minThresholdForPowerEvent: 25
   monsterHungerEventChannel: {fileID: 11400000, guid: 2010f43b02da6a84380ee0a92b046515, type: 2}
   monsterPowerEventChanel: {fileID: 11400000, guid: f59841847b5a2a84fb8fe36d9ccef995, type: 2}
   _tenteclesArray: []
