@@ -49,9 +49,11 @@ public class RandomEventsManager : ScriptableObject
         maxPunishment += punishmentGrowthPerIteration;
         minPriceToPay += priceGrowthPerItration;
         minPunishment += punishmentGrowthPerIteration;
+        
     }
     private void EventRandomizer()
     { 
+        
         ResourceIteration();
         PriceRandomizer();
         punishment = Random.Range(minPunishment, maxPunishment);

@@ -73,7 +73,7 @@ public class Tiles : MonoBehaviour
 
     public void TileProduction()
     {
-        if(hasBuilding && !isCursed && building != null)
+        if(hasBuilding && !isCursed && building != null&&!GameManager.isEventUIActive)
              _resourceDataScriptable.IncreaseResource(building._resourceType,amountOfReasourceProdused);
     }
     public void SetCursed()

@@ -5128,6 +5128,7 @@ GameObject:
   - component: {fileID: 659937628}
   - component: {fileID: 659937629}
   - component: {fileID: 659937630}
+  - component: {fileID: 659937631}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -5178,6 +5179,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monster: {fileID: 1876995522}
   listOfActiveSacrificeBuildings: []
+--- !u!114 &659937631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 659937626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da8f1f6e45be97b4692c0d6b519343ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  monster: {fileID: 1876995522}
+  ResourceManager: {fileID: 11400000, guid: 03b278ed35e4eea438837b784cc437e1, type: 2}
+  numOfCursedTiles: 0
+  listOfTiles: []
 --- !u!1 &691162144
 GameObject:
   m_ObjectHideFlags: 0
@@ -10710,15 +10727,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monsterHunger: 0
   monsterPower: 0
-  monsterHungerGrowth: 0.05
-  monsterPowerGrowth: 2
-  hungerTime: 0.1
+  monsterHungerGrowth: 1
+  monsterPowerGrowth: 3
+  hungerTime: 4
   isBanished: 0
   maxRangeToTrigerHungerEvent: 0
-  maxRangeToTrigerHungerEventConstant: 100000
+  maxRangeToTrigerHungerEventConstant: 500
   hungerEventTriger: 0
   maxRangeToTrigerPowerEvent: 0
-  maxRangeToTrigerPowerEventConstant: 100000
+  maxRangeToTrigerPowerEventConstant: 500
   powerEventTriger: 0
   monsterHungerEventChannel: {fileID: 11400000, guid: 2010f43b02da6a84380ee0a92b046515, type: 2}
   monsterPowerEventChanel: {fileID: 11400000, guid: f59841847b5a2a84fb8fe36d9ccef995, type: 2}

@@ -13,6 +13,7 @@ public class Timer : MonoBehaviour
     public void TimeNormal()
     {
         Time.timeScale = 1;
+
     }
     public void TimeSpeedUp()
     {

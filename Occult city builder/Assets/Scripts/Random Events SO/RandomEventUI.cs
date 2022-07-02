@@ -31,7 +31,7 @@ public class RandomEventUI : MonoBehaviour
         Text();
         Header();
         PriceText();
-        RelevantSecrificeSprite();
+        RelevantSecrificeSprite();   
     }
     public void IfRejectedToSecrefice()
     {
@@ -75,7 +75,9 @@ public class RandomEventUI : MonoBehaviour
                 resource.researchPoints = 0;
             }
         }
+       
         Deactivate();
+
     }
     public void IfAceptedToSecrifice()
     {
