@@ -39,9 +39,12 @@ public class MonsterManager : MonoBehaviour
     private IEnumerator HungerTimer()
     {
         yield return new WaitForSeconds(hungerTime);
-        HungerGrowth();
-        HungerEventProbability();
-        PowerEventProbability();
+        if (!GameManager.isEventUIActive)
+        {
+            HungerGrowth();
+            HungerEventProbability();
+            PowerEventProbability();
+        } 
         StartCoroutine(HungerTimer());
     }
     private void HungerEventFlag()
@@ -55,8 +58,7 @@ public class MonsterManager : MonoBehaviour
         if (hungerEventTriger >= maxRangeToTrigerHungerEvent)
         {
             HungerEventFlag();
-            maxRangeToTrigerHungerEvent = maxRangeToTrigerHungerEventConstant;
-            
+            maxRangeToTrigerHungerEvent = maxRangeToTrigerHungerEventConstant;    
         }
     }
     private void PowerEventProbability()
