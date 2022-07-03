@@ -130,21 +130,30 @@ public class BuildingManager : MonoBehaviour
         {
             if (currentBuilding.CompareTag("Spell")&& currentTile!= null)
             {
-                if (currentBuilding.isDragged)
+                if (currentBuilding.isDragged && currentTile.isCursed)
                 {
                     currentTile.TileHoverEffect();
-                    currentTile.ChangeTileColor(Color.red);
+                    currentTile.ChangeTileColor(Color.blue);
                 }
                     
-                if (!currentBuilding.isDragged)
+               else if (!currentBuilding.isDragged)
                 {
-                    currentTile.SetNotCursed();
+                   
                     currentBuilding.DecreaseReasourceCost();
-                    Destroy(currentBuilding.gameObject);
+                    currentTile.SetNotCursed();
+                    if(!currentTile.isCursed)
+                        Destroy(currentBuilding.gameObject);
                 }
                 
             }
         }
+
+        if (!currentBuilding.isDragged && !currentTile.isCursed && currentBuilding.CompareTag("Spell") && currentBuilding._typeOfDraggableItem == Building.TypeOfDraggableItem.Secrifice)
+        {
+            Destroy(currentBuilding.gameObject);
+        }
+        
+        
     }
 
     private static void BuildOnTile(Tiles currentTile, Building currentBuilding)

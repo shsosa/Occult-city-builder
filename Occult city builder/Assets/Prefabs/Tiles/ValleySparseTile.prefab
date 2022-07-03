@@ -106,10 +106,10 @@ MonoBehaviour:
   resourceManager: {fileID: 11400000, guid: aa6d1e9599124c244b5af24ba9ba859f, type: 2}
   monsterPowerEvent: {fileID: 0}
   _buildingManager: {fileID: 0}
-  tileFeedbacks: {fileID: 961970359274185891, guid: ed286d07a3a185a44b73718e64ee5cdb, type: 3}
   hasBuilding: 0
   hasBonus: 0
   isCursed: 0
+  isHoly: 0
   amountOfReasourceProdused: 1
 --- !u!60 &1372300153
 PolygonCollider2D:
