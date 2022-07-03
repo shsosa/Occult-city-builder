@@ -35,6 +35,10 @@ public class MonsterManager : MonoBehaviour
     {
 
         monsterHunger += monsterHungerGrowth;
+        
+        //Add power when really hungry
+        if (monsterHunger >= 9)
+            monsterPower += 0.05f;
     }
     private IEnumerator HungerTimer()
     {
