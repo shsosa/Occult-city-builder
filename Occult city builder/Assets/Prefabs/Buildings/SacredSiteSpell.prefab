@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 8849899712448278358}
   m_Layer: 2
   m_Name: SacredSiteSpell
-  m_TagString: Spell
+  m_TagString: HolyTile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -82,7 +82,7 @@ public class BuildingManager : MonoBehaviour
                 {
                     currentTile.ActivateSacredSite();
                     currentBuilding.DecreaseReasourceCost();
-                    Destroy(currentBuilding.gameObject);
+                    currentBuilding.PlaceBuildingOnTile();
                 }
             }
         }
