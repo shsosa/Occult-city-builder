@@ -71,7 +71,7 @@ public class BuildingManager : MonoBehaviour
 
     private static void ActivateHolySite(Tiles currentTile, Building currentBuilding)
     {
-        if (currentTile.CompareTag("HolyTile"))
+        if (currentTile.CompareTag("HolyTile") && !currentBuilding.CompareTag("Building"))
         {
             if (currentBuilding._typeOfDraggableItem == Building.TypeOfDraggableItem.Research &&
                 !currentTile.hasBuilding)
@@ -88,7 +88,7 @@ public class BuildingManager : MonoBehaviour
         }
 
         if (currentBuilding._typeOfDraggableItem == Building.TypeOfDraggableItem.Research &&
-            currentTile.CompareTag("Tile") && !currentBuilding.isDragged)
+            currentTile.CompareTag("Tile") && !currentBuilding.isDragged && !currentBuilding.CompareTag("Building"))
         {
             Destroy(currentBuilding.gameObject);
         }
@@ -144,7 +144,13 @@ public class BuildingManager : MonoBehaviour
     {
         if (!currentTile.hasBuilding && !currentTile.isCursed &&
             currentBuilding.CompareTag("Building"))
+        {
+
             currentBuilding.PlaceBuildingOnTile();
+        }
+           
+
+       
     }
 
 

@@ -19,7 +19,7 @@ public class Building : MonoBehaviour, Idraggable
 
     public ResourceTypeData _resourceTypeData;
     [SerializeField] private ReasourcePrice reasourcePrice;
-    [SerializeField] private ResourceData _resourceDataSO;
+    public ResourceData _resourceDataSO;
     public VoidEventChannelSO BuildEventChannelSo;
     public GameObject tile;
     private SpriteRenderer _spriteRenderer;
@@ -112,11 +112,11 @@ public class Building : MonoBehaviour, Idraggable
         {
             
             case TypeOfDraggableItem.Building:  
-                 CheckTileVacancy(other);
+              
                  break;
             
             case TypeOfDraggableItem.Research:
-                
+               
               
                 break;
             
@@ -180,7 +180,10 @@ public class Building : MonoBehaviour, Idraggable
                     BuildEventChannelSo.RaiseEvent();
                     tileScript.hasBuilding = true;
                     GetComponent<PolygonCollider2D>().isTrigger = true;
-                    
+                    if (tileScript.nextToSite && _typeOfDraggableItem == TypeOfDraggableItem.Research)
+                        tileScript.hasBonus = true;
+
+
                 }
                 
                 
@@ -194,9 +197,9 @@ public class Building : MonoBehaviour, Idraggable
     {
         if (tile.type._resourceType == _resourceTypeData._resourceType)
         {
-            tile.amountOfReasourceProdused += _resourceTypeData.bonus;
             tile.hasBonus = true;
         }
+        
     }
 
     private void StopFollowingMouse()

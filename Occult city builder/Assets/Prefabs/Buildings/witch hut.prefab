@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44a37726f4c868d4aa2e16474d043214, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _typeOfDraggableItem: 0
+  _typeOfDraggableItem: 2
   _resourceTypeData: {fileID: 11400000, guid: 4fe4a459b8950b248b6e4241c869438e, type: 2}
   reasourcePrice: {fileID: 11400000, guid: ef4215a9cada38d49b7aef4be0ceb5ee, type: 2}
   _resourceDataSO: {fileID: 11400000, guid: a058ea4808a964c4883a30c07f49f86f, type: 2}

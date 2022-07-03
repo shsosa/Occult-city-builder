@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: WitchHut
   m_EditorClassIdentifier: 
   wood: 10
-  gold: 15
+  gold: 5
   vilagers: 3
   researchPoints: 0
-  cattle: 5
+  cattle: 2
   secrificeAmountHunger: 0
   secrificeAddPower: 0

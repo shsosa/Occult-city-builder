@@ -1,4 +1,5 @@
 using System;
+using System.ComponentModel.Design;
 using MoreMountains.Feedbacks;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -18,13 +19,14 @@ public class Tiles : MonoBehaviour
     private MMFeedbacks tileFeedbacks;
     
     public bool hasBuilding =false;
-    public bool hasBonus,isCursed;
+    public bool hasBonus,isCursed, nextToSite;
     public int amountOfReasourceProdused;
     private PolygonCollider2D _polygonCollider2D;
 
     private void Awake()
     {
         feedbackEffectsManager = FindObjectOfType<FeedbackEffects>();
+        
     }
 
     private void Start()
@@ -52,7 +54,9 @@ public class Tiles : MonoBehaviour
     { 
         resourceManager.OnEventRaised -= TileProduction;
     }
-
+    
+    
+    
     private void Update()
     {
         if (hasBuilding )
@@ -67,14 +71,22 @@ public class Tiles : MonoBehaviour
         {
             _polygonCollider2D.isTrigger = true;
         }
+        
+        
+           
 
     }
+    
     
 
     public void TileProduction()
     {
+
+        int totalAmountToProduce = amountOfReasourceProdused;
+        if (hasBonus)
+            totalAmountToProduce = amountOfReasourceProdused * building.bonus;
         if(hasBuilding && !isCursed && building != null&&!GameManager.isEventUIActive)
-             _resourceDataScriptable.IncreaseResource(building._resourceType,amountOfReasourceProdused);
+             _resourceDataScriptable.IncreaseResource(building._resourceType,totalAmountToProduce);
     }
     public void SetCursed()
     {
@@ -128,7 +140,15 @@ public class Tiles : MonoBehaviour
         sacredSite.color = Color.Lerp(Color.blue, Color.cyan, 1f);
     }
 
-    
 
-   
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("HolyTile"))
+        {
+            Debug.Log("Tile next to site " + name);
+
+            nextToSite = true;
+        }
+       
+    }
 }
