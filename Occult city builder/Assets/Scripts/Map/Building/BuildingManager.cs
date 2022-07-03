@@ -44,74 +44,57 @@ public class BuildingManager : MonoBehaviour
 
     private void Update()
     {
-       
-           
+        var isObjectsActive = building != null && tile != null && !GameManager.isEventUIActive;
         
-        if (building != null && tile != null && !GameManager.isEventUIActive)
+        if (isObjectsActive)
         {
+            //Set current active objects scripts
             Building currentBuilding = building.GetComponent<Building>();
             Tiles currentTile = tile.GetComponent<Tiles>();
-            
             currentBuilding.tile = tile;
 
-           
-
-            if (currentBuilding.CompareTag("Building"))
-            {
-                TileHasBuildingFeedback(currentTile,currentBuilding);
-
-                HoverOnTileWithBuildingFeedback(currentTile, currentBuilding);
-                if(!currentTile.CompareTag("HolyTile"))
-                   BuildOnTile(currentTile, currentBuilding);
-            }
+            
+            Build(currentBuilding, currentTile);
                
             BlessCursedTile(currentBuilding, currentTile);
 
-            
             ActivateHolySite(currentTile, currentBuilding);
         }
-        
+    }
+
+    private static void Build(Building currentBuilding, Tiles currentTile)
+    {
+        if (currentBuilding.CompareTag("Building"))
+        {
+            TileHasBuildingFeedback(currentTile, currentBuilding);
+            
+            HoverOnTileWithBuildingFeedback(currentTile, currentBuilding);
+            
+            if (!currentTile.CompareTag("HolyTile"))
+                PlaceBuildingOnTile(currentTile, currentBuilding);
+        }
+    }
+    private static void PlaceBuildingOnTile(Tiles currentTile, Building currentBuilding)
+    {
+        if (!currentTile.hasBuilding && !currentTile.isCursed)
+            currentBuilding.PlaceBuildingOnTile();
         
        
     }
-
-    private static void ActivateHolySite(Tiles currentTile, Building currentBuilding)
-    {
-        if (currentTile.CompareTag("HolyTile") && !currentBuilding.CompareTag("Building"))
-        {
-            if (currentBuilding._typeOfDraggableItem == Building.TypeOfDraggableItem.Research &&
-                !currentTile.hasBuilding)
-            {
-                if (currentBuilding.isDragged && !currentTile.hasBuilding)
-                    currentTile.TileHoverEffect();
-                if (!currentBuilding.isDragged && !currentTile.hasBuilding)
-                {
-                    currentTile.ActivateSacredSite();
-                    currentBuilding.DecreaseReasourceCost();
-                    currentBuilding.PlaceBuildingOnTile();
-                }
-            }
-        }
-
-        if (currentBuilding._typeOfDraggableItem == Building.TypeOfDraggableItem.Research &&
-            currentTile.CompareTag("Tile") && !currentBuilding.isDragged && !currentBuilding.CompareTag("Building"))
-        {
-            Destroy(currentBuilding.gameObject);
-        }
-    }
-
     private static void HoverOnTileWithBuildingFeedback(Tiles currentTile, Building currentBuilding)
     {
         if (!currentTile.hasBuilding && !currentTile.isCursed)
         {
             if (currentBuilding.CompareTag("Building"))
             {
+                if(currentBuilding.CheckIfGetsResourceBonus(currentTile,currentBuilding) && !currentTile.CompareTag("HolyTile"))
+                    currentTile.ChangeTileColor(Color.green);
+                if(currentBuilding._typeOfDraggableItem == Building.TypeOfDraggableItem.Research && currentTile.isHoly)
+                    currentTile.ChangeTileColor(Color.green);
                 currentTile.TileHoverEffect();
             }
-            
         }
     }
-
     private static void TileHasBuildingFeedback(Tiles currentTile , Building currentBuilding)
     {
         if (currentTile.hasBuilding && currentBuilding.CompareTag("Building") || currentBuilding.CompareTag("Building")&& currentTile.CompareTag("HolyTile") )
@@ -123,6 +106,8 @@ public class BuildingManager : MonoBehaviour
                 Destroy(currentBuilding.gameObject);
         }
     }
+    
+    
 
     private static void BlessCursedTile(Building currentBuilding, Tiles currentTile)
     {
@@ -155,19 +140,33 @@ public class BuildingManager : MonoBehaviour
         
         
     }
-
-    private static void BuildOnTile(Tiles currentTile, Building currentBuilding)
+    private static void ActivateHolySite(Tiles currentTile, Building currentBuilding)
     {
-        if (!currentTile.hasBuilding && !currentTile.isCursed &&
-            currentBuilding.CompareTag("Building"))
+        if (currentTile.CompareTag("HolyTile") && !currentBuilding.CompareTag("Building"))
         {
-
-            currentBuilding.PlaceBuildingOnTile();
+            if (currentBuilding._typeOfDraggableItem == Building.TypeOfDraggableItem.Research &&
+                !currentTile.hasBuilding)
+            {
+                if (currentBuilding.isDragged && !currentTile.hasBuilding)
+                    currentTile.TileHoverEffect();
+                if (!currentBuilding.isDragged && !currentTile.hasBuilding)
+                {
+                    currentTile.ActivateSacredSite();
+                    currentBuilding.DecreaseReasourceCost();
+                    currentBuilding.PlaceBuildingOnTile();
+                }
+            }
         }
-           
 
-       
+        if (currentBuilding._typeOfDraggableItem == Building.TypeOfDraggableItem.Research &&
+            currentTile.CompareTag("Tile") && !currentBuilding.isDragged && !currentBuilding.CompareTag("Building"))
+        {
+            Destroy(currentBuilding.gameObject);
+        }
     }
+
+
+   
 
 
     #region Resource Data - SO
@@ -218,7 +217,7 @@ public class BuildingManager : MonoBehaviour
 
     #endregion
 
-    public void Build(GameObject buildingPB, Transform uiButtonPos)
+    public void InstantiateBuilding(GameObject buildingPB, Transform uiButtonPos)
     {
         building = Instantiate(buildingPB, uiButtonPos.position, Quaternion.identity);
         
@@ -279,11 +278,7 @@ public class BuildingManager : MonoBehaviour
         }
     }
 
-
-    void PutObjectsInBack()
-    {
-      
-    }
+    
     void SetBuildingNull()
     {
         building = null;

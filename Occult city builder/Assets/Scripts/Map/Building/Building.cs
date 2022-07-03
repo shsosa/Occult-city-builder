@@ -129,8 +129,6 @@ public class Building : MonoBehaviour, Idraggable
                         Destroy(gameObject);
                     }    
                 }
-               
-               
                 break;
         }
     }
@@ -143,17 +141,12 @@ public class Building : MonoBehaviour, Idraggable
 
     private void CheckTileVacancy(Collider2D other)
     {
-        
-
         if (other.gameObject.CompareTag("Tile"))
         {
             if (other.GetComponent<Tiles>().isCursed && !isDragged && !isBuildingChildOfTile) 
               Destroy(gameObject);
         }
-
         
-        
-          
     }
 
     #endregion
@@ -174,17 +167,16 @@ public class Building : MonoBehaviour, Idraggable
                     tileScript.hasBuilding = true;
                     SetTileParent(tile);
                     DecreaseReasourceCost();
-                    CheckIfGetsResourceBonus(tileScript);
+                    tileScript.hasBonus =
+                        CheckIfGetsResourceBonus(tileScript, this);
                     SnapToTile();
                     StopFollowingMouse();
                     BuildEventChannelSo.RaiseEvent();
                     GetComponent<PolygonCollider2D>().isTrigger = true;
                     if (tileScript.isHoly && _typeOfDraggableItem == TypeOfDraggableItem.Research)
                         tileScript.hasBonus = true;
-
-
+                    
                 }
-                
                 
             }
             
@@ -192,13 +184,9 @@ public class Building : MonoBehaviour, Idraggable
     }
 
 
-    private void CheckIfGetsResourceBonus(Tiles tile)
+    public bool CheckIfGetsResourceBonus(Tiles tile,Building building)
     {
-        if (tile.type._resourceType == _resourceTypeData._resourceType)
-        {
-            tile.hasBonus = true;
-        }
-        
+        return tile.type._resourceType == building._resourceTypeData._resourceType;
     }
 
     private void StopFollowingMouse()
@@ -215,23 +203,17 @@ public class Building : MonoBehaviour, Idraggable
     private void SnapToTile()
     {
         transform.localPosition = new Vector3(0, 0, 0);
-        
-       
     }
-    /// <summary>
-    /// Takes the building price SO and passes it to resource manager SO
-    /// </summary>
+  
     public void DecreaseReasourceCost()
     {
         _resourceDataSO.SpendReasource(reasourcePrice);
-        
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
         isOnTile = false;
     }
-    
 
     #endregion
 

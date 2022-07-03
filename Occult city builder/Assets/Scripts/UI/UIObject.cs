@@ -61,7 +61,7 @@ public class UIObject : MonoBehaviour
     {
         if(!eventHappaning && canBuild && buildingToCreate!= null)
         {
-            _buildingManager.Build(buildingToCreate,transform);
+            _buildingManager.InstantiateBuilding(buildingToCreate,transform);
         }
     }
 
