@@ -30,7 +30,7 @@ public class Building : MonoBehaviour, Idraggable
 
     public bool isDragged;
     private bool isOnTile = false;
-    private bool isBuildingChildOfTile = false;
+    public bool isBuildingChildOfTile = false;
 
     #endregion
 
@@ -116,28 +116,8 @@ public class Building : MonoBehaviour, Idraggable
                  break;
             
             case TypeOfDraggableItem.Research:
-                
-                
-                    if (other.gameObject.CompareTag("Building"))
-                    {
-                        if (!isBuildingChildOfTile && !isDragged)
-                            Destroy(gameObject);
-                    }
-
-                    if (other.gameObject.CompareTag("Tile"))
-                    {
-                        if (other.GetComponent<Tiles>().isCursed && !isDragged)
-                            Destroy(gameObject);
-                    }
-
-                
-
-                   
-                    break;
-             
-                
-                
-                 
+                CheckTileVacancy(other);
+                break;
             
             case TypeOfDraggableItem.Secrifice:
                 if (other.gameObject.CompareTag("Monster"))
@@ -163,16 +143,12 @@ public class Building : MonoBehaviour, Idraggable
 
     private void CheckTileVacancy(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Building"))
-        {
-            if (!isBuildingChildOfTile && !isDragged)
-                Destroy(gameObject);
-        }
+        
 
         if (other.gameObject.CompareTag("Tile"))
         {
-            if (other.GetComponent<Tiles>().isCursed && !isDragged)
-                Destroy(gameObject);
+            if (other.GetComponent<Tiles>().isCursed && !isDragged && !isBuildingChildOfTile) 
+              Destroy(gameObject);
         }
 
         
@@ -195,14 +171,13 @@ public class Building : MonoBehaviour, Idraggable
                 var tileScript = tile.GetComponent<Tiles>();
                 if (!tileScript.isCursed)
                 {
-                   
+                    tileScript.hasBuilding = true;
+                    SetTileParent(tile);
                     DecreaseReasourceCost();
                     CheckIfGetsResourceBonus(tileScript);
-                    SetTileParent(tile);
                     SnapToTile();
                     StopFollowingMouse();
                     BuildEventChannelSo.RaiseEvent();
-                    tileScript.hasBuilding = true;
                     GetComponent<PolygonCollider2D>().isTrigger = true;
                     if (tileScript.isHoly && _typeOfDraggableItem == TypeOfDraggableItem.Research)
                         tileScript.hasBonus = true;

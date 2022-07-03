@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wood: 10
   gold: 0
-  vilagers: 5
+  vilagers: 8
   researchPoints: 0
   cattle: 0

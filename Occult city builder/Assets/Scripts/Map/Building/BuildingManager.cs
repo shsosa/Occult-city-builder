@@ -54,7 +54,7 @@ public class BuildingManager : MonoBehaviour
             
             currentBuilding.tile = tile;
 
-
+           
 
             if (currentBuilding.CompareTag("Building"))
             {
