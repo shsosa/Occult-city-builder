@@ -130,13 +130,13 @@ public class Building : MonoBehaviour, Idraggable
                         Destroy(gameObject);
                     }    
                 }
-                
+                /*
                 if (!isDragged)
                 {
                     
                     Destroy(gameObject);
                 }
-
+                */
                 break;
         }
     }

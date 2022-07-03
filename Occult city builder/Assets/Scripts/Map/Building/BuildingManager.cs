@@ -52,7 +52,7 @@ public class BuildingManager : MonoBehaviour
             
             currentBuilding.tile = tile;
             
-            BlessCursedTile(currentBuilding, currentTile);
+            
             
             if (!currentTile.CompareTag("HolyTile"))
             {
@@ -61,6 +61,7 @@ public class BuildingManager : MonoBehaviour
                 HoverOnTileWithBuildingFeedback(currentTile, currentBuilding);
          
                 BuildOnTile(currentTile, currentBuilding);
+                BlessCursedTile(currentBuilding, currentTile);
 
             }
 
