@@ -152,7 +152,6 @@ public class BuildingManager : MonoBehaviour
                 if (!currentBuilding.isDragged && !currentTile.hasBuilding)
                 {
                     currentTile.ActivateSacredSite();
-                    currentBuilding.DecreaseReasourceCost();
                     currentBuilding.PlaceBuildingOnTile();
                 }
             }
