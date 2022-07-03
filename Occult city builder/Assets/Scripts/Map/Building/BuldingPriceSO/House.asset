@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: House
   m_EditorClassIdentifier: 
   wood: 2
-  gold: 1
+  gold: 0
   vilagers: 0
   researchPoints: 0
   cattle: 1

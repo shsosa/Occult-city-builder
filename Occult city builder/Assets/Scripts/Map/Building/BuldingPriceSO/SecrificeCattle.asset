@@ -15,8 +15,7 @@ MonoBehaviour:
   wood: 0
   gold: 0
   vilagers: 0
-  researchPoints: 0
+  researchPoints: -5
   cattle: 1
   secrificeAmountHunger: 1
   secrificeAddPower: 2
-  isCorectForRendomSecrafice: 0

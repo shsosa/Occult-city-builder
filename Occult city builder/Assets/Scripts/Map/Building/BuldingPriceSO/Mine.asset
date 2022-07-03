@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2cd0fd6b9484366a15c2a69c69ae3ca, type: 3}
   m_Name: Mine
   m_EditorClassIdentifier: 
-  wood: 5
+  wood: 15
   gold: 0
   vilagers: 2
   researchPoints: 0

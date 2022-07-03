@@ -5,14 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6a6f9a88-340d-4329-b101-d2b7388b26fe" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/DebugMode.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/DebugMode.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Occult city builder/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Occult city builder/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Map/Building/BuildingManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Map/Building/BuildingManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Random Events SO/RandomEvents.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Random Events SO/RandomEvents.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Resources/ResourceSO/ResourceManager.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Resources/ResourceSO/ResourceManager.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SosaLevelTest.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SosaLevelTest.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Map/Building/Building.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Map/Building/Building.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Map/Building/BuldingPriceSO/House.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Map/Building/BuldingPriceSO/House.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Map/Building/BuldingPriceSO/Mine.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Map/Building/BuldingPriceSO/Mine.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Map/Building/BuldingPriceSO/RandomEvents.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Map/Building/BuldingPriceSO/RandomEvents.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Map/Building/BuldingPriceSO/ResourceManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Map/Building/BuldingPriceSO/ResourceManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Map/Building/BuldingPriceSO/WitchHut.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Map/Building/BuldingPriceSO/WitchHut.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Random Events SO/RandomEventUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Random Events SO/RandomEventUI.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

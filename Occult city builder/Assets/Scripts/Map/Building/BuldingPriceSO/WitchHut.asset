@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: WitchHut
   m_EditorClassIdentifier: 
   wood: 10
-  gold: 20
+  gold: 15
   vilagers: 3
   researchPoints: 0
   cattle: 5

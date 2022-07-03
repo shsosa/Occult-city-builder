@@ -13,6 +13,9 @@ public class RandomEventUI : MonoBehaviour
     [SerializeField] TMP_Text eventText,headerText,priceText;
     [SerializeField] VoidEventChannelSO monsterHungerEventChannel;
     [SerializeField] List<Sprite> listOfSprite;
+    
+    //Added reserch point amount after event
+    [SerializeField] private int researchPointToAdd;
 
 
     private void OnEnable()
@@ -144,6 +147,8 @@ public class RandomEventUI : MonoBehaviour
     
     private void Deactivate()
     {
+        //Add some research after event
+        resource.researchPoints += researchPointToAdd;
         eventPromt.SetActive(false);
         GameManager.isEventUIActive = false;
     }
