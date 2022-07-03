@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: RandomEvents
   m_EditorClassIdentifier: 
   monsterHungerEventChannel: {fileID: 11400000, guid: 2010f43b02da6a84380ee0a92b046515, type: 2}
-  eventType: 1
+  eventType: 2
   madnesEvents:
   - ' Sanity is not a default state of mind nor is it a right. Sanity is a gift,
     we have been robbed of. Cleanse the village of the unpure or risk to join them,
@@ -51,15 +51,15 @@ MonoBehaviour:
   - WILD ANIMALS
   - FAMINE
   - COMET SPOTTED
-  randomEventText: ' If they all die, whom shall you feed to the shadows, my Lord?
-    It''s better to pay in gold than in your life. '
-  eventTextHeader: PESTILENCE
-  punishment: 13
-  maxPunishment: 14
-  minPunishment: 14
-  priceToPay: 13
-  maxPriceToPay: 14
-  minPriceToPay: 14
+  randomEventText: 'Fangs and claws can be warded off by spears and palisades. It
+    is wood or blood... Choose wisely, my Lord. '
+  eventTextHeader: WILD ANIMALS
+  punishment: 6
+  maxPunishment: 7
+  minPunishment: 7
+  priceToPay: 6
+  maxPriceToPay: 7
+  minPriceToPay: 7
   priceGrowthPerItration: 1
   punishmentGrowthPerIteration: 1
-  resourceIterator: 3
+  resourceIterator: 1
