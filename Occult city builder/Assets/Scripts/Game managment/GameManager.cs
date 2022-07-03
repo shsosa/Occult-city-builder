@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
     public ResourceManager ResourceManager;
     public int numOfCursedTiles;
     public Tiles[] listOfTiles;
-    private bool hasLost,hasWon;
+    private bool hasLost, hasWon;
 
     public static bool isEventUIActive = false;
     /*
@@ -22,23 +22,24 @@ public class GameManager : MonoBehaviour
     {
         numOfCursedTiles = 0;
         listOfTiles = FindObjectsOfType<Tiles>();
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
     private void LoseCondition()
     {
-        if(numOfCursedTiles>=listOfTiles.Length)
+        if (numOfCursedTiles >= listOfTiles.Length)
         {
             hasLost = true;
         }
     }
     private void WinCondition()
     {
-        if(monster.isBanished)
+        if (monster.isBanished)
         {
             hasWon = true;
             Loader(SceneManager.GetActiveScene().buildIndex + 1);

@@ -11,7 +11,8 @@ public class MonsterManager : MonoBehaviour
     public float hungerTime;
     public bool isBanished;
     [SerializeField] private float maxRangeToTrigerHungerEvent, maxRangeToTrigerHungerEventConstant, hungerEventTriger,
-                     maxRangeToTrigerPowerEvent, maxRangeToTrigerPowerEventConstant, powerEventTriger;
+                     maxRangeToTrigerPowerEvent, maxRangeToTrigerPowerEventConstant, powerEventTriger
+        ,minThreshholdForHungerEvent,minThresholdForPowerEvent;
     [SerializeField] VoidEventChannelSO monsterHungerEventChannel, monsterPowerEventChanel;
     Tiles[] tile;
 
@@ -27,8 +28,8 @@ public class MonsterManager : MonoBehaviour
 
     private void Update()
     {
-        monsterHunger = Mathf.Clamp(monsterHunger, 0, 10);
-       monsterPower= Mathf.Clamp(monsterPower, 0, 10);
+        //monsterHunger = Mathf.Clamp(monsterHunger, 0, 10);
+      // monsterPower= Mathf.Clamp(monsterPower, 0, 10);
     }
 
     private void HungerGrowth()
@@ -57,23 +58,29 @@ public class MonsterManager : MonoBehaviour
     }
     private void HungerEventProbability()
     {
-        maxRangeToTrigerHungerEvent -= monsterHunger;
-        hungerEventTriger = Random.Range(0, maxRangeToTrigerHungerEventConstant);
-        if (hungerEventTriger >= maxRangeToTrigerHungerEvent)
+        if (monsterHunger >= minThreshholdForHungerEvent)
         {
-            HungerEventFlag();
-            maxRangeToTrigerHungerEvent = maxRangeToTrigerHungerEventConstant;    
+            maxRangeToTrigerHungerEvent -= monsterHunger;
+            hungerEventTriger = Random.Range(0, maxRangeToTrigerHungerEventConstant);
+            if (hungerEventTriger >= maxRangeToTrigerHungerEvent)
+            {
+                HungerEventFlag();
+                maxRangeToTrigerHungerEvent = maxRangeToTrigerHungerEventConstant;
+            }
         }
     }
     private void PowerEventProbability()
     {
-        maxRangeToTrigerPowerEvent -= monsterPower;
-        powerEventTriger = Random.Range(0, maxRangeToTrigerPowerEventConstant);
-        if (powerEventTriger >= maxRangeToTrigerPowerEvent)
+        if (monsterPower >= minThresholdForPowerEvent)
         {
-            PowerEvent();
-            maxRangeToTrigerPowerEvent = maxRangeToTrigerPowerEventConstant;
-            monsterPower -= monsterPowerGrowth;
+            maxRangeToTrigerPowerEvent -= monsterPower;
+            powerEventTriger = Random.Range(0, maxRangeToTrigerPowerEventConstant);
+            if (powerEventTriger >= maxRangeToTrigerPowerEvent)
+            {
+                PowerEvent();
+                maxRangeToTrigerPowerEvent = maxRangeToTrigerPowerEventConstant;
+                monsterPower -= monsterPowerGrowth;
+            }
         }
     }
     private void PowerEvent()
