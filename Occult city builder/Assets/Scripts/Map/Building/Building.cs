@@ -112,13 +112,32 @@ public class Building : MonoBehaviour, Idraggable
         {
             
             case TypeOfDraggableItem.Building:  
-              
+                CheckTileVacancy(other);
                  break;
             
             case TypeOfDraggableItem.Research:
-               
-              
-                break;
+                
+                
+                    if (other.gameObject.CompareTag("Building"))
+                    {
+                        if (!isBuildingChildOfTile && !isDragged)
+                            Destroy(gameObject);
+                    }
+
+                    if (other.gameObject.CompareTag("Tile"))
+                    {
+                        if (other.GetComponent<Tiles>().isCursed && !isDragged)
+                            Destroy(gameObject);
+                    }
+
+                
+
+                   
+                    break;
+             
+                
+                
+                 
             
             case TypeOfDraggableItem.Secrifice:
                 if (other.gameObject.CompareTag("Monster"))
@@ -154,6 +173,10 @@ public class Building : MonoBehaviour, Idraggable
             if (other.GetComponent<Tiles>().isCursed && !isDragged)
                 Destroy(gameObject);
         }
+
+        
+        
+          
     }
 
     #endregion
@@ -180,7 +203,7 @@ public class Building : MonoBehaviour, Idraggable
                     BuildEventChannelSo.RaiseEvent();
                     tileScript.hasBuilding = true;
                     GetComponent<PolygonCollider2D>().isTrigger = true;
-                    if (tileScript.nextToSite && _typeOfDraggableItem == TypeOfDraggableItem.Research)
+                    if (tileScript.isHoly && _typeOfDraggableItem == TypeOfDraggableItem.Research)
                         tileScript.hasBonus = true;
 
 

@@ -5927,6 +5927,14 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5221034697131395727, guid: 57b51eef4733bb74a901e331d477ac62, type: 3}
+      propertyPath: nextToSite
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5221034697131395727, guid: 57b51eef4733bb74a901e331d477ac62, type: 3}
+      propertyPath: hasBuilding
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6742397480971769726, guid: 57b51eef4733bb74a901e331d477ac62, type: 3}
       propertyPath: m_Name
       value: HolyMountainPeak (1)
@@ -13527,9 +13535,21 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5221034697131395727, guid: 57b51eef4733bb74a901e331d477ac62, type: 3}
+      propertyPath: hasBuilding
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6501815528795194600, guid: 57b51eef4733bb74a901e331d477ac62, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6742397480971769726, guid: 57b51eef4733bb74a901e331d477ac62, type: 3}
       propertyPath: m_Name
       value: HolyMountainPeak
+      objectReference: {fileID: 0}
+    - target: {fileID: 6742397480971769726, guid: 57b51eef4733bb74a901e331d477ac62, type: 3}
+      propertyPath: m_TagString
+      value: HolyTile
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 57b51eef4733bb74a901e331d477ac62, type: 3}

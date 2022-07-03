@@ -44,6 +44,8 @@ public class BuildingManager : MonoBehaviour
 
     private void Update()
     {
+       
+           
         
         if (building != null && tile != null && !GameManager.isEventUIActive)
         {
@@ -51,22 +53,26 @@ public class BuildingManager : MonoBehaviour
             Tiles currentTile = tile.GetComponent<Tiles>();
             
             currentBuilding.tile = tile;
-            
-            
-            
-            if (!currentTile.CompareTag("HolyTile"))
+
+
+
+            if (currentBuilding.CompareTag("Building"))
             {
                 TileHasBuildingFeedback(currentTile,currentBuilding);
 
                 HoverOnTileWithBuildingFeedback(currentTile, currentBuilding);
-         
-                BuildOnTile(currentTile, currentBuilding);
-                BlessCursedTile(currentBuilding, currentTile);
-
+                if(!currentTile.CompareTag("HolyTile"))
+                   BuildOnTile(currentTile, currentBuilding);
             }
+               
+            BlessCursedTile(currentBuilding, currentTile);
 
+            
             ActivateHolySite(currentTile, currentBuilding);
         }
+        
+        
+       
     }
 
     private static void ActivateHolySite(Tiles currentTile, Building currentBuilding)
@@ -102,17 +108,18 @@ public class BuildingManager : MonoBehaviour
             {
                 currentTile.TileHoverEffect();
             }
+            
         }
     }
 
     private static void TileHasBuildingFeedback(Tiles currentTile , Building currentBuilding)
     {
-        if (currentTile.hasBuilding && currentBuilding.CompareTag("Building"))
+        if (currentTile.hasBuilding && currentBuilding.CompareTag("Building") || currentBuilding.CompareTag("Building")&& currentTile.CompareTag("HolyTile") )
         {
             currentTile.ChangeTileColor(Color.red);
-            if(!currentBuilding.isDragged && currentTile.isCursed)
+            if(!currentBuilding.isDragged && currentTile.isCursed || !currentBuilding.isDragged && currentTile.CompareTag("HolyTile"))
                 Destroy(currentBuilding.gameObject);
-            if(!currentBuilding.isDragged&& currentTile.hasBuilding)
+            if(!currentBuilding.isDragged&& currentTile.hasBuilding ||  !currentBuilding.isDragged && currentTile.CompareTag("HolyTile"))
                 Destroy(currentBuilding.gameObject);
         }
     }

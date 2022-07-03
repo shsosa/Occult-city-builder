@@ -19,8 +19,10 @@ public class Tiles : MonoBehaviour
     private MMFeedbacks tileFeedbacks;
     
     public bool hasBuilding =false;
-    public bool hasBonus,isCursed, nextToSite;
+    public bool hasBonus,isCursed, isHoly;
     public int amountOfReasourceProdused;
+    
+   
     private PolygonCollider2D _polygonCollider2D;
 
     private void Awake()
@@ -73,8 +75,6 @@ public class Tiles : MonoBehaviour
         }
         
         
-           
-
     }
     
     
@@ -140,6 +140,7 @@ public class Tiles : MonoBehaviour
         sacredSite.color = Color.Lerp(Color.blue, Color.cyan, 1f);
     }
 
+    
 
     private void OnTriggerStay2D(Collider2D other)
     {
@@ -147,7 +148,7 @@ public class Tiles : MonoBehaviour
         {
             Debug.Log("Tile next to site " + name);
 
-            nextToSite = true;
+            isHoly = true;
         }
        
     }
