@@ -10653,12 +10653,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f71fd354098af8418424690d18a23ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fadeRate: 0.01
+  timeToFade: 10
   normalMusic: {fileID: 1707693889}
   powerMusic: {fileID: 1707693888}
   hungerMusic: {fileID: 1707693887}
   monster: {fileID: 1876995522}
-  hungerThreshhold: 20
+  hungerThreshhold: 10
   powerThreshold: 20
 --- !u!1001 &1710149526
 PrefabInstance:
