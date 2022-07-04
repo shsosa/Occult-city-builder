@@ -10,6 +10,8 @@ public class MonsterManager : MonoBehaviour
     public float monsterHungerGrowth, monsterPowerGrowth;
     public float hungerTime;
     public bool isBanished;
+    [SerializeField] private float growthIncreaseFromSacredSite;
+    [SerializeField] private int numOfSacredToGetAngry;
     [SerializeField] private float maxRangeToTrigerHungerEvent, maxRangeToTrigerHungerEventConstant, hungerEventTriger,
                      maxRangeToTrigerPowerEvent, maxRangeToTrigerPowerEventConstant, powerEventTriger, angryFromHunger;
     [SerializeField] VoidEventChannelSO monsterHungerEventChannel, monsterPowerEventChanel;
@@ -29,11 +31,14 @@ public class MonsterManager : MonoBehaviour
     {
         monsterHunger = Mathf.Clamp(monsterHunger, 0, 10);
        monsterPower= Mathf.Clamp(monsterPower, 0, 10);
+       hungerTime = Mathf.Clamp(hungerTime, 1, 5);
+
     }
 
     private void HungerGrowth()
     {
-
+       
+            
         monsterHunger += monsterHungerGrowth;
         
         //Add power when really hungry
@@ -42,6 +47,8 @@ public class MonsterManager : MonoBehaviour
     }
     private IEnumerator HungerTimer()
     {
+        if (GameManagerScript.numberOfScaredSitesActive >= numOfSacredToGetAngry)
+            hungerTime -= growthIncreaseFromSacredSite;
         yield return new WaitForSeconds(hungerTime);
         if (!GameManager.isEventUIActive)
         {

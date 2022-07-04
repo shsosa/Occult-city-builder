@@ -6,11 +6,11 @@ public class GameManagerScript : MonoBehaviour
 {
     public VoidEventChannelSO CollectReasources;
     public VoidEventChannelSO SacredSiteBuiltEvent;
-    [SerializeField] private MonsterManager _monsterManager;
+   
     [SerializeField] private float time;
    
     
-    [SerializeField] private int numberOfSacredSiteOnMap;
+    public static int numberOfSacredSiteOnMap;
     public static int numberOfScaredSitesActive =0;
 
     private void OnEnable()

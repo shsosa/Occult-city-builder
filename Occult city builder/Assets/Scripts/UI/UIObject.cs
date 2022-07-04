@@ -28,7 +28,7 @@ public class UIObject : MonoBehaviour
 
    #endregion
 
-   #region Mono
+   #region Mono 
    private void Awake()
    {
        _buildingManager = FindObjectOfType<BuildingManager>();
