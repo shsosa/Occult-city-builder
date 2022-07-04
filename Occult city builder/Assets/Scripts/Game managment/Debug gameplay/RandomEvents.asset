@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: RandomEvents
   m_EditorClassIdentifier: 
   monsterHungerEventChannel: {fileID: 11400000, guid: 2010f43b02da6a84380ee0a92b046515, type: 2}
-  eventType: 4
+  eventType: 1
   madnesEvents:
   - ' Sanity is not a default state of mind nor is it a right. Sanity is a gift,
     we have been robbed of. Cleanse the village of the unpure or risk to join them,
@@ -51,13 +51,15 @@ MonoBehaviour:
   - WILD ANIMALS
   - FAMINE
   - COMET SPOTTED
-  randomEventText: When Stars are falling from the sky, it isn't a time for logic,
-    my Lord
-  eventTextHeader: COMET SPOTTED
-  priceGrowthPerItration: 1
-  punishmentGrowthPerIteration: 1
-  maxPunishmentOnStart: 4
-  minPunishmentOnStart: 1
-  maxPriceToPayOnStart: 3
-  minPriceToPayOnStart: 1
-  resourceIterator: 1
+  randomEventText: ' If they all die, whom shall you feed to the shadows, my Lord?
+    It''s better to pay in gold than in your life. '
+  eventTextHeader: PESTILENCE
+  punishment: 54
+  maxPunishment: 5
+  minPunishment: 1
+  priceToPay: 53
+  maxPriceToPay: 5
+  minPriceToPay: 1
+  priceGrowthPerItration: 2
+  punishmentGrowthPerIteration: 5
+  resourceIterator: 2

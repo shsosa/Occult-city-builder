@@ -18,7 +18,7 @@ public class Building : MonoBehaviour, Idraggable
     #region SerializedData
 
     public ResourceTypeData _resourceTypeData;
-    public ReasourcePrice reasourcePrice;
+    [SerializeField] private ReasourcePrice reasourcePrice;
     public ResourceData _resourceDataSO;
     public VoidEventChannelSO BuildEventChannelSo;
     public GameObject tile;

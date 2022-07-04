@@ -18,7 +18,12 @@ public class ReserchManager : MonoBehaviour
   
     //todo node to line renderer 
 
-   
+    private void Update()
+    {
+        if(listOfActiveResearchBuildings.Count == 2)
+            Debug.Log("Monster banished!!");
+    }
+
     private void RitualForPowerOfMonster()
     {
         monster.monsterPower -= powerOfRitual;
