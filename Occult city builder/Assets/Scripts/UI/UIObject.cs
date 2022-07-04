@@ -2,6 +2,7 @@ using System;
 using Game_managment;
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class UIObject : MonoBehaviour
 {
@@ -66,7 +67,7 @@ public class UIObject : MonoBehaviour
     }
 
     #endregion
+    
    
-
-   
+     
 }

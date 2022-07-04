@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.ComponentModel.Design;
 using MoreMountains.Feedbacks;
 using Unity.VisualScripting;
@@ -6,6 +7,8 @@ using UnityEngine;
 
 public class Tiles : MonoBehaviour
 {
+    [SerializeField] private string header;
+    [SerializeField] private string content;
     private SpriteRenderer spriteRenderer;
     public Sprite normalSprite;
     public ResourceTypeData type;
@@ -112,13 +115,27 @@ public class Tiles : MonoBehaviour
         spriteRenderer.sortingOrder = 0;
         spriteRenderer.color = Color.white;
             _buildingManager.tile = null;
+            
+            TooltipSystem.Hide();
     }
-    
+
+    private void OnMouseEnter()
+    {
+        StartCoroutine(DelayTooltip());
+    }
 
     private void OnMouseOver()
     {
         _buildingManager.tile = gameObject;
-        
+     
+
+    }
+
+    IEnumerator DelayTooltip()
+    {
+        yield return new WaitForSeconds(0.5f);
+        if(header!=null && content != null)
+            TooltipSystem.Show(content,header);
     }
 
     public void TileHoverEffect()

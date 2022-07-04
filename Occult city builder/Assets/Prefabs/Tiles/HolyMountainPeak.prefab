@@ -222,6 +222,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 016eed81dfa96fd4a8b91366237d892c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  header: Holy Ruin
+  content: 
   normalSprite: {fileID: 0}
   type: {fileID: 11400000, guid: 4fe4a459b8950b248b6e4241c869438e, type: 2}
   building: {fileID: 0}
@@ -233,7 +235,7 @@ MonoBehaviour:
   hasBuilding: 1
   hasBonus: 0
   isCursed: 0
-  nextToSite: 1
+  isHoly: 0
   amountOfReasourceProdused: 0
 --- !u!60 &1585963076837970182
 PolygonCollider2D:
