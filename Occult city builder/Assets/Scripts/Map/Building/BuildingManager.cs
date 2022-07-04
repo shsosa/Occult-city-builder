@@ -12,7 +12,6 @@ public class BuildingManager : MonoBehaviour
     [Header("Event channels: ")]
     public VoidEventChannelSO buildEventChannelSo;
     public VoidEventChannelSO buildUIEventChannelSo;
-    public  VoidEventChannelSO sacretSiteBuiltEvent;
     
   
     
@@ -63,7 +62,7 @@ public class BuildingManager : MonoBehaviour
         }
     }
 
-    private  void Build(Building currentBuilding, Tiles currentTile)
+    private static void Build(Building currentBuilding, Tiles currentTile)
     {
         if (currentBuilding.CompareTag("Building"))
         {
@@ -75,14 +74,14 @@ public class BuildingManager : MonoBehaviour
                 PlaceBuildingOnTile(currentTile, currentBuilding);
         }
     }
-    private  void PlaceBuildingOnTile(Tiles currentTile, Building currentBuilding)
+    private static void PlaceBuildingOnTile(Tiles currentTile, Building currentBuilding)
     {
         if (!currentTile.hasBuilding && !currentTile.isCursed)
             currentBuilding.PlaceBuildingOnTile();
         
        
     }
-    private  void HoverOnTileWithBuildingFeedback(Tiles currentTile, Building currentBuilding)
+    private static void HoverOnTileWithBuildingFeedback(Tiles currentTile, Building currentBuilding)
     {
         if (!currentTile.hasBuilding && !currentTile.isCursed)
         {
@@ -96,7 +95,7 @@ public class BuildingManager : MonoBehaviour
             }
         }
     }
-    private  void TileHasBuildingFeedback(Tiles currentTile , Building currentBuilding)
+    private static void TileHasBuildingFeedback(Tiles currentTile , Building currentBuilding)
     {
         if (currentTile.hasBuilding && currentBuilding.CompareTag("Building") || currentBuilding.CompareTag("Building")&& currentTile.CompareTag("HolyTile") )
         {
@@ -110,7 +109,7 @@ public class BuildingManager : MonoBehaviour
     
     
 
-    private  void BlessCursedTile(Building currentBuilding, Tiles currentTile)
+    private static void BlessCursedTile(Building currentBuilding, Tiles currentTile)
     {
         if (currentBuilding._typeOfDraggableItem == Building.TypeOfDraggableItem.Secrifice && currentTile.isCursed)
         {
@@ -141,7 +140,7 @@ public class BuildingManager : MonoBehaviour
         
         
     }
-    private  void ActivateHolySite(Tiles currentTile, Building currentBuilding)
+    private static void ActivateHolySite(Tiles currentTile, Building currentBuilding)
     {
         if (currentTile.CompareTag("HolyTile") && !currentBuilding.CompareTag("Building"))
         {
@@ -154,8 +153,6 @@ public class BuildingManager : MonoBehaviour
                 {
                     currentTile.ActivateSacredSite();
                     currentBuilding.PlaceBuildingOnTile();
-                    sacretSiteBuiltEvent.RaiseEvent();
-                    
                 }
             }
         }
