@@ -112,11 +112,12 @@ public class Tiles : MonoBehaviour
 
     private void OnMouseExit()
     {
+        TooltipSystem.Hide();
         spriteRenderer.sortingOrder = 0;
         spriteRenderer.color = Color.white;
             _buildingManager.tile = null;
             
-            TooltipSystem.Hide();
+           
     }
 
     private void OnMouseEnter()
