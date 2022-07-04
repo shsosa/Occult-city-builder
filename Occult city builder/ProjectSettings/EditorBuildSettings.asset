@@ -8,7 +8,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 4e2f0498e4716c44686cf9e2339852cc
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/SosaLevelTest.unity
+    guid: 85a8c4e000635ce4584a78d1264d0f27
+  - enabled: 1
+    path: Assets/Scenes/ArtemLevel.unity
+    guid: e475a89ee4b72a24daee6d4869b15a31
   m_configObjects: {}

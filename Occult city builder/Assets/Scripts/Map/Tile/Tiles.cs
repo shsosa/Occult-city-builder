@@ -22,7 +22,7 @@ public class Tiles : MonoBehaviour
     private MMFeedbacks tileFeedbacks;
     
     public bool hasBuilding =false;
-    public bool hasBonus,isCursed, isHoly;
+    public bool hasBonus,isCursed, isHoly,isErelevantToLoseCondition,isBlesed;
     public int amountOfReasourceProdused;
     
    
@@ -31,12 +31,12 @@ public class Tiles : MonoBehaviour
     private void Awake()
     {
         feedbackEffectsManager = FindObjectOfType<FeedbackEffects>();
-        
+        RelevancyToLoseCondition();
     }
 
     private void Start()
     {
-       
+
         _buildingManager = FindObjectOfType<BuildingManager>();
        
         tileFeedbacks = feedbackEffectsManager.FeelEffectsList[0].Feedbacks;
@@ -52,6 +52,7 @@ public class Tiles : MonoBehaviour
     {
        
         resourceManager.OnEventRaised += TileProduction;
+        
         
     }
 
@@ -76,10 +77,8 @@ public class Tiles : MonoBehaviour
         {
             _polygonCollider2D.isTrigger = true;
         }
-        
-        
-        
-        
+
+        WorkAroundForWinCondition(); 
     }
     
     
@@ -159,18 +158,32 @@ public class Tiles : MonoBehaviour
         SpriteRenderer sacredSite = transform.GetChild(0).GetComponent<SpriteRenderer>();
         sacredSite.color = Color.Lerp(Color.blue, Color.cyan, 1f);
     }
+    private void RelevancyToLoseCondition()
+    {
+        if(gameObject.CompareTag("HolyTile"))
+        {
+            isErelevantToLoseCondition = true;
+        }
+    }
+    private void WorkAroundForWinCondition()
+    {
+        if(isErelevantToLoseCondition&&hasBuilding&&!isBlesed)
+        {
+            GameManager.numOfTilesToWin++;
+            isBlesed = true;
+        }
+
+    }
 
     
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        if(!CompareTag("HolyTile"))
-            if (other.gameObject.CompareTag("HolyTile"))
-            {
-                Debug.Log("Tile next to site " + name);
+        if (other.gameObject.CompareTag("HolyTile"))
+        {
+            Debug.Log("Tile next to site " + name);
 
-                isHoly = true;
-            }
-       
+            isHoly = true;
+        }      
     }
 }
