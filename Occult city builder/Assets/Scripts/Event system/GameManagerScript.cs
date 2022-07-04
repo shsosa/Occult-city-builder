@@ -6,8 +6,12 @@ public class GameManagerScript : MonoBehaviour
 {
     public VoidEventChannelSO CollectReasources;
     public VoidEventChannelSO SacredSiteBuiltEvent;
+    [SerializeField] private MonsterManager _monsterManager;
     [SerializeField] private float time;
-    [SerializeField] private int numberOfScaredSitesActive =0;
+   
+    
+    [SerializeField] private int numberOfSacredSiteOnMap;
+    public static int numberOfScaredSitesActive =0;
 
     private void OnEnable()
     {
@@ -18,6 +22,8 @@ public class GameManagerScript : MonoBehaviour
     {
         StartCoroutine(Timer());
     }
+    
+    
     IEnumerator Timer()
     {
         yield return new WaitForSeconds(time);

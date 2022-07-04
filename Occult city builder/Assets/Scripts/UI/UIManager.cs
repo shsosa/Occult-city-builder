@@ -45,8 +45,8 @@ public class UIManager : MonoBehaviour
         {
             
             Debug.Log("Current uiObject checking to build: "+ uiObject.name);
-            
-            uiObject.canBuild = buildingManager.CheckIfCanBuild(uiObject);
+            if(uiObject.isPlayebleYet)
+                uiObject.canBuild = buildingManager.CheckIfCanBuild(uiObject);
             ChangeUIObjectColor(uiObject);
         }
     }
