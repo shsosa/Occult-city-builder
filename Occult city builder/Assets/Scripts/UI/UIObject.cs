@@ -9,7 +9,7 @@ public class UIObject : MonoBehaviour
 
    #region Variables
 
-   [SerializeField] private GameObject buildingToCreate;
+   public  GameObject buildingToCreate;
    private BuildingManager _buildingManager;
     
    //Price to build
@@ -20,14 +20,15 @@ public class UIObject : MonoBehaviour
     
    //Original object scale
    private Vector3 scaleOG;
-    
+   public bool isPlayebleYet;
+   [SerializeField] int numberOfSacredSiteNeeded = 0;
+   
    public bool canBuild =false;
    private bool eventHappaning = false;
 
    #endregion
 
-   #region Mono
-
+   #region Mono 
    private void Awake()
    {
        _buildingManager = FindObjectOfType<BuildingManager>();
@@ -35,6 +36,17 @@ public class UIObject : MonoBehaviour
         
        map = FindObjectOfType<BuildingManager>().transform;
    }
+   private void Update()
+   {
+       if (GameManagerScript.numberOfScaredSitesActive >= numberOfSacredSiteNeeded)
+           isPlayebleYet = true;
+       else
+       {
+           isPlayebleYet = false;
+       }
+   }
+
+  
 
    
    #endregion
