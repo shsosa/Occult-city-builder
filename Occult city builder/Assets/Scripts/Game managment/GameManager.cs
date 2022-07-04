@@ -22,16 +22,22 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        listOfTiles = FindObjectsOfType<Tiles>();
-        SetingBlessedTiles();
-        ResetingResources();
+        if (SceneManager.GetActiveScene().buildIndex != 0)
+        {
+            listOfTiles = FindObjectsOfType<Tiles>();
+            SetingBlessedTiles();
+            ResetingResources();
+        }
     }
     private void Update()
     {
+        if (SceneManager.GetActiveScene().buildIndex != 0)
+        {
             GoToMainMenu();
             SetingCursedTilesNumberAndLoseCondition();
             WinCondition();
             LoadingOnWinLose();
+        }
     }
     private void WinCondition()
     {

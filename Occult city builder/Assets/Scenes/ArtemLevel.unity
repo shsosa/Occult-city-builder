@@ -4854,8 +4854,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   positiveOffset: 10
   negetiveOffset: 0
-  minTimeToSpawn: 10
-  maxTimeToSpawn: 20
+  minTimeToSpawn: 20
+  maxTimeToSpawn: 30
   secondsToWait: 0
   speed: 2
 --- !u!1001 &880389054
@@ -4974,10 +4974,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   positiveOffset: 10
   negetiveOffset: 0
-  minTimeToSpawn: 10
-  maxTimeToSpawn: 20
+  minTimeToSpawn: 20
+  maxTimeToSpawn: 30
   secondsToWait: 0
-  speed: 2
+  speed: 3
 --- !u!212 &894309323
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7450,11 +7450,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6841831380044669835, guid: da19f0b1c516abc438906755da631be4, type: 3}
       propertyPath: m_Pivot.x
-      value: 0.56879175
+      value: 0.61358804
       objectReference: {fileID: 0}
     - target: {fileID: 6841831380044669835, guid: da19f0b1c516abc438906755da631be4, type: 3}
       propertyPath: m_Pivot.y
-      value: 1.1797758
+      value: 1.1750814
       objectReference: {fileID: 0}
     - target: {fileID: 6841831380044669835, guid: da19f0b1c516abc438906755da631be4, type: 3}
       propertyPath: m_SizeDelta.x
@@ -10619,10 +10619,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   positiveOffset: 10
   negetiveOffset: 0
-  minTimeToSpawn: 10
-  maxTimeToSpawn: 20
+  minTimeToSpawn: 20
+  maxTimeToSpawn: 30
   secondsToWait: 0
-  speed: 2
+  speed: 2.5
 --- !u!212 &2116840627
 SpriteRenderer:
   m_ObjectHideFlags: 0
