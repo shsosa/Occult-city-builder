@@ -22,7 +22,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI villigersTextUI;
     [SerializeField] private TextMeshProUGUI cattleTextUI;
     [SerializeField] private TextMeshProUGUI researchTextUI;
-    [SerializeField] private TextMeshProUGUI toolTipTextUI;
+    //[SerializeField] private TextMeshProUGUI toolTipTextUI;
     #endregion
 
     #region Mono
@@ -75,7 +75,7 @@ public class UIManager : MonoBehaviour
         cattleTextUI.text = _resourceData.cattle.ToString();
         researchTextUI.text = _resourceData.researchPoints.ToString();
         villigersTextUI.text = _resourceData.vilagers.ToString();
-        toolTipTextUI.text = _uiObjectInfo.GetBuildingPrice();
+       // toolTipTextUI.text = _uiObjectInfo.GetBuildingPrice();
     }
     
     #endregion

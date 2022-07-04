@@ -52,7 +52,7 @@ public class Building : MonoBehaviour, Idraggable
     private void ChangeSortingOrder()
     {
         if (GameManager.isEventUIActive)
-            _spriteRenderer.sortingOrder = 0;
+            _spriteRenderer.sortingOrder = -1;
         else
         {
             _spriteRenderer.sortingOrder = 2;

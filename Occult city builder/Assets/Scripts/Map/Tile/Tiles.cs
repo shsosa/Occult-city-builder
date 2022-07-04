@@ -78,6 +78,8 @@ public class Tiles : MonoBehaviour
         }
         
         
+        
+        
     }
     
     
@@ -162,12 +164,13 @@ public class Tiles : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("HolyTile"))
-        {
-            Debug.Log("Tile next to site " + name);
+        if(!CompareTag("HolyTile"))
+            if (other.gameObject.CompareTag("HolyTile"))
+            {
+                Debug.Log("Tile next to site " + name);
 
-            isHoly = true;
-        }
+                isHoly = true;
+            }
        
     }
 }

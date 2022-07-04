@@ -5072,6 +5072,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1087566646}
   - component: {fileID: 1087566647}
+  - component: {fileID: 1087566648}
   m_Layer: 5
   m_Name: RandomEventManager
   m_TagString: Untagged
@@ -5127,6 +5128,27 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 48badc6522709c04f92b600d5d17e04d, type: 3}
   - {fileID: 21300000, guid: 36ed9d209c9efd4408def386a6b894c5, type: 3}
   researchPointToAdd: 2
+--- !u!223 &1087566648
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1087566645}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 1
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 2
+  m_TargetDisplay: 0
 --- !u!1 &1112003457
 GameObject:
   m_ObjectHideFlags: 0
@@ -6136,11 +6158,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6841831380044669835, guid: da19f0b1c516abc438906755da631be4, type: 3}
       propertyPath: m_Pivot.x
-      value: 1.5874616
+      value: 1.9986526
       objectReference: {fileID: 0}
     - target: {fileID: 6841831380044669835, guid: da19f0b1c516abc438906755da631be4, type: 3}
       propertyPath: m_Pivot.y
-      value: 1.2915813
+      value: 1.1180699
       objectReference: {fileID: 0}
     - target: {fileID: 6841831380044669835, guid: da19f0b1c516abc438906755da631be4, type: 3}
       propertyPath: m_SizeDelta.x

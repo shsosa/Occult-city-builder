@@ -9,12 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8ea555cfb2a7ef459111f388e4b538f, type: 3}
-  m_Name: ResourceManager
+  m_Script: {fileID: 11500000, guid: c1d885ea04be46ffbbb9a9411b8264cd, type: 3}
+  m_Name: Feeding
   m_EditorClassIdentifier: 
-  wood: 100
-  gold: 100
-  vilagers: 100
-  researchPoints: 99018
-  cattle: 100
-  reasoursesOnStart: 100
+  _emotion: 2
+  wiggleSpeed: 0
+  wiggleMag: 0.61
+  tenticleGrowth: -0.62
+  growthMagnitude: -0.06
+  reactPulseTime: 1.35
