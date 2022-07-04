@@ -87,23 +87,42 @@ public class RandomEventUI : MonoBehaviour
         if (rEManager.eventType == RandomEventsManager.EventType.Madness)
         {
             resource.vilagers-= rEManager.priceToPay;
-
+            if (resource.vilagers < 0)
+            {
+                resource.vilagers = 0;
+            }
         }
         if (rEManager.eventType == RandomEventsManager.EventType.Desise)
         {
             resource.gold -= rEManager.priceToPay;
+            if (resource.gold < 0)
+            {
+                resource.gold= 0;
+            }
         }
         if (rEManager.eventType == RandomEventsManager.EventType.WildAnimals)
         {
             resource.wood -= rEManager.priceToPay;
+            if (resource.wood < 0)
+            {
+                resource.wood = 0;
+            }
         }
         if (rEManager.eventType == RandomEventsManager.EventType.Starvation)
         {
             resource.cattle -= rEManager.priceToPay;
+            if (resource.cattle < 0)
+            {
+                resource.cattle = 0;
+            }
         }
         if (rEManager.eventType == RandomEventsManager.EventType.FalingStar)
         {
             resource.researchPoints -= rEManager.priceToPay;
+            if (resource.researchPoints < 0)
+            {
+                resource.researchPoints = 0;
+            }
         }
         Deactivate();
     }

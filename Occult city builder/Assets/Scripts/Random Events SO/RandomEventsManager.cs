@@ -12,9 +12,9 @@ public class RandomEventsManager : ScriptableObject
 
     public enum EventType
     {
-        Madness, Desise, WildAnimals, Starvation, FalingStar,MaxValueForIteration
-            //MaxValueForIteration is not an event and used only to astablish randomization 
-            //upper border in EventRandomizer. Do not add enums after it
+        Madness, Desise, WildAnimals, Starvation, FalingStar, MaxValueForIteration
+        //MaxValueForIteration is not an event and used only to astablish randomization 
+        //upper border in EventRandomizer. Do not add enums after it
     }
     public EventType eventType;
 
@@ -27,14 +27,16 @@ public class RandomEventsManager : ScriptableObject
 
     private List<string> curentEventTexts;
 
-    public string randomEventText,eventTextHeader;
+    public string randomEventText, eventTextHeader;
 
-    public int punishment,maxPunishment,minPunishment,priceToPay,maxPriceToPay,minPriceToPay,
-        priceGrowthPerItration,punishmentGrowthPerIteration;
+    [System.NonSerialized] public int punishment, maxPunishment, minPunishment, priceToPay, maxPriceToPay, minPriceToPay;
+      public int  priceGrowthPerItration,punishmentGrowthPerIteration;
+    public int maxPunishmentOnStart, minPunishmentOnStart, maxPriceToPayOnStart, minPriceToPayOnStart;
 
     public int resourceIterator;
     private void OnEnable()
     {
+        SettingPriceAndPunishment();
         monsterHungerEventChannel.OnEventRaised += RandomEvent;
     }
     
@@ -57,7 +59,7 @@ public class RandomEventsManager : ScriptableObject
         ResourceIteration();
         PriceRandomizer();
         punishment = Random.Range(minPunishment, maxPunishment);
-        eventTypeIterator = (int)Random.Range(0, (int)EventType.MaxValueForIteration-1);
+        eventTypeIterator = (int)Random.Range(0, (int)EventType.MaxValueForIteration);
        // Debug.LogError("randomizer");
     }
     private void EventListTextSorter()
@@ -106,5 +108,12 @@ public class RandomEventsManager : ScriptableObject
     private void ResourceIteration()
     {
         resourceIterator = Random.Range(0, 4);
+    }
+    private void SettingPriceAndPunishment()
+    {
+        minPriceToPay = minPriceToPayOnStart;
+        maxPriceToPay = maxPriceToPayOnStart;
+        minPunishment = minPunishmentOnStart;
+        maxPunishment = maxPunishmentOnStart;
     }
 }

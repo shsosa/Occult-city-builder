@@ -12,13 +12,22 @@ public class ResourceData : ScriptableObject
     public int vilagers;
     public int researchPoints;
     public int cattle;
-    
+
+    public int reasoursesOnStart;
+
 
     #endregion
-    
+
     //todo check possibility to make a scriptable for tile also so it can produce some other resources
-    
-  
+    private void OnEnable()
+    {
+        wood = reasoursesOnStart;
+        gold = reasoursesOnStart;
+        vilagers = reasoursesOnStart;
+        researchPoints = reasoursesOnStart;
+        cattle = reasoursesOnStart;
+    }
+
     public void IncreaseResource(ResourceTypeData.ResourceType resourceType, int resourcesTAdd)
     {
         Debug.Log("resource: "+ resourceType);

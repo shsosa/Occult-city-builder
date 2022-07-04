@@ -27,12 +27,12 @@ namespace UI
         {
             if (_barType==BarType.hunger)
             {
-                _slider.value = _monsterManager.monsterHunger;
+                _slider.value = _monsterManager.monsterHunger/10;
             }
             else if (_barType==BarType.power)
             {
                 Debug.Log("i am monster power");
-                _slider.value = _monsterManager.monsterPower;
+                _slider.value = _monsterManager.monsterPower/10;
             }
         }
 
