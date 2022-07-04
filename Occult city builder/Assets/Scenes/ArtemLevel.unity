@@ -206,6 +206,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildEventChannelSo: {fileID: 11400000, guid: 1937f1b57f01ddd448ebe004034eae57, type: 2}
   buildUIEventChannelSo: {fileID: 11400000, guid: 8d694df3df72f364c94ebe815482a9fc, type: 2}
+  sacretSiteBuiltEvent: {fileID: 0}
   tile: {fileID: 0}
   building: {fileID: 0}
   map: {fileID: 1227144227}
@@ -1734,6 +1735,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildingToCreate: {fileID: 6462662817318702781, guid: 0222375351e193945a7db1d8c77f258c, type: 3}
   _reasourcePrice: {fileID: 11400000, guid: e9482fd79af0a5f4aab30793d31ffc4b, type: 2}
+  isPlayebleYet: 0
+  numberOfSacredSiteNeeded: 0
   canBuild: 0
 --- !u!114 &230836701
 MonoBehaviour:
@@ -1904,6 +1907,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildingToCreate: {fileID: 3183833581075913164, guid: fe0113e8bcc3a3e4f80c1f940199b428, type: 3}
   _reasourcePrice: {fileID: 11400000, guid: d6aa3f9de4f4f7f429a2a4b3689834f6, type: 2}
+  isPlayebleYet: 0
+  numberOfSacredSiteNeeded: 0
   canBuild: 0
 --- !u!114 &256254606
 MonoBehaviour:
@@ -2559,6 +2564,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildingToCreate: {fileID: 0}
   _reasourcePrice: {fileID: 0}
+  isPlayebleYet: 0
+  numberOfSacredSiteNeeded: 0
   canBuild: 0
 --- !u!1 &351253901
 GameObject:
@@ -3328,6 +3335,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildingToCreate: {fileID: 4663308838598489374, guid: d14a6be1d713106438edf7b89e9a0ce3, type: 3}
   _reasourcePrice: {fileID: 11400000, guid: 7bf81ee11460b9e44b8bcd1d9a37e755, type: 2}
+  isPlayebleYet: 0
+  numberOfSacredSiteNeeded: 0
   canBuild: 0
 --- !u!114 &396928102
 MonoBehaviour:
@@ -3873,6 +3882,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildingToCreate: {fileID: 907057363068202997, guid: 1b1a6a86e7b608d498de66b121c0a71d, type: 3}
   _reasourcePrice: {fileID: 11400000, guid: ef4215a9cada38d49b7aef4be0ceb5ee, type: 2}
+  isPlayebleYet: 0
+  numberOfSacredSiteNeeded: 0
   canBuild: 0
 --- !u!114 &457941598
 MonoBehaviour:
@@ -5277,6 +5288,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CollectReasources: {fileID: 11400000, guid: aa6d1e9599124c244b5af24ba9ba859f, type: 2}
+  SacredSiteBuiltEvent: {fileID: 11400000, guid: 125536dda30d8074fbe36066fed50d28, type: 2}
   time: 5
 --- !u!114 &659937630
 MonoBehaviour:
@@ -5612,6 +5624,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildingToCreate: {fileID: 1290519556559800796, guid: e20d301789479c44a99552e1ef605c2b, type: 3}
   _reasourcePrice: {fileID: 0}
+  isPlayebleYet: 0
+  numberOfSacredSiteNeeded: 0
   canBuild: 0
 --- !u!1 &738340004
 GameObject:
@@ -5666,6 +5680,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildingToCreate: {fileID: 2460782622546668677, guid: 73ffb6cf5fdaf9446a9e4d0b57941e28, type: 3}
   _reasourcePrice: {fileID: 11400000, guid: fc14d91c525411e48b1e9c785afc3f51, type: 2}
+  isPlayebleYet: 0
+  numberOfSacredSiteNeeded: 0
   canBuild: 0
 --- !u!114 &738340007
 MonoBehaviour:
@@ -6627,6 +6643,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildingToCreate: {fileID: 4506224245774911541, guid: 29c96b16e35208a4d975e21779674106, type: 3}
   _reasourcePrice: {fileID: 11400000, guid: 81e7411d20221c64888237cf2185b92d, type: 2}
+  isPlayebleYet: 0
+  numberOfSacredSiteNeeded: 0
   canBuild: 0
 --- !u!114 &937779965
 MonoBehaviour:
@@ -7233,6 +7251,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildingToCreate: {fileID: 6634119082779499340, guid: 873499971d4717341982654aefd74b60, type: 3}
   _reasourcePrice: {fileID: 11400000, guid: 014e99382cd4bac48af7bc16d49f15ec, type: 2}
+  isPlayebleYet: 0
+  numberOfSacredSiteNeeded: 0
   canBuild: 0
 --- !u!114 &1090417989
 MonoBehaviour:
@@ -8687,6 +8707,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildingToCreate: {fileID: 8333826259438945344, guid: 56b34712edc4e4b43b7cf42736fdc5a1, type: 3}
   _reasourcePrice: {fileID: 11400000, guid: e272a855bb621c84d89dd8a5d63fc6ec, type: 2}
+  isPlayebleYet: 0
+  numberOfSacredSiteNeeded: 0
   canBuild: 0
 --- !u!114 &1375470514
 MonoBehaviour:
@@ -10208,6 +10230,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildingToCreate: {fileID: 1290519556559800796, guid: e20d301789479c44a99552e1ef605c2b, type: 3}
   _reasourcePrice: {fileID: 11400000, guid: 976eff758a593984d810a64b2f2ca6f8, type: 2}
+  isPlayebleYet: 0
+  numberOfSacredSiteNeeded: 0
   canBuild: 0
 --- !u!114 &1672704736
 MonoBehaviour:
@@ -10363,7 +10387,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: fb4662b50a721114cb078b8e616087ef, type: 3}
+  m_audioClip: {fileID: 8300000, guid: c23bdcae42731de44bf0425498e3165d, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0
   m_Pitch: 1
@@ -10459,7 +10483,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 4066cc3de1c03234182b9a10d34b1d29, type: 3}
+  m_audioClip: {fileID: 8300000, guid: ef3f93e4914bda4468e988e63ffa7bda, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -10555,7 +10579,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: cabbc92b99277a944a23df813c46bc86, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 681b22ad7db4f614884c4bd5db47a86c, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -11084,6 +11108,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildingToCreate: {fileID: 0}
   _reasourcePrice: {fileID: 0}
+  isPlayebleYet: 0
+  numberOfSacredSiteNeeded: 0
   canBuild: 0
 --- !u!1001 &1810552079
 PrefabInstance:
@@ -11508,6 +11534,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildingToCreate: {fileID: 6462662817318702781, guid: f9cdfff1e38728248a65b6934609826b, type: 3}
   _reasourcePrice: {fileID: 11400000, guid: 32341532e71d93c49ad562fc19144ec7, type: 2}
+  isPlayebleYet: 0
+  numberOfSacredSiteNeeded: 0
   canBuild: 0
 --- !u!114 &1812151152
 MonoBehaviour:
@@ -11984,6 +12012,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildingToCreate: {fileID: 4506224245774911541, guid: 29c96b16e35208a4d975e21779674106, type: 3}
   _reasourcePrice: {fileID: 11400000, guid: 81e7411d20221c64888237cf2185b92d, type: 2}
+  isPlayebleYet: 0
+  numberOfSacredSiteNeeded: 0
   canBuild: 0
 --- !u!114 &1889531243
 MonoBehaviour:
@@ -12349,6 +12379,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildingToCreate: {fileID: 2460782622546668677, guid: 73ffb6cf5fdaf9446a9e4d0b57941e28, type: 3}
   _reasourcePrice: {fileID: 11400000, guid: fc14d91c525411e48b1e9c785afc3f51, type: 2}
+  isPlayebleYet: 0
+  numberOfSacredSiteNeeded: 0
   canBuild: 0
 --- !u!114 &1899559980
 MonoBehaviour:
@@ -13058,6 +13090,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildingToCreate: {fileID: 5175587246928169690, guid: 7913ad87a478d8d4f94aec8f0b49fd49, type: 3}
   _reasourcePrice: {fileID: 0}
+  isPlayebleYet: 0
+  numberOfSacredSiteNeeded: 0
   canBuild: 0
 --- !u!1 &2067456830
 GameObject:

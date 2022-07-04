@@ -23,6 +23,7 @@ public class MusicManager : MonoBehaviour
         hungerMusic.Play();
         curentllyChosen =curentllyPlaying= normalMusic;
         curentllyPlaying.Play();
+        curentllyPlaying.volume = 1;
 
     }
     private void FixedUpdate()
