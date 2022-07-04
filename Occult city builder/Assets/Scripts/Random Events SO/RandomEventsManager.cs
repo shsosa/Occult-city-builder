@@ -59,7 +59,7 @@ public class RandomEventsManager : ScriptableObject
         ResourceIteration();
         PriceRandomizer();
         punishment = Random.Range(minPunishment, maxPunishment);
-        eventTypeIterator = (int)Random.Range(0, (int)EventType.MaxValueForIteration-1);
+        eventTypeIterator = (int)Random.Range(0, (int)EventType.MaxValueForIteration);
        // Debug.LogError("randomizer");
     }
     private void EventListTextSorter()

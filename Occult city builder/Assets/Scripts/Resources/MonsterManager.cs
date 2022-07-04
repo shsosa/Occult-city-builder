@@ -12,7 +12,7 @@ public class MonsterManager : MonoBehaviour
     public bool isBanished;
     [SerializeField] private float maxRangeToTrigerHungerEvent, maxRangeToTrigerHungerEventConstant, hungerEventTriger,
                      maxRangeToTrigerPowerEvent, maxRangeToTrigerPowerEventConstant, powerEventTriger
-        ,minThreshholdForHungerEvent,minThresholdForPowerEvent;
+        ,minThreshholdForHungerEvent,minThresholdForPowerEvent,maxThresholdForHungerEventTrigger,maxThresholdForPowerEventTrigger;
     [SerializeField] VoidEventChannelSO monsterHungerEventChannel, monsterPowerEventChanel;
     Tiles[] tile;
 
@@ -28,25 +28,28 @@ public class MonsterManager : MonoBehaviour
 
     private void Update()
     {
-        //monsterHunger = Mathf.Clamp(monsterHunger, 0, 10);
-      // monsterPower= Mathf.Clamp(monsterPower, 0, 10);
+        monsterHunger = Mathf.Clamp(monsterHunger, 0, 100);
+        monsterPower= Mathf.Clamp(monsterPower, 0, 100);
+        HungerGrowth();
     }
 
     private void HungerGrowth()
     {
+        if (!GameManager.isEventUIActive)
+        {
+            monsterHunger += monsterHungerGrowth * Time.deltaTime;
 
-        monsterHunger += monsterHungerGrowth;
-        
-        //Add power when really hungry
-        if (monsterHunger >= 9)
-            monsterPower += 0.05f;
+            //Add power when really hungry
+            if (monsterHunger >= 90)
+                monsterPower += 0.05f * Time.deltaTime;
+        }
     }
     private IEnumerator HungerTimer()
     {
         yield return new WaitForSeconds(hungerTime);
         if (!GameManager.isEventUIActive)
         {
-            HungerGrowth();
+            
             HungerEventProbability();
             PowerEventProbability();
         } 
@@ -60,13 +63,20 @@ public class MonsterManager : MonoBehaviour
     {
         if (monsterHunger >= minThreshholdForHungerEvent)
         {
-            maxRangeToTrigerHungerEvent -= monsterHunger;
-            hungerEventTriger = Random.Range(0, maxRangeToTrigerHungerEventConstant);
-            if (hungerEventTriger >= maxRangeToTrigerHungerEvent)
+            if (monsterHunger <= maxThresholdForHungerEventTrigger)
             {
-                HungerEventFlag();
-                maxRangeToTrigerHungerEvent = maxRangeToTrigerHungerEventConstant;
+                maxRangeToTrigerHungerEvent -= monsterHunger;
             }
+            else
+            {
+                maxRangeToTrigerHungerEvent = maxRangeToTrigerHungerEventConstant- maxThresholdForHungerEventTrigger;
+            }
+            hungerEventTriger = Random.Range(0, maxRangeToTrigerHungerEventConstant);
+        }
+        if (hungerEventTriger >= maxRangeToTrigerHungerEvent)
+        {
+            HungerEventFlag();
+            maxRangeToTrigerHungerEvent = maxRangeToTrigerHungerEventConstant;
         }
     }
     private void PowerEventProbability()
