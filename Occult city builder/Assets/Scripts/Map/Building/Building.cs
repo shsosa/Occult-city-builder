@@ -186,7 +186,7 @@ public class Building : MonoBehaviour, Idraggable
 
     public bool CheckIfGetsResourceBonus(Tiles tile,Building building)
     {
-        return tile.type._resourceType == building._resourceTypeData._resourceType;
+        return tile.type?._resourceType == building._resourceTypeData?._resourceType;
     }
 
     private void StopFollowingMouse()

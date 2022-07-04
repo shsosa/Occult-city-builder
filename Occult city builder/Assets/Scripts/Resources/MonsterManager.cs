@@ -11,7 +11,7 @@ public class MonsterManager : MonoBehaviour
     public float hungerTime;
     public bool isBanished;
     [SerializeField] private float maxRangeToTrigerHungerEvent, maxRangeToTrigerHungerEventConstant, hungerEventTriger,
-                     maxRangeToTrigerPowerEvent, maxRangeToTrigerPowerEventConstant, powerEventTriger;
+                     maxRangeToTrigerPowerEvent, maxRangeToTrigerPowerEventConstant, powerEventTriger, angryFromHunger;
     [SerializeField] VoidEventChannelSO monsterHungerEventChannel, monsterPowerEventChanel;
     Tiles[] tile;
 
@@ -38,7 +38,7 @@ public class MonsterManager : MonoBehaviour
         
         //Add power when really hungry
         if (monsterHunger >= 9)
-            monsterPower += 0.05f;
+            monsterPower += angryFromHunger;
     }
     private IEnumerator HungerTimer()
     {
