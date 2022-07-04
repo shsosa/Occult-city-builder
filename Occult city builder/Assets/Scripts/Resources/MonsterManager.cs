@@ -76,6 +76,7 @@ public class MonsterManager : MonoBehaviour
         if (hungerEventTriger >= maxRangeToTrigerHungerEvent)
         {
             HungerEventFlag();
+            MonsterReact();
             maxRangeToTrigerHungerEvent = maxRangeToTrigerHungerEventConstant;
         }
     }
@@ -88,6 +89,7 @@ public class MonsterManager : MonoBehaviour
             if (powerEventTriger >= maxRangeToTrigerPowerEvent)
             {
                 PowerEvent();
+                MonsterReact();
                 maxRangeToTrigerPowerEvent = maxRangeToTrigerPowerEventConstant;
                 monsterPower -= monsterPowerGrowth;
             }
@@ -107,6 +109,16 @@ public class MonsterManager : MonoBehaviour
         else 
         { 
             PowerEvent(); 
+        }
+    }
+
+    void MonsterReact()
+    {
+        Debug.Log("Monster react");
+        foreach (var tentecle in _tenteclesArray)
+        {
+            StartCoroutine(tentecle.Pulse(10, 20, 1f, 1f, 1));
+           
         }
     }
 }

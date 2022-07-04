@@ -1490,11 +1490,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6841831380044669835, guid: da19f0b1c516abc438906755da631be4, type: 3}
       propertyPath: m_Pivot.x
-      value: 1.6186863
+      value: 1.0504465
       objectReference: {fileID: 0}
     - target: {fileID: 6841831380044669835, guid: da19f0b1c516abc438906755da631be4, type: 3}
       propertyPath: m_Pivot.y
-      value: 1.2775509
+      value: 0.37346938
       objectReference: {fileID: 0}
     - target: {fileID: 6841831380044669835, guid: da19f0b1c516abc438906755da631be4, type: 3}
       propertyPath: m_SizeDelta.x
@@ -1581,6 +1581,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5743052716923661427, guid: 74d9a43c6ad56654987e87475bb764a8, type: 3}
+      propertyPath: monsterPowerEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: 2010f43b02da6a84380ee0a92b046515, type: 2}
     - target: {fileID: 9174179434253869827, guid: 74d9a43c6ad56654987e87475bb764a8, type: 3}
       propertyPath: m_Name
       value: UIManager+WorldMap
@@ -1589,6 +1593,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 519420031}
+    - target: {fileID: 9174179434253869837, guid: 74d9a43c6ad56654987e87475bb764a8, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9174179434253869838, guid: 74d9a43c6ad56654987e87475bb764a8, type: 3}
       propertyPath: buildingManager
       value: 
