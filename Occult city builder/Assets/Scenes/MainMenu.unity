@@ -366,6 +366,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 49694883086443861, guid: 0f8eaf127e71d9d4a9b4f34b1378e87a, type: 3}
+      propertyPath: resources
+      value: 
+      objectReference: {fileID: 11400000, guid: a058ea4808a964c4883a30c07f49f86f, type: 2}
     - target: {fileID: 8544814758609780082, guid: 0f8eaf127e71d9d4a9b4f34b1378e87a, type: 3}
       propertyPath: m_Name
       value: GameManager

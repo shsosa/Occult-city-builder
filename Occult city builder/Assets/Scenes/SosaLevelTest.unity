@@ -665,6 +665,7 @@ GameObject:
   - component: {fileID: 659937628}
   - component: {fileID: 659937629}
   - component: {fileID: 659937630}
+  - component: {fileID: 659937631}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -715,6 +716,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monster: {fileID: 1876995522}
   listOfActiveSacrificeBuildings: []
+--- !u!114 &659937631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 659937626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da8f1f6e45be97b4692c0d6b519343ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  monster: {fileID: 1876995522}
+  resources: {fileID: 11400000, guid: a058ea4808a964c4883a30c07f49f86f, type: 2}
+  numOfCursedTiles: 0
+  numOfErelevantTiles: 0
+  listOfTiles: []
+  reasoursesOnStart: 5
 --- !u!1 &778490573
 GameObject:
   m_ObjectHideFlags: 0
@@ -1490,11 +1509,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6841831380044669835, guid: da19f0b1c516abc438906755da631be4, type: 3}
       propertyPath: m_Pivot.x
-      value: 1.6186863
+      value: 0.56730914
       objectReference: {fileID: 0}
     - target: {fileID: 6841831380044669835, guid: da19f0b1c516abc438906755da631be4, type: 3}
       propertyPath: m_Pivot.y
-      value: 1.2775509
+      value: 1.2035267
       objectReference: {fileID: 0}
     - target: {fileID: 6841831380044669835, guid: da19f0b1c516abc438906755da631be4, type: 3}
       propertyPath: m_SizeDelta.x
@@ -1581,6 +1600,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 9174179433999302332, guid: 74d9a43c6ad56654987e87475bb764a8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 9174179434253869827, guid: 74d9a43c6ad56654987e87475bb764a8, type: 3}
       propertyPath: m_Name
       value: UIManager+WorldMap

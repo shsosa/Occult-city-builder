@@ -213,8 +213,8 @@ MonoBehaviour:
   powerMusic: {fileID: 6450988085831867198}
   hungerMusic: {fileID: 6450988085831867201}
   monster: {fileID: 0}
-  hungerThreshhold: 10
-  powerThreshold: 20
+  hungerThreshhold: 50
+  powerThreshold: 50
 --- !u!82 &6450988085831867199
 AudioSource:
   m_ObjectHideFlags: 0

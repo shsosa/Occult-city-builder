@@ -30,7 +30,10 @@ public class FeedbackEffects : MonoBehaviour
    
     public List<FeelEffects> FeelEffectsList;
 
-
+    void Awake()
+    {
+        DontDestroyOnLoad(this.gameObject);
+    }
 
     private void OnEnable()
     {
@@ -39,7 +42,6 @@ public class FeedbackEffects : MonoBehaviour
         InstanitateBuildingChannelSO.OnEventRaised += InstantiateBuildingEvent;
         CollectReasourcesSO.OnEventRaised += CollectResourcesEvent;
     }
-
     private void CollectResourcesEvent()
     {
         collectResourcesFeddbacks.PlayFeedbacks();

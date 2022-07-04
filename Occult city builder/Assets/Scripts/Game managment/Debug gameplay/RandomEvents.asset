@@ -54,12 +54,10 @@ MonoBehaviour:
   randomEventText: ' If they all die, whom shall you feed to the shadows, my Lord?
     It''s better to pay in gold than in your life. '
   eventTextHeader: PESTILENCE
-  punishment: 54
-  maxPunishment: 5
-  minPunishment: 1
-  priceToPay: 53
-  maxPriceToPay: 5
-  minPriceToPay: 1
-  priceGrowthPerItration: 2
-  punishmentGrowthPerIteration: 5
+  priceGrowthPerItration: 1
+  punishmentGrowthPerIteration: 1
+  maxPunishmentOnStart: 4
+  minPunishmentOnStart: 1
+  maxPriceToPayOnStart: 3
+  minPriceToPayOnStart: 1
   resourceIterator: 2
