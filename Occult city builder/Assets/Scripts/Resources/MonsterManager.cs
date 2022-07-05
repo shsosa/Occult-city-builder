@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using DefaultNamespace.Monster;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -18,9 +17,10 @@ public class MonsterManager : MonoBehaviour
     Tiles[] tile;
 
     [SerializeField] Tentecle[] _tenteclesArray;
-    [SerializeField] private MonsterEmot _monsterEmotCurseTile;
-    [SerializeField] private MonsterEmot _monsterEmotFeedMe;
-    
+    //void Awake()
+   //{
+   //     DontDestroyOnLoad(this.gameObject);
+   // }
     private void Start()
     {
         _tenteclesArray = GetComponentsInChildren<Tentecle>();
@@ -35,7 +35,6 @@ public class MonsterManager : MonoBehaviour
         monsterHunger = Mathf.Clamp(monsterHunger, 0, 100);
         monsterPower= Mathf.Clamp(monsterPower, 0, 100);
         HungerGrowth();
-        
     }
 
     private void HungerGrowth()
@@ -81,7 +80,6 @@ public class MonsterManager : MonoBehaviour
         if (hungerEventTriger >= maxRangeToTrigerHungerEvent)
         {
             HungerEventFlag();
-            MonsterReact(_monsterEmotFeedMe);
             maxRangeToTrigerHungerEvent = maxRangeToTrigerHungerEventConstant;
         }
     }
@@ -94,7 +92,6 @@ public class MonsterManager : MonoBehaviour
             if (powerEventTriger >= maxRangeToTrigerPowerEvent)
             {
                 PowerEvent();
-                MonsterReact(_monsterEmotCurseTile);
                 maxRangeToTrigerPowerEvent = maxRangeToTrigerPowerEventConstant;
                 monsterPower -= monsterPowerGrowth;
             }
@@ -109,23 +106,11 @@ public class MonsterManager : MonoBehaviour
         if(!tile[randomizer].isCursed)
         {
             if(!tile[randomizer].CompareTag("HolyTile"))
-                tile[randomizer].SetCursed(); 
-            MonsterReact(_monsterEmotCurseTile);
+                tile[randomizer].SetCursed();     
         }
         else 
         { 
-          
             PowerEvent(); 
-        }
-    }
-
-    void MonsterReact(MonsterEmot _monsterEmot)
-    {
-        Debug.Log("Monster react");
-        foreach (var tentecle in _tenteclesArray)
-        {
-            StartCoroutine(tentecle.Pulse(_monsterEmot));
-           
         }
     }
 }

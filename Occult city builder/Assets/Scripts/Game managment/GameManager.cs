@@ -9,7 +9,8 @@ public class GameManager : MonoBehaviour
     public Tiles[] listOfTiles;
     private bool hasLost, hasWon;
     public static int numOfTilesToWin;
-    [SerializeField] private int reasoursesOnStart;
+    private int curentSceneIndex;
+     [SerializeField] private int reasoursesOnStart;
 
     public static bool isEventUIActive = false;
     /*
@@ -50,11 +51,14 @@ public class GameManager : MonoBehaviour
     {
         if(hasWon)
         {
-            Loader(SceneManager.GetActiveScene().buildIndex + 1);
+            hasWon = false;
+            Loader(SceneManager.GetActiveScene().buildIndex + 1);    
         }
         if(hasLost)
         {
+            hasLost = false;
             Loader(SceneManager.GetActiveScene().buildIndex);
+            
         }
     }
     public void Loader(int scene)
@@ -70,7 +74,7 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            SceneManager.LoadScene("MainMenu");
+            Loader(0);
         }
     }
     private void SetingCursedTilesNumberAndLoseCondition()
