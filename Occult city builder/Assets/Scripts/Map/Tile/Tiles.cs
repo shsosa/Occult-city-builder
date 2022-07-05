@@ -2,13 +2,16 @@ using System;
 using System.Collections;
 using System.ComponentModel.Design;
 using MoreMountains.Feedbacks;
+using UI.Tooltip;
 using Unity.VisualScripting;
 using UnityEngine;
 
 public class Tiles : MonoBehaviour
 {
-    [SerializeField] private string header;
-    [SerializeField] private string content;
+     public  string header;
+     public string content;
+
+  
     private SpriteRenderer spriteRenderer;
     public Sprite normalSprite;
     public ResourceTypeData type;
@@ -32,6 +35,8 @@ public class Tiles : MonoBehaviour
     {
         feedbackEffectsManager = FindObjectOfType<FeedbackEffects>();
         RelevancyToLoseCondition();
+        
+          
     }
 
     private void Start()

@@ -5165,7 +5165,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: c3e7475e2bd20fa44996dc8aa469ec78, type: 3}
   - {fileID: 21300000, guid: 48badc6522709c04f92b600d5d17e04d, type: 3}
   - {fileID: 21300000, guid: 36ed9d209c9efd4408def386a6b894c5, type: 3}
-  researchPointToAdd: 2
+  researchPointToAdd: 0
 --- !u!223 &1087566648
 Canvas:
   m_ObjectHideFlags: 0

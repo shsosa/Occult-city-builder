@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using Game_managment;
 using InputMouse;
+using UI.Tooltip;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -24,9 +25,12 @@ public class BuildingManager : MonoBehaviour
     [SerializeField] private SecreficeManager SecrificeManager;
     [SerializeField] private ReserchManager reserchManager;
     private UIManager _uiManager;
+
+    public TooltipTextSO toolTipHasBonus;
    
 
     public bool hasInstantiatedBuilding = false;
+   
 
     private void OnEnable()
     {
@@ -87,8 +91,14 @@ public class BuildingManager : MonoBehaviour
         {
             if (currentBuilding.CompareTag("Building"))
             {
-                if(currentBuilding.CheckIfGetsResourceBonus(currentTile,currentBuilding) && !currentTile.CompareTag("HolyTile"))
+                if (currentBuilding.CheckIfGetsResourceBonus(currentTile, currentBuilding) &&
+                    !currentTile.CompareTag("HolyTile"))
+                {
                     currentTile.ChangeTileColor(Color.green);
+                    if (GameManager.isTutorial)
+                        currentTile.header = "has bonus";
+                }
+                   
                 if(currentBuilding._typeOfDraggableItem == Building.TypeOfDraggableItem.Research && currentTile.isHoly)
                     currentTile.ChangeTileColor(Color.green);
                 currentTile.TileHoverEffect();

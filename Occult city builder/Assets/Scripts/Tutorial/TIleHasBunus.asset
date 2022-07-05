@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46409e99f0954f9f939fd44d8bf3cd41, type: 3}
   m_Name: TIleHasBunus
   m_EditorClassIdentifier: 
-  header: 
-  Content: 
+  id: 2
+  header: You did it!
+  Content: now to reap the rewords!

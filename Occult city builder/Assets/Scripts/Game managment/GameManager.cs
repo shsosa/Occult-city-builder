@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
      [SerializeField] private int reasoursesOnStart;
 
     public static bool isEventUIActive = false;
+
+    public static bool isTutorial =false;
     /*
      * timer -> to UI
      * points - resources -> to UI
