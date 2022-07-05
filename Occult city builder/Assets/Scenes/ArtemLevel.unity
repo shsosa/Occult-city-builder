@@ -6131,6 +6131,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 519420031}
+    - target: {fileID: 6841831379957150017, guid: da19f0b1c516abc438906755da631be4, type: 3}
+      propertyPath: m_SortingOrder
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 6841831379957150018, guid: da19f0b1c516abc438906755da631be4, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -8405,6 +8409,7 @@ GameObject:
   - component: {fileID: 2067456833}
   - component: {fileID: 2067456832}
   - component: {fileID: 2067456834}
+  - component: {fileID: 2067456835}
   m_Layer: 5
   m_Name: RandomEventPromt
   m_TagString: Untagged
@@ -8509,6 +8514,27 @@ PolygonCollider2D:
       - {x: -0.5877852, y: -0.80901706}
       - {x: 0.58778536, y: -0.80901694}
       - {x: 0.9510565, y: 0.30901712}
+--- !u!223 &2067456835
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2067456830}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 1
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 5
+  m_TargetDisplay: 0
 --- !u!1 &2116840624
 GameObject:
   m_ObjectHideFlags: 0

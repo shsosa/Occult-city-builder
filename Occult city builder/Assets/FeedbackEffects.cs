@@ -8,7 +8,8 @@ using UnityEngine.Serialization;
 
 public class FeedbackEffects : MonoBehaviour
 {
-
+    private static FeedbackEffects current;
+    
     [Header("Place building on tile effects "  )]
     [SerializeField] private VoidEventChannelSO buildChannelSo;
     [SerializeField] private MMFeedbacks PlaceBuildingOnTileFeedbacks;
@@ -32,7 +33,8 @@ public class FeedbackEffects : MonoBehaviour
 
     void Awake()
     {
-        DontDestroyOnLoad(this.gameObject);
+       // DontDestroyOnLoad(this.gameObject);
+       current = this;
     }
 
     private void OnEnable()
@@ -44,17 +46,17 @@ public class FeedbackEffects : MonoBehaviour
     }
     private void CollectResourcesEvent()
     {
-        collectResourcesFeddbacks.PlayFeedbacks();
+        current.collectResourcesFeddbacks.PlayFeedbacks();
     }
 
     void InstantiateBuildingEvent()
     {
-        MMInstantiateBuildinFeedbacks.PlayFeedbacks();
+        current.MMInstantiateBuildinFeedbacks.PlayFeedbacks();
     }
 
     private void PlaceBUildingEvent()
     {
-        PlaceBuildingOnTileFeedbacks.PlayFeedbacks();
+        current.PlaceBuildingOnTileFeedbacks.PlayFeedbacks();
     }
 
     // Start is called before the first frame update
