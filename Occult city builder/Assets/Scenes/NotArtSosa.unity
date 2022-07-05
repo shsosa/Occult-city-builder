@@ -5080,6 +5080,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _secreficeManager: {fileID: 778490575}
+  _monsterManager: {fileID: 0}
 --- !u!1 &1087566645
 GameObject:
   m_ObjectHideFlags: 0
@@ -6143,51 +6144,51 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6841831378015519950, guid: da19f0b1c516abc438906755da631be4, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6841831378015519950, guid: da19f0b1c516abc438906755da631be4, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6841831378015519950, guid: da19f0b1c516abc438906755da631be4, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 124.38
       objectReference: {fileID: 0}
     - target: {fileID: 6841831378015519950, guid: da19f0b1c516abc438906755da631be4, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 24.92
       objectReference: {fileID: 0}
     - target: {fileID: 6841831378015519950, guid: da19f0b1c516abc438906755da631be4, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 62.19
       objectReference: {fileID: 0}
     - target: {fileID: 6841831378015519950, guid: da19f0b1c516abc438906755da631be4, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -48.469997
       objectReference: {fileID: 0}
     - target: {fileID: 6841831378294552843, guid: da19f0b1c516abc438906755da631be4, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6841831378294552843, guid: da19f0b1c516abc438906755da631be4, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6841831378294552843, guid: da19f0b1c516abc438906755da631be4, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 179.68
       objectReference: {fileID: 0}
     - target: {fileID: 6841831378294552843, guid: da19f0b1c516abc438906755da631be4, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 36.01
       objectReference: {fileID: 0}
     - target: {fileID: 6841831378294552843, guid: da19f0b1c516abc438906755da631be4, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 89.84
       objectReference: {fileID: 0}
     - target: {fileID: 6841831378294552843, guid: da19f0b1c516abc438906755da631be4, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -18.005
       objectReference: {fileID: 0}
     - target: {fileID: 6841831379957150017, guid: da19f0b1c516abc438906755da631be4, type: 3}
       propertyPath: m_Camera
@@ -6197,21 +6198,25 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 6841831380044669834, guid: da19f0b1c516abc438906755da631be4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6841831380044669835, guid: da19f0b1c516abc438906755da631be4, type: 3}
       propertyPath: m_Pivot.x
-      value: 1.5915042
+      value: 1.6134379
       objectReference: {fileID: 0}
     - target: {fileID: 6841831380044669835, guid: da19f0b1c516abc438906755da631be4, type: 3}
       propertyPath: m_Pivot.y
-      value: 1.2864478
+      value: 1.344296
       objectReference: {fileID: 0}
     - target: {fileID: 6841831380044669835, guid: da19f0b1c516abc438906755da631be4, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 6841831380044669835, guid: da19f0b1c516abc438906755da631be4, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 80.44
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da19f0b1c516abc438906755da631be4, type: 3}
@@ -7448,7 +7453,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.16397095, y: -2.1293945}
+  m_AnchoredPosition: {x: -0.16999999, y: -1.2399999}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1685276281
@@ -8866,6 +8871,7 @@ MonoBehaviour:
   _tenteclesArray: []
   _monsterEmotCurseTile: {fileID: 11400000, guid: 25a066871d4210f44a2b031e41c06e8d, type: 2}
   _monsterEmotFeedMe: {fileID: 11400000, guid: 50bec0d58b25aaf42b9ca45a5740678c, type: 2}
+  _monsterEmotEating: {fileID: 11400000, guid: bb616aba47f9c7a408fc21610f955fbd, type: 2}
 --- !u!4 &1876995523
 Transform:
   m_ObjectHideFlags: 0

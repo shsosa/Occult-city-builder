@@ -21,6 +21,8 @@ public class MonsterManager : MonoBehaviour
     
     [SerializeField] private MonsterEmot _monsterEmotCurseTile;
     [SerializeField] private MonsterEmot _monsterEmotFeedMe;
+    [SerializeField]  MonsterEmot _monsterEmotEating;
+    
     void Awake()
     {
         DontDestroyOnLoad(this.gameObject);
@@ -120,12 +122,21 @@ public class MonsterManager : MonoBehaviour
         }
     }
     
-    void MonsterReact(MonsterEmot _monsterEmot)
+    public void MonsterReact(MonsterEmot _monsterEmot)
     {
         Debug.Log("Monster react");
         foreach (var tentecle in _tenteclesArray)
         {
             StartCoroutine(tentecle.Pulse(_monsterEmot));
+           
+        }
+    }
+
+    public void MonsterEat()
+    {
+        foreach (var tentecle in _tenteclesArray)
+        {
+            StartCoroutine(tentecle.Pulse(_monsterEmotEating));
            
         }
     }

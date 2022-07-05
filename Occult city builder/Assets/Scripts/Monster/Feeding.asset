@@ -15,6 +15,6 @@ MonoBehaviour:
   _emotion: 2
   wiggleSpeed: 0
   wiggleMag: 0.61
-  tenticleGrowth: -0.62
-  growthMagnitude: -0.06
-  reactPulseTime: 1.35
+  tenticleGrowth: -0.56
+  growthMagnitude: 0.04
+  reactPulseTime: 1
