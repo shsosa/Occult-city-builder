@@ -1625,6 +1625,7 @@ GameObject:
   - component: {fileID: 659937628}
   - component: {fileID: 659937629}
   - component: {fileID: 659937630}
+  - component: {fileID: 659937631}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1675,6 +1676,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monster: {fileID: 0}
   listOfActiveSacrificeBuildings: []
+--- !u!114 &659937631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 659937626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da8f1f6e45be97b4692c0d6b519343ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  monster: {fileID: 1732217982548808036}
+  resources: {fileID: 11400000, guid: a058ea4808a964c4883a30c07f49f86f, type: 2}
+  numOfCursedTiles: 0
+  numOfErelevantTiles: 0
+  listOfTiles: []
+  reasoursesOnStart: 5
 --- !u!1001 &722458211
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7476,6 +7495,7 @@ MonoBehaviour:
   _tenteclesArray: []
   _monsterEmotCurseTile: {fileID: 11400000, guid: 25a066871d4210f44a2b031e41c06e8d, type: 2}
   _monsterEmotFeedMe: {fileID: 11400000, guid: 50bec0d58b25aaf42b9ca45a5740678c, type: 2}
+  _monsterEmotEating: {fileID: 0}
 --- !u!4 &1732217982548808037
 Transform:
   m_ObjectHideFlags: 0
@@ -8316,6 +8336,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _secreficeManager: {fileID: 0}
+  _monsterManager: {fileID: 0}
 --- !u!212 &1732217983231998200
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8659,11 +8680,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6841831380044669835, guid: da19f0b1c516abc438906755da631be4, type: 3}
       propertyPath: m_Pivot.x
-      value: 1.5811089
+      value: 1.0538284
       objectReference: {fileID: 0}
     - target: {fileID: 6841831380044669835, guid: da19f0b1c516abc438906755da631be4, type: 3}
       propertyPath: m_Pivot.y
-      value: 1.2926079
+      value: 0.34224048
       objectReference: {fileID: 0}
     - target: {fileID: 6841831380044669835, guid: da19f0b1c516abc438906755da631be4, type: 3}
       propertyPath: m_SizeDelta.x

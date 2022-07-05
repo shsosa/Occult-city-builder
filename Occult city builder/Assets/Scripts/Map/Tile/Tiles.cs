@@ -144,10 +144,13 @@ public class Tiles : MonoBehaviour
 
     public void TileHoverEffect()
     {
-        
-        tileFeedbacks.GetComponent<MMFeedbackScale>().AnimateScaleTarget = transform;
-        tileFeedbacks.PlayFeedbacks();
-        spriteRenderer.sortingOrder=1;
+        if (tileFeedbacks != null)
+        {
+            tileFeedbacks.GetComponent<MMFeedbackScale>().AnimateScaleTarget = transform;
+            tileFeedbacks.PlayFeedbacks();
+            spriteRenderer.sortingOrder=1;
+        }
+       
     }
 
     public void ChangeTileColor(Color color)

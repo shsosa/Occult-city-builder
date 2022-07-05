@@ -3343,6 +3343,7 @@ GameObject:
   - component: {fileID: 659937628}
   - component: {fileID: 659937629}
   - component: {fileID: 659937630}
+  - component: {fileID: 659937631}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -3393,6 +3394,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monster: {fileID: 1876995522}
   listOfActiveSacrificeBuildings: []
+--- !u!114 &659937631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 659937626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da8f1f6e45be97b4692c0d6b519343ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  monster: {fileID: 1876995522}
+  resources: {fileID: 11400000, guid: a058ea4808a964c4883a30c07f49f86f, type: 2}
+  numOfCursedTiles: 0
+  numOfErelevantTiles: 0
+  listOfTiles: []
+  reasoursesOnStart: 10000
 --- !u!1 &691162144
 GameObject:
   m_ObjectHideFlags: 0
