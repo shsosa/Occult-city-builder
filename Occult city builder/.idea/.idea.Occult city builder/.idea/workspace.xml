@@ -6,9 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="6a6f9a88-340d-4329-b101-d2b7388b26fe" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Occult city builder/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Occult city builder/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DebugMode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DebugMode.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resource managmentes/honeyblot_caps SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resource managmentes/honeyblot_caps SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Tutorial.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Tutorial.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tutorial/TutorialSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tutorial/TutorialSystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tutorial/TutorialTextSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tutorial/TutorialTextSystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Tooltip/Tooltip.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Tooltip/Tooltip.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,7 +122,7 @@
       <workItem from="1656360528618" duration="2048000" />
       <workItem from="1656578634976" duration="8178000" />
       <workItem from="1656868549621" duration="7224000" />
-      <workItem from="1657023893716" duration="706000" />
+      <workItem from="1657023893716" duration="1152000" />
     </task>
     <servers />
   </component>

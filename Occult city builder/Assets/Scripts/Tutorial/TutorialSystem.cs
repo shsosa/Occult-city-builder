@@ -114,7 +114,7 @@ public class TutorialSystem : MonoBehaviour
       
         monsterHungerEvent.OnEventRaised -= ShowOnHungerEventText;
         StartCoroutine(Wait(1));
-     
+        SHowCurrentTutorialObject();
       
 
     }
@@ -123,6 +123,7 @@ public class TutorialSystem : MonoBehaviour
         TutorialTextSystem.Show(tutoialTextSos[3].Content, tutoialTextSos[3].header);
         resourceColletEvent.OnEventRaised -= ShowResorceCollectText;
         StartCoroutine(Wait(1));
+        SHowCurrentTutorialObject();
        
     }
 
