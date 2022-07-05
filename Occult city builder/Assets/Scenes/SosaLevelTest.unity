@@ -1509,11 +1509,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6841831380044669835, guid: da19f0b1c516abc438906755da631be4, type: 3}
       propertyPath: m_Pivot.x
-      value: 0.56730914
+      value: 0.5703886
       objectReference: {fileID: 0}
     - target: {fileID: 6841831380044669835, guid: da19f0b1c516abc438906755da631be4, type: 3}
       propertyPath: m_Pivot.y
-      value: 1.2035267
+      value: 1.1879535
       objectReference: {fileID: 0}
     - target: {fileID: 6841831380044669835, guid: da19f0b1c516abc438906755da631be4, type: 3}
       propertyPath: m_SizeDelta.x
@@ -1703,6 +1703,30 @@ PrefabInstance:
     - target: {fileID: 9174179434612775728, guid: 74d9a43c6ad56654987e87475bb764a8, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9174179434710057143, guid: 74d9a43c6ad56654987e87475bb764a8, type: 3}
+      propertyPath: hungerTime
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9174179434710057143, guid: 74d9a43c6ad56654987e87475bb764a8, type: 3}
+      propertyPath: monsterHungerGrowth
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9174179434710057143, guid: 74d9a43c6ad56654987e87475bb764a8, type: 3}
+      propertyPath: maxThresholdForPowerEventTrigger
+      value: 85
+      objectReference: {fileID: 0}
+    - target: {fileID: 9174179434710057143, guid: 74d9a43c6ad56654987e87475bb764a8, type: 3}
+      propertyPath: maxThresholdForHungerEventTrigger
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 9174179434710057143, guid: 74d9a43c6ad56654987e87475bb764a8, type: 3}
+      propertyPath: maxRangeToTrigerPowerEventConstant
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 9174179434710057143, guid: 74d9a43c6ad56654987e87475bb764a8, type: 3}
+      propertyPath: maxRangeToTrigerHungerEventConstant
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 9174179435268401429, guid: 74d9a43c6ad56654987e87475bb764a8, type: 3}
       propertyPath: _secreficeManager

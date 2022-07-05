@@ -17,6 +17,10 @@ public class MonsterManager : MonoBehaviour
     Tiles[] tile;
 
     [SerializeField] Tentecle[] _tenteclesArray;
+    void Awake()
+    {
+        DontDestroyOnLoad(this.gameObject);
+    }
     private void Start()
     {
         _tenteclesArray = GetComponentsInChildren<Tentecle>();
