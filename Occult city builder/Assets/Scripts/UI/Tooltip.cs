@@ -17,8 +17,11 @@ public class Tooltip : MonoBehaviour
     public int charecterWrapLimit;
 
     public RectTransform RectTransform;
+    private Vector2 position;
 
     private Color _color;
+
+    [SerializeField] bool isOnMouseUI;
     private void Awake()
     {
         RectTransform = GetComponent<RectTransform>();
@@ -28,12 +31,19 @@ public class Tooltip : MonoBehaviour
     
     void  Update()
     {
-        Vector2 position = Input.mousePosition;
+        if (isOnMouseUI)
+             position = Input.mousePosition;
+        else
+        {
+            position = transform.position;
+        }
 
-        float pivotX = position.x / Screen.width;
-        float pivotY = position.y / Screen.height;
+            float pivotX = position.x / Screen.width;
+            float pivotY = position.y / Screen.height;
 
-        RectTransform.pivot = new Vector2(pivotX, pivotY);
+            RectTransform.pivot = new Vector2(pivotX, pivotY);
+        
+      
        
        
 

@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 4e2f0498e4716c44686cf9e2339852cc
   - enabled: 1
-    path: Assets/Scenes/NotArtSosa.unity
+    path: Assets/Scenes/Level template - 1.unity
     guid: 3f687f4cf3f761a4eb94bfec02cb889d
   - enabled: 1
     path: Assets/Scenes/ArtemLevel.unity

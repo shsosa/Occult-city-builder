@@ -544,3 +544,4 @@ MonoBehaviour:
   layoutElement: {fileID: 6841831380044669557}
   charecterWrapLimit: 90
   RectTransform: {fileID: 6841831380044669835}
+  isOnMouseUI: 1
