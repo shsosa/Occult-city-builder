@@ -39,7 +39,7 @@ public class RandomEventsManager : ScriptableObject
         SettingPriceAndPunishment();
         monsterHungerEventChannel.OnEventRaised += RandomEvent;
     }
-    
+
 
     private void RandomEvent() 
     {  
@@ -109,7 +109,7 @@ public class RandomEventsManager : ScriptableObject
     {
         resourceIterator = Random.Range(0, 4);
     }
-    private void SettingPriceAndPunishment()
+    public void SettingPriceAndPunishment()
     {
         minPriceToPay = minPriceToPayOnStart;
         maxPriceToPay = maxPriceToPayOnStart;
