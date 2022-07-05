@@ -22,6 +22,10 @@ public class RandomEventUI : MonoBehaviour
     {
         monsterHungerEventChannel.OnEventRaised += Activate;
     }
+    private void OnDisable()
+    {
+        monsterHungerEventChannel.OnEventRaised -= Activate;
+    }
     private void Start()
     {
         eventPromt.SetActive(false);

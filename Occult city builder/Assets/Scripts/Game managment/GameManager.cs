@@ -9,7 +9,8 @@ public class GameManager : MonoBehaviour
     public Tiles[] listOfTiles;
     private bool hasLost, hasWon;
     public static int numOfTilesToWin;
-    [SerializeField] private int reasoursesOnStart;
+    private int curentSceneIndex;
+     [SerializeField] private int reasoursesOnStart;
 
     public static bool isEventUIActive = false;
     /*
