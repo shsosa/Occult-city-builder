@@ -21,6 +21,7 @@ public class RandomEventUI : MonoBehaviour
     private void OnEnable()
     {
         monsterHungerEventChannel.OnEventRaised += Activate;
+        rEManager.SettingPriceAndPunishment();
     }
     private void OnDisable()
     {
@@ -171,7 +172,7 @@ public class RandomEventUI : MonoBehaviour
     private void Deactivate()
     {
         //Add some research after event
-        resource.researchPoints += researchPointToAdd;
+       // resource.researchPoints += researchPointToAdd;
         eventPromt.SetActive(false);
         GameManager.isEventUIActive = false;
     }
