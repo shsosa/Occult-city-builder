@@ -56,9 +56,13 @@ public class Tooltip : MonoBehaviour
         }
         else
         {
-            Vector2 position = Input.mousePosition;
-             position = Camera.main.ScreenToWorldPoint(position);
-            RectTransform.position = new Vector3(position.x, position.y, 0);
+            if (isOnMouseUI)
+            {
+                Vector2 position = Input.mousePosition;
+                position = Camera.main.ScreenToWorldPoint(position);
+                RectTransform.position = new Vector3(position.x, position.y, 0);
+            }
+           
             
             headerFiled.gameObject.SetActive(true);
             headerFiled.text = header;

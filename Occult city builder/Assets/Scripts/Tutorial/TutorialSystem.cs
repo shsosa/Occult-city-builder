@@ -7,15 +7,19 @@ using UnityEngine;
 public class TutorialSystem : MonoBehaviour
 {
    
-    [SerializeField] private TutorialTextSystem _tutorialTextSystem;
+   
 
     [SerializeField] private VoidEventChannelSO buildEventChannelSo;
+    [SerializeField] private VoidEventChannelSO monsterHungerEvent;
+    [SerializeField] private VoidEventChannelSO monsterPowerEvent;
+    [SerializeField] private VoidEventChannelSO resourceColletEvent;
+
+    [SerializeField] private UIObject witchUtUI;
+    
     
 
-    [SerializeField] private string buildFirstbuilding;
-
     [SerializeField] private TooltipTextSO[] tutoialTextSos;
-
+    public  int currentTutorialObject=0;
     private void Awake()
     {
         GameManager.isTutorial = true;
@@ -24,6 +28,8 @@ public class TutorialSystem : MonoBehaviour
     private void OnEnable()
     {
        
+        monsterHungerEvent.OnEventRaised += ShowOnHungerEventText;
+        monsterHungerEvent.OnEventRaised += ShowCuresedTileText;
     }
 
     private void OnDisable()
@@ -31,30 +37,99 @@ public class TutorialSystem : MonoBehaviour
         buildEventChannelSo.OnEventRaised -= BuildTutorialInfo;
     }
 
-   void  BuildTutorialInfo()
-    {
-        _tutorialTextSystem.Show(tutoialTextSos[2].Content, tutoialTextSos[2].header);
-            
-        
-        buildEventChannelSo.OnEventRaised -= BuildTutorialInfo;
-       
-    }
+   
     
     private void Start()
     {
       
         StartCoroutine(Tutorial());
     }
-
+    
+    IEnumerator Wait(float time)
+    {
+        yield return new WaitForSeconds(time);
+    }
+    
 
    
+
     IEnumerator Tutorial()
     {
-        _tutorialTextSystem.Show(tutoialTextSos[0].Content, tutoialTextSos[0].header);
+       
+       
+        SHowCurrentTutorialObject();
+        currentTutorialObject++;
         yield return new WaitForSeconds(3f);
-        _tutorialTextSystem.Show(tutoialTextSos[1].Content, tutoialTextSos[1].header);
-        buildEventChannelSo.OnEventRaised += BuildTutorialInfo;
         
+       SHowCurrentTutorialObject();
+       buildEventChannelSo.OnEventRaised += BuildTutorialInfo;
+       SHowCurrentTutorialObject();
         
+        currentTutorialObject++;
+        yield return CanbuildUt();
+
+
+
+
+    }
+
+    IEnumerator CanbuildUt()
+    {
+        if (witchUtUI.canBuild)
+        {
+            TutorialTextSystem.Show(tutoialTextSos[6].Content, tutoialTextSos[6].header);
+            StartCoroutine(Wait(1));
+            SHowCurrentTutorialObject();
+            yield break;
+            
+        }
+        
+    }
+    
+
+    void ShowCuresedTileText()
+    {
+        TutorialTextSystem.Show(tutoialTextSos[2].Content, tutoialTextSos[2].header);
+        monsterHungerEvent.OnEventRaised -= ShowCuresedTileText;
+        StartCoroutine(Wait(1));
+        SHowCurrentTutorialObject();
+       
+    }
+
+    void  BuildTutorialInfo()
+    {
+        TutorialTextSystem.Show(tutoialTextSos[2].Content, tutoialTextSos[2].header);
+        currentTutorialObject++;
+        buildEventChannelSo.OnEventRaised -= BuildTutorialInfo;
+        StartCoroutine(Wait(1));
+        resourceColletEvent.OnEventRaised += ShowResorceCollectText;
+      
+        
+
+    }
+
+    void ShowOnHungerEventText()
+    {
+        TutorialTextSystem.Show(tutoialTextSos[4].Content, tutoialTextSos[4].header);
+      
+        monsterHungerEvent.OnEventRaised -= ShowOnHungerEventText;
+        StartCoroutine(Wait(1));
+     
+      
+
+    }
+    void ShowResorceCollectText()
+    {
+        TutorialTextSystem.Show(tutoialTextSos[3].Content, tutoialTextSos[3].header);
+        resourceColletEvent.OnEventRaised -= ShowResorceCollectText;
+        StartCoroutine(Wait(1));
+       
+    }
+
+    private void SHowCurrentTutorialObject()
+    {
+        TutorialTextSystem.Show(tutoialTextSos[currentTutorialObject].Content,
+            tutoialTextSos[currentTutorialObject].header);
+       
     }
 }
