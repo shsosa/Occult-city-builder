@@ -211,6 +211,7 @@ MonoBehaviour:
   map: {fileID: 1227144227}
   SecrificeManager: {fileID: 778490575}
   reserchManager: {fileID: 330351601}
+  toolTipHasBonus: {fileID: 0}
   hasInstantiatedBuilding: 0
   _resourceData: {fileID: 11400000, guid: a058ea4808a964c4883a30c07f49f86f, type: 2}
   _reasourcePrices:
@@ -3582,6 +3583,7 @@ GameObject:
   - component: {fileID: 659937628}
   - component: {fileID: 659937629}
   - component: {fileID: 659937630}
+  - component: {fileID: 659937631}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -3632,6 +3634,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monster: {fileID: 1876995522}
   listOfActiveSacrificeBuildings: []
+--- !u!114 &659937631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 659937626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da8f1f6e45be97b4692c0d6b519343ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  monster: {fileID: 1876995522}
+  resources: {fileID: 11400000, guid: a058ea4808a964c4883a30c07f49f86f, type: 2}
+  numOfCursedTiles: 0
+  numOfErelevantTiles: 0
+  listOfTiles: []
+  reasoursesOnStart: 5
 --- !u!1 &691162144
 GameObject:
   m_ObjectHideFlags: 0
@@ -8702,14 +8722,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2067456831}
     m_Modifications:
-    - target: {fileID: 273626672495534645, guid: 68b2aac341211354fba688785085c890, type: 3}
-      propertyPath: canBuild
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 273626672495534645, guid: 68b2aac341211354fba688785085c890, type: 3}
-      propertyPath: _reasourcePrice
-      value: 
-      objectReference: {fileID: 11400000, guid: 36efc2d9355bd8a4381c80e3ac44c851, type: 2}
     - target: {fileID: 273626672495534641, guid: 7b458539bc23f884eafa9bf4c3b6a999, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -8822,6 +8834,14 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 273626672495534645, guid: 68b2aac341211354fba688785085c890, type: 3}
+      propertyPath: canBuild
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 273626672495534645, guid: 68b2aac341211354fba688785085c890, type: 3}
+      propertyPath: _reasourcePrice
+      value: 
+      objectReference: {fileID: 11400000, guid: 36efc2d9355bd8a4381c80e3ac44c851, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7b458539bc23f884eafa9bf4c3b6a999, type: 3}
 --- !u!1001 &1709929490428276893
