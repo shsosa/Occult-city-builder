@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using DefaultNamespace.Monster;
 using UnityEngine;
 
 public class Tentecle : MonoBehaviour
@@ -63,7 +64,7 @@ public class Tentecle : MonoBehaviour
 
         if (Input.GetKey(KeyCode.Space))
         {
-            StartCoroutine(Pulse(10, 20, 0.1f,0.1f,1));
+           // StartCoroutine(Pulse(10, 20, 0.1f,0.1f,1));
         }
     }
 
@@ -84,15 +85,15 @@ public class Tentecle : MonoBehaviour
         wiggleSpeed = Mathf.Clamp(wiggleSpeed, 1f, 30);
     }
 
-    public IEnumerator Pulse(float wiggleSpeed, float wiggleMag,float tenticleGrowth, float pulseTime,float growthMagnitude)
+    public IEnumerator Pulse(MonsterEmot monsterEmot)
     {
        
 
-        yield return PulseChange(wiggleSpeed,wiggleMag,pulseTime);
-        targetDist = Mathf.Lerp(targetDist, targetDist + tenticleGrowth, 0.5f);
-        yield return new WaitForSeconds(growthMagnitude);
-        targetDist = Mathf.Lerp(targetDist, targetDist - tenticleGrowth, 0.5f);
-        yield return PulseChange(-wiggleSpeed, -wiggleMag,pulseTime);
+        yield return PulseChange(monsterEmot.wiggleSpeed,monsterEmot.wiggleMag,monsterEmot.reactPulseTime);
+        targetDist = Mathf.Lerp(targetDist, targetDist + monsterEmot.tenticleGrowth, 0.5f);
+        yield return new WaitForSeconds(monsterEmot.reactPulseTime);
+        targetDist = Mathf.Lerp(targetDist, targetDist - monsterEmot.tenticleGrowth, 0.5f);
+        yield return PulseChange(-monsterEmot.wiggleSpeed, -monsterEmot.wiggleMag,monsterEmot.reactPulseTime);
        
 
 

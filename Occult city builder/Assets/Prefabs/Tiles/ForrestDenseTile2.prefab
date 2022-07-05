@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 3522474144374782223}
   - component: {fileID: 3522474144374782220}
   - component: {fileID: 1116008492}
-  - component: {fileID: 2103672024}
   m_Layer: 0
   m_Name: ForrestDenseTile2
   m_TagString: Tile
@@ -99,6 +98,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 016eed81dfa96fd4a8b91366237d892c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  header: 
+  content: 
   normalSprite: {fileID: 0}
   type: {fileID: 11400000, guid: 3316c7f7ccd70cf46b2def2d93e7a9f7, type: 2}
   building: {fileID: 0}
@@ -111,52 +112,10 @@ MonoBehaviour:
   hasBonus: 0
   isCursed: 0
   isHoly: 0
+  isErelevantToLoseCondition: 0
+  isBlesed: 0
   amountOfReasourceProdused: 2
 --- !u!60 &1116008492
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3522474144374782259}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.1, y: 2.1}
-    newSize: {x: 2.1, y: 2.1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0.88, y: -0.5}
-      - {x: 0.88, y: 0.5}
-      - {x: 0.79999995, y: 0.56}
-      - {x: 0.59999996, y: 0.69}
-      - {x: 0.39999998, y: 0.81}
-      - {x: 0.03, y: 1}
-      - {x: -0.03, y: 1}
-      - {x: -0.39999998, y: 0.81}
-      - {x: -0.68, y: 0.65}
-      - {x: -0.88, y: 0.5}
-      - {x: -0.88, y: -0.42}
-      - {x: -0.87, y: -0.48999998}
-      - {x: -0.77, y: -0.59}
-      - {x: -0.52, y: -0.75}
-      - {x: -0.04, y: -1}
-      - {x: 0.03, y: -1}
-      - {x: 0.39999998, y: -0.81}
-      - {x: 0.52, y: -0.74}
-      - {x: 0.74, y: -0.61}
---- !u!60 &2103672024
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
