@@ -17,14 +17,14 @@ public class TutorialBubble : MonoBehaviour
            // RectTransform.position = new Vector3(position.x, position.y, 0);
             
            // headerFiled.gameObject.SetActive(true);
-           // headerFiled.text = header;
+          //  headerFiled.text = header;
         }
 
-       // contentField.text = content;
+      //  contentField.text = content;
         
        // int headerLength = headerFiled.text.Length;
        // int contentLenght = contentField.text.Length;
 
-       // layoutElement.enabled = headerLength > charecterWrapLimit || contentLenght > charecterWrapLimit;
+        //layoutElement.enabled = headerLength > charecterWrapLimit || contentLenght > charecterWrapLimit;
     }
 }

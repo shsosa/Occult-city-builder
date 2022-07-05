@@ -15,7 +15,7 @@ MonoBehaviour:
   wood: 0
   gold: 0
   vilagers: 0
-  researchPoints: -5
+  researchPoints: 0
   cattle: 10
   secrificeAmountHunger: 20
   secrificeAddPower: 10

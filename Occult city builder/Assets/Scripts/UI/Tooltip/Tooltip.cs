@@ -33,15 +33,12 @@ public class Tooltip : MonoBehaviour
     {
         if (isOnMouseUI)
              position = Input.mousePosition;
-        else
-        {
-            position = transform.position;
-        }
+        
 
-            float pivotX = position.x / Screen.width;
-            float pivotY = position.y / Screen.height;
+        float pivotX = position.x / Screen.width;
+        float pivotY = position.y / Screen.height;
 
-            RectTransform.pivot = new Vector2(pivotX, pivotY);
+        RectTransform.pivot = new Vector2(pivotX, pivotY);
         
       
        

@@ -9,13 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2cd0fd6b9484366a15c2a69c69ae3ca, type: 3}
-  m_Name: SecrificeVilliger
+  m_Script: {fileID: 11500000, guid: 46409e99f0954f9f939fd44d8bf3cd41, type: 3}
+  m_Name: First encounter
   m_EditorClassIdentifier: 
-  wood: 0
-  gold: 0
-  vilagers: 5
-  researchPoints: 0
-  cattle: 0
-  secrificeAmountHunger: 50
-  secrificeAddPower: 15
+  header: 
+  Content: 

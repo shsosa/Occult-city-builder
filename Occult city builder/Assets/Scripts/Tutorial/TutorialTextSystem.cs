@@ -5,7 +5,7 @@ using UnityEngine;
 public class TutorialTextSystem : MonoBehaviour
 {
 
-    public TutorialBubble TutorialBubble;
+    public Tooltip TutorialBubble;
     public  void Show(string content, string header = "")
     {
         TutorialBubble.SetText(content,header);
