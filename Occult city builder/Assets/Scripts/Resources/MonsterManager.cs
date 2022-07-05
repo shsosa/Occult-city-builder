@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using DefaultNamespace.Monster;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -17,10 +18,15 @@ public class MonsterManager : MonoBehaviour
     Tiles[] tile;
 
     [SerializeField] Tentecle[] _tenteclesArray;
-    //void Awake()
-   //{
-   //     DontDestroyOnLoad(this.gameObject);
-   // }
+    
+    [SerializeField] private MonsterEmot _monsterEmotCurseTile;
+    [SerializeField] private MonsterEmot _monsterEmotFeedMe;
+    [SerializeField]  MonsterEmot _monsterEmotEating;
+    
+    void Awake()
+    {
+        DontDestroyOnLoad(this.gameObject);
+    }
     private void Start()
     {
         _tenteclesArray = GetComponentsInChildren<Tentecle>();
@@ -79,6 +85,7 @@ public class MonsterManager : MonoBehaviour
         }
         if (hungerEventTriger >= maxRangeToTrigerHungerEvent)
         {
+            MonsterReact(_monsterEmotFeedMe);
             HungerEventFlag();
             maxRangeToTrigerHungerEvent = maxRangeToTrigerHungerEventConstant;
         }
@@ -105,12 +112,32 @@ public class MonsterManager : MonoBehaviour
         //todo Randomize is cool - i had a thought about making it spread if close to monster like a deasese,  you know like its alive
         if(!tile[randomizer].isCursed)
         {
+            MonsterReact(_monsterEmotCurseTile);
             if(!tile[randomizer].CompareTag("HolyTile"))
                 tile[randomizer].SetCursed();     
         }
         else 
         { 
             PowerEvent(); 
+        }
+    }
+    
+    public void MonsterReact(MonsterEmot _monsterEmot)
+    {
+        Debug.Log("Monster react");
+        foreach (var tentecle in _tenteclesArray)
+        {
+            StartCoroutine(tentecle.Pulse(_monsterEmot));
+           
+        }
+    }
+
+    public void MonsterEat()
+    {
+        foreach (var tentecle in _tenteclesArray)
+        {
+            StartCoroutine(tentecle.Pulse(_monsterEmotEating));
+           
         }
     }
 }

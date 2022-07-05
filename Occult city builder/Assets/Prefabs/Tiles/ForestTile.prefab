@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7588842737585111093}
   - component: {fileID: 42019628}
   - component: {fileID: 588148518296366353}
-  - component: {fileID: 7244285732230565793}
+  - component: {fileID: 9164154894440276963}
   m_Layer: 0
   m_Name: ForestTile
   m_TagString: Tile
@@ -111,20 +111,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 016eed81dfa96fd4a8b91366237d892c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  header: 
+  content: 
   normalSprite: {fileID: 0}
   type: {fileID: 11400000, guid: 22a36d06dc0f0d941a9e0762458a563f, type: 2}
   building: {fileID: 0}
   cursedSprite: {fileID: 21300000, guid: 38ec2d16b67aa2745a1eb0294e9472a9, type: 3}
-  _resourceDataScriptable: {fileID: 0}
-  resourceManager: {fileID: 0}
+  _resourceDataScriptable: {fileID: 11400000, guid: a058ea4808a964c4883a30c07f49f86f, type: 2}
+  resourceManager: {fileID: 11400000, guid: aa6d1e9599124c244b5af24ba9ba859f, type: 2}
   monsterPowerEvent: {fileID: 0}
   _buildingManager: {fileID: 0}
   hasBuilding: 0
   hasBonus: 0
   isCursed: 0
   isHoly: 0
+  isErelevantToLoseCondition: 0
+  isBlesed: 0
   amountOfReasourceProdused: 1
---- !u!60 &7244285732230565793
+--- !u!60 &9164154894440276963
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -134,7 +138,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -149,22 +153,22 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.73391044, y: -0.18955958}
-      - {x: 0.691301, y: 0.42695522}
-      - {x: 0.5869527, y: 0.5052164}
-      - {x: 0.41738802, y: 0.6169552}
-      - {x: 0.27217162, y: 0.6882587}
-      - {x: 0.005651742, y: 0.8356493}
-      - {x: -0.0056515, y: 0.817388}
-      - {x: -0.38782585, y: 0.6395622}
-      - {x: -0.71043533, y: 0.46130085}
-      - {x: -0.7095622, y: 0.24434316}
-      - {x: -0.7034751, y: -0.4504353}
-      - {x: -0.55347264, y: -0.52043533}
-      - {x: -0.39868903, y: -0.6204353}
-      - {x: -0.20955968, y: -0.7378259}
-      - {x: 0.008696519, y: -0.8478234}
-      - {x: 0.023912935, y: -0.8478234}
-      - {x: 0.29651988, y: -0.6578234}
-      - {x: 0.69652486, y: -0.43564677}
-      - {x: 0.73391294, y: -0.32999504}
+    - - {x: 0.88, y: -0.5}
+      - {x: 0.88, y: 0.5}
+      - {x: 0.79999995, y: 0.56}
+      - {x: 0.59999996, y: 0.69}
+      - {x: 0.39999998, y: 0.81}
+      - {x: 0.03, y: 1}
+      - {x: -0.03, y: 1}
+      - {x: -0.39999998, y: 0.81}
+      - {x: -0.68, y: 0.65}
+      - {x: -0.88, y: 0.5}
+      - {x: -0.88, y: -0.42}
+      - {x: -0.87, y: -0.48999998}
+      - {x: -0.77, y: -0.59}
+      - {x: -0.52, y: -0.75}
+      - {x: -0.04, y: -1}
+      - {x: 0.03, y: -1}
+      - {x: 0.39999998, y: -0.81}
+      - {x: 0.52, y: -0.74}
+      - {x: 0.74, y: -0.61}

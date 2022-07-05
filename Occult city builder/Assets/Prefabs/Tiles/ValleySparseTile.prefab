@@ -98,6 +98,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 016eed81dfa96fd4a8b91366237d892c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  header: 
+  content: 
   normalSprite: {fileID: 0}
   type: {fileID: 11400000, guid: 22a36d06dc0f0d941a9e0762458a563f, type: 2}
   building: {fileID: 0}
@@ -110,6 +112,8 @@ MonoBehaviour:
   hasBonus: 0
   isCursed: 0
   isHoly: 0
+  isErelevantToLoseCondition: 0
+  isBlesed: 0
   amountOfReasourceProdused: 1
 --- !u!60 &1372300153
 PolygonCollider2D:
