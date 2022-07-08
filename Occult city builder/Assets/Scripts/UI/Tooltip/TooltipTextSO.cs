@@ -5,6 +5,9 @@ namespace UI.Tooltip
     [CreateAssetMenu(fileName = "Tool tip text", menuName = "Tooltip", order = 0)]
     public class TooltipTextSO : ScriptableObject
     {
+        
+        //todo check if needs id
+        
         public int id;
         
         [Header("Text: ")]

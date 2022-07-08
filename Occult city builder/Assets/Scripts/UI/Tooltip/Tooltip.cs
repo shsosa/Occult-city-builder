@@ -51,11 +51,11 @@ public class Tooltip : MonoBehaviour
 
     public void SetText(TooltipTextSO tooltipTextSo)
     {
-        if (!tooltipTextSo)
+        if (tooltipTextSo == null)
         {
             headerFiled.gameObject.SetActive(false);
         }
-        else
+        else  
         {
             if (isOnMouseUI)
             {
@@ -64,7 +64,7 @@ public class Tooltip : MonoBehaviour
                 RectTransform.position = new Vector3(position.x, position.y, 0);
             }
            
-            
+           
             headerFiled.gameObject.SetActive(true);
             headerFiled.text = tooltipTextSo.header;
             headerFiled.color = tooltipTextSo.headerColor;
@@ -72,6 +72,7 @@ public class Tooltip : MonoBehaviour
 
         }
 
+        
         contentField.text = tooltipTextSo.Content;
         contentField.color = tooltipTextSo.contentColor;
         contentField.fontSize = tooltipTextSo.contentFontSize;
@@ -80,6 +81,8 @@ public class Tooltip : MonoBehaviour
         int contentLenght = contentField.text.Length;
 
         layoutElement.enabled = headerLength > charecterWrapLimit || contentLenght > charecterWrapLimit;
+        
+      
     }
 
 

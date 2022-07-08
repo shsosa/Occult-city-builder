@@ -95,8 +95,9 @@ public class BuildingManager : MonoBehaviour
                     !currentTile.CompareTag("HolyTile"))
                 {
                     currentTile.ChangeTileColor(Color.green);
-                    if (GameManager.isTutorial)
-                        currentTile.header = "has bonus";
+                    if (GameManager.isTutorial) ;
+                    //todo check if needs or just from tooltip
+                    // currentTile. = "has bonus";
                 }
                    
                 if(currentBuilding._typeOfDraggableItem == Building.TypeOfDraggableItem.Research && currentTile.isHoly)

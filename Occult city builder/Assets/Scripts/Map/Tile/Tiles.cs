@@ -8,8 +8,11 @@ using UnityEngine;
 
 public class Tiles : MonoBehaviour
 {
-     public  string header;
-     public string content;
+    //todo make method that takes  these to tooltip and 
+     [SerializeField]  string header;
+     
+     [TextArea]
+     [SerializeField] private string content;
 
   
     private SpriteRenderer spriteRenderer;
@@ -144,7 +147,7 @@ public class Tiles : MonoBehaviour
     IEnumerator DelayTooltip()
     {
         yield return new WaitForSeconds(0.5f);
-        if(header!=null && content != null)
+        if(_tooltipTextSo != null)
             TooltipSystem.Show(_tooltipTextSo);
     }
 
