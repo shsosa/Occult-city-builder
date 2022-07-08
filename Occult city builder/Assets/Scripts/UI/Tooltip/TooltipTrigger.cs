@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Game_managment;
+using UI.Tooltip;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UIElements;
@@ -10,6 +11,7 @@ public class TooltipTrigger : MonoBehaviour, IPointerEnterHandler, IPointerExitH
 {
     public string header;
     [SerializeField] private ReasourcePrice _reasourcePrice;
+    [SerializeField] private TooltipTextSO _tooltipTextSo;
    
 
     
@@ -27,8 +29,9 @@ public class TooltipTrigger : MonoBehaviour, IPointerEnterHandler, IPointerExitH
 
     IEnumerator Delay()
     {
+        _tooltipTextSo.Content = _reasourcePrice.GetBuildingPrice();
         yield return new WaitForSeconds(0.3f);
-        TooltipSystem.Show(_reasourcePrice.GetBuildingPrice(),header);
+        TooltipSystem.Show(_tooltipTextSo);
     }
 
    

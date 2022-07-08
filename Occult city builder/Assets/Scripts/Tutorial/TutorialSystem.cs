@@ -76,7 +76,7 @@ public class TutorialSystem : MonoBehaviour
     {
         if (witchUtUI.canBuild)
         {
-            TutorialTextSystem.Show(tutoialTextSos[6].Content, tutoialTextSos[6].header);
+            TutorialTextSystem.Show(tutoialTextSos[6]);
             StartCoroutine(Wait(1));
             SHowCurrentTutorialObject();
             yield break;
@@ -88,7 +88,7 @@ public class TutorialSystem : MonoBehaviour
 
     void ShowCuresedTileText()
     {
-        TutorialTextSystem.Show(tutoialTextSos[2].Content, tutoialTextSos[2].header);
+        TutorialTextSystem.Show(tutoialTextSos[2]);
         monsterHungerEvent.OnEventRaised -= ShowCuresedTileText;
         StartCoroutine(Wait(1));
         SHowCurrentTutorialObject();
@@ -97,7 +97,7 @@ public class TutorialSystem : MonoBehaviour
 
     void  BuildTutorialInfo()
     {
-        TutorialTextSystem.Show(tutoialTextSos[2].Content, tutoialTextSos[2].header);
+        TutorialTextSystem.Show(tutoialTextSos[2]);
         currentTutorialObject++;
         buildEventChannelSo.OnEventRaised -= BuildTutorialInfo;
         StartCoroutine(Wait(1));
@@ -109,7 +109,7 @@ public class TutorialSystem : MonoBehaviour
 
     void ShowOnHungerEventText()
     {
-        TutorialTextSystem.Show(tutoialTextSos[4].Content, tutoialTextSos[4].header);
+        TutorialTextSystem.Show(tutoialTextSos[4]);
       
         monsterHungerEvent.OnEventRaised -= ShowOnHungerEventText;
         StartCoroutine(Wait(1));
@@ -119,7 +119,7 @@ public class TutorialSystem : MonoBehaviour
     }
     void ShowResorceCollectText()
     {
-        TutorialTextSystem.Show(tutoialTextSos[3].Content, tutoialTextSos[3].header);
+        TutorialTextSystem.Show(tutoialTextSos[3]);
         resourceColletEvent.OnEventRaised -= ShowResorceCollectText;
         StartCoroutine(Wait(1));
         resourceColletEvent.OnEventRaised += ShowOnHungerEventText;
@@ -129,8 +129,7 @@ public class TutorialSystem : MonoBehaviour
 
     private void SHowCurrentTutorialObject()
     {
-        TutorialTextSystem.Show(tutoialTextSos[currentTutorialObject].Content,
-            tutoialTextSos[currentTutorialObject].header);
+        TutorialTextSystem.Show(tutoialTextSos[currentTutorialObject]);
        
     }
 }

@@ -6,10 +6,17 @@ namespace UI.Tooltip
     public class TooltipTextSO : ScriptableObject
     {
         public int id;
+        
+        [Header("Text: ")]
         public string header;
         public string Content;
 
-        public Color color;
-        public float fontSize;
+        [Header("Header text parameters")]
+        public Color headerColor;
+        public float headerFontSize;
+        
+        [Header("Content text parameters")]
+        public Color contentColor;
+        public float contentFontSize;
     }
 }

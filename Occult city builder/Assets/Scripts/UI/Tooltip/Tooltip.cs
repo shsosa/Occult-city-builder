@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UI.Tooltip;
 using UnityEngine;
 using UnityEngine.UI;
 using Image = UnityEngine.UIElements.Image;
@@ -48,9 +49,9 @@ public class Tooltip : MonoBehaviour
 
     }
 
-    public void SetText(string content, string header = "")
+    public void SetText(TooltipTextSO tooltipTextSo)
     {
-        if (string.IsNullOrEmpty(header))
+        if (!tooltipTextSo)
         {
             headerFiled.gameObject.SetActive(false);
         }
@@ -65,11 +66,15 @@ public class Tooltip : MonoBehaviour
            
             
             headerFiled.gameObject.SetActive(true);
-            headerFiled.text = header;
-            
+            headerFiled.text = tooltipTextSo.header;
+            headerFiled.color = tooltipTextSo.headerColor;
+            headerFiled.fontSize = tooltipTextSo.headerFontSize;
+
         }
 
-        contentField.text = content;
+        contentField.text = tooltipTextSo.Content;
+        contentField.color = tooltipTextSo.contentColor;
+        contentField.fontSize = tooltipTextSo.contentFontSize;
         
         int headerLength = headerFiled.text.Length;
         int contentLenght = contentField.text.Length;

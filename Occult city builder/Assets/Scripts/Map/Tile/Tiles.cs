@@ -145,7 +145,7 @@ public class Tiles : MonoBehaviour
     {
         yield return new WaitForSeconds(0.5f);
         if(header!=null && content != null)
-            TooltipSystem.Show(content,header);
+            TooltipSystem.Show(_tooltipTextSo);
     }
 
     public void TileHoverEffect()

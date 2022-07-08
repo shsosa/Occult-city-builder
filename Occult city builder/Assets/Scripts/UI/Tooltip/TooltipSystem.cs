@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UI.Tooltip;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -17,11 +18,12 @@ public class TooltipSystem : MonoBehaviour
      
    }
 
-   public static void Show(string content, string header = "")
+   public static void Show(TooltipTextSO tooltipTextSo)
    {
-      current.Tooltip.SetText(content,header);
+      current.Tooltip.SetText(tooltipTextSo);
       current.Tooltip.gameObject.SetActive(true);
    }
+   
 
    public static void Hide()
    {

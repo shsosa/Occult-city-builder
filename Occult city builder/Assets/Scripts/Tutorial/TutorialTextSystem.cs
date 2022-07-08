@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UI.Tooltip;
 using UnityEngine;
 
 public class TutorialTextSystem : MonoBehaviour
@@ -13,9 +14,9 @@ public class TutorialTextSystem : MonoBehaviour
     }
 
     public Tooltip TutorialBubble;
-    public static  void Show(string content, string header = "")
+    public static  void Show(TooltipTextSO tooltipTextSo)
     {
-        current.TutorialBubble.SetText(content,header);
+        current.TutorialBubble.SetText(tooltipTextSo);
        current.TutorialBubble.gameObject.SetActive(true);
     }
 
