@@ -23,6 +23,7 @@ public class Tiles : MonoBehaviour
     [SerializeField] BuildingManager _buildingManager;
     private FeedbackEffects feedbackEffectsManager;
     private MMFeedbacks tileFeedbacks;
+    [SerializeField] private TooltipTextSO _tooltipTextSo;
     
     public bool hasBuilding =false;
     public bool hasBonus,isCursed, isHoly,isErelevantToLoseCondition,isBlesed;

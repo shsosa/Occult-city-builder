@@ -66,6 +66,7 @@ public class Tooltip : MonoBehaviour
             
             headerFiled.gameObject.SetActive(true);
             headerFiled.text = header;
+            
         }
 
         contentField.text = content;

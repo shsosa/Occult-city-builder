@@ -8,5 +8,8 @@ namespace UI.Tooltip
         public int id;
         public string header;
         public string Content;
+
+        public Color color;
+        public float fontSize;
     }
 }
