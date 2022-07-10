@@ -20,8 +20,8 @@ public class TutorialTextSystem : MonoBehaviour
        current.TutorialBubble.gameObject.SetActive(true);
     }
 
-    public  void Hide()
+    public static  void Hide()
     {
-      TutorialBubble.gameObject.SetActive(false);
+      current.TutorialBubble.gameObject.SetActive(false);
     }
 }

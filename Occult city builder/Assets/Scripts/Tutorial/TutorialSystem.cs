@@ -24,10 +24,7 @@ public class TutorialSystem : MonoBehaviour
 
     [SerializeField] private TooltipTextSO[] tutoialTextSos;
     public  int currentTutorialObject=0;
-    private void Awake()
-    {
-        GameManager.isTutorial = true;
-    }
+    
     
 
     private void OnDisable()
@@ -35,8 +32,14 @@ public class TutorialSystem : MonoBehaviour
         buildEventChannelSo.OnEventRaised -= BuildTutorialInfo;
     }
 
-   
-    
+
+    private void Update()
+    {
+        if(Input.GetMouseButtonDown(0) && GameManager.isPaused)
+            GameManager.ResumeGame();
+    }
+
+
     private void Start()
     {
       
@@ -58,10 +61,16 @@ public class TutorialSystem : MonoBehaviour
         
         yield return new WaitForSeconds(3f);
         SHowCurrentTutorialObject();
-       ChangeBubbleTranform(0);
+        ChangeBubbleTranform(0);
+
+        GameManager.PauseGame();
        
-       buildEventChannelSo.OnEventRaised += BuildTutorialInfo;
-       SHowCurrentTutorialObject();
+        
+        buildEventChannelSo.OnEventRaised += BuildTutorialInfo;
+        SHowCurrentTutorialObject();
+        yield return new WaitForSeconds(3f);
+     
+      
         
         currentTutorialObject++;
         yield return CanbuildUt();
@@ -100,6 +109,7 @@ public class TutorialSystem : MonoBehaviour
 
     void  BuildTutorialInfo()
     {
+        GameManager.ResumeGame();
         TutorialTextSystem.Show(tutoialTextSos[2]);
         currentTutorialObject++;
         buildEventChannelSo.OnEventRaised -= BuildTutorialInfo;
@@ -117,6 +127,9 @@ public class TutorialSystem : MonoBehaviour
         ChangeBubbleTranform(2);
       
         monsterHungerEvent.OnEventRaised -= ShowOnHungerEventText;
+       
+        if(!GameManager.isEventUIActive)
+            TutorialTextSystem.Hide();
       
        
       
@@ -144,6 +157,7 @@ public class TutorialSystem : MonoBehaviour
     private void SHowCurrentTutorialObject()
     {
         TutorialTextSystem.Show(tutoialTextSos[currentTutorialObject]);
+       
        
     }
 }

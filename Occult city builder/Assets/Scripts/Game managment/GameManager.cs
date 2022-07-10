@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -14,7 +15,7 @@ public class GameManager : MonoBehaviour
 
     public static bool isEventUIActive = false;
 
-    public static bool isTutorial =false;
+    public static bool isPaused = false;
     /*
      * timer -> to UI
      * points - resources -> to UI
@@ -23,6 +24,25 @@ public class GameManager : MonoBehaviour
 
 
     // Start is called before the first frame update
+
+    public static void PauseGame()
+    {
+        Time.timeScale = 0;
+        isPaused = true;
+
+
+    }
+
+
+    public static void  ResumeGame()
+    {
+      
+            Time.timeScale = 1;
+            isPaused = false;
+
+    }
+        
+    
     void Start()
     {
         if (SceneManager.GetActiveScene().buildIndex != 0)

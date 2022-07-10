@@ -29,7 +29,7 @@ public class BuildingManager : MonoBehaviour
     public TooltipTextSO toolTipHasBonus;
    
 
-    public bool hasInstantiatedBuilding = false;
+    public static bool hasInstantiatedBuilding = false;
    
 
     private void OnEnable()
@@ -95,9 +95,7 @@ public class BuildingManager : MonoBehaviour
                     !currentTile.CompareTag("HolyTile"))
                 {
                     currentTile.ChangeTileColor(Color.green);
-                    if (GameManager.isTutorial) ;
-                    //todo check if needs or just from tooltip
-                    // currentTile. = "has bonus";
+                   
                 }
                    
                 if(currentBuilding._typeOfDraggableItem == Building.TypeOfDraggableItem.Research && currentTile.isHoly)
@@ -230,15 +228,15 @@ public class BuildingManager : MonoBehaviour
     public void InstantiateBuilding(GameObject buildingPB, Transform uiButtonPos)
     {
         building = Instantiate(buildingPB, uiButtonPos.position, Quaternion.identity);
-        
+        hasInstantiatedBuilding = true;
         AttachBuildingToManager();
         
         
         //Instantiate Event
         buildUIEventChannelSo.RaiseEvent();
         
-        if(building.CompareTag("Building"))
-            hasInstantiatedBuilding = true;
+      
+           
         
 
     }

@@ -15,6 +15,10 @@ PrefabInstance:
       propertyPath: tileFeedbacks
       value: 
       objectReference: {fileID: 961970359274185891, guid: ed286d07a3a185a44b73718e64ee5cdb, type: 3}
+    - target: {fileID: 99729293624716172, guid: 1dc306dff38e7a346a9df6b41cd47c33, type: 3}
+      propertyPath: _tooltipTextSo
+      value: 
+      objectReference: {fileID: 11400000, guid: 364e60a54dc1a5841a4bfe89f5af393b, type: 2}
     - target: {fileID: 99729293624716174, guid: 1dc306dff38e7a346a9df6b41cd47c33, type: 3}
       propertyPath: m_RootOrder
       value: 0

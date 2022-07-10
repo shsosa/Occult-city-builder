@@ -135,6 +135,10 @@ public class Tiles : MonoBehaviour
     {
         if(header != null && content != null)
           StartCoroutine(DelayTooltip());
+        else
+        {
+            TooltipSystem.Hide();
+        }
     }
 
     private void OnMouseOver()
@@ -146,9 +150,21 @@ public class Tiles : MonoBehaviour
 
     IEnumerator DelayTooltip()
     {
-        yield return new WaitForSeconds(0.5f);
-        if(_tooltipTextSo != null)
-            TooltipSystem.Show(_tooltipTextSo);
+       
+        
+            
+        yield return new WaitForSeconds(0.1f);
+        if (_tooltipTextSo != null )
+        {
+          
+               
+                _tooltipTextSo.header = header;
+                _tooltipTextSo.Content = content;
+                TooltipSystem.Show(_tooltipTextSo);
+            
+           
+        }
+           
     }
 
     public void TileHoverEffect()
