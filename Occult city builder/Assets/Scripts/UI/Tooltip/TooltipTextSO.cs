@@ -12,6 +12,8 @@ namespace UI.Tooltip
         
         [Header("Text: ")]
         public string header;
+        
+        [TextArea]
         public string Content;
 
         [Header("Header text parameters")]

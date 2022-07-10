@@ -14,4 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 4
   header: Monster hungry!
-  Content: feed her with villager or cattle
+  Content: 'feed her
+
+    with villager or cattle'
+  headerColor: {r: 0.20784315, g: 0.8313726, b: 0.2392157, a: 1}
+  headerFontSize: 36
+  contentColor: {r: 0.26666668, g: 0.40784317, b: 0.5019608, a: 1}
+  contentFontSize: 32

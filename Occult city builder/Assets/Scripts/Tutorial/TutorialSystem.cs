@@ -15,6 +15,10 @@ public class TutorialSystem : MonoBehaviour
     [SerializeField] private VoidEventChannelSO resourceColletEvent;
 
     [SerializeField] private UIObject witchUtUI;
+
+    [SerializeField] private RectTransform tutorialBubbleTransform;
+
+    [SerializeField] private RectTransform[] bubblePosArray;
     
     
 
@@ -24,12 +28,7 @@ public class TutorialSystem : MonoBehaviour
     {
         GameManager.isTutorial = true;
     }
-
-    private void OnEnable()
-    {
-       
-        
-    }
+    
 
     private void OnDisable()
     {
@@ -54,22 +53,26 @@ public class TutorialSystem : MonoBehaviour
 
     IEnumerator Tutorial()
     {
-       
-       
         SHowCurrentTutorialObject();
         currentTutorialObject++;
-        yield return new WaitForSeconds(3f);
         
-       SHowCurrentTutorialObject();
+        yield return new WaitForSeconds(3f);
+        SHowCurrentTutorialObject();
+       ChangeBubbleTranform(0);
+       
        buildEventChannelSo.OnEventRaised += BuildTutorialInfo;
        SHowCurrentTutorialObject();
         
         currentTutorialObject++;
         yield return CanbuildUt();
 
+        
+    }
 
-
-
+    private void ChangeBubbleTranform(int transArray)
+    {
+        tutorialBubbleTransform.position = bubblePosArray[transArray].position;
+        tutorialBubbleTransform.localScale = bubblePosArray[transArray].localScale;
     }
 
     IEnumerator CanbuildUt()
@@ -77,7 +80,7 @@ public class TutorialSystem : MonoBehaviour
         if (witchUtUI.canBuild)
         {
             TutorialTextSystem.Show(tutoialTextSos[6]);
-            StartCoroutine(Wait(1));
+         
             SHowCurrentTutorialObject();
             yield break;
             
@@ -90,7 +93,7 @@ public class TutorialSystem : MonoBehaviour
     {
         TutorialTextSystem.Show(tutoialTextSos[2]);
         monsterHungerEvent.OnEventRaised -= ShowCuresedTileText;
-        StartCoroutine(Wait(1));
+      
         SHowCurrentTutorialObject();
        
     }
@@ -100,7 +103,7 @@ public class TutorialSystem : MonoBehaviour
         TutorialTextSystem.Show(tutoialTextSos[2]);
         currentTutorialObject++;
         buildEventChannelSo.OnEventRaised -= BuildTutorialInfo;
-        StartCoroutine(Wait(1));
+      
         resourceColletEvent.OnEventRaised += ShowResorceCollectText;
       
         
@@ -109,10 +112,12 @@ public class TutorialSystem : MonoBehaviour
 
     void ShowOnHungerEventText()
     {
+        Debug.Log("Monster hunger event tutorial");
         TutorialTextSystem.Show(tutoialTextSos[4]);
+        ChangeBubbleTranform(2);
       
         monsterHungerEvent.OnEventRaised -= ShowOnHungerEventText;
-        StartCoroutine(Wait(1));
+      
        
       
 
@@ -120,9 +125,18 @@ public class TutorialSystem : MonoBehaviour
     void ShowResorceCollectText()
     {
         TutorialTextSystem.Show(tutoialTextSos[3]);
+        ChangeBubbleTranform(1);
         resourceColletEvent.OnEventRaised -= ShowResorceCollectText;
-        StartCoroutine(Wait(1));
-        resourceColletEvent.OnEventRaised += ShowOnHungerEventText;
+        StartCoroutine(Wait());
+        
+        
+        IEnumerator Wait()
+        {
+            yield return new WaitForSeconds(4);
+           
+            monsterHungerEvent.OnEventRaised += ShowOnHungerEventText;
+        }
+       
        
        
     }

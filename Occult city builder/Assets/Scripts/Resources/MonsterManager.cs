@@ -99,6 +99,7 @@ public class MonsterManager : MonoBehaviour
             if (powerEventTriger >= maxRangeToTrigerPowerEvent)
             {
                 PowerEvent();
+                monsterPowerEventChanel.RaiseEvent();
                 maxRangeToTrigerPowerEvent = maxRangeToTrigerPowerEventConstant;
                 monsterPower -= monsterPowerGrowth;
             }

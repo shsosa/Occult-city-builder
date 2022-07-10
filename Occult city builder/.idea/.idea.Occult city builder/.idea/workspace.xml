@@ -5,20 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6a6f9a88-340d-4329-b101-d2b7388b26fe" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Tooltip/ResourceUITooltip.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Tooltip/ResourceUITooltip.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Tooltip/TileObjectTooltip.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Tooltip/TileObjectTooltip.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Tooltip/UIObjectTooltip.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Tooltip/UIObjectTooltip.asset.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Occult city builder/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Occult city builder/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Tutorial.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Tutorial.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Map/Building/BuildingManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Map/Building/BuildingManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Map/Tile/Tiles.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Map/Tile/Tiles.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Tooltip/Tooltip.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Tooltip/Tooltip.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Resources/MonsterManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Resources/MonsterManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tutorial/BuildAwitchHut.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tutorial/BuildAwitchHut.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tutorial/CollectedResources.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tutorial/CollectedResources.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tutorial/CursedTile.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tutorial/CursedTile.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tutorial/First encounter.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tutorial/First encounter.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tutorial/MonsterHungry.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tutorial/MonsterHungry.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tutorial/PlaceBuilding.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tutorial/PlaceBuilding.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tutorial/TIleHasBunus.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tutorial/TIleHasBunus.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tutorial/TutorialSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tutorial/TutorialSystem.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Tooltip/TooltipTextSO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Tooltip/TooltipTextSO.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Tooltip/WitchHutUITooltip.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Tooltip/WitchHutUITooltip.asset.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
