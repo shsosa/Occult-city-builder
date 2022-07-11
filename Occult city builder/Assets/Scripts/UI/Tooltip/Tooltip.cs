@@ -13,20 +13,22 @@ public class Tooltip : MonoBehaviour
     public TextMeshProUGUI headerFiled;
     public TextMeshProUGUI contentField;
 
+   
+
     public LayoutElement layoutElement;
 
     public int charecterWrapLimit;
 
     public RectTransform RectTransform;
     private Vector2 position;
-
+    private Image icaonImage;
     private Color _color;
-
+   
     [SerializeField] bool isOnMouseUI;
     private void Awake()
     {
         RectTransform = GetComponent<RectTransform>();
-      
+       // icaonImage = GetComponentInChildren<Image>();
     }
 
     
