@@ -13,6 +13,8 @@ public class TutorialSystem : MonoBehaviour
     [SerializeField] private VoidEventChannelSO monsterHungerEvent;
     [SerializeField] private VoidEventChannelSO monsterPowerEvent;
     [SerializeField] private VoidEventChannelSO resourceColletEvent;
+    
+   // [SerializeField] GameObject 
 
     [SerializeField] private UIObject witchUtUI;
 
@@ -36,8 +38,8 @@ public class TutorialSystem : MonoBehaviour
 
     private void Update()
     {
-       if(!GameManager.isEventUIActive)
-           SHowCurrentTutorialObject();
+      // if(!GameManager.isEventUIActive)
+         //  SHowCurrentTutorialObject();
     }
 
 
@@ -116,6 +118,7 @@ public class TutorialSystem : MonoBehaviour
         currentTutorialObject++;
         buildEventChannelSo.OnEventRaised -= BuildTutorialInfo;
       
+        
         resourceColletEvent.OnEventRaised += ShowResorceCollectText;
       
         
