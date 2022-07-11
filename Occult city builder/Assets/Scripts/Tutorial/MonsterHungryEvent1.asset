@@ -10,12 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 46409e99f0954f9f939fd44d8bf3cd41, type: 3}
-  m_Name: TileObjectTooltip
+  m_Name: MonsterHungryEvent1
   m_EditorClassIdentifier: 
-  header: Hills
-  Content: 
-  headerColor: {r: 0.8225027, g: 1, b: 0.8066038, a: 1}
-  headerFontSize: 10
-  contentColor: {r: 1, g: 1, b: 1, a: 1}
-  contentFontSize: 6
+  header: Monster got hungry
+  Content: 'You must please he
+
+    Resolve by sacrificing or
+
+    face the consequences'
+  headerColor: {r: 0.20784314, g: 0.83137256, b: 0.23921569, a: 1}
+  headerFontSize: 36
+  contentColor: {r: 0.26666668, g: 0.40784314, b: 0.5019608, a: 1}
+  contentFontSize: 32
   iconSprite: {fileID: 0}

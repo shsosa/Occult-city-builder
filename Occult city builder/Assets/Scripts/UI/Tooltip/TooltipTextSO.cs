@@ -7,9 +7,7 @@ namespace UI.Tooltip
     {
         
         //todo check if needs id
-        
-        public int id;
-        
+
         [Header("Text: ")]
         public string header;
         

@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46409e99f0954f9f939fd44d8bf3cd41, type: 3}
   m_Name: UIObjectTooltip
   m_EditorClassIdentifier: 
-  id: 0
-  header: 'Witch hut '
-  Content: "Wood: 15 \nVillagers: 2 \n"
+  header: Wood chop
+  Content: "Villagers: 2 \nProduces: "
   headerColor: {r: 0.9716981, g: 0.01375042, b: 0.01375042, a: 1}
-  headerFontSize: 36
+  headerFontSize: 16
   contentColor: {r: 1, g: 0.9858491, b: 0.9858491, a: 1}
-  contentFontSize: 24
+  contentFontSize: 14
+  iconSprite: {fileID: 0}

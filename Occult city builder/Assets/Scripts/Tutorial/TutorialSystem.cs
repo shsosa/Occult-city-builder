@@ -30,6 +30,7 @@ public class TutorialSystem : MonoBehaviour
     private void OnDisable()
     {
         buildEventChannelSo.OnEventRaised -= BuildTutorialInfo;
+        
     }
 
 
@@ -67,6 +68,7 @@ public class TutorialSystem : MonoBehaviour
        
         
         buildEventChannelSo.OnEventRaised += BuildTutorialInfo;
+        monsterHungerEvent.OnEventRaised += ShowOnHungerEventText;
         SHowCurrentTutorialObject();
         yield return new WaitForSeconds(3f);
      
@@ -147,7 +149,7 @@ public class TutorialSystem : MonoBehaviour
         {
             yield return new WaitForSeconds(4);
            
-            monsterHungerEvent.OnEventRaised += ShowOnHungerEventText;
+            
         }
        
        
