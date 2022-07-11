@@ -164,18 +164,26 @@ public class Tiles : MonoBehaviour
         yield return new WaitForSeconds(0.001f);
         if (_tooltipTextSo != null )
         {
-            if (iconSprit != null)
-            {
-                _tooltipTextSo.iconSprite = iconSprit;
-            }
            
             _tooltipTextSo.header = header;
-            _tooltipTextSo.Content = content;
+            _tooltipTextSo.Content = "";
             TooltipSystem.Show(_tooltipTextSo);
             
            
         }
            
+    }
+
+    public void ActivateBonusContent()
+    {
+        if (iconSprit != null)
+        {
+            _tooltipTextSo.iconSprite = iconSprit;
+            _tooltipTextSo.Content = content;
+            TooltipSystem.Show(_tooltipTextSo);
+        }
+
+       
     }
 
     public void TileHoverEffect()

@@ -95,6 +95,7 @@ public class BuildingManager : MonoBehaviour
                     !currentTile.CompareTag("HolyTile"))
                 {
                     currentTile.ChangeTileColor(Color.green);
+                    currentTile.ActivateBonusContent();
                    
                 }
                    
