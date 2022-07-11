@@ -87,9 +87,7 @@ public class BuildingManager : MonoBehaviour
             currentBuilding.PlaceBuildingOnTile();
           
         }
-           
         
-       
     }
     private static void HoverOnTileWithBuildingFeedback(Tiles currentTile, Building currentBuilding)
     {

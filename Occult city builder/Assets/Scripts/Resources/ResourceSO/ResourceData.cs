@@ -18,10 +18,7 @@ public class ResourceData : ScriptableObject
     #endregion
 
     //todo check possibility to make a scriptable for tile also so it can produce some other resources
-    private void OnEnable()
-    {
-        
-    }
+  
 
     public void IncreaseResource(ResourceTypeData.ResourceType resourceType, int resourcesTAdd)
     {
@@ -61,8 +58,7 @@ public class ResourceData : ScriptableObject
     public  string  CheckIfHasSpesificResource(ReasourcePrice reasourcePrice)
     {
         string price = null;
-
-
+        
         if (reasourcePrice.wood != 0)
         {
             if (reasourcePrice.wood > wood)
@@ -74,8 +70,7 @@ public class ResourceData : ScriptableObject
            
         }
 
-
-
+        
         if (reasourcePrice.cattle != 0)
         {
             if (reasourcePrice.cattle > cattle)
