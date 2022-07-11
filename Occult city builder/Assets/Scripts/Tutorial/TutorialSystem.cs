@@ -36,8 +36,8 @@ public class TutorialSystem : MonoBehaviour
 
     private void Update()
     {
-       // if(Input.GetMouseButtonDown(0) && GameManager.isPaused)
-          //  GameManager.ResumeGame();
+       if(!GameManager.isEventUIActive)
+           SHowCurrentTutorialObject();
     }
 
 

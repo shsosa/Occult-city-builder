@@ -107,6 +107,7 @@ MonoBehaviour:
   BuildEventChannelSo: {fileID: 11400000, guid: 1937f1b57f01ddd448ebe004034eae57, type: 2}
   tile: {fileID: 0}
   isDragged: 0
+  isBuildingChildOfTile: 0
 --- !u!114 &6634119082779499341
 MonoBehaviour:
   m_ObjectHideFlags: 0
