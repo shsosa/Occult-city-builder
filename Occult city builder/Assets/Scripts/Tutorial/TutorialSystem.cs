@@ -120,13 +120,13 @@ public class TutorialSystem : MonoBehaviour
         
 
     }
-
+    
     void ShowOnHungerEventText()
     {
         Debug.Log("Monster hunger event tutorial");
         TutorialTextSystem.Show(tutoialTextSos[4]);
         ChangeBubbleTranform(2);
-
+        //todo when to deactivate maybe when player press button "understood"
        // monsterHungerEvent.OnEventRaised -= ShowOnHungerEventText;
         StartCoroutine(DeactivateUIEvent());
         

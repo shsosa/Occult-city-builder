@@ -175,6 +175,8 @@ public class Building : MonoBehaviour, Idraggable
                     GetComponent<PolygonCollider2D>().isTrigger = true;
                     if (tileScript.isHoly && _typeOfDraggableItem == TypeOfDraggableItem.Research)
                         tileScript.hasBonus = true;
+                    //todo see if to refactor this to building manager
+                    TooltipSystem.ResetTooltip();
                     
                 }
                 

@@ -31,6 +31,11 @@ public class TooltipSystem : MonoBehaviour
       current.Tooltip.ResetTooltip();
       current.Tooltip.gameObject.SetActive(false);
    }
+
+   public static void ResetTooltip()
+   {
+      current.Tooltip.ResetTooltip();
+   }
    
    
 }

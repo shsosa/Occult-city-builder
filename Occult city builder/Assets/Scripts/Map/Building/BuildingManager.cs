@@ -48,7 +48,9 @@ public class BuildingManager : MonoBehaviour
 
     private void Update()
     {
+
         var isObjectsActive = building != null && tile != null && !GameManager.isEventUIActive;
+        
         
         if (isObjectsActive)
         {
@@ -81,7 +83,11 @@ public class BuildingManager : MonoBehaviour
     private static void PlaceBuildingOnTile(Tiles currentTile, Building currentBuilding)
     {
         if (!currentTile.hasBuilding && !currentTile.isCursed)
+        {
             currentBuilding.PlaceBuildingOnTile();
+          
+        }
+           
         
        
     }
@@ -133,7 +139,7 @@ public class BuildingManager : MonoBehaviour
                     
                else if (!currentBuilding.isDragged)
                 {
-                   
+                  
                     currentBuilding.DecreaseReasourceCost();
                     currentTile.SetNotCursed();
                     if(!currentTile.isCursed)

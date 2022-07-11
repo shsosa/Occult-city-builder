@@ -182,8 +182,13 @@ public class Tiles : MonoBehaviour
             _tooltipTextSo.Content = content;
             TooltipSystem.Show(_tooltipTextSo);
         }
-
-       
+        
+    }
+    public void DeactivateBonusContent()
+    {
+        
+        TooltipSystem.Hide(_tooltipTextSo);
+        
     }
 
     public void TileHoverEffect()
