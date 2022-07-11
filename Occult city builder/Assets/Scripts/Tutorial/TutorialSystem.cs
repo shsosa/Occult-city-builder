@@ -35,8 +35,8 @@ public class TutorialSystem : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetMouseButtonDown(0) && GameManager.isPaused)
-            GameManager.ResumeGame();
+       // if(Input.GetMouseButtonDown(0) && GameManager.isPaused)
+          //  GameManager.ResumeGame();
     }
 
 
@@ -63,7 +63,7 @@ public class TutorialSystem : MonoBehaviour
         SHowCurrentTutorialObject();
         ChangeBubbleTranform(0);
 
-        GameManager.PauseGame();
+        //GameManager.PauseGame();
        
         
         buildEventChannelSo.OnEventRaised += BuildTutorialInfo;

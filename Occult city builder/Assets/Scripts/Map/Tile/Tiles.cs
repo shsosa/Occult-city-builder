@@ -8,25 +8,32 @@ using UnityEngine;
 
 public class Tiles : MonoBehaviour
 {
-    //todo make method that takes  these to tooltip and 
+    
+    [Header("Tool tip content: "+ "\n")]
      [SerializeField]  string header;
-     
      [TextArea]
      [SerializeField] private string content;
+     [SerializeField] private Sprite iconSprit;
+     [SerializeField] private TooltipTextSO _tooltipTextSo;
 
-  
+    [Header("Tile states : " + "\n")]
     private SpriteRenderer spriteRenderer;
     public Sprite normalSprite;
     public ResourceTypeData type;
     public ResourceTypeData building;
     public Sprite cursedSprite;
+    
+    [Header("Resources SO: "+ "\n")]
     [SerializeField] private ResourceData _resourceDataScriptable;
+    
+    [Header("Events channels: "+ "\n")]
     public VoidEventChannelSO resourceManager,monsterPowerEvent;
     
+    [Header("Managers: "+ "\n")]
     [SerializeField] BuildingManager _buildingManager;
     private FeedbackEffects feedbackEffectsManager;
     private MMFeedbacks tileFeedbacks;
-    [SerializeField] private TooltipTextSO _tooltipTextSo;
+   
     
     public bool hasBuilding =false;
     public bool hasBonus,isCursed, isHoly,isErelevantToLoseCondition,isBlesed;
@@ -122,8 +129,9 @@ public class Tiles : MonoBehaviour
 
     private void OnMouseExit()
     {
+        _tooltipTextSo.iconSprite = null;
         if(header != null && content != null)
-            TooltipSystem.Hide();
+            TooltipSystem.Hide(_tooltipTextSo);
         spriteRenderer.sortingOrder = 0;
         spriteRenderer.color = Color.white;
             _buildingManager.tile = null;
@@ -133,11 +141,11 @@ public class Tiles : MonoBehaviour
 
     private void OnMouseEnter()
     {
-        if(header != null && content != null)
+        if(header != null && content != null )
           StartCoroutine(DelayTooltip());
         else
         {
-            TooltipSystem.Hide();
+            TooltipSystem.Hide(_tooltipTextSo);
         }
     }
 
@@ -153,14 +161,17 @@ public class Tiles : MonoBehaviour
        
         
             
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.001f);
         if (_tooltipTextSo != null )
         {
-          
-               
-                _tooltipTextSo.header = header;
-                _tooltipTextSo.Content = content;
-                TooltipSystem.Show(_tooltipTextSo);
+            if (iconSprit != null)
+            {
+                _tooltipTextSo.iconSprite = iconSprit;
+            }
+           
+            _tooltipTextSo.header = header;
+            _tooltipTextSo.Content = content;
+            TooltipSystem.Show(_tooltipTextSo);
             
            
         }

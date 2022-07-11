@@ -25,8 +25,10 @@ public class TooltipSystem : MonoBehaviour
    }
    
 
-   public static void Hide()
+   public static void Hide(TooltipTextSO tooltipTextSo)
    {
+      tooltipTextSo.iconSprite = null;
+      current.Tooltip.ResetTooltip();
       current.Tooltip.gameObject.SetActive(false);
    }
    

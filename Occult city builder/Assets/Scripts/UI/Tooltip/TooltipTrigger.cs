@@ -19,18 +19,21 @@ public class TooltipTrigger : MonoBehaviour, IPointerEnterHandler, IPointerExitH
 
     public void OnPointerEnter(PointerEventData eventData)
     {
+       
         StartCoroutine(Delay());
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-       TooltipSystem.Hide();
+       TooltipSystem.Hide(_tooltipTextSo);
     }
 
     IEnumerator Delay()
     {
+        _tooltipTextSo.iconSprite = null;
+        _tooltipTextSo.header = header;
         _tooltipTextSo.Content = _reasourcePrice.GetBuildingPrice();
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(0.1f);
         TooltipSystem.Show(_tooltipTextSo);
     }
 

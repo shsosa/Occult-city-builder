@@ -12,6 +12,14 @@ PrefabInstance:
       value: MountinTile Variant
       objectReference: {fileID: 0}
     - target: {fileID: 99729293624716172, guid: 1dc306dff38e7a346a9df6b41cd47c33, type: 3}
+      propertyPath: header
+      value: Mountain
+      objectReference: {fileID: 0}
+    - target: {fileID: 99729293624716172, guid: 1dc306dff38e7a346a9df6b41cd47c33, type: 3}
+      propertyPath: iconSprit
+      value: 
+      objectReference: {fileID: 21300000, guid: b673cad4aa3fc674aa9d750e02afb88e, type: 3}
+    - target: {fileID: 99729293624716172, guid: 1dc306dff38e7a346a9df6b41cd47c33, type: 3}
       propertyPath: tileFeedbacks
       value: 
       objectReference: {fileID: 961970359274185891, guid: ed286d07a3a185a44b73718e64ee5cdb, type: 3}

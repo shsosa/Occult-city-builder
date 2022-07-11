@@ -23,5 +23,8 @@ namespace UI.Tooltip
         [Header("Content text parameters")]
         public Color contentColor;
         public float contentFontSize;
+
+        [Header("Icon sprite")]
+        public Sprite iconSprite;
     }
 }

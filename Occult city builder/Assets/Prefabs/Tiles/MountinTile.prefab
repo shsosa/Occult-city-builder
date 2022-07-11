@@ -99,7 +99,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   header: Mountain
-  content: 
+  content: 'Bonus for '
+  iconSprit: {fileID: 21300000, guid: b673cad4aa3fc674aa9d750e02afb88e, type: 3}
+  _tooltipTextSo: {fileID: 11400000, guid: 364e60a54dc1a5841a4bfe89f5af393b, type: 2}
   normalSprite: {fileID: 0}
   type: {fileID: 11400000, guid: 22a36d06dc0f0d941a9e0762458a563f, type: 2}
   building: {fileID: 0}
@@ -108,7 +110,6 @@ MonoBehaviour:
   resourceManager: {fileID: 11400000, guid: aa6d1e9599124c244b5af24ba9ba859f, type: 2}
   monsterPowerEvent: {fileID: 0}
   _buildingManager: {fileID: 0}
-  _tooltipTextSo: {fileID: 11400000, guid: 364e60a54dc1a5841a4bfe89f5af393b, type: 2}
   hasBuilding: 0
   hasBonus: 0
   isCursed: 0
