@@ -14,7 +14,6 @@ public class TutorialSystem : MonoBehaviour
     [SerializeField] private VoidEventChannelSO monsterPowerEvent;
     [SerializeField] private VoidEventChannelSO resourceColletEvent;
     
-   // [SerializeField] GameObject 
 
     [SerializeField] private UIObject witchUtUI;
 
@@ -38,8 +37,7 @@ public class TutorialSystem : MonoBehaviour
 
     private void Update()
     {
-      // if(!GameManager.isEventUIActive)
-         //  SHowCurrentTutorialObject();
+        
     }
 
 
@@ -76,7 +74,7 @@ public class TutorialSystem : MonoBehaviour
      
       
         
-        currentTutorialObject++;
+       
         yield return CanbuildUt();
 
         
@@ -92,8 +90,9 @@ public class TutorialSystem : MonoBehaviour
     {
         if (witchUtUI.canBuild)
         {
+            
             TutorialTextSystem.Show(tutoialTextSos[6]);
-         
+            
             SHowCurrentTutorialObject();
             yield break;
             
@@ -115,10 +114,7 @@ public class TutorialSystem : MonoBehaviour
     {
         GameManager.ResumeGame();
         TutorialTextSystem.Show(tutoialTextSos[2]);
-        currentTutorialObject++;
         buildEventChannelSo.OnEventRaised -= BuildTutorialInfo;
-      
-        
         resourceColletEvent.OnEventRaised += ShowResorceCollectText;
       
         
@@ -130,11 +126,22 @@ public class TutorialSystem : MonoBehaviour
         Debug.Log("Monster hunger event tutorial");
         TutorialTextSystem.Show(tutoialTextSos[4]);
         ChangeBubbleTranform(2);
-      
-        monsterHungerEvent.OnEventRaised -= ShowOnHungerEventText;
-       
-        if(!GameManager.isEventUIActive)
-            TutorialTextSystem.Hide();
+
+       // monsterHungerEvent.OnEventRaised -= ShowOnHungerEventText;
+        StartCoroutine(DeactivateUIEvent());
+        
+        //Coroutine for wait until event is no longer active 
+        IEnumerator DeactivateUIEvent()
+        {
+            yield return new WaitUntil(() => !GameManager.isEventUIActive);
+          
+            
+                ChangeBubbleTranform(currentTutorialObject-1);
+                SHowCurrentTutorialObject();
+                
+        }
+        
+          
       
        
       
@@ -142,6 +149,7 @@ public class TutorialSystem : MonoBehaviour
     }
     void ShowResorceCollectText()
     {
+        currentTutorialObject++;
         TutorialTextSystem.Show(tutoialTextSos[3]);
         ChangeBubbleTranform(1);
         resourceColletEvent.OnEventRaised -= ShowResorceCollectText;

@@ -18,8 +18,8 @@ MonoBehaviour:
     Resolve by sacrificing or
 
     face the consequences'
-  headerColor: {r: 0.20784314, g: 0.83137256, b: 0.23921569, a: 1}
+  headerColor: {r: 0.77254903, g: 0.078431375, b: 0.62352943, a: 1}
   headerFontSize: 36
-  contentColor: {r: 0.26666668, g: 0.40784314, b: 0.5019608, a: 1}
+  contentColor: {r: 0.59607846, g: 0.36862746, b: 0.54509807, a: 1}
   contentFontSize: 32
   iconSprite: {fileID: 0}
