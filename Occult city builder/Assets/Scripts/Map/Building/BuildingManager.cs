@@ -224,11 +224,12 @@ public class BuildingManager : MonoBehaviour
                 
             ExitLoop:
             return canBuild;
-
-
+            
         }
 
     }
+
+   
 
     #endregion
 

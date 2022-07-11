@@ -17,6 +17,8 @@ public class TooltipTrigger : MonoBehaviour, IPointerEnterHandler, IPointerExitH
     [SerializeField] private Sprite iconSprite;
     [SerializeField] private ReasourcePrice _reasourcePrice;
     [SerializeField] private TooltipTextSO _tooltipTextSo;
+    [SerializeField] private ResourceData resourceData;
+    
    
 
     
@@ -37,7 +39,7 @@ public class TooltipTrigger : MonoBehaviour, IPointerEnterHandler, IPointerExitH
     {
         _tooltipTextSo.iconSprite = null;   
         _tooltipTextSo.header = header + "\n";
-        _tooltipTextSo.Content = _reasourcePrice.GetBuildingPrice() + "\n" + content;
+        _tooltipTextSo.Content = resourceData.CheckIfHasSpesificResource(_reasourcePrice) + "\n" + content;
         _tooltipTextSo.iconSprite = iconSprite;
         yield return new WaitForSeconds(0.1f);
         TooltipSystem.Show(_tooltipTextSo);

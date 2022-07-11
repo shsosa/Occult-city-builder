@@ -2611,6 +2611,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1877847959174296264, guid: 0485dc3e8cb70434fb6319f45f959a57, type: 3}
+      propertyPath: resourceData
+      value: 
+      objectReference: {fileID: 11400000, guid: a058ea4808a964c4883a30c07f49f86f, type: 2}
+    - target: {fileID: 1877847959174296264, guid: 0485dc3e8cb70434fb6319f45f959a57, type: 3}
       propertyPath: _tooltipTextSo
       value: 
       objectReference: {fileID: 11400000, guid: 1d5af7e333760e541b6d09649c38fd74, type: 2}
@@ -2618,6 +2622,10 @@ PrefabInstance:
       propertyPath: iconSprite
       value: 
       objectReference: {fileID: 21300000, guid: 2188d4d167ab3c24bbe05bfdf5597efd, type: 3}
+    - target: {fileID: 1877847959199209862, guid: 0485dc3e8cb70434fb6319f45f959a57, type: 3}
+      propertyPath: resourceData
+      value: 
+      objectReference: {fileID: 11400000, guid: a058ea4808a964c4883a30c07f49f86f, type: 2}
     - target: {fileID: 1877847959199209862, guid: 0485dc3e8cb70434fb6319f45f959a57, type: 3}
       propertyPath: _tooltipTextSo
       value: 
@@ -2627,6 +2635,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 43829a55dad36684ab64667482583519, type: 3}
     - target: {fileID: 1877847959401355637, guid: 0485dc3e8cb70434fb6319f45f959a57, type: 3}
+      propertyPath: resourceData
+      value: 
+      objectReference: {fileID: 11400000, guid: a058ea4808a964c4883a30c07f49f86f, type: 2}
+    - target: {fileID: 1877847959401355637, guid: 0485dc3e8cb70434fb6319f45f959a57, type: 3}
       propertyPath: _tooltipTextSo
       value: 
       objectReference: {fileID: 11400000, guid: 1d5af7e333760e541b6d09649c38fd74, type: 2}
@@ -2634,6 +2646,10 @@ PrefabInstance:
       propertyPath: iconSprite
       value: 
       objectReference: {fileID: 21300000, guid: 2ad9f42d580e1ef458e91ea09168a4d8, type: 3}
+    - target: {fileID: 1877847959608778622, guid: 0485dc3e8cb70434fb6319f45f959a57, type: 3}
+      propertyPath: resourceData
+      value: 
+      objectReference: {fileID: 11400000, guid: a058ea4808a964c4883a30c07f49f86f, type: 2}
     - target: {fileID: 1877847959608778622, guid: 0485dc3e8cb70434fb6319f45f959a57, type: 3}
       propertyPath: _tooltipTextSo
       value: 
@@ -2731,6 +2747,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 1461ff6832fdcda47a8d13dc44645109, type: 3}
     - target: {fileID: 1877847960335322719, guid: 0485dc3e8cb70434fb6319f45f959a57, type: 3}
+      propertyPath: resourceData
+      value: 
+      objectReference: {fileID: 11400000, guid: a058ea4808a964c4883a30c07f49f86f, type: 2}
+    - target: {fileID: 1877847960335322719, guid: 0485dc3e8cb70434fb6319f45f959a57, type: 3}
       propertyPath: _tooltipTextSo
       value: 
       objectReference: {fileID: 11400000, guid: 1d5af7e333760e541b6d09649c38fd74, type: 2}
@@ -2739,6 +2759,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: b673cad4aa3fc674aa9d750e02afb88e, type: 3}
     - target: {fileID: 1877847960586877101, guid: 0485dc3e8cb70434fb6319f45f959a57, type: 3}
+      propertyPath: resourceData
+      value: 
+      objectReference: {fileID: 11400000, guid: a058ea4808a964c4883a30c07f49f86f, type: 2}
+    - target: {fileID: 1877847960586877101, guid: 0485dc3e8cb70434fb6319f45f959a57, type: 3}
       propertyPath: _tooltipTextSo
       value: 
       objectReference: {fileID: 11400000, guid: 1d5af7e333760e541b6d09649c38fd74, type: 2}
@@ -2746,6 +2770,10 @@ PrefabInstance:
       propertyPath: content
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1877847960789172325, guid: 0485dc3e8cb70434fb6319f45f959a57, type: 3}
+      propertyPath: resourceData
+      value: 
+      objectReference: {fileID: 11400000, guid: a058ea4808a964c4883a30c07f49f86f, type: 2}
     - target: {fileID: 1877847960789172325, guid: 0485dc3e8cb70434fb6319f45f959a57, type: 3}
       propertyPath: _tooltipTextSo
       value: 
@@ -2754,6 +2782,10 @@ PrefabInstance:
       propertyPath: content
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1877847960884578805, guid: 0485dc3e8cb70434fb6319f45f959a57, type: 3}
+      propertyPath: resourceData
+      value: 
+      objectReference: {fileID: 11400000, guid: a058ea4808a964c4883a30c07f49f86f, type: 2}
     - target: {fileID: 1877847960884578805, guid: 0485dc3e8cb70434fb6319f45f959a57, type: 3}
       propertyPath: _tooltipTextSo
       value: 

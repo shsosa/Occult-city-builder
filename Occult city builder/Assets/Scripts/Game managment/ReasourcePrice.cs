@@ -9,11 +9,11 @@ namespace Game_managment
         
         // could be used for banishing or other magic stuff
         [Header("Price to build")]
-            public int wood;
-            public int gold;
-            public int vilagers;
-            public int researchPoints;
-            public int cattle;
+            public  int wood;
+            public  int gold;
+            public  int vilagers;
+            public   int researchPoints;
+            public  int cattle;
 
 
             [Header("Sacrifice To monster amount:")]
@@ -26,7 +26,7 @@ namespace Game_managment
             {
                 string price = null;
                 if (wood != 0)
-                    price += "Wood: " + wood.ToString() +" \n";
+                    price += "Wood: " + wood.ToString() +" \n" ;
                 if (cattle != 0)
                     price += "Cattle: " + cattle.ToString()+ " \n";
                 if (researchPoints != 0)
