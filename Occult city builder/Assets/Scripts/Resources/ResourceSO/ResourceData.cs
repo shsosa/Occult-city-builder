@@ -65,7 +65,7 @@ public class ResourceData : ScriptableObject
 
         if (reasourcePrice.wood != 0)
         {
-            if (reasourcePrice.wood >= wood)
+            if (reasourcePrice.wood > wood)
                 price += "<color=red>Wood: " + reasourcePrice.wood +"</color>"+" \n";
             else
             {
@@ -78,7 +78,7 @@ public class ResourceData : ScriptableObject
 
         if (reasourcePrice.cattle != 0)
         {
-            if (reasourcePrice.cattle >= cattle)
+            if (reasourcePrice.cattle > cattle)
                 price += "<color=red>Cattle: " + reasourcePrice.cattle +"</color>"+ " \n";
             else
             {
@@ -89,7 +89,7 @@ public class ResourceData : ScriptableObject
 
         if (reasourcePrice.researchPoints != 0)
         {
-            if (reasourcePrice.researchPoints >= researchPoints)
+            if (reasourcePrice.researchPoints > researchPoints)
                 price += "<color=red>Research: " + reasourcePrice.researchPoints +"</color>"+ " \n";
             else
             {
@@ -101,7 +101,7 @@ public class ResourceData : ScriptableObject
         if (reasourcePrice.gold != 0)
         {
             
-            if (reasourcePrice.gold >= gold)
+            if (reasourcePrice.gold > gold)
                 price += "<color=red>Gold: " + reasourcePrice.gold +"</color>"+ " \n";
             else
             {
@@ -112,7 +112,7 @@ public class ResourceData : ScriptableObject
 
         if (reasourcePrice.vilagers != 0)
         {
-            if (reasourcePrice.vilagers >= vilagers)
+            if (reasourcePrice.vilagers > vilagers)
                 price += "<color=red>Villagers : " + reasourcePrice.vilagers +"</color>"+ " \n";
             else
             {

@@ -222,7 +222,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 016eed81dfa96fd4a8b91366237d892c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  header: Holy Ruin
+  header: Holy site
   content: 'Bonus for '
   iconSprit: {fileID: 21300000, guid: 43829a55dad36684ab64667482583519, type: 3}
   _tooltipTextSo: {fileID: 11400000, guid: 364e60a54dc1a5841a4bfe89f5af393b, type: 2}

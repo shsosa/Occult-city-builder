@@ -101,7 +101,7 @@ MonoBehaviour:
   header: Moore
   content: Cant build here
   iconSprit: {fileID: 0}
-  _tooltipTextSo: {fileID: 0}
+  _tooltipTextSo: {fileID: 11400000, guid: 364e60a54dc1a5841a4bfe89f5af393b, type: 2}
   normalSprite: {fileID: 0}
   type: {fileID: 11400000, guid: 22a36d06dc0f0d941a9e0762458a563f, type: 2}
   building: {fileID: 0}

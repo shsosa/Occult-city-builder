@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4827505848542440856
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4827505848542440858}
+  - component: {fileID: 4827505848542440857}
+  m_Layer: 0
+  m_Name: Tutorial
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4827505848542440858
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4827505848542440856}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.5020123, y: 1.2553947, z: -45.233498}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4827505848542440857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4827505848542440856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e2643333fc30a043b91c7a3d2f87c76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buildEventChannelSo: {fileID: 11400000, guid: 1937f1b57f01ddd448ebe004034eae57, type: 2}
+  monsterHungerEvent: {fileID: 11400000, guid: 2010f43b02da6a84380ee0a92b046515, type: 2}
+  monsterPowerEvent: {fileID: 11400000, guid: f59841847b5a2a84fb8fe36d9ccef995, type: 2}
+  resourceColletEvent: {fileID: 11400000, guid: aa6d1e9599124c244b5af24ba9ba859f, type: 2}
+  witchUtUI: {fileID: 0}
+  tutorialBubbleTransform: {fileID: 0}
+  bubblePosArray:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  tutoialTextSos:
+  - {fileID: 11400000, guid: fbe971868625895488c525249298da40, type: 2}
+  - {fileID: 11400000, guid: 3473b5e18942f024caec57f4649315d2, type: 2}
+  - {fileID: 11400000, guid: 3408691986588204ebcedccb5dc112a0, type: 2}
+  - {fileID: 11400000, guid: f58947e4e7709cc4da2cbbd399ffbae3, type: 2}
+  - {fileID: 11400000, guid: 2982bb4ed392c434e962a8586625bbfa, type: 2}
+  - {fileID: 11400000, guid: d88225e5299957044a00cf500880374e, type: 2}
+  - {fileID: 11400000, guid: 5bb5f8c0602f7ac48b34f325be078bde, type: 2}
+  currentTutorialObject: 0
