@@ -6,6 +6,8 @@ using UnityEngine;
 public class RandomEventsManager : ScriptableObject
 {
     [SerializeField] VoidEventChannelSO monsterHungerEventChannel;
+    [SerializeField] ResourceData resource;
+    RandomEventUI eventUI;
 
 
     private int eventTypeIterator;
@@ -38,6 +40,7 @@ public class RandomEventsManager : ScriptableObject
     {
         SettingPriceAndPunishment();
         monsterHungerEventChannel.OnEventRaised += RandomEvent;
+        eventUI = FindObjectOfType<RandomEventUI>();
     }
 
 
@@ -45,7 +48,7 @@ public class RandomEventsManager : ScriptableObject
     {  
         EventRandomizer();
         eventType= (EventType) eventTypeIterator;
-        EventListTextSorter();
+        EventListTextAndResourceSorter();
         EventTextSorter();
         maxPriceToPay += priceGrowthPerItration;
         maxPunishment += punishmentGrowthPerIteration;
@@ -54,45 +57,49 @@ public class RandomEventsManager : ScriptableObject
         
     }
     private void EventRandomizer()
-    { 
-        
+    {    
         ResourceIteration();
-        PriceRandomizer();
-        punishment = Random.Range(minPunishment, maxPunishment);
+        PriceAndPunishmentRandomizer();
         eventTypeIterator = (int)Random.Range(0, (int)EventType.MaxValueForIteration);
-       // Debug.LogError("randomizer");
     }
-    private void EventListTextSorter()
+    private void EventListTextAndResourceSorter()
     {
-        //Debug.LogError("listsorter");
-        if (eventType == EventType.Madness)
+        int relevantResource=0;
         {
-            curentEventTexts = madnesEvents;
-            eventTextHeader = eventTextHeaders[0];
+            if (eventType == EventType.Madness)
+            {
+                curentEventTexts = madnesEvents;
+                eventTextHeader = eventTextHeaders[0];
+                relevantResource = resource.vilagers;
+            }
+            else if (eventType == EventType.Desise)
+            {
+                curentEventTexts = desiseEvents;
+                eventTextHeader = eventTextHeaders[1];
+                relevantResource = resource.gold;
+            }
+            else if (eventType == EventType.WildAnimals)
+            {
+                curentEventTexts = wildAnimalsEvents;
+                eventTextHeader = eventTextHeaders[2];
+                relevantResource = resource.wood;
+            }
+            else if (eventType == EventType.Starvation)
+            {
+                curentEventTexts = starvationEvents;
+                eventTextHeader = eventTextHeaders[3];
+                relevantResource = resource.cattle;
+            }
+            else if (eventType == EventType.FalingStar)
+            {
+                curentEventTexts = fallingStarEvents;
+                eventTextHeader = eventTextHeaders[4];
+                relevantResource = resource.researchPoints;
+            }
         }
-        else if (eventType == EventType.Desise)
+        if(relevantResource<priceToPay)
         {
-            curentEventTexts = desiseEvents;
-            eventTextHeader = eventTextHeaders[1];
-        }
-        else if (eventType == EventType.WildAnimals)
-        {
-            curentEventTexts = wildAnimalsEvents;
-            eventTextHeader = eventTextHeaders[2];
-        }
-        else if (eventType == EventType.Starvation)
-        {
-            curentEventTexts = starvationEvents;
-            eventTextHeader = eventTextHeaders[3];
-        }
-        else if (eventType == EventType.FalingStar)
-        {
-            curentEventTexts = fallingStarEvents;
-            eventTextHeader = eventTextHeaders[4];
-        }
-        else
-        {
-            Debug.LogError("Event Type Does not exist!!!!!!!!!!!");
+            eventUI.DesableSecrificeButton();
         }
     }
     private void EventTextSorter()
@@ -101,13 +108,15 @@ public class RandomEventsManager : ScriptableObject
         eventTextIterator = Random.Range(0, curentEventTexts.Count);
         randomEventText = curentEventTexts[eventTextIterator];
     }
-    private void PriceRandomizer()
+    private void PriceAndPunishmentRandomizer()
     {
-        priceToPay = Random.Range(minPriceToPay, maxPriceToPay);
+        priceToPay = Random.Range(minPriceToPay, maxPriceToPay); 
+        punishment = Random.Range(minPunishment, maxPunishment);
     }
     private void ResourceIteration()
     {
         resourceIterator = Random.Range(0, 4);
+
     }
     public void SettingPriceAndPunishment()
     {
@@ -115,5 +124,9 @@ public class RandomEventsManager : ScriptableObject
         maxPriceToPay = maxPriceToPayOnStart;
         minPunishment = minPunishmentOnStart;
         maxPunishment = maxPunishmentOnStart;
+    }
+    public void Secrafice(int resource)
+    {
+        resource -= priceToPay;
     }
 }

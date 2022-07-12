@@ -58,8 +58,7 @@ public class MonsterManager : MonoBehaviour
     {
         yield return new WaitForSeconds(hungerTime);
         if (!GameManager.isEventUIActive)
-        {
-            
+        {   
             HungerEventProbability();
             PowerEventProbability();
         } 
@@ -128,7 +127,6 @@ public class MonsterManager : MonoBehaviour
         foreach (var tentecle in _tenteclesArray)
         {
             StartCoroutine(tentecle.Pulse(_monsterEmot));
-           
         }
     }
 
