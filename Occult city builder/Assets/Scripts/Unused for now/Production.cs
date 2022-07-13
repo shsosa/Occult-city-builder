@@ -6,7 +6,7 @@ public class Production : MonoBehaviour
 {
     [SerializeField] ResourceData resourceData;
    // [SerializeField] ResourceTypeData typeData;
-    [SerializeField] private int secondsToWait = 3;
+    [SerializeField] public int secondsToWait = 3;
     [SerializeField]Tiles[] tile;
     private int resource;
 
@@ -62,7 +62,6 @@ public class Production : MonoBehaviour
         ResourceProduction();
         yield return new WaitForSeconds(secondsToWait);
         
-        StartCoroutine(ProductionTimer());
-        
+        StartCoroutine(ProductionTimer());    
     }
 }
