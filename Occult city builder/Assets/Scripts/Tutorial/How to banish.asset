@@ -10,12 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 46409e99f0954f9f939fd44d8bf3cd41, type: 3}
-  m_Name: Activate a sacred site
+  m_Name: How to banish
   m_EditorClassIdentifier: 
-  header: Activate a sacred site
-  Content: 'drag the banish spell to the sacred site
+  header: So...
+  Content: 'once you have activated all sacred site
 
-'
+    the monster will be banisheed
+    to her dimention'
   headerColor: {r: 0.77254903, g: 0.078431375, b: 0.62352943, a: 1}
   headerFontSize: 36
   contentColor: {r: 0.59607846, g: 0.36862746, b: 0.54509807, a: 1}

@@ -37,14 +37,18 @@ public class TutorialSystem : MonoBehaviour
 
     private void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            SHowCurrentTutorialObject();
+            currentTutorialObject++;
+        }
     }
 
 
     private void Start()
     {
       
-        StartCoroutine(Tutorial());
+       // StartCoroutine(Tutorial());
     }
     
     IEnumerator Wait(float time)

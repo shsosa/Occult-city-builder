@@ -202,7 +202,7 @@ public class BuildingManager : MonoBehaviour
     {
         bool canBuild = false;
         {
-           
+           //todo foreach
             for (int i = 0; i < _reasourcePrices.Count; i++)
             {
                 //todo change logic to something else not name
