@@ -8,7 +8,7 @@ public class TutorialSystem : MonoBehaviour
 {
    
    
-
+    [Header("Event channels: ")]
     [SerializeField] private VoidEventChannelSO buildEventChannelSo;
     [SerializeField] private VoidEventChannelSO monsterHungerEvent;
     [SerializeField] private VoidEventChannelSO monsterPowerEvent;
@@ -16,14 +16,20 @@ public class TutorialSystem : MonoBehaviour
     
 
     [SerializeField] private UIObject witchUtUI;
-
+    
+    
+    [Header("Tutorial objects trasforms: ")]
     [SerializeField] private RectTransform tutorialBubbleTransform;
-
+    [SerializeField] private Transform buildingHighlight;
+    [SerializeField] private Transform tileHighlight;
    
     
     
 
+    [Header("Toolitip tutorial text: ")]
     [SerializeField] private TooltipTextSO[] tutoialTextSos;
+    
+    
     public  int currentTutorialObject=0;
     
     [Serializable]
@@ -35,8 +41,7 @@ public class TutorialSystem : MonoBehaviour
 
     [SerializeField] private List<HightLightObjects> _hightLightObjectsList;
 
-    [SerializeField] private Transform buildingHighlight;
-    [SerializeField] private Transform tileHighlight;
+    
     
 
     private void OnDisable()
@@ -187,7 +192,7 @@ public class TutorialSystem : MonoBehaviour
         if (tutoialTextSos[currentTutorialObject].id != 0)
         {
             var hightLightObject =  GetHighlightObject(tutoialTextSos[currentTutorialObject].id);
-            
+            //todo maybe make a for loop here for 2 arrays
             
             ChangePosTransform(hightLightObject.newTransform[0],buildingHighlight);
             ChangePosTransform(hightLightObject.newTransform[1],tileHighlight);
