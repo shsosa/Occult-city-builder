@@ -31,14 +31,14 @@ public class RandomEventsManager : ScriptableObject
 
     public string randomEventText, eventTextHeader;
 
-    [System.NonSerialized] public int punishment, maxPunishment, minPunishment, priceToPay, maxPriceToPay, minPriceToPay;
+    [System.NonSerialized] public int punishment, maxCurrentPunishment, minCurrentPunishment,minPunishment,maxPunishment, priceToPay, maxCurrentPriceToPay, minCurrentPriceToPay,minPriceToPay,maxPriceToPay;
       public int  priceGrowthPerItration,punishmentGrowthPerIteration;
     public int maxPunishmentOnStart, minPunishmentOnStart, maxPriceToPayOnStart, minPriceToPayOnStart;
 
     public int resourceIterator;
     private void OnEnable()
     {
-        SettingPriceAndPunishment();
+        //SettingPriceAndPunishment();
         monsterHungerEventChannel.OnEventRaised += RandomEvent;
         eventUI = FindObjectOfType<RandomEventUI>();
     }
@@ -50,11 +50,10 @@ public class RandomEventsManager : ScriptableObject
         eventType= (EventType) eventTypeIterator;
         EventListTextAndResourceSorter();
         EventTextSorter();
-        maxPriceToPay += priceGrowthPerItration;
-        maxPunishment += punishmentGrowthPerIteration;
-        minPriceToPay += priceGrowthPerItration;
-        minPunishment += punishmentGrowthPerIteration;
-        
+        maxCurrentPriceToPay += priceGrowthPerItration;
+        maxCurrentPunishment += punishmentGrowthPerIteration;
+        minCurrentPriceToPay += priceGrowthPerItration;
+        minCurrentPunishment += punishmentGrowthPerIteration;   
     }
     private void EventRandomizer()
     {    
@@ -110,23 +109,19 @@ public class RandomEventsManager : ScriptableObject
     }
     private void PriceAndPunishmentRandomizer()
     {
-        priceToPay = Random.Range(minPriceToPay, maxPriceToPay); 
-        punishment = Random.Range(minPunishment, maxPunishment);
+        priceToPay = Random.Range(minCurrentPriceToPay, maxCurrentPriceToPay); 
+        punishment = Random.Range(minCurrentPunishment, maxCurrentPunishment);
+        if (punishment <= 0)
+        { punishment = 1; }
+        if(punishment>maxPunishment)
+        { punishment = maxPunishment; }
+        if (priceToPay <= 0)
+        { priceToPay = 1; }
+        if(priceToPay>maxPriceToPay)
+        { priceToPay = maxPriceToPay; }
     }
     private void ResourceIteration()
     {
-        resourceIterator = Random.Range(0, 4);
-
-    }
-    public void SettingPriceAndPunishment()
-    {
-        minPriceToPay = minPriceToPayOnStart;
-        maxPriceToPay = maxPriceToPayOnStart;
-        minPunishment = minPunishmentOnStart;
-        maxPunishment = maxPunishmentOnStart;
-    }
-    public void Secrafice(int resource)
-    {
-        resource -= priceToPay;
+        resourceIterator = Random.Range(0, 5);
     }
 }

@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour
         {
             listOfTiles = FindObjectsOfType<Tiles>();
             SetingBlessedTiles();
-            ResetingResources();
+            //ResetingResources();
         }
     }
     private void Update()
