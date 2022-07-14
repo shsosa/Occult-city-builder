@@ -59,7 +59,7 @@ public class BuildingManager : MonoBehaviour
             Tiles currentTile = tile.GetComponent<Tiles>();
             currentBuilding.tile = tile;
 
-            
+            //todo check not in method
             Build(currentBuilding, currentTile);
                
             BlessCursedTile(currentBuilding, currentTile);
@@ -215,7 +215,8 @@ public class BuildingManager : MonoBehaviour
                         (_reasourcePrices[i].vilagers <= _resourceData.vilagers) &&
                         (_reasourcePrices[i].wood <= _resourceData.wood) &&
                         (_reasourcePrices[i].researchPoints <= _resourceData.researchPoints); 
-                       
+                    
+                  if(canBuild)     
                     goto ExitLoop;
                         
                 }
