@@ -26,6 +26,17 @@ public class TutorialSystem : MonoBehaviour
     [SerializeField] private TooltipTextSO[] tutoialTextSos;
     public  int currentTutorialObject=0;
     
+    [Serializable]
+    public struct HightLightObjects
+    {
+        public int id;
+        public Transform[] newTransform;
+    }
+
+    [SerializeField] private List<HightLightObjects> _hightLightObjectsList;
+
+    [SerializeField] private Transform buildingHighlight;
+    [SerializeField] private Transform tileHighlight;
     
 
     private void OnDisable()
@@ -83,6 +94,8 @@ public class TutorialSystem : MonoBehaviour
 
         
     }
+
+   
 
     private void ChangeBubbleTranform(int transArray)
     {
@@ -174,7 +187,39 @@ public class TutorialSystem : MonoBehaviour
     private void SHowCurrentTutorialObject()
     {
         TutorialTextSystem.Show(tutoialTextSos[currentTutorialObject]);
-       
-       
+        
+        if (tutoialTextSos[currentTutorialObject].id != 0)
+        {
+            var hightLightObject =  GetHighlightObject(tutoialTextSos[currentTutorialObject].id);
+            
+            
+            ChangePosTransform(hightLightObject.newTransform[0],buildingHighlight);
+            ChangePosTransform(hightLightObject.newTransform[1],tileHighlight);
+          //  if(hightLightObject.newTransform[2] !=null)
+                //ChangePosTransform(hightLightObject.newTransform[1],bub);
+        }
+        
+    }
+    
+    void ChangePosTransform(Transform newPos, Transform objectToMove)
+    {
+        objectToMove.position = newPos.position;
+    }
+
+    HightLightObjects GetHighlightObject(int id)
+    {
+        HightLightObjects hightLightObject = default;
+        
+        foreach (var highlightObjects in _hightLightObjectsList)
+        {
+            if (id == highlightObjects.id)
+            {
+                hightLightObject= highlightObjects;
+                goto exitLoop;
+            }
+        }
+    
+        exitLoop:
+        return hightLightObject;
     }
 }
