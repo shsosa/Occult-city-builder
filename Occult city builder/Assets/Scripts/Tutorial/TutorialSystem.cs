@@ -216,11 +216,12 @@ public class TutorialSystem : MonoBehaviour
             if (id == highlightObjects.id)
             {
                 hightLightObject= highlightObjects;
-                goto exitLoop;
+                return hightLightObject; 
+               
             }
         }
-    
-        exitLoop:
-        return hightLightObject;
+
+        return hightLightObject; 
+
     }
 }
