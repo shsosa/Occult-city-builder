@@ -8,7 +8,7 @@ public class TutorialSystem : MonoBehaviour
 {
    
    
-
+    [Header("Event channels: ")]
     [SerializeField] private VoidEventChannelSO buildEventChannelSo;
     [SerializeField] private VoidEventChannelSO monsterHungerEvent;
     [SerializeField] private VoidEventChannelSO monsterPowerEvent;
@@ -16,15 +16,31 @@ public class TutorialSystem : MonoBehaviour
     
 
     [SerializeField] private UIObject witchUtUI;
-
+    
+    
+    [Header("Tutorial objects trasforms: ")]
     [SerializeField] private RectTransform tutorialBubbleTransform;
-
-    [SerializeField] private RectTransform[] bubblePosArray;
+    [SerializeField] private Transform buildingHighlight;
+    [SerializeField] private Transform tileHighlight;
+   
     
     
 
+    [Header("Toolitip tutorial text: ")]
     [SerializeField] private TooltipTextSO[] tutoialTextSos;
+    
+    
     public  int currentTutorialObject=0;
+    
+    [Serializable]
+    public struct HightLightObjects
+    {
+        public int id;
+        public Transform[] newTransform;
+    }
+
+    [SerializeField] private List<HightLightObjects> _hightLightObjectsList;
+
     
     
 
@@ -37,14 +53,18 @@ public class TutorialSystem : MonoBehaviour
 
     private void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            SHowCurrentTutorialObject();
+            currentTutorialObject++;
+        }
     }
 
 
     private void Start()
     {
       
-        StartCoroutine(Tutorial());
+       // StartCoroutine(Tutorial());
     }
     
     IEnumerator Wait(float time)
@@ -62,7 +82,7 @@ public class TutorialSystem : MonoBehaviour
         
         yield return new WaitForSeconds(3f);
         SHowCurrentTutorialObject();
-        ChangeBubbleTranform(0);
+       
 
         //GameManager.PauseGame();
        
@@ -80,11 +100,9 @@ public class TutorialSystem : MonoBehaviour
         
     }
 
-    private void ChangeBubbleTranform(int transArray)
-    {
-        tutorialBubbleTransform.position = bubblePosArray[transArray].position;
-        tutorialBubbleTransform.localScale = bubblePosArray[transArray].localScale;
-    }
+   
+
+   
 
     IEnumerator CanbuildUt()
     {
@@ -125,7 +143,7 @@ public class TutorialSystem : MonoBehaviour
     {
         Debug.Log("Monster hunger event tutorial");
         TutorialTextSystem.Show(tutoialTextSos[4]);
-        ChangeBubbleTranform(2);
+       
         //todo when to deactivate maybe when player press button "understood"
        // monsterHungerEvent.OnEventRaised -= ShowOnHungerEventText;
         StartCoroutine(DeactivateUIEvent());
@@ -136,7 +154,7 @@ public class TutorialSystem : MonoBehaviour
             yield return new WaitUntil(() => !GameManager.isEventUIActive);
           
             
-                ChangeBubbleTranform(currentTutorialObject-1);
+               
                 SHowCurrentTutorialObject();
                 
         }
@@ -151,7 +169,7 @@ public class TutorialSystem : MonoBehaviour
     {
         currentTutorialObject++;
         TutorialTextSystem.Show(tutoialTextSos[3]);
-        ChangeBubbleTranform(1);
+      
         resourceColletEvent.OnEventRaised -= ShowResorceCollectText;
         StartCoroutine(Wait());
         
@@ -170,7 +188,40 @@ public class TutorialSystem : MonoBehaviour
     private void SHowCurrentTutorialObject()
     {
         TutorialTextSystem.Show(tutoialTextSos[currentTutorialObject]);
-       
-       
+        
+        if (tutoialTextSos[currentTutorialObject].id != 0)
+        {
+            var hightLightObject =  GetHighlightObject(tutoialTextSos[currentTutorialObject].id);
+            //todo maybe make a for loop here for 2 arrays
+            
+            ChangePosTransform(hightLightObject.newTransform[0],buildingHighlight);
+            ChangePosTransform(hightLightObject.newTransform[1],tileHighlight);
+            if(hightLightObject.newTransform[2] !=null)
+                ChangePosTransform(hightLightObject.newTransform[2],tutorialBubbleTransform);
+        }
+        
+    }
+    
+    void ChangePosTransform(Transform newPos, Transform objectToMove)
+    {
+        objectToMove.position = newPos.position;
+    }
+
+    HightLightObjects GetHighlightObject(int id)
+    {
+        HightLightObjects hightLightObject = default;
+        
+        foreach (var highlightObjects in _hightLightObjectsList)
+        {
+            if (id == highlightObjects.id)
+            {
+                hightLightObject= highlightObjects;
+                return hightLightObject; 
+               
+            }
+        }
+
+        return hightLightObject; 
+
     }
 }

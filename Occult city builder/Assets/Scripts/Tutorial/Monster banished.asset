@@ -10,17 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 46409e99f0954f9f939fd44d8bf3cd41, type: 3}
-  m_Name: BuildAwitchHut
+  m_Name: Monster banished
   m_EditorClassIdentifier: 
-  header: Build a witch hut
-  Content: 'Drag it near a holy site
+  header: Monster banished!
+  Content: 'until next time
 
-    to get bonus research points points
+    she is never pleased
 
-    but
-    remember you can build on
-
-    any tile'
+    it seamse'
   headerColor: {r: 0.77254903, g: 0.078431375, b: 0.62352943, a: 1}
   headerFontSize: 36
   contentColor: {r: 0.59607846, g: 0.36862746, b: 0.54509807, a: 1}
