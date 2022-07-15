@@ -47,7 +47,6 @@ public class EventIcon : MonoBehaviour
         if (other.gameObject.CompareTag("EventSecrefice"))
         {    
             isSecreficed = true;
-           
         }
         if(other.gameObject.CompareTag("EventNotSecrefice"))
         {

@@ -9,11 +9,11 @@ public class MonsterManager : MonoBehaviour
 {
     public float monsterHunger, monsterPower;
     public float monsterHungerGrowth, monsterPowerGrowth;
-    public float hungerTime;
+    public float hungerTime,powerTime;
     public bool isBanished;
-    [SerializeField] private float maxRangeToTrigerHungerEvent, maxRangeToTrigerHungerEventConstant, hungerEventTriger,
-                     maxRangeToTrigerPowerEvent, maxRangeToTrigerPowerEventConstant, powerEventTriger
-        ,minThreshholdForHungerEvent,minThresholdForPowerEvent,maxThresholdForHungerEventTrigger,maxThresholdForPowerEventTrigger;
+    public float maxRangeToTrigerHungerEventConstant, maxRangeToTrigerPowerEventConstant;
+    public float minThreshholdForHungerEvent, minThresholdForPowerEvent;
+    [SerializeField] private float maxRangeToTrigerHungerEvent, hungerEventTriger,maxRangeToTrigerPowerEvent, powerEventTriger ,maxThresholdForHungerEventTrigger,maxThresholdForPowerEventTrigger;
     [SerializeField] VoidEventChannelSO monsterHungerEventChannel, monsterPowerEventChanel;
     Tiles[] tile;
 
@@ -34,6 +34,7 @@ public class MonsterManager : MonoBehaviour
         maxRangeToTrigerHungerEvent = maxRangeToTrigerHungerEventConstant;
         maxRangeToTrigerPowerEvent = maxRangeToTrigerPowerEventConstant;
         StartCoroutine(HungerTimer());
+        StartCoroutine(PowerTimer());
     }
 
     private void Update()
@@ -58,12 +59,19 @@ public class MonsterManager : MonoBehaviour
     {
         yield return new WaitForSeconds(hungerTime);
         if (!GameManager.isEventUIActive)
-        {
-            
+        {   
             HungerEventProbability();
-            PowerEventProbability();
+            
         } 
         StartCoroutine(HungerTimer());
+    }
+    private IEnumerator PowerTimer()
+    {
+        yield return new WaitForSeconds(powerTime);
+        {    
+            PowerEventProbability();
+        }
+        StartCoroutine(PowerTimer());
     }
     private void HungerEventFlag()
     {
@@ -114,8 +122,10 @@ public class MonsterManager : MonoBehaviour
         if(!tile[randomizer].isCursed)
         {
             MonsterReact(_monsterEmotCurseTile);
-            if(!tile[randomizer].CompareTag("HolyTile"))
-                tile[randomizer].SetCursed();     
+            if (!tile[randomizer].CompareTag("HolyTile"))
+            {
+                tile[randomizer].SetCursed(); 
+            }   
         }
         else 
         { 
@@ -129,7 +139,6 @@ public class MonsterManager : MonoBehaviour
         foreach (var tentecle in _tenteclesArray)
         {
             StartCoroutine(tentecle.Pulse(_monsterEmot));
-           
         }
     }
 
