@@ -235,7 +235,7 @@ MonoBehaviour:
   map: {fileID: 1227144227}
   SecrificeManager: {fileID: 778490575}
   reserchManager: {fileID: 330351601}
-  hasInstantiatedBuilding: 0
+  toolTipHasBonus: {fileID: 0}
   _resourceData: {fileID: 11400000, guid: a058ea4808a964c4883a30c07f49f86f, type: 2}
   _reasourcePrices:
   - {fileID: 11400000, guid: 7bf81ee11460b9e44b8bcd1d9a37e755, type: 2}
@@ -300,7 +300,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rEManager: {fileID: 11400000, guid: a7e59b057f19b78419e0e26cf56a8474, type: 2}
+  secrificeButton: {fileID: 0}
   resource: {fileID: 11400000, guid: a058ea4808a964c4883a30c07f49f86f, type: 2}
+  price: {fileID: 0}
   eventPromt: {fileID: 656898872}
   secrificeObject: {fileID: 1505968092}
   eventText: {fileID: 1403431126}
@@ -1498,6 +1500,119 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 912f564359f351a41a691cabf9149d83, type: 3}
+--- !u!1001 &631646638
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 535985942187729481, guid: 379e946e49adf324fb63e57cd09d9e1d, type: 3}
+      propertyPath: m_Name
+      value: Setter
+      objectReference: {fileID: 0}
+    - target: {fileID: 5237658749470498461, guid: 379e946e49adf324fb63e57cd09d9e1d, type: 3}
+      propertyPath: m_RootOrder
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 5237658749470498461, guid: 379e946e49adf324fb63e57cd09d9e1d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4.061611
+      objectReference: {fileID: 0}
+    - target: {fileID: 5237658749470498461, guid: 379e946e49adf324fb63e57cd09d9e1d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.7846153
+      objectReference: {fileID: 0}
+    - target: {fileID: 5237658749470498461, guid: 379e946e49adf324fb63e57cd09d9e1d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.029692803
+      objectReference: {fileID: 0}
+    - target: {fileID: 5237658749470498461, guid: 379e946e49adf324fb63e57cd09d9e1d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5237658749470498461, guid: 379e946e49adf324fb63e57cd09d9e1d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5237658749470498461, guid: 379e946e49adf324fb63e57cd09d9e1d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5237658749470498461, guid: 379e946e49adf324fb63e57cd09d9e1d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5237658749470498461, guid: 379e946e49adf324fb63e57cd09d9e1d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5237658749470498461, guid: 379e946e49adf324fb63e57cd09d9e1d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5237658749470498461, guid: 379e946e49adf324fb63e57cd09d9e1d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7364471787996171063, guid: 379e946e49adf324fb63e57cd09d9e1d, type: 3}
+      propertyPath: farm.so
+      value: 
+      objectReference: {fileID: 11400000, guid: 7bf81ee11460b9e44b8bcd1d9a37e755, type: 2}
+    - target: {fileID: 7364471787996171063, guid: 379e946e49adf324fb63e57cd09d9e1d, type: 3}
+      propertyPath: house.so
+      value: 
+      objectReference: {fileID: 11400000, guid: 014e99382cd4bac48af7bc16d49f15ec, type: 2}
+    - target: {fileID: 7364471787996171063, guid: 379e946e49adf324fb63e57cd09d9e1d, type: 3}
+      propertyPath: villagers.so
+      value: 
+      objectReference: {fileID: 11400000, guid: 81e7411d20221c64888237cf2185b92d, type: 2}
+    - target: {fileID: 7364471787996171063, guid: 379e946e49adf324fb63e57cd09d9e1d, type: 3}
+      propertyPath: villagers.monsterPower
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 7364471787996171063, guid: 379e946e49adf324fb63e57cd09d9e1d, type: 3}
+      propertyPath: villagers.monsterHunger
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7364471787996171063, guid: 379e946e49adf324fb63e57cd09d9e1d, type: 3}
+      propertyPath: monsterPowerReduction.so
+      value: 
+      objectReference: {fileID: 11400000, guid: 976eff758a593984d810a64b2f2ca6f8, type: 2}
+    - target: {fileID: 7364471787996171063, guid: 379e946e49adf324fb63e57cd09d9e1d, type: 3}
+      propertyPath: villagers.priceInVillagers
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7364471787996171063, guid: 379e946e49adf324fb63e57cd09d9e1d, type: 3}
+      propertyPath: monsterOptions.monsterScript
+      value: 
+      objectReference: {fileID: 1732217982548808036}
+    - target: {fileID: 7364471787996171063, guid: 379e946e49adf324fb63e57cd09d9e1d, type: 3}
+      propertyPath: monsterOptions.hungerThreshold
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 7364471787996171063, guid: 379e946e49adf324fb63e57cd09d9e1d, type: 3}
+      propertyPath: monsterOptions.powerProbability
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 7364471787996171063, guid: 379e946e49adf324fb63e57cd09d9e1d, type: 3}
+      propertyPath: monsterPowerReduction.monsterPower
+      value: 65
+      objectReference: {fileID: 0}
+    - target: {fileID: 7364471787996171063, guid: 379e946e49adf324fb63e57cd09d9e1d, type: 3}
+      propertyPath: monsterPowerReduction.priceInCattle
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7364471787996171063, guid: 379e946e49adf324fb63e57cd09d9e1d, type: 3}
+      propertyPath: monsterPowerReduction.priceInVillagers
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7364471787996171063, guid: 379e946e49adf324fb63e57cd09d9e1d, type: 3}
+      propertyPath: monsterPowerReduction.priceInReserchPoints
+      value: 50
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 379e946e49adf324fb63e57cd09d9e1d, type: 3}
 --- !u!1 &656898872
 GameObject:
   m_ObjectHideFlags: 0
@@ -2994,14 +3109,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 656898873}
     m_Modifications:
-    - target: {fileID: 273626672495534645, guid: 68b2aac341211354fba688785085c890, type: 3}
-      propertyPath: canBuild
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 273626672495534645, guid: 68b2aac341211354fba688785085c890, type: 3}
-      propertyPath: _reasourcePrice
-      value: 
-      objectReference: {fileID: 11400000, guid: 36efc2d9355bd8a4381c80e3ac44c851, type: 2}
     - target: {fileID: 273626672495534641, guid: 7b458539bc23f884eafa9bf4c3b6a999, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -3114,6 +3221,14 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 273626672495534645, guid: 68b2aac341211354fba688785085c890, type: 3}
+      propertyPath: canBuild
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 273626672495534645, guid: 68b2aac341211354fba688785085c890, type: 3}
+      propertyPath: _reasourcePrice
+      value: 
+      objectReference: {fileID: 11400000, guid: 36efc2d9355bd8a4381c80e3ac44c851, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7b458539bc23f884eafa9bf4c3b6a999, type: 3}
 --- !u!224 &1505968091 stripped
@@ -7479,15 +7594,16 @@ MonoBehaviour:
   monsterHungerGrowth: 2
   monsterPowerGrowth: 2
   hungerTime: 5
+  powerTime: 0
   isBanished: 0
-  maxRangeToTrigerHungerEvent: 0
   maxRangeToTrigerHungerEventConstant: 100
-  hungerEventTriger: 0
-  maxRangeToTrigerPowerEvent: 0
   maxRangeToTrigerPowerEventConstant: 100
-  powerEventTriger: 0
   minThreshholdForHungerEvent: 25
   minThresholdForPowerEvent: 0
+  maxRangeToTrigerHungerEvent: 0
+  hungerEventTriger: 0
+  maxRangeToTrigerPowerEvent: 0
+  powerEventTriger: 0
   maxThresholdForHungerEventTrigger: 50
   maxThresholdForPowerEventTrigger: 85
   monsterHungerEventChannel: {fileID: 11400000, guid: 2010f43b02da6a84380ee0a92b046515, type: 2}

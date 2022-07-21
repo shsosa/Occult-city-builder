@@ -4,7 +4,7 @@ using UnityEngine;
 public class BradcasterScript : MonoBehaviour
 {
     public VoidEventChannelSO CollectReasources;
-    [SerializeField] private float time;
+    [SerializeField] public float time;
 
     private void Start()
     {
