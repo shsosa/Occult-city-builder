@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 016eed81dfa96fd4a8b91366237d892c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  header: Forest
+  header: Swamp
   content: 'Bonus for '
   iconSprit: {fileID: 21300000, guid: cef1d601a1bd80241a1ad55b3cd3176b, type: 3}
   _tooltipTextSo: {fileID: 11400000, guid: 364e60a54dc1a5841a4bfe89f5af393b, type: 2}
@@ -110,13 +110,13 @@ MonoBehaviour:
   resourceManager: {fileID: 11400000, guid: aa6d1e9599124c244b5af24ba9ba859f, type: 2}
   monsterPowerEvent: {fileID: 0}
   _buildingManager: {fileID: 0}
-  hasBuilding: 0
+  hasBuilding: 1
   hasBonus: 0
   isCursed: 0
   isHoly: 0
-  isErelevantToLoseCondition: 0
+  isErelevantToLoseCondition: 1
   isBlesed: 0
-  amountOfReasourceProdused: 1
+  amountOfReasourceProdused: 0
 --- !u!60 &1065538023
 PolygonCollider2D:
   m_ObjectHideFlags: 0

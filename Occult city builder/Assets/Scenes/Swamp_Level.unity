@@ -1434,6 +1434,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RandomEventManager (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3293959937467564764, guid: 571b9c0363668ff43aa47ac4594fcefb, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3293959937467564767, guid: 571b9c0363668ff43aa47ac4594fcefb, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -3876,24 +3880,116 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7364471787996171063, guid: 379e946e49adf324fb63e57cd09d9e1d, type: 3}
       propertyPath: resources.cattle
-      value: 100
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7364471787996171063, guid: 379e946e49adf324fb63e57cd09d9e1d, type: 3}
       propertyPath: resources.villagers
-      value: 100
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7364471787996171063, guid: 379e946e49adf324fb63e57cd09d9e1d, type: 3}
       propertyPath: cattle.monsterHunger
       value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 7364471787996171063, guid: 379e946e49adf324fb63e57cd09d9e1d, type: 3}
+      propertyPath: banishing.priceInGold
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7364471787996171063, guid: 379e946e49adf324fb63e57cd09d9e1d, type: 3}
+      propertyPath: banishing.priceInWood
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7364471787996171063, guid: 379e946e49adf324fb63e57cd09d9e1d, type: 3}
+      propertyPath: blessing.priceInCattle
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7364471787996171063, guid: 379e946e49adf324fb63e57cd09d9e1d, type: 3}
+      propertyPath: banishing.priceInCattle
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7364471787996171063, guid: 379e946e49adf324fb63e57cd09d9e1d, type: 3}
+      propertyPath: eventsOptions.priceStep
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7364471787996171063, guid: 379e946e49adf324fb63e57cd09d9e1d, type: 3}
       propertyPath: villagers.monsterHunger
       value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 7364471787996171063, guid: 379e946e49adf324fb63e57cd09d9e1d, type: 3}
+      propertyPath: monsterOptions.timePower
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7364471787996171063, guid: 379e946e49adf324fb63e57cd09d9e1d, type: 3}
+      propertyPath: blessing.priceInVillagers
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7364471787996171063, guid: 379e946e49adf324fb63e57cd09d9e1d, type: 3}
+      propertyPath: monsterOptions.timeHunger
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7364471787996171063, guid: 379e946e49adf324fb63e57cd09d9e1d, type: 3}
+      propertyPath: banishing.priceInVillagers
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7364471787996171063, guid: 379e946e49adf324fb63e57cd09d9e1d, type: 3}
+      propertyPath: eventsOptions.punishmentStep
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7364471787996171063, guid: 379e946e49adf324fb63e57cd09d9e1d, type: 3}
       propertyPath: monsterOptions.monsterScript
       value: 
       objectReference: {fileID: 1876995522}
+    - target: {fileID: 7364471787996171063, guid: 379e946e49adf324fb63e57cd09d9e1d, type: 3}
+      propertyPath: blessing.priceInReserchPoints
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7364471787996171063, guid: 379e946e49adf324fb63e57cd09d9e1d, type: 3}
+      propertyPath: eventsOptions.maxPriceOnStart
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7364471787996171063, guid: 379e946e49adf324fb63e57cd09d9e1d, type: 3}
+      propertyPath: eventsOptions.minPriceOnStart
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7364471787996171063, guid: 379e946e49adf324fb63e57cd09d9e1d, type: 3}
+      propertyPath: monsterOptions.powerThreshold
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7364471787996171063, guid: 379e946e49adf324fb63e57cd09d9e1d, type: 3}
+      propertyPath: monsterOptions.hungerThreshold
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 7364471787996171063, guid: 379e946e49adf324fb63e57cd09d9e1d, type: 3}
+      propertyPath: monsterOptions.hungerProbability
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 7364471787996171063, guid: 379e946e49adf324fb63e57cd09d9e1d, type: 3}
+      propertyPath: monsterPowerReduction.priceInGold
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7364471787996171063, guid: 379e946e49adf324fb63e57cd09d9e1d, type: 3}
+      propertyPath: monsterPowerReduction.priceInWood
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7364471787996171063, guid: 379e946e49adf324fb63e57cd09d9e1d, type: 3}
+      propertyPath: eventsOptions.maxPunishmentOnStart
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7364471787996171063, guid: 379e946e49adf324fb63e57cd09d9e1d, type: 3}
+      propertyPath: eventsOptions.minPunishmentOnStart
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7364471787996171063, guid: 379e946e49adf324fb63e57cd09d9e1d, type: 3}
+      propertyPath: monsterPowerReduction.priceInCattle
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7364471787996171063, guid: 379e946e49adf324fb63e57cd09d9e1d, type: 3}
+      propertyPath: monsterPowerReduction.priceInVillagers
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7364471787996171063, guid: 379e946e49adf324fb63e57cd09d9e1d, type: 3}
+      propertyPath: monsterPowerReduction.priceInReserchPoints
+      value: 30
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 379e946e49adf324fb63e57cd09d9e1d, type: 3}
 --- !u!1 &917437991
@@ -4413,6 +4509,14 @@ PrefabInstance:
       propertyPath: _buildingManager
       value: 
       objectReference: {fileID: 15791928}
+    - target: {fileID: 8017027821222928875, guid: f8475267d60483f47b868e6083d26ca2, type: 3}
+      propertyPath: amountOfReasourceProdused
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8017027821222928875, guid: f8475267d60483f47b868e6083d26ca2, type: 3}
+      propertyPath: isErelevantToLoseCondition
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8475267d60483f47b868e6083d26ca2, type: 3}
 --- !u!1 &1010843748
