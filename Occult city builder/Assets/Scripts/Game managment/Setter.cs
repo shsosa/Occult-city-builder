@@ -119,7 +119,7 @@ public class Setter : MonoBehaviour
             so.vilagers = priceInVillagers;
             so.researchPoints = priceInReserchPoints;
             so.secrificeAddPower = monsterPower;
-            so.secrificeAmountHunger -= monsterHunger;
+            so.secrificeAmountHunger = monsterHunger;
         }
     }
     [System.Serializable]
@@ -204,6 +204,7 @@ public class Setter : MonoBehaviour
     [System.Serializable]
     public class Resource
     {
+        public BradcasterScript timer;
         public ResourceData so;
         [Header("Resources on Start")]
         public int villagers;
@@ -223,13 +224,18 @@ public class Setter : MonoBehaviour
         public int minGold;
         public int maxReserchPoints;
         public int minReserchPoints;
+
+        [Header("Time to colect resources")]
+        public float time;
         public void OnStart()
         {
+            timer = FindObjectOfType<BradcasterScript>();
             so.vilagers = villagers;
             so.cattle = cattle;
             so.wood = wood;
             so.gold = gold;
             so.researchPoints = reserchPoints;
+            timer.time = time;
         }
         public void OnRunTime()
         {
@@ -240,6 +246,7 @@ public class Setter : MonoBehaviour
             so.researchPoints = Mathf.Clamp(so.researchPoints, minReserchPoints, maxReserchPoints);
         }
     }
+
     #endregion
     #region Functions
    
