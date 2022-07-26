@@ -101,10 +101,10 @@ public class Tiles : MonoBehaviour
 
     public void TileProduction()
     {
-
-        int totalAmountToProduce = amountOfReasourceProdused;
+        int totalAmountToProduce = 0;
+        totalAmountToProduce =+ amountOfReasourceProdused;
         if (hasBonus && building != null)
-            totalAmountToProduce = amountOfReasourceProdused * building.bonus;
+            totalAmountToProduce = amountOfReasourceProdused + building.bonus;
         if(hasBuilding && !isCursed && building != null&&!GameManager.isEventUIActive)
              _resourceDataScriptable.IncreaseResource(building._resourceType,totalAmountToProduce);
     }

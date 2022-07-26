@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Reaserch
   m_EditorClassIdentifier: 
   _resourceType: 3
-  bonus: 2
+  bonus: 1

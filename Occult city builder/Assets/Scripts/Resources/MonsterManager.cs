@@ -52,7 +52,7 @@ public class MonsterManager : MonoBehaviour
 
             //Add power when really hungry
             if (monsterHunger >= 90)
-                monsterPower += 0.05f * Time.deltaTime;
+                monsterPower += 1f * Time.deltaTime;
         }
     }
     private IEnumerator HungerTimer()
