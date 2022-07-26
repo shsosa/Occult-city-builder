@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46409e99f0954f9f939fd44d8bf3cd41, type: 3}
   m_Name: Missing resource
   m_EditorClassIdentifier: 
-  header: If a resource is marked <color = red>red</color>
+  id: 0
+  header: If a resource is marked <color=red>red</color>
   Content: You dont have suficiant resource to build.
   headerColor: {r: 0.77254903, g: 0.078431375, b: 0.62352943, a: 1}
   headerFontSize: 36

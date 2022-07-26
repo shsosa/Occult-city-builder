@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46409e99f0954f9f939fd44d8bf3cd41, type: 3}
   m_Name: How to produce
   m_EditorClassIdentifier: 
+  id: 0
   header: Each tile with a building
   Content: will produce the building's resource
   headerColor: {r: 0.77254903, g: 0.078431375, b: 0.62352943, a: 1}
