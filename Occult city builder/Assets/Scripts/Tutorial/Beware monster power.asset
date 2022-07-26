@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46409e99f0954f9f939fd44d8bf3cd41, type: 3}
   m_Name: Beware monster power
   m_EditorClassIdentifier: 
+  id: 12
   header: but beware!
   Content: "Feeding her will make her stonger. \nshe will start to to curse your
     land.\nmonster be monster"

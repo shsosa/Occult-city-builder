@@ -36,7 +36,9 @@ public class TutorialSystem : MonoBehaviour
     public struct HightLightObjects
     {
         public int id;
-        public Transform[] newTransform;
+        public Transform buildingHighlight;
+        public Transform tileHighlight;
+        public Transform tutorialBubbleTransform;
     }
 
     [SerializeField] private List<HightLightObjects> _hightLightObjectsList;
@@ -193,11 +195,20 @@ public class TutorialSystem : MonoBehaviour
         {
             var hightLightObject =  GetHighlightObject(tutoialTextSos[currentTutorialObject].id);
             //todo maybe make a for loop here for 2 arrays
-            
-            ChangePosTransform(hightLightObject.newTransform[0],buildingHighlight);
-            ChangePosTransform(hightLightObject.newTransform[1],tileHighlight);
-            if(hightLightObject.newTransform[2] !=null)
-                ChangePosTransform(hightLightObject.newTransform[2],tutorialBubbleTransform);
+            if (hightLightObject.buildingHighlight != null)
+            {
+                buildingHighlight.gameObject.SetActive(true);
+                ChangePosTransform(hightLightObject.buildingHighlight,buildingHighlight);
+            } else buildingHighlight.gameObject.SetActive(false);
+
+            if (hightLightObject.tileHighlight != null)
+            {
+                tileHighlight.gameObject.SetActive(true);
+                ChangePosTransform(hightLightObject.tileHighlight,tileHighlight);
+            } else  tileHighlight.gameObject.SetActive(false);
+               
+            if(hightLightObject.tutorialBubbleTransform !=null)
+                ChangePosTransform(hightLightObject.tutorialBubbleTransform,tutorialBubbleTransform);
         }
         
     }
