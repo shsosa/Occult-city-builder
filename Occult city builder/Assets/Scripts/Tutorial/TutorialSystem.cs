@@ -28,6 +28,21 @@ public class TutorialSystem : MonoBehaviour
 
     [Header("Toolitip tutorial text: ")]
     [SerializeField] private TooltipTextSO[] tutoialTextSos;
+
+
+    [SerializeField] private GameObject eventManager;
+    
+    
+    
+    //Flags
+    private bool builtEventHappned = false;
+    private bool resourceEventHappned = false;
+    private bool monsterHungerEventhappned = false;
+    private bool monsterFed =false;
+
+   
+    
+    
     
     
     public  int currentTutorialObject=0;
@@ -43,30 +58,33 @@ public class TutorialSystem : MonoBehaviour
 
     [SerializeField] private List<HightLightObjects> _hightLightObjectsList;
 
-    
-    
+
+    private void OnEnable()
+    {
+        buildEventChannelSo.OnEventRaised += OnBuiltEvent;
+        resourceColletEvent.OnEventRaised += OnResourceEvent;
+       
+
+    }
 
     private void OnDisable()
     {
-        buildEventChannelSo.OnEventRaised -= BuildTutorialInfo;
+        buildEventChannelSo.OnEventRaised -= OnBuiltEvent;
+        resourceColletEvent.OnEventRaised -= OnResourceEvent;
+        monsterHungerEvent.OnEventRaised -= OnHungerEvent;
         
     }
 
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            SHowCurrentTutorialObject();
-            currentTutorialObject++;
-        }
     }
 
 
     private void Start()
-    {
-      
-       // StartCoroutine(Tutorial());
+    { 
+        eventManager.SetActive(false);
+        StartCoroutine(Tutorial());
     }
     
     IEnumerator Wait(float time)
@@ -75,120 +93,155 @@ public class TutorialSystem : MonoBehaviour
     }
     
 
-   
+    void OnBuiltEvent()
+    {
+        builtEventHappned = true;
+    }
+
+    IEnumerator WaitForBuiltEvent()
+    {
+        yield return new WaitUntil(() => builtEventHappned);
+        builtEventHappned = false;
+    }
+    
+    
+    void OnResourceEvent()
+    {
+        resourceEventHappned = true;
+    }
+
+    IEnumerator WaitForResoueceEvent()
+    {
+        yield return new WaitUntil(() => resourceEventHappned);
+        resourceEventHappned = false;
+    }
+    
+    void OnHungerEvent()
+    {
+        monsterHungerEventhappned = true;
+    }
+
+    IEnumerator WaitForHungerEvent()
+    {
+       
+        yield return new WaitUntil(() => monsterHungerEventhappned);
+        monsterHungerEventhappned = false;
+    }
+
+    public void FeedMonster()
+    {
+        monsterFed = true;
+    }
+
 
     IEnumerator Tutorial()
     {
+       
         SHowCurrentTutorialObject();
+        yield return new WaitForSeconds(3f);
+        
         currentTutorialObject++;
+        SHowCurrentTutorialObject();
+        
+        
+        yield return StartCoroutine(WaitForBuiltEvent());
+        currentTutorialObject++;
+        SHowCurrentTutorialObject();
+        
+        yield return new WaitForSeconds(2f);
+        currentTutorialObject++;
+        SHowCurrentTutorialObject();
+        
+        yield return new WaitForSeconds(2f);
+        currentTutorialObject++;
+        SHowCurrentTutorialObject();
+        
+        yield return StartCoroutine(WaitForBuiltEvent());
+        currentTutorialObject++;
+        SHowCurrentTutorialObject();
+        
+        yield return new WaitForSeconds(2f);
+        currentTutorialObject++;
+        SHowCurrentTutorialObject();
         
         yield return new WaitForSeconds(3f);
+        yield return StartCoroutine(WaitForResoueceEvent());
+        currentTutorialObject++;
         SHowCurrentTutorialObject();
-       
-
-        //GameManager.PauseGame();
+        
+        yield return new WaitForSeconds(2f);
+        currentTutorialObject++;
+        SHowCurrentTutorialObject();
+        
+        
+        yield return new WaitForSeconds(2f);
+        currentTutorialObject++;
+        SHowCurrentTutorialObject();
+        
+        yield return new WaitForSeconds(2f);
+        currentTutorialObject++;
+        SHowCurrentTutorialObject();
+        
        
         
-        buildEventChannelSo.OnEventRaised += BuildTutorialInfo;
-        monsterHungerEvent.OnEventRaised += ShowOnHungerEventText;
+        yield return StartCoroutine(WaitForBuiltEvent());
+        yield return new WaitForSeconds(2f);
+        TutorialTextSystem.Hide();
+        
+        
+        monsterHungerEvent.OnEventRaised += OnHungerEvent;
+        yield return StartCoroutine(WaitForHungerEvent());
+        eventManager.SetActive(true);
+        
+        
+        yield return new WaitUntil(() => GameManager.isEventUIActive);
+        currentTutorialObject++;
         SHowCurrentTutorialObject();
-        yield return new WaitForSeconds(3f);
-     
+        
+        yield return new WaitForSeconds(2f);
+        currentTutorialObject++;
+        SHowCurrentTutorialObject();
+        
+        yield return new WaitForSeconds(2f);
+        currentTutorialObject++;
+        SHowCurrentTutorialObject();
+        
+        
+        yield return new WaitUntil(() => !GameManager.isEventUIActive);
+        eventManager.SetActive(false);
+        currentTutorialObject++;
+        SHowCurrentTutorialObject();
+        
+        yield return new WaitUntil(() => monsterFed);
+        currentTutorialObject++;
+        SHowCurrentTutorialObject();
+        
+        yield return new WaitForSeconds(2f);
+        currentTutorialObject++;
+        SHowCurrentTutorialObject();
+        
+        yield return StartCoroutine(WaitForBuiltEvent());
+        yield return StartCoroutine(WaitForHungerEvent());
+        currentTutorialObject++;
+        SHowCurrentTutorialObject();
       
         
+        
        
-        yield return CanbuildUt();
 
         
+
     }
 
    
 
    
 
-    IEnumerator CanbuildUt()
-    {
-        if (witchUtUI.canBuild)
-        {
-            
-            TutorialTextSystem.Show(tutoialTextSos[6]);
-            
-            SHowCurrentTutorialObject();
-            yield break;
-            
-        }
-        
-    }
-    
-
-    void ShowCuresedTileText()
-    {
-        TutorialTextSystem.Show(tutoialTextSos[2]);
-        monsterHungerEvent.OnEventRaised -= ShowCuresedTileText;
-      
-        SHowCurrentTutorialObject();
-       
-    }
-
-    void  BuildTutorialInfo()
-    {
-        GameManager.ResumeGame();
-        TutorialTextSystem.Show(tutoialTextSos[2]);
-        buildEventChannelSo.OnEventRaised -= BuildTutorialInfo;
-        resourceColletEvent.OnEventRaised += ShowResorceCollectText;
-      
-        
-
-    }
-    
-    void ShowOnHungerEventText()
-    {
-        Debug.Log("Monster hunger event tutorial");
-        TutorialTextSystem.Show(tutoialTextSos[4]);
-       
-        //todo when to deactivate maybe when player press button "understood"
-       // monsterHungerEvent.OnEventRaised -= ShowOnHungerEventText;
-        StartCoroutine(DeactivateUIEvent());
-        
-        //Coroutine for wait until event is no longer active 
-        IEnumerator DeactivateUIEvent()
-        {
-            yield return new WaitUntil(() => !GameManager.isEventUIActive);
-          
-            
-               
-                SHowCurrentTutorialObject();
-                
-        }
-        
-          
-      
-       
-      
-
-    }
-    void ShowResorceCollectText()
-    {
-        currentTutorialObject++;
-        TutorialTextSystem.Show(tutoialTextSos[3]);
-      
-        resourceColletEvent.OnEventRaised -= ShowResorceCollectText;
-        StartCoroutine(Wait());
-        
-        
-        IEnumerator Wait()
-        {
-            yield return new WaitForSeconds(4);
-           
-            
-        }
-       
-       
-       
-    }
-
+  
     private void SHowCurrentTutorialObject()
     {
+       
+       
         TutorialTextSystem.Show(tutoialTextSos[currentTutorialObject]);
         
         if (tutoialTextSos[currentTutorialObject].id != 0)
