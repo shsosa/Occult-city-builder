@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
     public MonsterManager monster;
     public ResourceData resources;
     public int numOfCursedTiles,numOfErelevantTiles;
-    public Tiles[] listOfTiles;
+   static public Tiles[] listOfTiles;
     private bool hasLost, hasWon;
     public static int numOfTilesToWin;
     private int curentSceneIndex;

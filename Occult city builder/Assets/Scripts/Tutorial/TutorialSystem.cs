@@ -31,6 +31,7 @@ public class TutorialSystem : MonoBehaviour
 
 
     [SerializeField] private GameObject eventManager;
+    [SerializeField] private int time;
     
     
     
@@ -39,6 +40,7 @@ public class TutorialSystem : MonoBehaviour
     private bool resourceEventHappned = false;
     private bool monsterHungerEventhappned = false;
     private bool monsterFed =false;
+    private bool powerEventHappend =false;
 
    
     
@@ -61,6 +63,7 @@ public class TutorialSystem : MonoBehaviour
 
     private void OnEnable()
     {
+        MonsterManager.CursedTile += OnPowerEvent;
         buildEventChannelSo.OnEventRaised += OnBuiltEvent;
         resourceColletEvent.OnEventRaised += OnResourceEvent;
        
@@ -69,6 +72,8 @@ public class TutorialSystem : MonoBehaviour
 
     private void OnDisable()
     {
+        
+        MonsterManager.CursedTile -= OnPowerEvent;
         buildEventChannelSo.OnEventRaised -= OnBuiltEvent;
         resourceColletEvent.OnEventRaised -= OnResourceEvent;
         monsterHungerEvent.OnEventRaised -= OnHungerEvent;
@@ -86,10 +91,19 @@ public class TutorialSystem : MonoBehaviour
         eventManager.SetActive(false);
         StartCoroutine(Tutorial());
     }
-    
-    IEnumerator Wait(float time)
+
+    void OnPowerEvent()
     {
-        yield return new WaitForSeconds(time);
+        powerEventHappend = true;
+    }
+
+    IEnumerator WaitForPowerEvent()
+    {
+        yield return new WaitUntil((() => powerEventHappend));
+        ShowTutorialObject(tutoialTextSos[23]);
+
+        yield return new WaitForSeconds(2);
+        ShowTutorialObject(tutoialTextSos[currentTutorialObject]);
     }
     
 
@@ -123,8 +137,9 @@ public class TutorialSystem : MonoBehaviour
 
     IEnumerator WaitForHungerEvent()
     {
-       
+        monsterHungerEvent.OnEventRaised += OnHungerEvent;
         yield return new WaitUntil(() => monsterHungerEventhappned);
+        eventManager.SetActive(true);
         monsterHungerEventhappned = false;
     }
 
@@ -137,93 +152,97 @@ public class TutorialSystem : MonoBehaviour
     IEnumerator Tutorial()
     {
        
-        SHowCurrentTutorialObject();
+        ShowTutorialObject(tutoialTextSos[currentTutorialObject]);
         yield return new WaitForSeconds(3f);
         
         currentTutorialObject++;
-        SHowCurrentTutorialObject();
+        ShowTutorialObject(tutoialTextSos[currentTutorialObject]);
         
         
         yield return StartCoroutine(WaitForBuiltEvent());
         currentTutorialObject++;
-        SHowCurrentTutorialObject();
+        ShowTutorialObject(tutoialTextSos[currentTutorialObject]);
         
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(time);
         currentTutorialObject++;
-        SHowCurrentTutorialObject();
+        ShowTutorialObject(tutoialTextSos[currentTutorialObject]);
         
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(time);
         currentTutorialObject++;
-        SHowCurrentTutorialObject();
+        ShowTutorialObject(tutoialTextSos[currentTutorialObject]);
         
         yield return StartCoroutine(WaitForBuiltEvent());
         currentTutorialObject++;
-        SHowCurrentTutorialObject();
+        ShowTutorialObject(tutoialTextSos[currentTutorialObject]);
         
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(time);
         currentTutorialObject++;
-        SHowCurrentTutorialObject();
+        ShowTutorialObject(tutoialTextSos[currentTutorialObject]);
         
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(time);
         yield return StartCoroutine(WaitForResoueceEvent());
         currentTutorialObject++;
-        SHowCurrentTutorialObject();
+        ShowTutorialObject(tutoialTextSos[currentTutorialObject]);
         
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(time);
         currentTutorialObject++;
-        SHowCurrentTutorialObject();
+        ShowTutorialObject(tutoialTextSos[currentTutorialObject]);
         
         
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(time);
         currentTutorialObject++;
-        SHowCurrentTutorialObject();
+        ShowTutorialObject(tutoialTextSos[currentTutorialObject]);
         
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(time);
         currentTutorialObject++;
-        SHowCurrentTutorialObject();
+        ShowTutorialObject(tutoialTextSos[currentTutorialObject]);
         
        
         
         yield return StartCoroutine(WaitForBuiltEvent());
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(time);
         TutorialTextSystem.Hide();
         
         
-        monsterHungerEvent.OnEventRaised += OnHungerEvent;
+        
         yield return StartCoroutine(WaitForHungerEvent());
-        eventManager.SetActive(true);
+       
         
         
         yield return new WaitUntil(() => GameManager.isEventUIActive);
         currentTutorialObject++;
-        SHowCurrentTutorialObject();
+        ShowTutorialObject(tutoialTextSos[currentTutorialObject]);
+        
+        yield return new WaitForSeconds(time);
+        currentTutorialObject++;
+        ShowTutorialObject(tutoialTextSos[currentTutorialObject]);
         
         yield return new WaitForSeconds(2f);
         currentTutorialObject++;
-        SHowCurrentTutorialObject();
-        
-        yield return new WaitForSeconds(2f);
-        currentTutorialObject++;
-        SHowCurrentTutorialObject();
+        ShowTutorialObject(tutoialTextSos[currentTutorialObject]);
         
         
         yield return new WaitUntil(() => !GameManager.isEventUIActive);
         eventManager.SetActive(false);
         currentTutorialObject++;
-        SHowCurrentTutorialObject();
+        ShowTutorialObject(tutoialTextSos[currentTutorialObject]);
         
         yield return new WaitUntil(() => monsterFed);
         currentTutorialObject++;
-        SHowCurrentTutorialObject();
+        ShowTutorialObject(tutoialTextSos[currentTutorialObject]);
         
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(time);
+        yield return StartCoroutine(WaitForPowerEvent());
         currentTutorialObject++;
-        SHowCurrentTutorialObject();
+        ShowTutorialObject(tutoialTextSos[currentTutorialObject]);
         
         yield return StartCoroutine(WaitForBuiltEvent());
-        yield return StartCoroutine(WaitForHungerEvent());
+        yield return new WaitForSeconds(time);
         currentTutorialObject++;
-        SHowCurrentTutorialObject();
+        ShowTutorialObject(tutoialTextSos[currentTutorialObject]);
+        yield return StartCoroutine(WaitForHungerEvent());
+      
+      
       
         
         
@@ -238,15 +257,15 @@ public class TutorialSystem : MonoBehaviour
    
 
   
-    private void SHowCurrentTutorialObject()
+    private void ShowTutorialObject(TooltipTextSO tooltipTextSo)
     {
        
        
-        TutorialTextSystem.Show(tutoialTextSos[currentTutorialObject]);
+        TutorialTextSystem.Show(tooltipTextSo);
         
         if (tutoialTextSos[currentTutorialObject].id != 0)
         {
-            var hightLightObject =  GetHighlightObject(tutoialTextSos[currentTutorialObject].id);
+            var hightLightObject =  GetHighlightObject(tooltipTextSo.id);
             //todo maybe make a for loop here for 2 arrays
             if (hightLightObject.buildingHighlight != null)
             {
@@ -277,6 +296,7 @@ public class TutorialSystem : MonoBehaviour
         
         foreach (var highlightObjects in _hightLightObjectsList)
         {
+            //todo change to just highlite object
             if (id == highlightObjects.id)
             {
                 hightLightObject= highlightObjects;
