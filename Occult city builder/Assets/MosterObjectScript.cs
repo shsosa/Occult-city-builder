@@ -19,11 +19,11 @@ public class MosterObjectScript : MonoBehaviour
     public void SacrificeToMonster()
     {
         Debug.Log("Monster eat event");
-        _unityEvent.Invoke();
+        
     }
     public void Eat(int amountToSecrificeHunger, int secrificeAddPower)
     {
-      
+        _unityEvent.Invoke();
         _secreficeManager.Sacrifice(amountToSecrificeHunger, secrificeAddPower);
     }
 
