@@ -32,7 +32,7 @@ public class Tooltip : MonoBehaviour
     private void Awake()
     {
         RectTransform = GetComponent<RectTransform>();
-      
+        
     }
 
     

@@ -31,7 +31,7 @@ public class TutorialSystem : MonoBehaviour
     [SerializeField] private TooltipTextSO[] tutoialTextSos;
 
 
-    [SerializeField] private RandomEventUI eventManager;
+    //[SerializeField] private RandomEventUI eventManager;
     [SerializeField] private int time;
     [SerializeField] private ReasourcePrice[] _reasourcePrices;
     
@@ -64,9 +64,14 @@ public class TutorialSystem : MonoBehaviour
 
     [SerializeField] private List<HightLightObjects> _hightLightObjectsList;
 
+    private void Awake()
+    {
+        MonsterManager.isTutorial = true;
+    }
 
     private void OnEnable()
     {
+       
         BuildingManager.TileHoltActivate += OnActivateHoly;
         BuildingManager.TileBlessed += OnTileBlessed;
         MonsterManager.CursedTile += OnPowerEvent;
@@ -99,7 +104,7 @@ public class TutorialSystem : MonoBehaviour
 
     private void Start()
     { 
-        eventManager.enabled = false;
+        
         StartCoroutine(Tutorial());
     }
 
@@ -156,6 +161,7 @@ public class TutorialSystem : MonoBehaviour
     void OnResourceEvent()
     {
         resourceEventHappned = true;
+        
     }
 
     IEnumerator WaitForResoueceEvent()
@@ -173,7 +179,6 @@ public class TutorialSystem : MonoBehaviour
     {
         monsterHungerEvent.OnEventRaised += OnHungerEvent;
         yield return new WaitUntil(() => monsterHungerEventhappned);
-        eventManager.enabled = true;
         monsterHungerEventhappned = false;
     }
 
@@ -241,11 +246,10 @@ public class TutorialSystem : MonoBehaviour
         yield return StartCoroutine(WaitForBuiltEvent());
         TutorialTextSystem.Hide();
        ShowTutorialObject(tutoialTextSos[26]);
-       eventManager.enabled = true;
-        
-        
+
+      MonsterManager.isTutorial = false;
         yield return StartCoroutine(WaitForHungerEvent());
-       
+        MonsterManager.isTutorial = false;
         
         
         yield return new WaitUntil(() => GameManager.isEventUIActive);
@@ -263,8 +267,8 @@ public class TutorialSystem : MonoBehaviour
         
         
         yield return new WaitUntil(() => !GameManager.isEventUIActive);
-        eventManager.enabled = false;
-       
+        MonsterManager.isTutorial = true;
+
         currentTutorialObject++;
         ShowTutorialObject(tutoialTextSos[currentTutorialObject]);
         
@@ -288,9 +292,10 @@ public class TutorialSystem : MonoBehaviour
         ChangeResearchPrice();
         
         yield return StartCoroutine(WaitForTileBlessedEvent());
+        MonsterManager.isTutorial = false;
         currentTutorialObject++;
         ShowTutorialObject(tutoialTextSos[currentTutorialObject]);
-        eventManager.enabled = true;
+        
        
        
         yield return new WaitUntil(() =>  MosterObjectScript.isMonsterPowerDecrease);

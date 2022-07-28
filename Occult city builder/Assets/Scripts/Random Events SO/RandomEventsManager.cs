@@ -27,7 +27,7 @@ public class RandomEventsManager : ScriptableObject
     public List<string> fallingStarEvents;
     public List<string> eventTextHeaders;
 
-    static public bool isTutorial = false;
+    
 
     private List<string> curentEventTexts;
 
@@ -41,24 +41,25 @@ public class RandomEventsManager : ScriptableObject
     private void OnEnable()
     {
         //SettingPriceAndPunishment();
-        monsterHungerEventChannel.OnEventRaised += RandomEvent;
+        
+          monsterHungerEventChannel.OnEventRaised += RandomEvent;
         eventUI = FindObjectOfType<RandomEventUI>();
     }
 
 
     private void RandomEvent() 
     {
-        if (!isTutorial)
-        {
+       
             EventRandomizer();
-            eventType = (EventType)eventTypeIterator;
-            EventListTextAndResourceSorter();
-            EventTextSorter();
-            maxCurrentPriceToPay += priceGrowthPerItration;
-            maxCurrentPunishment += punishmentGrowthPerIteration;
-            minCurrentPriceToPay += priceGrowthPerItration;
-            minCurrentPunishment += punishmentGrowthPerIteration;
-        }
+        
+        eventType = (EventType)eventTypeIterator;
+        EventListTextAndResourceSorter();
+        EventTextSorter();
+        maxCurrentPriceToPay += priceGrowthPerItration;
+        maxCurrentPunishment += punishmentGrowthPerIteration;
+        minCurrentPriceToPay += priceGrowthPerItration;
+        minCurrentPunishment += punishmentGrowthPerIteration;
+      
     }
     private void EventRandomizer()
     {    
