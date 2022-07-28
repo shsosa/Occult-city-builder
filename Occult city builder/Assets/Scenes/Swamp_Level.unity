@@ -2758,7 +2758,6 @@ MonoBehaviour:
   resources: {fileID: 11400000, guid: a058ea4808a964c4883a30c07f49f86f, type: 2}
   numOfCursedTiles: 0
   numOfErelevantTiles: 0
-  listOfTiles: []
   reasoursesOnStart: 5
 --- !u!1 &758430941
 GameObject:
