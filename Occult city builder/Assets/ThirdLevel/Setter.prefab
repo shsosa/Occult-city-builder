@@ -1,0 +1,164 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &535985942187729481
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5237658749470498461}
+  - component: {fileID: 7364471787996171063}
+  m_Layer: 0
+  m_Name: Setter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5237658749470498461
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 535985942187729481}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.061611, y: -3.7846153, z: -0.029692803}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7364471787996171063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 535985942187729481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecf4340039ccbda4ba241209791c054b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  farm:
+    so: {fileID: 11400000, guid: 7bf81ee11460b9e44b8bcd1d9a37e755, type: 2}
+    priceInGold: 0
+    priceInWood: 5
+    priceInCattle: 0
+    priceInVillagers: 2
+    priceInReserchPoints: 0
+  house:
+    so: {fileID: 11400000, guid: 014e99382cd4bac48af7bc16d49f15ec, type: 2}
+    priceInGold: 0
+    priceInWood: 5
+    priceInCattle: 2
+    priceInVillagers: 0
+    priceInReserchPoints: 0
+  mine:
+    so: {fileID: 11400000, guid: e272a855bb621c84d89dd8a5d63fc6ec, type: 2}
+    priceInGold: 0
+    priceInWood: 10
+    priceInCattle: 2
+    priceInVillagers: 3
+    priceInReserchPoints: 0
+  query:
+    so: {fileID: 11400000, guid: d6aa3f9de4f4f7f429a2a4b3689834f6, type: 2}
+    priceInGold: 1
+    priceInWood: 0
+    priceInCattle: 1
+    priceInVillagers: 2
+    priceInReserchPoints: 0
+  witchHut:
+    so: {fileID: 11400000, guid: ef4215a9cada38d49b7aef4be0ceb5ee, type: 2}
+    priceInGold: 10
+    priceInWood: 15
+    priceInCattle: 5
+    priceInVillagers: 5
+    priceInReserchPoints: 0
+  banishing:
+    so: {fileID: 11400000, guid: e9482fd79af0a5f4aab30793d31ffc4b, type: 2}
+    priceInGold: 10
+    priceInWood: 10
+    priceInCattle: 5
+    priceInVillagers: 5
+    priceInReserchPoints: 100
+    monsterPower: 0
+  blessing:
+    so: {fileID: 11400000, guid: 32341532e71d93c49ad562fc19144ec7, type: 2}
+    priceInGold: 0
+    priceInWood: 0
+    priceInCattle: 0
+    priceInVillagers: 0
+    priceInReserchPoints: 20
+    monsterPower: 0
+  monsterPowerReduction:
+    so: {fileID: 11400000, guid: 976eff758a593984d810a64b2f2ca6f8, type: 2}
+    priceInGold: 0
+    priceInWood: 0
+    priceInCattle: 0
+    priceInVillagers: 0
+    priceInReserchPoints: 30
+    monsterPower: 50
+  villagers:
+    so: {fileID: 11400000, guid: 81e7411d20221c64888237cf2185b92d, type: 2}
+    priceInGold: 0
+    priceInWood: 0
+    priceInCattle: 0
+    priceInVillagers: 5
+    priceInReserchPoints: 0
+    monsterPower: 30
+    monsterHunger: 50
+  cattle:
+    so: {fileID: 11400000, guid: fc14d91c525411e48b1e9c785afc3f51, type: 2}
+    priceInGold: 0
+    priceInWood: 0
+    priceInCattle: 10
+    priceInVillagers: 0
+    priceInReserchPoints: 0
+    monsterPower: 20
+    monsterHunger: 20
+  monsterOptions:
+    monsterScript: {fileID: 0}
+    hunger: 1
+    power: 0
+    timeHunger: 3
+    timePower: 3
+    hungerThreshold: 15
+    powerThreshold: 15
+    hungerProbability: 125
+    powerProbability: 150
+  eventsOptions:
+    rEManager: {fileID: 11400000, guid: a7e59b057f19b78419e0e26cf56a8474, type: 2}
+    minPriceOnStart: 1
+    maxPriceOnStart: 5
+    minPrice: 1
+    maxPrice: 50
+    minPunishmentOnStart: 3
+    maxPunishmentOnStart: 10
+    minPunishment: 3
+    maxPunishment: 70
+    priceStep: 3
+    punishmentStep: 4
+  resources:
+    timer: {fileID: 0}
+    so: {fileID: 11400000, guid: a058ea4808a964c4883a30c07f49f86f, type: 2}
+    villagers: 5
+    cattle: 5
+    wood: 5
+    gold: 5
+    reserchPoints: 0
+    maxVillagers: 100
+    minVillagers: 0
+    maxCattle: 100
+    minCattle: 0
+    maxWood: 100
+    minWood: 0
+    maxGold: 100
+    minGold: 0
+    maxReserchPoints: 120
+    minReserchPoints: 0
+    time: 3
