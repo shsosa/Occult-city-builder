@@ -26,6 +26,7 @@ public class MonsterManager : MonoBehaviour
     [SerializeField]  MonsterEmot _monsterEmotEating;
 
     static public UnityAction CursedTile;
+    static public bool isTutorial = false;
     
     void Awake()
     {
@@ -97,8 +98,13 @@ public class MonsterManager : MonoBehaviour
         }
         if (hungerEventTriger >= maxRangeToTrigerHungerEvent)
         {
-            MonsterReact(_monsterEmotFeedMe);
-            HungerEventFlag();
+            if (!isTutorial)
+            {
+                MonsterReact(_monsterEmotFeedMe);
+           
+                HungerEventFlag();
+            }
+           
             maxRangeToTrigerHungerEvent = maxRangeToTrigerHungerEventConstant;
         }
     }
@@ -129,7 +135,7 @@ public class MonsterManager : MonoBehaviour
             if (!tile[randomizer].CompareTag("HolyTile"))
             {
                 tile[randomizer].SetCursed(); 
-               // CursedTile.Invoke();
+                CursedTile?.Invoke();
             }   
         }
         else 
