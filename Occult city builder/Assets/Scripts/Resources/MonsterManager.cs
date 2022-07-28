@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using DefaultNamespace.Monster;
 using UnityEngine;
+using UnityEngine.Events;
 using Random = UnityEngine.Random;
 
 public class MonsterManager : MonoBehaviour
@@ -22,6 +23,8 @@ public class MonsterManager : MonoBehaviour
     [SerializeField] private MonsterEmot _monsterEmotCurseTile;
     [SerializeField] private MonsterEmot _monsterEmotFeedMe;
     [SerializeField]  MonsterEmot _monsterEmotEating;
+
+    static public UnityAction CursedTile;
     
     void Awake()
     {
@@ -125,6 +128,7 @@ public class MonsterManager : MonoBehaviour
             if (!tile[randomizer].CompareTag("HolyTile"))
             {
                 tile[randomizer].SetCursed(); 
+                CursedTile.Invoke();
             }   
         }
         else 
