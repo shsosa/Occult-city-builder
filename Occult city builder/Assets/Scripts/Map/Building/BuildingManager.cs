@@ -5,6 +5,7 @@ using InputMouse;
 using UI.Tooltip;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class BuildingManager : MonoBehaviour
 {
@@ -30,6 +31,9 @@ public class BuildingManager : MonoBehaviour
    
 
     public static bool hasInstantiatedBuilding = false;
+
+    static public UnityAction TileBlessed;
+    static public UnityAction TileHoltActivate;
    
 
     private void OnEnable()
@@ -140,6 +144,7 @@ public class BuildingManager : MonoBehaviour
                   
                     currentBuilding.DecreaseReasourceCost();
                     currentTile.SetNotCursed();
+                    TileBlessed?.Invoke();
                     if(!currentTile.isCursed)
                         Destroy(currentBuilding.gameObject);
                 }
@@ -167,6 +172,7 @@ public class BuildingManager : MonoBehaviour
                 {
                     currentTile.ActivateSacredSite();
                     currentBuilding.PlaceBuildingOnTile();
+                    TileHoltActivate?.Invoke();
                 }
             }
         }

@@ -41,6 +41,8 @@ public class TutorialSystem : MonoBehaviour
     private bool monsterHungerEventhappned = false;
     private bool monsterFed =false;
     private bool powerEventHappend =false;
+    private bool tileBlessedEvent = false;
+    private bool tileHolyActivate = false;
 
    
     
@@ -63,6 +65,8 @@ public class TutorialSystem : MonoBehaviour
 
     private void OnEnable()
     {
+        BuildingManager.TileHoltActivate += OnActivateHoly;
+        BuildingManager.TileBlessed += OnTileBlessed;
         MonsterManager.CursedTile += OnPowerEvent;
         buildEventChannelSo.OnEventRaised += OnBuiltEvent;
         resourceColletEvent.OnEventRaised += OnResourceEvent;
@@ -72,7 +76,7 @@ public class TutorialSystem : MonoBehaviour
 
     private void OnDisable()
     {
-        
+        BuildingManager.TileHoltActivate -= OnActivateHoly;
         MonsterManager.CursedTile -= OnPowerEvent;
         buildEventChannelSo.OnEventRaised -= OnBuiltEvent;
         resourceColletEvent.OnEventRaised -= OnResourceEvent;
@@ -81,9 +85,7 @@ public class TutorialSystem : MonoBehaviour
     }
 
 
-    private void Update()
-    {
-    }
+  
 
 
     private void Start()
@@ -91,6 +93,29 @@ public class TutorialSystem : MonoBehaviour
         eventManager.SetActive(false);
         StartCoroutine(Tutorial());
     }
+
+    void OnActivateHoly()
+    {
+        tileHolyActivate = true;
+    }
+
+    IEnumerator WaitForActiveHoly()
+    {
+        yield return new WaitUntil((() => tileHolyActivate));
+        tileHolyActivate = false;
+    }
+
+    void OnTileBlessed()
+    {
+        tileBlessedEvent = true;
+    }
+
+    IEnumerator WaitForTileBlessedEvent()
+    {
+        yield return new WaitUntil((() => tileBlessedEvent));
+        tileBlessedEvent = false;
+    }
+    
 
     void OnPowerEvent()
     {
@@ -100,8 +125,8 @@ public class TutorialSystem : MonoBehaviour
     IEnumerator WaitForPowerEvent()
     {
         yield return new WaitUntil((() => powerEventHappend));
-        ShowTutorialObject(tutoialTextSos[23]);
-
+        ShowTutorialObject(tutoialTextSos[24]);
+        powerEventHappend = false;
         yield return new WaitForSeconds(2);
         ShowTutorialObject(tutoialTextSos[currentTutorialObject]);
     }
@@ -200,7 +225,11 @@ public class TutorialSystem : MonoBehaviour
        
         
         yield return StartCoroutine(WaitForBuiltEvent());
-        yield return new WaitForSeconds(time);
+        currentTutorialObject++;
+        ShowTutorialObject(tutoialTextSos[currentTutorialObject]);
+       
+        
+        yield return StartCoroutine(WaitForBuiltEvent());
         TutorialTextSystem.Hide();
         
         
@@ -230,19 +259,39 @@ public class TutorialSystem : MonoBehaviour
         yield return new WaitUntil(() => monsterFed);
         currentTutorialObject++;
         ShowTutorialObject(tutoialTextSos[currentTutorialObject]);
+       
         
         yield return new WaitForSeconds(time);
         yield return StartCoroutine(WaitForPowerEvent());
         currentTutorialObject++;
         ShowTutorialObject(tutoialTextSos[currentTutorialObject]);
         
+        
+        
+        
         yield return StartCoroutine(WaitForBuiltEvent());
-        yield return new WaitForSeconds(time);
         currentTutorialObject++;
         ShowTutorialObject(tutoialTextSos[currentTutorialObject]);
-        yield return StartCoroutine(WaitForHungerEvent());
+        
+        yield return StartCoroutine(WaitForTileBlessedEvent());
+        currentTutorialObject++;
+        ShowTutorialObject(tutoialTextSos[currentTutorialObject]);
+        monsterFed = false;
+        
+        yield return new WaitUntil(() => monsterFed);
+        currentTutorialObject++;
+        ShowTutorialObject(tutoialTextSos[currentTutorialObject]);
+        
+        yield return StartCoroutine(WaitForActiveHoly());
+        currentTutorialObject++;
+        ShowTutorialObject(tutoialTextSos[currentTutorialObject]); 
+        
+        
+       
+        
+       
       
-      
+        
       
         
         
