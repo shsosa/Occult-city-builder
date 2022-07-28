@@ -410,7 +410,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   header: Activate ruins
+  content: 
+  iconSprite: {fileID: 0}
   _reasourcePrice: {fileID: 11400000, guid: e9482fd79af0a5f4aab30793d31ffc4b, type: 2}
+  _tooltipTextSo: {fileID: 0}
+  resourceData: {fileID: 0}
 --- !u!1 &1877847959199209887
 GameObject:
   m_ObjectHideFlags: 0
@@ -791,7 +795,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   header: Wood chop
+  content: 
+  iconSprite: {fileID: 0}
   _reasourcePrice: {fileID: 11400000, guid: d6aa3f9de4f4f7f429a2a4b3689834f6, type: 2}
+  _tooltipTextSo: {fileID: 0}
+  resourceData: {fileID: 0}
 --- !u!1 &1877847959366124597
 GameObject:
   m_ObjectHideFlags: 0
@@ -900,7 +908,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1877847959401355598}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 4.7775564}
+  m_LocalPosition: {x: 0, y: 0, z: 4.7776318}
   m_LocalScale: {x: 1.6608169, y: 1.6608169, z: 1.6608169}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -908,9 +916,9 @@ RectTransform:
   m_Father: {fileID: 1877847961199595311}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 299.67557, y: -11}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 349.6756, y: 38.999992}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1877847959401355595
@@ -1279,7 +1287,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   header: 'Witch hut '
+  content: 
+  iconSprite: {fileID: 0}
   _reasourcePrice: {fileID: 11400000, guid: ef4215a9cada38d49b7aef4be0ceb5ee, type: 2}
+  _tooltipTextSo: {fileID: 0}
+  resourceData: {fileID: 0}
 --- !u!1 &1877847959608778614
 GameObject:
   m_ObjectHideFlags: 0
@@ -1317,7 +1329,7 @@ RectTransform:
   m_Children:
   - {fileID: 1877847960386521430}
   m_Father: {fileID: 1877847960226644042}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -1660,7 +1672,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   header: Farm
+  content: 
+  iconSprite: {fileID: 0}
   _reasourcePrice: {fileID: 11400000, guid: 7bf81ee11460b9e44b8bcd1d9a37e755, type: 2}
+  _tooltipTextSo: {fileID: 0}
+  resourceData: {fileID: 0}
 --- !u!1 &1877847959677063375
 GameObject:
   m_ObjectHideFlags: 0
@@ -1971,8 +1987,8 @@ RectTransform:
   m_LocalScale: {x: 0.74287367, y: 0.74287367, z: 0.74287367}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1877847959608778613}
   - {fileID: 1877847960335322710}
+  - {fileID: 1877847959608778613}
   - {fileID: 1877847959199209886}
   - {fileID: 1877847960586877095}
   m_Father: {fileID: 1877847959898344099}
@@ -2015,16 +2031,16 @@ RectTransform:
   m_GameObject: {fileID: 1877847960335322711}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -0.6659853}
-  m_LocalScale: {x: 1.6608169, y: 1.6608169, z: 1.6608169}
+  m_LocalScale: {x: 1.660817, y: 1.660817, z: 1.660817}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1877847959366124596}
   m_Father: {fileID: 1877847960226644042}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -461.93982, y: -26.750362}
+  m_AnchoredPosition: {x: -461.93982, y: -26.750355}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1877847960335322708
@@ -2363,7 +2379,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   header: House
+  content: 
+  iconSprite: {fileID: 0}
   _reasourcePrice: {fileID: 11400000, guid: 014e99382cd4bac48af7bc16d49f15ec, type: 2}
+  _tooltipTextSo: {fileID: 0}
+  resourceData: {fileID: 0}
 --- !u!1 &1877847960386521431
 GameObject:
   m_ObjectHideFlags: 0
@@ -2896,7 +2916,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   header: Mine
+  content: 
+  iconSprite: {fileID: 0}
   _reasourcePrice: {fileID: 11400000, guid: e272a855bb621c84d89dd8a5d63fc6ec, type: 2}
+  _tooltipTextSo: {fileID: 0}
+  resourceData: {fileID: 0}
 --- !u!1 &1877847960789172350
 GameObject:
   m_ObjectHideFlags: 0
@@ -3307,7 +3331,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   header: Bless tile spell
+  content: 
+  iconSprite: {fileID: 0}
   _reasourcePrice: {fileID: 11400000, guid: 32341532e71d93c49ad562fc19144ec7, type: 2}
+  _tooltipTextSo: {fileID: 0}
+  resourceData: {fileID: 0}
 --- !u!1 &1877847960884578766
 GameObject:
   m_ObjectHideFlags: 0
@@ -3718,7 +3746,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   header: Lightning smite
+  content: 
+  iconSprite: {fileID: 0}
   _reasourcePrice: {fileID: 11400000, guid: 976eff758a593984d810a64b2f2ca6f8, type: 2}
+  _tooltipTextSo: {fileID: 0}
+  resourceData: {fileID: 0}
 --- !u!1 &1877847960979990574
 GameObject:
   m_ObjectHideFlags: 0

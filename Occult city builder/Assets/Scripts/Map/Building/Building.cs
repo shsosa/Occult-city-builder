@@ -137,6 +137,11 @@ public class Building : MonoBehaviour, Idraggable
     {
         other.GetComponent<MosterObjectScript>()
             .Eat(reasourcePrice.secrificeAmountHunger, reasourcePrice.secrificeAddPower);
+        if (CompareTag("Spell"))
+        {
+            MosterObjectScript.isMonsterPowerDecrease = true;
+        }
+        
     }
 
     private void CheckTileVacancy(Collider2D other)

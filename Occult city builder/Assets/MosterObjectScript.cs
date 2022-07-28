@@ -11,18 +11,22 @@ public class MosterObjectScript : MonoBehaviour
     public UnityEvent _unityEvent;
     [SerializeField] private SecreficeManager _secreficeManager;
     [SerializeField] private MonsterManager _monsterManager;
-  
-    
-   
-   
+
+
+
+    static public bool  isMonsterPowerDecrease =false;
 
     public void SacrificeToMonster()
     {
         Debug.Log("Monster eat event");
         
     }
+
+    
+
     public void Eat(int amountToSecrificeHunger, int secrificeAddPower)
     {
+        
         _unityEvent.Invoke();
         _secreficeManager.Sacrifice(amountToSecrificeHunger, secrificeAddPower);
     }

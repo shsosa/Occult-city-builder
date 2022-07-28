@@ -16,6 +16,11 @@ MonoBehaviour:
   header: Activate a sacred site
   Content: 'drag the banish spell to the sacred site
 
+    wait until you have
+
+    enough
+    resources
+
 '
   headerColor: {r: 0.77254903, g: 0.078431375, b: 0.62352943, a: 1}
   headerFontSize: 36

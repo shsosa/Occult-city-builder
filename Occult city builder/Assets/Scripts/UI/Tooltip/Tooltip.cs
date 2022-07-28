@@ -83,10 +83,13 @@ public class Tooltip : MonoBehaviour
           
         }
 
-      
-        contentField.text = tooltipTextSo.Content;
-        contentField.color = tooltipTextSo.contentColor;
-        contentField.fontSize = tooltipTextSo.contentFontSize;
+        if (tooltipTextSo != null)
+        {
+            contentField.text = tooltipTextSo.Content;
+            contentField.color = tooltipTextSo.contentColor;
+            contentField.fontSize = tooltipTextSo.contentFontSize;
+        }
+       
         
         int headerLength = headerFiled.text.Length;
         int contentLenght = contentField.text.Length;

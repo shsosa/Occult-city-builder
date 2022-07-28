@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Game_managment;
 using UI.Tooltip;
 using UnityEngine;
 
@@ -30,8 +31,9 @@ public class TutorialSystem : MonoBehaviour
     [SerializeField] private TooltipTextSO[] tutoialTextSos;
 
 
-    [SerializeField] private GameObject eventManager;
+    [SerializeField] private RandomEventUI eventManager;
     [SerializeField] private int time;
+    [SerializeField] private ReasourcePrice[] _reasourcePrices;
     
     
     
@@ -84,13 +86,20 @@ public class TutorialSystem : MonoBehaviour
         
     }
 
-
+    void ChangeResearchPrice()
+    {
+        foreach (var reasourcePrice in _reasourcePrices)
+        {
+            reasourcePrice.researchPoints = 0;
+        }
+        
+    }
   
 
 
     private void Start()
     { 
-        eventManager.SetActive(false);
+        eventManager.enabled = false;
         StartCoroutine(Tutorial());
     }
 
@@ -125,7 +134,7 @@ public class TutorialSystem : MonoBehaviour
     IEnumerator WaitForPowerEvent()
     {
         yield return new WaitUntil((() => powerEventHappend));
-        ShowTutorialObject(tutoialTextSos[24]);
+        ShowTutorialObject(tutoialTextSos[25]);
         powerEventHappend = false;
         yield return new WaitForSeconds(2);
         ShowTutorialObject(tutoialTextSos[currentTutorialObject]);
@@ -164,7 +173,7 @@ public class TutorialSystem : MonoBehaviour
     {
         monsterHungerEvent.OnEventRaised += OnHungerEvent;
         yield return new WaitUntil(() => monsterHungerEventhappned);
-        eventManager.SetActive(true);
+        eventManager.enabled = true;
         monsterHungerEventhappned = false;
     }
 
@@ -231,7 +240,8 @@ public class TutorialSystem : MonoBehaviour
         
         yield return StartCoroutine(WaitForBuiltEvent());
         TutorialTextSystem.Hide();
-        
+       ShowTutorialObject(tutoialTextSos[26]);
+       eventManager.enabled = true;
         
         
         yield return StartCoroutine(WaitForHungerEvent());
@@ -239,6 +249,7 @@ public class TutorialSystem : MonoBehaviour
         
         
         yield return new WaitUntil(() => GameManager.isEventUIActive);
+       
         currentTutorialObject++;
         ShowTutorialObject(tutoialTextSos[currentTutorialObject]);
         
@@ -252,14 +263,15 @@ public class TutorialSystem : MonoBehaviour
         
         
         yield return new WaitUntil(() => !GameManager.isEventUIActive);
-        eventManager.SetActive(false);
+        eventManager.enabled = false;
+       
         currentTutorialObject++;
         ShowTutorialObject(tutoialTextSos[currentTutorialObject]);
         
         yield return new WaitUntil(() => monsterFed);
         currentTutorialObject++;
         ShowTutorialObject(tutoialTextSos[currentTutorialObject]);
-       
+        
         
         yield return new WaitForSeconds(time);
         yield return StartCoroutine(WaitForPowerEvent());
@@ -273,18 +285,27 @@ public class TutorialSystem : MonoBehaviour
         currentTutorialObject++;
         ShowTutorialObject(tutoialTextSos[currentTutorialObject]);
         
+        ChangeResearchPrice();
+        
         yield return StartCoroutine(WaitForTileBlessedEvent());
         currentTutorialObject++;
         ShowTutorialObject(tutoialTextSos[currentTutorialObject]);
-        monsterFed = false;
-        
-        yield return new WaitUntil(() => monsterFed);
+        eventManager.enabled = true;
+       
+       
+        yield return new WaitUntil(() =>  MosterObjectScript.isMonsterPowerDecrease);
         currentTutorialObject++;
         ShowTutorialObject(tutoialTextSos[currentTutorialObject]);
+       
         
         yield return StartCoroutine(WaitForActiveHoly());
         currentTutorialObject++;
         ShowTutorialObject(tutoialTextSos[currentTutorialObject]); 
+       
+        
+        yield return new WaitForSeconds(time);
+        currentTutorialObject++;
+        ShowTutorialObject(tutoialTextSos[currentTutorialObject]);
         
         
        

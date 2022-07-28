@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46409e99f0954f9f939fd44d8bf3cd41, type: 3}
   m_Name: CollectedResources
   m_EditorClassIdentifier: 
-  header: Good job!
+  id: 0
+  header: Earned resources
   Content: goes up every few seconds
   headerColor: {r: 0.77254903, g: 0.078431375, b: 0.62352943, a: 1}
   headerFontSize: 36

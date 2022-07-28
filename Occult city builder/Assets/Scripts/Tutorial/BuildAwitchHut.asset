@@ -16,12 +16,7 @@ MonoBehaviour:
   header: Build a witch hut
   Content: 'Drag it near a holy site
 
-    to get bonus research points points
-
-    but
-    remember you can build on
-
-    any tile'
+    to get research bonus'
   headerColor: {r: 0.77254903, g: 0.078431375, b: 0.62352943, a: 1}
   headerFontSize: 36
   contentColor: {r: 0.59607846, g: 0.36862746, b: 0.54509807, a: 1}
