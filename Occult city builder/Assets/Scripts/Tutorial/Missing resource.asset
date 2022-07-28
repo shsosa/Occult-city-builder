@@ -16,7 +16,7 @@ MonoBehaviour:
   header: If a resource is marked <color=red>red</color>
   Content: You dont have suficiant resource to build.
   headerColor: {r: 0.77254903, g: 0.078431375, b: 0.62352943, a: 1}
-  headerFontSize: 36
+  headerFontSize: 24
   contentColor: {r: 0.59607846, g: 0.36862746, b: 0.54509807, a: 1}
-  contentFontSize: 32
+  contentFontSize: 20
   iconSprite: {fileID: 0}
