@@ -8,6 +8,7 @@ using Random = UnityEngine.Random;
 
 public class MonsterManager : MonoBehaviour
 {
+    static public bool isGamePlay = true;
     public float monsterHunger, monsterPower;
     public float monsterHungerGrowth, monsterPowerGrowth;
     public float hungerTime,powerTime;
