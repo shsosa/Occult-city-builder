@@ -1277,7 +1277,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3293959937467564764, guid: eb1bf5cd7c03d5042b8e97da6757abb5, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3293959937467564767, guid: eb1bf5cd7c03d5042b8e97da6757abb5, type: 3}
       propertyPath: m_Pivot.x
@@ -3067,7 +3067,6 @@ MonoBehaviour:
   resources: {fileID: 11400000, guid: a058ea4808a964c4883a30c07f49f86f, type: 2}
   numOfCursedTiles: 0
   numOfErelevantTiles: 0
-  listOfTiles: []
   reasoursesOnStart: 5
 --- !u!1001 &686989007
 PrefabInstance:

@@ -1325,10 +1325,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: RandomEventManager (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 3293959937467564764, guid: 571b9c0363668ff43aa47ac4594fcefb, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3293959937467564767, guid: 571b9c0363668ff43aa47ac4594fcefb, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

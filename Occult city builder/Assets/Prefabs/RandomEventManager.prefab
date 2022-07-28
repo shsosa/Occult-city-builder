@@ -1380,14 +1380,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3293959937095848662}
     m_Modifications:
-    - target: {fileID: 273626672495534645, guid: 68b2aac341211354fba688785085c890, type: 3}
-      propertyPath: canBuild
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 273626672495534645, guid: 68b2aac341211354fba688785085c890, type: 3}
-      propertyPath: _reasourcePrice
-      value: 
-      objectReference: {fileID: 11400000, guid: 36efc2d9355bd8a4381c80e3ac44c851, type: 2}
     - target: {fileID: 273626672495534641, guid: 7b458539bc23f884eafa9bf4c3b6a999, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1500,6 +1492,14 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 273626672495534645, guid: 68b2aac341211354fba688785085c890, type: 3}
+      propertyPath: canBuild
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 273626672495534645, guid: 68b2aac341211354fba688785085c890, type: 3}
+      propertyPath: _reasourcePrice
+      value: 
+      objectReference: {fileID: 11400000, guid: 36efc2d9355bd8a4381c80e3ac44c851, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7b458539bc23f884eafa9bf4c3b6a999, type: 3}
 --- !u!224 &3293959936622667249 stripped
