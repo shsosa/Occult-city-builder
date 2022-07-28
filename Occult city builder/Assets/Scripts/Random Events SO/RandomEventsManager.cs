@@ -27,7 +27,7 @@ public class RandomEventsManager : ScriptableObject
     public List<string> fallingStarEvents;
     public List<string> eventTextHeaders;
 
-    static public bool isTutorial = true;
+    static public bool isTutorial = false;
 
     private List<string> curentEventTexts;
 
