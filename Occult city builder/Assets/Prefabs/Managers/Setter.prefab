@@ -75,7 +75,7 @@ MonoBehaviour:
   witchHut:
     so: {fileID: 11400000, guid: ef4215a9cada38d49b7aef4be0ceb5ee, type: 2}
     priceInGold: 10
-    priceInWood: 10
+    priceInWood: 15
     priceInCattle: 5
     priceInVillagers: 5
     priceInReserchPoints: 0
@@ -125,11 +125,11 @@ MonoBehaviour:
     monsterScript: {fileID: 0}
     hunger: 1
     power: 0
-    timeHunger: 5
-    timePower: 5
+    timeHunger: 3
+    timePower: 3
     hungerThreshold: 15
     powerThreshold: 15
-    hungerProbability: 100
+    hungerProbability: 125
     powerProbability: 150
   eventsOptions:
     rEManager: {fileID: 11400000, guid: a7e59b057f19b78419e0e26cf56a8474, type: 2}
@@ -141,16 +141,16 @@ MonoBehaviour:
     maxPunishmentOnStart: 10
     minPunishment: 3
     maxPunishment: 70
-    priceStep: 4
+    priceStep: 3
     punishmentStep: 4
   resources:
     timer: {fileID: 0}
     so: {fileID: 11400000, guid: a058ea4808a964c4883a30c07f49f86f, type: 2}
-    villagers: 10
-    cattle: 10
-    wood: 10
-    gold: 10
-    reserchPoints: 10
+    villagers: 5
+    cattle: 5
+    wood: 5
+    gold: 5
+    reserchPoints: 0
     maxVillagers: 100
     minVillagers: 0
     maxCattle: 100
