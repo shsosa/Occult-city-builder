@@ -56,8 +56,8 @@ public class MonsterManager : MonoBehaviour
             monsterHunger += monsterHungerGrowth * Time.deltaTime;
 
             //Add power when really hungry
-            if (monsterHunger >= 90)
-                monsterPower += 1f * Time.deltaTime;
+          //  if (monsterHunger >= 90)
+                //monsterPower += 1f * Time.deltaTime;
         }
     }
     private IEnumerator HungerTimer()
@@ -132,7 +132,7 @@ public class MonsterManager : MonoBehaviour
         if(!tile[randomizer].isCursed)
         {
             MonsterReact(_monsterEmotCurseTile);
-            if (!tile[randomizer].CompareTag("HolyTile"))
+            if (!tile[randomizer].CompareTag("HolyTile") && !GameManager.isEventUIActive)
             {
                 tile[randomizer].SetCursed(); 
                 CursedTile?.Invoke();

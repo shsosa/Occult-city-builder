@@ -192,14 +192,17 @@ public class TutorialSystem : MonoBehaviour
     {
        
         ShowTutorialObject(tutoialTextSos[currentTutorialObject]);
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(2f);
         
         currentTutorialObject++;
         ShowTutorialObject(tutoialTextSos[currentTutorialObject]);
 
-        GameManager.stopProduction = true;
+       
         yield return StartCoroutine(WaitForBuiltEvent());
-        GameManager.stopProduction = false;
+        currentTutorialObject++;
+        ShowTutorialObject(tutoialTextSos[currentTutorialObject]);
+        
+        yield return new WaitForSeconds(1);
         currentTutorialObject++;
         ShowTutorialObject(tutoialTextSos[currentTutorialObject]);
         
@@ -207,17 +210,12 @@ public class TutorialSystem : MonoBehaviour
         currentTutorialObject++;
         ShowTutorialObject(tutoialTextSos[currentTutorialObject]);
         
-        yield return new WaitForSeconds(time);
-        currentTutorialObject++;
-        ShowTutorialObject(tutoialTextSos[currentTutorialObject]);
-        
-        GameManager.stopProduction = true;
+       
         yield return StartCoroutine(WaitForBuiltEvent());
-        GameManager.stopProduction = false;
         currentTutorialObject++;
         ShowTutorialObject(tutoialTextSos[currentTutorialObject]);
         
-        yield return new WaitForSeconds(time);
+        yield return new WaitForSeconds(4f);
         currentTutorialObject++;
         ShowTutorialObject(tutoialTextSos[currentTutorialObject]);
         
@@ -235,26 +233,23 @@ public class TutorialSystem : MonoBehaviour
         currentTutorialObject++;
         ShowTutorialObject(tutoialTextSos[currentTutorialObject]);
         
-        yield return new WaitForSeconds(time);
+        yield return new WaitForSeconds(4f);
         currentTutorialObject++;
         ShowTutorialObject(tutoialTextSos[currentTutorialObject]);
         
        
-        GameManager.stopProduction = true;
         yield return StartCoroutine(WaitForBuiltEvent());
-        GameManager.stopProduction = false;
         currentTutorialObject++;
         ShowTutorialObject(tutoialTextSos[currentTutorialObject]);
        
-        GameManager.stopProduction = true;
+       
         yield return StartCoroutine(WaitForBuiltEvent());
-        GameManager.stopProduction = false;
         TutorialTextSystem.Hide();
        ShowTutorialObject(tutoialTextSos[26]);
 
       MonsterManager.isTutorial = false;
         yield return StartCoroutine(WaitForHungerEvent());
-        MonsterManager.isTutorial = false;
+       
         
         
         yield return new WaitUntil(() => GameManager.isEventUIActive);
@@ -262,7 +257,7 @@ public class TutorialSystem : MonoBehaviour
         currentTutorialObject++;
         ShowTutorialObject(tutoialTextSos[currentTutorialObject]);
         
-        yield return new WaitForSeconds(time);
+        yield return new WaitForSeconds(5f);
         currentTutorialObject++;
         ShowTutorialObject(tutoialTextSos[currentTutorialObject]);
         
@@ -272,12 +267,14 @@ public class TutorialSystem : MonoBehaviour
         
         
         yield return new WaitUntil(() => !GameManager.isEventUIActive);
-       // MonsterManager.isTutorial = true;
+        MonsterManager.isTutorial = true;
 
         currentTutorialObject++;
         ShowTutorialObject(tutoialTextSos[currentTutorialObject]);
-        
+        GameManager.stopProduction = true;
         yield return new WaitUntil(() => monsterFed);
+        GameManager.stopProduction = false;
+        MonsterManager.isTutorial = false;
         currentTutorialObject++;
         ShowTutorialObject(tutoialTextSos[currentTutorialObject]);
         
@@ -297,7 +294,7 @@ public class TutorialSystem : MonoBehaviour
         ChangeResearchPrice();
         
         yield return StartCoroutine(WaitForTileBlessedEvent());
-      //  MonsterManager.isTutorial = false;
+     
         currentTutorialObject++;
         ShowTutorialObject(tutoialTextSos[currentTutorialObject]);
         
