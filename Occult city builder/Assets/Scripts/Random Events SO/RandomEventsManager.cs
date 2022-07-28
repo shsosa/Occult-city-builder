@@ -27,6 +27,8 @@ public class RandomEventsManager : ScriptableObject
     public List<string> fallingStarEvents;
     public List<string> eventTextHeaders;
 
+    static public bool isTutorial = false;
+
     private List<string> curentEventTexts;
 
     public string randomEventText, eventTextHeader;
@@ -45,15 +47,18 @@ public class RandomEventsManager : ScriptableObject
 
 
     private void RandomEvent() 
-    {  
-        EventRandomizer();
-        eventType= (EventType) eventTypeIterator;
-        EventListTextAndResourceSorter();
-        EventTextSorter();
-        maxCurrentPriceToPay += priceGrowthPerItration;
-        maxCurrentPunishment += punishmentGrowthPerIteration;
-        minCurrentPriceToPay += priceGrowthPerItration;
-        minCurrentPunishment += punishmentGrowthPerIteration;   
+    {
+        if (!isTutorial)
+        {
+            EventRandomizer();
+            eventType = (EventType)eventTypeIterator;
+            EventListTextAndResourceSorter();
+            EventTextSorter();
+            maxCurrentPriceToPay += priceGrowthPerItration;
+            maxCurrentPunishment += punishmentGrowthPerIteration;
+            minCurrentPriceToPay += priceGrowthPerItration;
+            minCurrentPunishment += punishmentGrowthPerIteration;
+        }
     }
     private void EventRandomizer()
     {    
