@@ -74,7 +74,14 @@ public class GameManager : MonoBehaviour
         if(hasWon)
         {
             hasWon = false;
-            Loader(SceneManager.GetActiveScene().buildIndex + 1);    
+            if (SceneManager.GetActiveScene().buildIndex + 1 > 3)
+            {
+                GoToMainMenu();
+            }
+            else
+            {
+                Loader(SceneManager.GetActiveScene().buildIndex + 1);
+            }
         }
         if(hasLost)
         {

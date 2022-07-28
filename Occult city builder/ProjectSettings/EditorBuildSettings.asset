@@ -8,12 +8,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 4e2f0498e4716c44686cf9e2339852cc
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Tutorial.unity
     guid: e1b8e72869eb8de45b7bc9d733b11263
   - enabled: 0
     path: Assets/Scenes/ArtemLevel.unity
     guid: e475a89ee4b72a24daee6d4869b15a31
+  - enabled: 1
+    path: Assets/Scenes/FirstLevel.unity
+    guid: 3d6f05e2ebe08624a8f795d3bdffa85d
   - enabled: 1
     path: Assets/Scenes/Swamp_Level.unity
     guid: 49414b68617e88c4da377514b061bb08
