@@ -5729,6 +5729,10 @@ PrefabInstance:
       value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 7364471787996171063, guid: 379e946e49adf324fb63e57cd09d9e1d, type: 3}
+      propertyPath: monsterOptions.hunger
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7364471787996171063, guid: 379e946e49adf324fb63e57cd09d9e1d, type: 3}
       propertyPath: eventsOptions.maxPrice
       value: 50
       objectReference: {fileID: 0}
@@ -5798,7 +5802,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7364471787996171063, guid: 379e946e49adf324fb63e57cd09d9e1d, type: 3}
       propertyPath: monsterOptions.powerThreshold
-      value: 15
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 7364471787996171063, guid: 379e946e49adf324fb63e57cd09d9e1d, type: 3}
       propertyPath: witchHut.priceInReserchPoints
@@ -5806,7 +5810,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7364471787996171063, guid: 379e946e49adf324fb63e57cd09d9e1d, type: 3}
       propertyPath: monsterOptions.hungerThreshold
-      value: 15
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 7364471787996171063, guid: 379e946e49adf324fb63e57cd09d9e1d, type: 3}
       propertyPath: monsterOptions.powerProbability

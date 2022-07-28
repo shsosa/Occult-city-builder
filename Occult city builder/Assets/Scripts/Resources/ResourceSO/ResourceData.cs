@@ -22,32 +22,35 @@ public class ResourceData : ScriptableObject
 
     public void IncreaseResource(ResourceTypeData.ResourceType resourceType, int resourcesTAdd)
     {
+        
         Debug.Log("resource: "+ resourceType);
-        switch (resourceType)
-        {
-            case ResourceTypeData.ResourceType.Wood:
-                wood += resourcesTAdd;
-                break;
-            case ResourceTypeData.ResourceType.Gold:
-                gold += resourcesTAdd;
-                break;
-            case ResourceTypeData.ResourceType.Vilagers:
-                vilagers += resourcesTAdd;
-                break;
-            case ResourceTypeData.ResourceType.ResearchPoints:
-                researchPoints += resourcesTAdd;
-                break;
-            case ResourceTypeData.ResourceType.Cattle:
-                cattle += resourcesTAdd;
-                break;
-            default:
-                Debug.Log("Incorrect resource");
-                break; 
-        }
+        if(!GameManager.stopProduction)
+            switch (resourceType)
+            {
+                case ResourceTypeData.ResourceType.Wood:
+                    wood += resourcesTAdd;
+                    break;
+                case ResourceTypeData.ResourceType.Gold:
+                    gold += resourcesTAdd;
+                    break;
+                case ResourceTypeData.ResourceType.Vilagers:
+                    vilagers += resourcesTAdd;
+                    break;
+                case ResourceTypeData.ResourceType.ResearchPoints:
+                    researchPoints += resourcesTAdd;
+                    break;
+                case ResourceTypeData.ResourceType.Cattle:
+                    cattle += resourcesTAdd;
+                    break;
+                default:
+                    Debug.Log("Incorrect resource");
+                    break; 
+            }
     }
 
     public void SpendReasource(ReasourcePrice reasourcePrice)
     {
+        
         wood -= reasourcePrice.wood;
         gold -= reasourcePrice.gold;
         cattle -= reasourcePrice.cattle;

@@ -196,9 +196,10 @@ public class TutorialSystem : MonoBehaviour
         
         currentTutorialObject++;
         ShowTutorialObject(tutoialTextSos[currentTutorialObject]);
-        
-        
+
+        GameManager.stopProduction = true;
         yield return StartCoroutine(WaitForBuiltEvent());
+        GameManager.stopProduction = false;
         currentTutorialObject++;
         ShowTutorialObject(tutoialTextSos[currentTutorialObject]);
         
@@ -210,7 +211,9 @@ public class TutorialSystem : MonoBehaviour
         currentTutorialObject++;
         ShowTutorialObject(tutoialTextSos[currentTutorialObject]);
         
+        GameManager.stopProduction = true;
         yield return StartCoroutine(WaitForBuiltEvent());
+        GameManager.stopProduction = false;
         currentTutorialObject++;
         ShowTutorialObject(tutoialTextSos[currentTutorialObject]);
         
@@ -237,13 +240,15 @@ public class TutorialSystem : MonoBehaviour
         ShowTutorialObject(tutoialTextSos[currentTutorialObject]);
         
        
-        
+        GameManager.stopProduction = true;
         yield return StartCoroutine(WaitForBuiltEvent());
+        GameManager.stopProduction = false;
         currentTutorialObject++;
         ShowTutorialObject(tutoialTextSos[currentTutorialObject]);
        
-        
+        GameManager.stopProduction = true;
         yield return StartCoroutine(WaitForBuiltEvent());
+        GameManager.stopProduction = false;
         TutorialTextSystem.Hide();
        ShowTutorialObject(tutoialTextSos[26]);
 
@@ -267,7 +272,7 @@ public class TutorialSystem : MonoBehaviour
         
         
         yield return new WaitUntil(() => !GameManager.isEventUIActive);
-        MonsterManager.isTutorial = true;
+       // MonsterManager.isTutorial = true;
 
         currentTutorialObject++;
         ShowTutorialObject(tutoialTextSos[currentTutorialObject]);
@@ -292,7 +297,7 @@ public class TutorialSystem : MonoBehaviour
         ChangeResearchPrice();
         
         yield return StartCoroutine(WaitForTileBlessedEvent());
-        MonsterManager.isTutorial = false;
+      //  MonsterManager.isTutorial = false;
         currentTutorialObject++;
         ShowTutorialObject(tutoialTextSos[currentTutorialObject]);
         

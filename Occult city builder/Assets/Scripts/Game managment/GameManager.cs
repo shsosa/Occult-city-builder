@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
      [SerializeField] private int reasoursesOnStart;
 
     public static bool isEventUIActive = false;
+    public static bool stopProduction = false;
 
     public static bool isPaused = false;
     /*
