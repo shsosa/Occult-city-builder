@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/ArtemLevel.unity
     guid: e475a89ee4b72a24daee6d4869b15a31
   - enabled: 1
+    path: Assets/Scenes/Tutorial current.unity
+    guid: 1d0eaf4e7991869449b70766b45e57ce
+  - enabled: 1
     path: Assets/Scenes/FirstLevel.unity
     guid: 3d6f05e2ebe08624a8f795d3bdffa85d
   - enabled: 1

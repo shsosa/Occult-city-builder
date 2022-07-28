@@ -129,7 +129,7 @@ public class MonsterManager : MonoBehaviour
             if (!tile[randomizer].CompareTag("HolyTile"))
             {
                 tile[randomizer].SetCursed(); 
-                CursedTile.Invoke();
+               // CursedTile.Invoke();
             }   
         }
         else 
