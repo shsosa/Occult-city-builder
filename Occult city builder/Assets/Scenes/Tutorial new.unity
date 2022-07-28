@@ -5547,7 +5547,7 @@ PrefabInstance:
       objectReference: {fileID: 961332060}
     - target: {fileID: 6841831380044669556, guid: da19f0b1c516abc438906755da631be4, type: 3}
       propertyPath: charecterWrapLimit
-      value: 120
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 6841831380044669557, guid: da19f0b1c516abc438906755da631be4, type: 3}
       propertyPath: m_Enabled
@@ -6845,6 +6845,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3293959937467564766, guid: 571b9c0363668ff43aa47ac4594fcefb, type: 3}
+      propertyPath: resource
+      value: 
+      objectReference: {fileID: 11400000, guid: a058ea4808a964c4883a30c07f49f86f, type: 2}
+    - target: {fileID: 3293959937467564766, guid: 571b9c0363668ff43aa47ac4594fcefb, type: 3}
+      propertyPath: rEManager
+      value: 
+      objectReference: {fileID: 11400000, guid: a7e59b057f19b78419e0e26cf56a8474, type: 2}
     - target: {fileID: 3293959937467564767, guid: 571b9c0363668ff43aa47ac4594fcefb, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
