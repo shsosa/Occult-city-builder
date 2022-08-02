@@ -271,10 +271,12 @@ public class TutorialSystem : MonoBehaviour
 
         currentTutorialObject++;
         ShowTutorialObject(tutoialTextSos[currentTutorialObject]);
+        
         GameManager.stopProduction = true;
         yield return new WaitUntil(() => monsterFed);
         GameManager.stopProduction = false;
         MonsterManager.isTutorial = false;
+        
         currentTutorialObject++;
         ShowTutorialObject(tutoialTextSos[currentTutorialObject]);
         
@@ -313,18 +315,6 @@ public class TutorialSystem : MonoBehaviour
         yield return new WaitForSeconds(time);
         currentTutorialObject++;
         ShowTutorialObject(tutoialTextSos[currentTutorialObject]);
-        
-        
-       
-        
-       
-      
-        
-      
-        
-        
-       
-
         
 
     }

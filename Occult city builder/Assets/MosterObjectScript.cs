@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using DefaultNamespace;
 using DefaultNamespace.Monster;
+using Game_managment;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -24,11 +25,11 @@ public class MosterObjectScript : MonoBehaviour
 
     
 
-    public void Eat(int amountToSecrificeHunger, int secrificeAddPower)
+    public void Eat(ReasourcePrice reasourcePrice)
     {
         
         _unityEvent.Invoke();
-        _secreficeManager.Sacrifice(amountToSecrificeHunger, secrificeAddPower);
+        _secreficeManager.Sacrifice(reasourcePrice.secrificeAmountHunger, reasourcePrice.secrificeAddPower,reasourcePrice.researchPointsAdd);
     }
 
    

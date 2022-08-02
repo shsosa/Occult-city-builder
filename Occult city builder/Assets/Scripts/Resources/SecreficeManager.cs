@@ -11,12 +11,14 @@ public class SecreficeManager : MonoBehaviour
     public List<Building> listOfActiveSacrificeBuildings;
    
 
-    public void Sacrifice(int secrificeAmountHunger, int secrificePowerAdd)
+    public void Sacrifice(int secrificeAmountHunger, int secrificePowerAdd, int researchPointAdd)
     {
        monster.MonsterEat();
         Debug.Log("Secrificed amount " + secrificeAmountHunger);
         monster.monsterHunger -= secrificeAmountHunger;
         monster.monsterPower += secrificePowerAdd;
-        
+        monster.ResourceData.researchPoints += researchPointAdd;
+
+
     } 
 }

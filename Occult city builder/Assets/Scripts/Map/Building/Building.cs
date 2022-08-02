@@ -136,7 +136,7 @@ public class Building : MonoBehaviour, Idraggable
     private void GetMonsterEat(Collider2D other)
     {
         other.GetComponent<MosterObjectScript>()
-            .Eat(reasourcePrice.secrificeAmountHunger, reasourcePrice.secrificeAddPower);
+            .Eat(reasourcePrice);
         if (CompareTag("Spell"))
         {
             MosterObjectScript.isMonsterPowerDecrease = true;

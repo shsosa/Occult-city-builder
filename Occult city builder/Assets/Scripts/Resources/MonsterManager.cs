@@ -27,6 +27,7 @@ public class MonsterManager : MonoBehaviour
 
     static public UnityAction CursedTile;
     static public bool isTutorial = false;
+    public ResourceData ResourceData;
     
     void Awake()
     {

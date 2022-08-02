@@ -19,3 +19,4 @@ MonoBehaviour:
   cattle: 0
   secrificeAmountHunger: 50
   secrificeAddPower: 15
+  researchPointsAdd: 20

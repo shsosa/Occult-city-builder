@@ -21,6 +21,8 @@ namespace Game_managment
 
             public int secrificeAddPower;
 
+            public int researchPointsAdd;
+
 
             public string GetBuildingPrice()
             {
